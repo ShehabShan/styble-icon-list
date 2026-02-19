@@ -1,0 +1,103 @@
+.wp-block-create-block-icon-list {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 100%;
+
+	/* gap util (keep your for-loop if you have many values) */
+	@for $i from 10 through 50 {
+		&.is-items-space-between-#{$i} {
+			gap: #{$i}px;
+		}
+	}
+
+	&.is-list-orientation-horizontal {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	/* item layout */
+	> .wp-block-create-block-icon-list-item {
+		position: relative; /* required for pseudo-element separators */
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 18px 16px;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	/* reset default heading margins so alignment is stable */
+	.wp-block-create-block-icon-list-item h3,
+	.wp-block-create-block-icon-list-item h2,
+	.wp-block-create-block-icon-list-item p {
+		margin: 0;
+	}
+
+	/* -------- Separator via pseudo-element (no collision with item border) -------- */
+	&:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item {
+		//line break
+		&::after {
+			content: "";
+			position: absolute;
+			pointer-events: none;
+			z-index: 1;
+
+			/* local aliases */
+			--sep-th: var(--separator-thickness, 1px);
+			--sep-col: var(--separator-color, #ccc);
+			--sep-style: var(--separator-style, solid);
+		}
+	}
+
+	/* vertical (default) - horizontal line centered on boundary */
+	&:not(.is-list-orientation-horizontal):not(.is-separator-type-none) {
+		//line break
+		> .wp-block-create-block-icon-list-item {
+			//line break
+			&::after {
+				left: 16px; /* inset to avoid icon area */
+				right: 16px;
+				height: 0;
+				bottom: calc((-1 * var(--sep-th) / 2) - 10px);
+				border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+				transform: translateY(50%);
+			}
+		}
+
+		> .wp-block-create-block-icon-list-item:last-child::after {
+			display: none;
+		}
+	}
+
+	/* horizontal layout — vertical separator to the right of each item */
+	&.is-list-orientation-horizontal:not(.is-separator-type-none) {
+		//line break
+		> .wp-block-create-block-icon-list-item {
+			//line break
+			&::after {
+				top: 12px;
+				bottom: 12px;
+				right: calc((-1 * var(--sep-th) / 2) - 10px);
+				width: 0;
+				border-right: var(--sep-th) var(--sep-style) var(--sep-col);
+				transform: translateX(50%);
+			}
+		}
+
+		> .wp-block-create-block-icon-list-item:last-child::after {
+			display: none;
+		}
+	}
+
+	/* style toggles (these affect the pseudo-element border style) */
+	&.is-separator-type-dotted {
+		/* style already applied via --separator-style */
+	}
+
+	&.is-separator-type-dashed {
+	}
+
+	&.is-separator-type-solid {
+	}
+}

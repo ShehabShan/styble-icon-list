@@ -1,0 +1,14 @@
+.typography-popover-container {
+	width: 320px;
+	min-height: 400px;
+	padding: 16px;
+	background: #fff;
+	border-radius: 8px;
+
+	//line break
+	.typography-popover-selected-options {
+		display: flex;
+		gap: 12px;
+		padding: 10px;
+	}
+}

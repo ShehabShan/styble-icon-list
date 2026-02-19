@@ -1,0 +1,96 @@
+.parent-contaner {
+	box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+
+	/* ======================================================
+	   Layout Wrapper (Editor Only Extra Layer)
+	====================================================== */
+
+	.block-editor-block-list__block.wp-block-create-block-icon-list-item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 18px 16px;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	/* reset heading margins */
+	.wp-block-create-block-icon-list-item h3,
+	.wp-block-create-block-icon-list-item h2,
+	.wp-block-create-block-icon-list-item p {
+		margin: 0;
+	}
+
+	// separator via pseudo-element (no collision with item border)
+
+	&:not(.is-separator-type-none)
+		.block-editor-block-list__block.wp-block-create-block-icon-list-item {
+		//line break
+		&::after {
+			content: "";
+			position: absolute;
+			pointer-events: none;
+			z-index: 1;
+
+			--sep-th: var(--separator-thickness, 1px);
+			--sep-col: var(--separator-color, #ccc);
+			--sep-style: var(--separator-style, solid);
+		}
+	}
+
+	/* -------------------------
+	   Vertical (default)
+	------------------------- */
+	&:not(.is-list-orientation-horizontal):not(.is-separator-type-none) {
+		//line break
+		.block-editor-block-list__block.wp-block-create-block-icon-list-item {
+			//line break
+			&::after {
+				left: 16px;
+				right: 16px;
+				height: 0;
+				bottom: calc((-1 * var(--sep-th) / 2) - 10px);
+				border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+				transform: translateY(50%);
+			}
+
+			&:last-child::after {
+				display: none;
+			}
+		}
+	}
+
+	&.is-list-orientation-horizontal:not(.is-separator-type-none) {
+		//line break
+		.block-editor-block-list__block.wp-block-create-block-icon-list-item {
+			//line break
+			&::after {
+				top: 12px;
+				bottom: 12px;
+				right: calc((-1 * var(--sep-th) / 2) - 10px);
+				width: 0;
+				border-right: var(--sep-th) var(--sep-style) var(--sep-col);
+				transform: translateX(50%);
+			}
+
+			&:last-child::after {
+				display: none;
+			}
+		}
+	}
+
+	/* -------------------------
+	   Horizontal
+	------------------------- */
+
+	/* ======================================================
+	   Prevent Separator On Appender
+	====================================================== */
+
+	.block-list-appender {
+		display: none;
+	}
+}

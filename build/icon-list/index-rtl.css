@@ -1,0 +1,703 @@
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/editor.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+.parent-contaner {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  /* ======================================================
+     Layout Wrapper (Editor Only Extra Layer)
+  ====================================================== */
+}
+.parent-contaner .block-editor-block-list__block.wp-block-create-block-icon-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 16px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.parent-contaner {
+  /* reset heading margins */
+}
+.parent-contaner .wp-block-create-block-icon-list-item h3,
+.parent-contaner .wp-block-create-block-icon-list-item h2,
+.parent-contaner .wp-block-create-block-icon-list-item p {
+  margin: 0;
+}
+.parent-contaner:not(.is-separator-type-none) .block-editor-block-list__block.wp-block-create-block-icon-list-item::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  --sep-th: var(--separator-thickness, 1px);
+  --sep-col: var(--separator-color, #ccc);
+  --sep-style: var(--separator-style, solid);
+}
+.parent-contaner {
+  /* -------------------------
+     Vertical (default)
+  ------------------------- */
+}
+.parent-contaner:not(.is-list-orientation-horizontal):not(.is-separator-type-none) .block-editor-block-list__block.wp-block-create-block-icon-list-item::after {
+  right: 16px;
+  left: 16px;
+  height: 0;
+  bottom: calc(-1 * var(--sep-th) / 2 - 10px);
+  border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateY(50%);
+}
+.parent-contaner:not(.is-list-orientation-horizontal):not(.is-separator-type-none) .block-editor-block-list__block.wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+.parent-contaner.is-list-orientation-horizontal:not(.is-separator-type-none) .block-editor-block-list__block.wp-block-create-block-icon-list-item::after {
+  top: 12px;
+  bottom: 12px;
+  left: calc(-1 * var(--sep-th) / 2 - 10px);
+  width: 0;
+  border-left: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateX(-50%);
+}
+.parent-contaner.is-list-orientation-horizontal:not(.is-separator-type-none) .block-editor-block-list__block.wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+.parent-contaner {
+  /* -------------------------
+     Horizontal
+  ------------------------- */
+  /* ======================================================
+     Prevent Separator On Appender
+  ====================================================== */
+}
+.parent-contaner .block-list-appender {
+  display: none;
+}
+:root {
+  --Visual-800: #444d54;
+  --Visual-primary: #007cba;
+  --icon-list-gap: 1.5rem;
+}
+.wp-block-create-block-icon-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  width: 900px !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  border: 1px solid rgb(187, 31, 31);
+}
+.wp-block-create-block-icon-list {
+  /* gap control */
+}
+.wp-block-create-block-icon-list.is-items-space-between-10 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 10px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-11 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 11px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-12 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 12px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-13 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 13px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-14 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 14px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-15 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 15px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-16 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 16px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-17 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 17px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-18 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 18px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-19 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 19px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-20 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 20px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-21 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 21px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-22 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 22px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-23 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 23px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-24 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 24px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-25 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 25px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-26 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 26px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-27 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 27px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-28 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 28px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-29 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 29px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-30 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 30px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-31 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 31px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-32 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 32px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-33 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 33px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-34 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 34px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-35 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 35px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-36 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 36px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-37 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 37px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-38 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 38px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-39 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 39px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-40 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 40px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-41 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 41px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-42 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 42px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-43 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 43px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-44 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 44px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-45 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 45px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-46 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 46px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-47 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 47px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-48 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 48px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-49 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 49px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-50 > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  gap: 50px;
+}
+.wp-block-create-block-icon-list {
+  /* horizontal orientation */
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  flex-direction: row;
+  align-items: stretch;
+}
+.my-custom-troggle .components-flex.components-h-stack {
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  width: 100%;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/placeholder.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.icon-list-placeholder {
+  width: 620px;
+  text-align: center;
+  padding: 50px 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fafbff;
+  /*  Title & Description  */
+}
+.icon-list-placeholder .icon-list-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--Visual-800);
+}
+.icon-list-placeholder .icon-list-desc {
+  color: #6b7280;
+  font-size: 14px;
+  max-width: 480px;
+  margin: 0 auto 32px auto;
+  line-height: 1.6;
+}
+.icon-list-placeholder {
+  /*  Preset Cards Container  */
+}
+.icon-list-placeholder .icon-list-presets {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  /*  Preset Card Button  */
+}
+.icon-list-placeholder .icon-list-presets .preset-card {
+  background: #fff;
+  border: 2px solid #d0d5ff;
+  border-radius: 10px;
+  width: 120px;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-style: solid;
+  font: inherit;
+}
+.icon-list-placeholder .icon-list-presets {
+  /* Hover Effect */
+}
+.icon-list-placeholder .icon-list-presets .preset-card:hover {
+  border-color: #635bff;
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15);
+}
+.icon-list-placeholder .icon-list-presets {
+  /* Focus Accessibility */
+}
+.icon-list-placeholder .icon-list-presets .preset-card:focus {
+  outline: 2px solid #635bff;
+  outline-offset: 2px;
+}
+.icon-list-placeholder .icon-list-presets {
+  /* Active State (optional if you add selected preset) */
+}
+.icon-list-placeholder .icon-list-presets .preset-card.is-active {
+  border-color: #635bff;
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.2);
+}
+.icon-list-placeholder .icon-list-presets {
+  /*  SVG Styling  */
+}
+.icon-list-placeholder .icon-list-presets .preset-card img {
+  width: 90px;
+  height: 50px;
+  fill: #6b6bff;
+  pointer-events: none;
+}
+.icon-list-placeholder {
+  /*  Action Buttons Row  */
+}
+.icon-list-placeholder .icon-list-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  /* Primary Button */
+}
+.icon-list-placeholder .icon-list-actions .primary-btn {
+  background: #635bff;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.icon-list-placeholder .icon-list-actions .primary-btn:hover {
+  background: #5348e5;
+}
+.icon-list-placeholder .icon-list-actions .primary-btn:focus {
+  outline: 2px solid #635bff;
+  outline-offset: 2px;
+}
+.icon-list-placeholder .icon-list-actions {
+  /* Secondary Button */
+}
+.icon-list-placeholder .icon-list-actions .secondary-btn {
+  background: transparent;
+  border: 1px solid #635bff;
+  color: #635bff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.icon-list-placeholder .icon-list-actions .secondary-btn:hover {
+  background: rgba(99, 91, 255, 0.08);
+}
+.icon-list-placeholder .icon-list-actions .secondary-btn:focus {
+  outline: 2px solid #635bff;
+  outline-offset: 2px;
+}
+.list-separator-style-toggle-group {
+  margin-top: 10px;
+}
+.list-separator-style-toggle-group .list-separator-type-option {
+  flex: 1;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 12px;
+  color: #1e1e1e;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+}
+.list-separator-style-toggle-group .list-separator-type-option:not(:last-child) {
+  border-left: 1px solid #e0e0e0;
+}
+.list-separator-style-toggle-group .list-separator-type-option.is-active {
+  background-color: #f0f0ff;
+  color: #4649ff;
+  font-weight: 500;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.list-separator-style-toggle-group .list-separator-type-option:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.list-separator-style-toggle-group .list-separator-type-option:hover:not(.is-active) {
+  background-color: #f8f8f8;
+  color: #000;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/uploadIcon.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.icon-sidebar-container {
+  border: 1px solid #ddd;
+}
+
+.icon-sidebar-container-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 140px;
+}
+
+.icon-sidebar-container-button-box {
+  display: flex;
+  gap: 10px;
+}
+
+.component-button-for-icon {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #2f2f2f !important;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.icon-library-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  max-height: 250px;
+  max-width: 300px;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.icon-library-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.icon-library-item:hover {
+  background: #f3f4f6;
+  border-color: #d0d5dd;
+}
+
+.icon-library-item.is-active {
+  border-color: #635bff;
+  background: rgba(99, 91, 255, 0.08);
+}
+
+.icon-library-item svg {
+  pointer-events: none;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/separatorModel.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.custom-sidebar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  width: 100%;
+}
+.custom-sidebar-row .row-label {
+  font-size: 13px;
+  color: #1e1e1e;
+  font-weight: 400;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #949494;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentcolor;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button:hover {
+  border-color: #007cba;
+  color: #007cba;
+  background: #f0f6fb;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button:focus {
+  box-shadow: 0 0 0 1px #007cba;
+  outline: none;
+}
+.separator-popover-container {
+  padding: 16px;
+  width: 280px;
+  background: #fff;
+  border-radius: 8px;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/customHelperComponent.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+.custom-sidebar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  width: 100%;
+}
+.custom-sidebar-row .row-label {
+  font-size: 13px;
+  color: #1e1e1e;
+  font-weight: 400;
+  flex: 1;
+}
+.custom-sidebar-row .row-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Stylized Text Button (e.g., "%", "px", "Auto") */
+}
+.custom-sidebar-row .row-control .components-button.custom-helper-button {
+  display: flex;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 4px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #8c8f94;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #070707;
+  line-height: 1;
+  transition: all 0.1s ease-in-out;
+}
+.custom-sidebar-row .row-control .components-button.custom-helper-button:hover {
+  border-color: #007cba;
+  color: #007cba;
+  background: #f0f6fb;
+}
+.custom-sidebar-row .row-control {
+  /* Pencil Edit Button */
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #949494;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button:hover {
+  border-color: #007cba;
+  background: #f0f6fb;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button:focus {
+  box-shadow: 0 0 0 1px #007cba;
+  outline: none;
+}
+.custom-sidebar-row .row-control .pencil-edit-button.components-button img {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/customItemWidth.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.separator-popover-container {
+  max-height: 250px;
+  max-width: 300px;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+.separator-popover-container .list-orientation {
+  display: flex;
+  border: 1px solid #949494;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.separator-popover-container .list-orientation .list-orientation-option {
+  flex: 1;
+  height: 32px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #1e1e1e;
+  transition: background 0.1s ease;
+}
+.separator-popover-container .list-orientation .list-orientation-option:not(:last-child) {
+  border-left: 1px solid #949494;
+}
+.separator-popover-container .list-orientation .list-orientation-option.is-active {
+  color: #4649ff;
+  background: #f0f0ff;
+  font-weight: 500;
+  border: 1px solid #a8aaff;
+}
+.separator-popover-container .list-orientation .list-orientation-option:hover:not(.is-active) {
+  background-color: #f0f0f0;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/listPreset.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.list-preset {
+  margin-top: 10px;
+}
+.list-preset .list-preset-option {
+  height: 70px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+}
+.list-preset {
+  /* Selected state */
+}
+.list-preset .list-preset-option.is-active {
+  border: 1px solid #a8aaff;
+  background-color: #f0f7ff;
+  box-shadow: 0 0 0 1px #635bff;
+}
+.list-preset {
+  /* Hover (only when not active) */
+}
+.list-preset .list-preset-option:not(.is-active):hover {
+  border-color: #b0b0b0;
+  background-color: #f9f9f9;
+}
+.list-preset {
+  /* Make them equal width */
+}
+.list-preset .components-toggle-group-control__group {
+  display: flex;
+  gap: 8px;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/listOrientation.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.list-orientation {
+  display: flex;
+  border: 1px solid #949494;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.list-orientation .list-orientation-option {
+  flex: 1;
+  height: 32px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #1e1e1e;
+  transition: background 0.1s ease;
+}
+.list-orientation .list-orientation-option:not(:last-child) {
+  border-left: 1px solid #949494;
+}
+.list-orientation .list-orientation-option.is-active {
+  color: #4649ff;
+  background: #f0f0ff;
+  font-weight: 500;
+  border: 1px solid #a8aaff;
+}
+.list-orientation .list-orientation-option:hover:not(.is-active) {
+  background-color: #f0f0f0;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-style-bar/typography.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.typography-popover-container {
+  width: 320px;
+  min-height: 400px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+}
+.typography-popover-container .typography-popover-selected-options {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+}

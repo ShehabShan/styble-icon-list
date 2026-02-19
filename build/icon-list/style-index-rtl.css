@@ -1,0 +1,205 @@
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wp-block-create-block-icon-list {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  /* gap util (keep your for-loop if you have many values) */
+}
+.wp-block-create-block-icon-list.is-items-space-between-10 {
+  gap: 10px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-11 {
+  gap: 11px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-12 {
+  gap: 12px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-13 {
+  gap: 13px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-14 {
+  gap: 14px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-15 {
+  gap: 15px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-16 {
+  gap: 16px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-17 {
+  gap: 17px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-18 {
+  gap: 18px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-19 {
+  gap: 19px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-20 {
+  gap: 20px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-21 {
+  gap: 21px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-22 {
+  gap: 22px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-23 {
+  gap: 23px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-24 {
+  gap: 24px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-25 {
+  gap: 25px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-26 {
+  gap: 26px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-27 {
+  gap: 27px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-28 {
+  gap: 28px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-29 {
+  gap: 29px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-30 {
+  gap: 30px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-31 {
+  gap: 31px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-32 {
+  gap: 32px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-33 {
+  gap: 33px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-34 {
+  gap: 34px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-35 {
+  gap: 35px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-36 {
+  gap: 36px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-37 {
+  gap: 37px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-38 {
+  gap: 38px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-39 {
+  gap: 39px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-40 {
+  gap: 40px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-41 {
+  gap: 41px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-42 {
+  gap: 42px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-43 {
+  gap: 43px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-44 {
+  gap: 44px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-45 {
+  gap: 45px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-46 {
+  gap: 46px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-47 {
+  gap: 47px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-48 {
+  gap: 48px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-49 {
+  gap: 49px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-50 {
+  gap: 50px;
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal {
+  flex-direction: row;
+  align-items: stretch;
+}
+.wp-block-create-block-icon-list {
+  /* item layout */
+}
+.wp-block-create-block-icon-list > .wp-block-create-block-icon-list-item {
+  position: relative; /* required for pseudo-element separators */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 16px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wp-block-create-block-icon-list {
+  /* reset default heading margins so alignment is stable */
+}
+.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item h3,
+.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item h2,
+.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item p {
+  margin: 0;
+}
+.wp-block-create-block-icon-list {
+  /* -------- Separator via pseudo-element (no collision with item border) -------- */
+}
+.wp-block-create-block-icon-list:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  /* local aliases */
+  --sep-th: var(--separator-thickness, 1px);
+  --sep-col: var(--separator-color, #ccc);
+  --sep-style: var(--separator-style, solid);
+}
+.wp-block-create-block-icon-list {
+  /* vertical (default) - horizontal line centered on boundary */
+}
+.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none) > .wp-block-create-block-icon-list-item::after {
+  right: 16px; /* inset to avoid icon area */
+  left: 16px;
+  height: 0;
+  bottom: calc(-1 * var(--sep-th) / 2 - 10px);
+  border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateY(50%);
+}
+.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none) > .wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+.wp-block-create-block-icon-list {
+  /* horizontal layout — vertical separator to the right of each item */
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item::after {
+  top: 12px;
+  bottom: 12px;
+  left: calc(-1 * var(--sep-th) / 2 - 10px);
+  width: 0;
+  border-left: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateX(-50%);
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+.wp-block-create-block-icon-list {
+  /* style toggles (these affect the pseudo-element border style) */
+}
+.wp-block-create-block-icon-list.is-separator-type-dotted {
+  /* style already applied via --separator-style */
+}

@@ -1,0 +1,51 @@
+@use "separator";
+
+:root {
+	--Visual-800: #444d54;
+	--Visual-primary: #007cba;
+	--icon-list-gap: 1.5rem;
+}
+
+.wp-block-create-block-icon-list {
+	//line break
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		width: 900px !important;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+		border: 1px solid rgb(187, 31, 31);
+	}
+
+	/* gap control */
+	@for $i from 10 through 50 {
+		&.is-items-space-between-#{$i}
+			> .block-editor-inner-blocks
+			> .block-editor-block-list__layout {
+			gap: #{$i}px;
+		}
+	}
+
+	/* horizontal orientation */
+	&.is-list-orientation-horizontal
+		> .block-editor-inner-blocks
+		> .block-editor-block-list__layout {
+		flex-direction: row;
+		align-items: stretch;
+	}
+}
+
+// Sidebar List Preset style css
+
+// List Orientation sidebar Toggle Styles
+
+//for showing and hiding the how icons toggle in the sidebar
+
+.my-custom-troggle {
+	// Target the internal flex container (HStack)
+	.components-flex.components-h-stack {
+		flex-direction: row-reverse !important;
+		justify-content: space-between !important; // Pushes toggle to the right, label to the left
+		width: 100%;
+	}
+}
