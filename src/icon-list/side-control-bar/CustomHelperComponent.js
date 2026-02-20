@@ -22,7 +22,7 @@ const CustomHelperComponent = ( props ) => {
 								} }
 							/>
 						}
-						onClick={ props?.toggleModal }
+						onClick={ () => props?.toggleModal( props?.label ) }
 					/>
 				) }
 
@@ -40,7 +40,7 @@ const CustomHelperComponent = ( props ) => {
 				{ props?.hasText && (
 					<Button
 						className="custom-helper-button"
-						onClick={ props?.onClick }
+						onClick={ () => props?.toggleModal( props?.label ) }
 						variant="secondary" // Use WP secondary style as a base
 					>
 						{ props?.text }

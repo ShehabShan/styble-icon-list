@@ -60,61 +60,13 @@ const fontFamilies = {
 		slug: 'inter',
 		fontFamily: 'Inter, sans-serif',
 	},
-	roboto: {
-		name: 'Roboto',
-		slug: 'roboto',
-		fontFamily: 'Roboto, sans-serif',
-	},
-	openSans: {
-		name: 'Open Sans',
-		slug: 'open-sans',
-		fontFamily: '"Open Sans", sans-serif',
-	},
-	lato: {
-		name: 'Lato',
-		slug: 'lato',
-		fontFamily: 'Lato, sans-serif',
-	},
-	poppins: {
-		name: 'Poppins',
-		slug: 'poppins',
-		fontFamily: 'Poppins, sans-serif',
-	},
-	montserrat: {
-		name: 'Montserrat',
-		slug: 'montserrat',
-		fontFamily: 'Montserrat, sans-serif',
-	},
-	sourceSansPro: {
-		name: 'Source Sans Pro',
-		slug: 'source-sans-pro',
-		fontFamily: '"Source Sans Pro", sans-serif',
-	},
-	nunito: {
-		name: 'Nunito',
-		slug: 'nunito',
-		fontFamily: 'Nunito, sans-serif',
-	},
-	raleway: {
-		name: 'Raleway',
-		slug: 'raleway',
-		fontFamily: 'Raleway, sans-serif',
-	},
-	ubuntu: {
-		name: 'Ubuntu',
-		slug: 'ubuntu',
-		fontFamily: 'Ubuntu, sans-serif',
-	},
+
 	merriweather: {
 		name: 'Merriweather',
 		slug: 'merriweather',
 		fontFamily: 'Merriweather, serif',
 	},
-	playfairDisplay: {
-		name: 'Playfair Display',
-		slug: 'playfair-display',
-		fontFamily: '"Playfair Display", serif',
-	},
+
 	oswald: {
 		name: 'Oswald',
 		slug: 'oswald',
@@ -135,11 +87,7 @@ const fontFamilies = {
 		slug: 'work-sans',
 		fontFamily: '"Work Sans", sans-serif',
 	},
-	archivo: {
-		name: 'Archivo',
-		slug: 'archivo',
-		fontFamily: 'Archivo, sans-serif',
-	},
+
 	ptSans: {
 		name: 'PT Sans',
 		slug: 'pt-sans',

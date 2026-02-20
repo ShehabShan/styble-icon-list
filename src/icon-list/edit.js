@@ -11,8 +11,11 @@ import {
 	TabPanel,
 	RangeControl,
 	ToggleControl,
+	BoxControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
+	BorderBoxControl,
+	BorderControl,
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
@@ -28,10 +31,12 @@ import presetThree from '../assests/List-presets-three.svg';
 import editIcon from '../assests/edit-icon.svg';
 import CustomItemWidth from './side-control-bar/CustomItemWidth.js';
 import ListPreset from './side-control-bar/ListPreset.js';
-import { List } from 'lucide-react';
 import ListOrientation from './side-control-bar/ListOrientation.js';
-import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
 import Typography from './side-control-style-bar/Typography.js';
+import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
+
+import RangeControls from './side-control-style-bar/RangeControls.js';
+import ItemStyle from './side-control-style-bar/ItemStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -43,47 +48,33 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		separatorColor,
 		separatorType,
 		separatorThickness,
+		fontWeight,
+		fontFamily,
+		fontSize,
+		fontHeight,
+		letterSpacing,
+		wordSpacing,
+		isItalic,
+		isUnderline,
+		isStrikethrough,
+		textTransform,
+		iconColor,
+		padding,
 	} = attributes;
 
 	//Opening modal for icon choose
 
-	const [ isLibaryOpen, setIsLibaryOpen ] = useState( false );
-	const [ isCustomIconOpen, setIsCustomIconOpen ] = useState( false );
+	// Initial state: null means no modal is open
+	const [ openModalId, setOpenModalId ] = useState( null );
 
-	const toggleLibaryOpen = () => {
-		setIsLibaryOpen( ( prev ) => ! prev );
+	const toggleModal = ( id ) => {
+		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
 	};
 
-	const toggleCustomIcon = () => {
-		setIsCustomIconOpen( ( prev ) => ! prev );
-	};
+	// Helper to check if a specific modal is open
+	const isModalOpen = ( id ) => openModalId === id;
 
-	// end of opening modal for icon choose
-
-	//opening modal from separator control
-
-	const [ isSeparatorModalOpen, setIsSeparatorModalOpen ] = useState( false );
-
-	const toggleSeparatorModal = () => {
-		setIsSeparatorModalOpen( ( prev ) => ! prev );
-	};
-
-	//ending modal from separator control
-
-	//opening modal for item width control
-
-	const [ isItemWidthModalOpen, setIsItemWidthModalOpen ] = useState( false );
-
-	const toggleItemWidthModal = () => {
-		setIsItemWidthModalOpen( ( prev ) => ! prev );
-	};
-
-	const [ isTypographyModalOpen, setIsTypographyModalOpen ] =
-		useState( false );
-
-	const toggleTypographyModal = () => {
-		setIsTypographyModalOpen( ( prev ) => ! prev );
-	};
+	const closeAllModals = () => setOpenModalId( null );
 
 	//ending modal for item width control
 
@@ -94,6 +85,21 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			'--separator-thickness': `${ separatorThickness }px`,
 			'--separator-color': separatorColor,
 			'--separator-style': separatorType,
+			'--icon-size': `${ iconSize }px`,
+			'--font-family': fontFamily,
+			'--font-size': `${ fontSize }px`,
+			'--font-weight': fontWeight,
+			'--font-height': fontHeight,
+			'--letter-spacing': `${ letterSpacing }px`,
+			'--word-spacing': `${ wordSpacing }px`,
+			'--font-style-italic': isItalic ? 'italic' : 'normal',
+			'--text-decoration':
+				`${ isUnderline ? 'underline' : '' } ${
+					isStrikethrough ? 'line-through' : ''
+				}`.trim() || 'none',
+			'--text-transform': textTransform,
+			'--icon-color': iconColor,
+			'--padding': `${ padding }px`,
 		},
 	} );
 
@@ -165,10 +171,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 							<UploadIcon
 								attributes={ attributes }
 								setAttributes={ setAttributes }
-								isCustomIconOpen={ isCustomIconOpen }
-								toggleCustomIcon={ toggleCustomIcon }
-								isLibaryOpen={ isLibaryOpen }
-								toggleLibaryOpen={ toggleLibaryOpen }
+								isModalOpen={ isModalOpen }
+								toggleModal={ toggleModal }
+								closeAllModals={ closeAllModals }
 							/>
 
 							<RangeControl
@@ -186,16 +191,18 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					) }
 
 					<SeparatorModel
-						toggleSeparatorModal={ toggleSeparatorModal }
+						isModalOpen={ isModalOpen }
+						toggleModal={ toggleModal }
+						closeAllModals={ closeAllModals }
 						editIcon={ editIcon }
-						isSeparatorModalOpen={ isSeparatorModalOpen }
 						setAttributes={ setAttributes }
 						attributes={ attributes }
 					/>
 
 					<CustomItemWidth
-						isItemWidthModalOpen={ isItemWidthModalOpen }
-						toggleItemWidthModal={ toggleItemWidthModal }
+						isModalOpen={ isModalOpen }
+						toggleModal={ toggleModal }
+						closeAllModals={ closeAllModals }
 						editIcon={ editIcon }
 						attributes={ attributes }
 						setAttributes={ setAttributes }
@@ -206,13 +213,37 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 		if ( tab.name === 'styles' ) {
 			return (
-				<Typography
-					isTypographyModalOpen={ isTypographyModalOpen }
-					toggleTypographyModal={ toggleTypographyModal }
-					attributes={ attributes }
-					setAttributes={ setAttributes }
-					clientId={ clientId }
-				/>
+				<>
+					<Typography
+						isModalOpen={ isModalOpen }
+						toggleModal={ toggleModal }
+						closeAllModals={ closeAllModals }
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+						clientId={ clientId }
+					/>
+
+					<CustomHelperComponent
+						label={ __( 'Icon Colour', 'icon-list' ) }
+						hasColor={ true }
+						color={ iconColor }
+						onColorChange={ ( color ) =>
+							setAttributes( { iconColor: color } )
+						}
+					/>
+
+					<RangeControls
+						setAttributes={ setAttributes }
+						attributes={ attributes }
+						title={ 'Padding' }
+						isPadding={ true }
+					/>
+
+					<ItemStyle
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+					/>
+				</>
 			);
 		}
 

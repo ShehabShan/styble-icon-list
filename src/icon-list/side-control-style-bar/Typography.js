@@ -3,26 +3,34 @@ import {
 	RangeControl,
 	SelectControl,
 	TextControl,
+	Button,
+	__experimentalHStack as HStack,
 } from '@wordpress/components';
-import CustomHelperComponent from '../side-control-bar/CustomHelperComponent';
+
+import { Italic, Underline, Strikethrough } from 'lucide-react';
 import { __ } from '@wordpress/i18n';
 
 import './typography.scss';
 import { fontOptions } from '../../utils/dataCenter';
-
+import CustomHelperComponent from '../side-control-bar/CustomHelperComponent';
 const Typography = ( {
-	isTypographyModalOpen,
-	toggleTypographyModal,
+	isModalOpen,
+	toggleModal,
+	closeAllModals,
 	attributes,
 	setAttributes,
 } ) => {
 	const {
 		fontFamily,
 		fontSize,
-		fontStyle,
+		fontWeight,
 		fontHeight,
 		letterSpacing,
 		wordSpacing,
+		isItalic,
+		isUnderline,
+		isStrikethrough,
+		textTransform,
 	} = attributes;
 
 	return (
@@ -31,12 +39,12 @@ const Typography = ( {
 				label={ __( 'Typography', 'icon-list' ) }
 				hasText={ true }
 				text={ __( 'Ab', 'icon-list' ) }
-				onClick={ toggleTypographyModal }
+				toggleModal={ toggleModal }
 			/>
 
-			{ isTypographyModalOpen && (
+			{ isModalOpen( 'Typography' ) && (
 				<Popover
-					onClose={ () => toggleTypographyModal( false ) }
+					onClose={ () => closeAllModals }
 					placement="left-start" // Left-start usually matches the sidebar flyout better
 					offset={ 15 }
 				>
@@ -54,8 +62,8 @@ const Typography = ( {
 								__next40pxDefaultSize
 							/>
 							<SelectControl
-								label={ __( 'Font Style', 'icon-list' ) }
-								value={ fontStyle }
+								label={ __( 'Font Weight', 'icon-list' ) }
+								value={ fontWeight }
 								options={ [
 									{ label: 'Regular 400', value: '400' },
 									{ label: 'Medium 500', value: '500' },
@@ -65,7 +73,7 @@ const Typography = ( {
 								] }
 								onChange={ ( value ) =>
 									setAttributes( {
-										fontStyle: value,
+										fontWeight: value,
 									} )
 								}
 								__next40pxDefaultSize
@@ -107,7 +115,7 @@ const Typography = ( {
 							step={ 0.1 }
 						/>
 
-						<div>
+						<div className="typography-spacing-controls">
 							<div>
 								<CustomHelperComponent
 									label={ __(
@@ -126,7 +134,8 @@ const Typography = ( {
 										} )
 									}
 									autoComplete="off"
-									step="0.1"
+									step="0.5"
+									max={ 10 }
 								/>
 							</div>
 							<div>
@@ -144,10 +153,79 @@ const Typography = ( {
 										} )
 									}
 									autoComplete="off"
-									step="0.1"
+									step="0.2"
+									max={ 3 }
 								/>
 							</div>
 						</div>
+
+						<HStack
+							className="segmented-control-container"
+							spacing={ 0 } // Ensures buttons touch each other
+							justify="stretch"
+						>
+							{ /* 1. Italic Toggle */ }
+							<Button
+								isPressed={ isItalic }
+								onClick={ () =>
+									setAttributes( {
+										isItalic: ! isItalic,
+									} )
+								}
+								className="segment-button"
+							>
+								<Italic size={ 16 } strokeWidth={ 2.5 } />
+							</Button>
+
+							{ /* 2. Underline Toggle */ }
+							<Button
+								isPressed={ isUnderline }
+								onClick={ () =>
+									setAttributes( {
+										isUnderline: ! isUnderline,
+									} )
+								}
+								className="segment-button"
+							>
+								<Underline size={ 16 } strokeWidth={ 2.5 } />
+							</Button>
+
+							{ /* 3. Strikethrough Toggle */ }
+							<Button
+								isPressed={ isStrikethrough }
+								onClick={ () =>
+									setAttributes( {
+										isStrikethrough: ! isStrikethrough,
+									} )
+								}
+								className="segment-button"
+							>
+								<Strikethrough
+									size={ 16 }
+									strokeWidth={ 2.5 }
+								/>
+							</Button>
+
+							{ /* 4. Uppercase (Single Choice Logic) */ }
+							<Button
+								isPressed={
+									attributes.textTransform === 'uppercase'
+								}
+								onClick={ () =>
+									setAttributes( {
+										textTransform:
+											textTransform === 'uppercase'
+												? 'none'
+												: 'uppercase',
+									} )
+								}
+								className="segment-button text-label"
+							>
+								AB
+							</Button>
+
+							{ /* ... Add lowercase (ab) and capitalize (Ab) buttons similarly */ }
+						</HStack>
 					</div>
 				</Popover>
 			) }

@@ -1,58 +1,9 @@
-.custom-sidebar-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 8px 0;
-	width: 100%;
-	// Standard WordPress sidebar border if needed
-	// border-bottom: 1px solid #e0e0e0;
-
-	.row-label {
-		font-size: 13px;
-		color: #1e1e1e;
-		font-weight: 400;
-	}
-
-	.row-control {
-		// The edit button styling
-		.pencil-edit-button.components-button {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 32px;
-			height: 32px;
-			min-width: 32px;
-			padding: 0;
-			background: #fff;
-			border: 1px solid #949494; // Standard WP border color
-			border-radius: 2px;
-			transition: all 0.1s ease-in-out;
-
-			svg {
-				width: 18px;
-				height: 18px;
-				fill: currentcolor;
-			}
-
-			&:hover {
-				border-color: #007cba; // WP Blue
-				color: #007cba;
-				background: #f0f6fb;
-			}
-
-			&:focus {
-				box-shadow: 0 0 0 1px #007cba;
-				outline: none;
-			}
-		}
-	}
-}
-
-// SeparatorModel Modal Styles
-
 .separator-popover-container {
 	padding: 16px;
-	width: 280px;
+	width: 320px;
+	height: 300px;
 	background: #fff;
 	border-radius: 8px;
 }
+
+// SeparatorModel Modal Styles

@@ -5,10 +5,9 @@ import './side-bar-scss/uploadIcon.scss';
 import { iconLibrary } from '../../utils/dataCenter.js';
 
 const UploadIcon = ( {
-	isLibaryOpen,
-	toggleLibaryOpen,
-	isCustomIconOpen,
-	toggleCustomIcon,
+	isModalOpen,
+	toggleModal,
+	closeAllModals,
 	attributes,
 	setAttributes,
 } ) => {
@@ -31,7 +30,7 @@ const UploadIcon = ( {
 				<Button
 					className="component-button-for-icon"
 					variant="secondary"
-					onClick={ toggleLibaryOpen }
+					onClick={ () => toggleModal( 'libary' ) }
 				>
 					Libary
 				</Button>
@@ -39,15 +38,15 @@ const UploadIcon = ( {
 				<Button
 					variant="secondary"
 					className="component-button-for-icon"
-					onClick={ toggleCustomIcon }
+					onClick={ () => toggleModal( 'customIcon' ) }
 				>
 					Custom
 				</Button>
 			</div>
 
-			{ isLibaryOpen && (
+			{ isModalOpen( 'libary' ) && (
 				<Popover
-					onClose={ () => toggleLibaryOpen( false ) }
+					onClose={ () => closeAllModals }
 					placement="bottom-start"
 					offset={ 10 }
 				>
@@ -66,7 +65,6 @@ const UploadIcon = ( {
 										setAttributes( {
 											selectedIcon: item.name,
 										} );
-										toggleLibaryOpen();
 									} }
 								>
 									<IconComponent size={ 20 } />
@@ -77,9 +75,9 @@ const UploadIcon = ( {
 				</Popover>
 			) }
 
-			{ isCustomIconOpen && (
+			{ isModalOpen( 'customIcon' ) && (
 				<Popover
-					onClose={ () => toggleCustomIcon( false ) }
+					onClose={ () => closeAllModals }
 					placement="bottom-start"
 					offset={ 10 }
 				>
@@ -90,12 +88,7 @@ const UploadIcon = ( {
 						} }
 					>
 						<p>Custom Icon</p>
-						<Button
-							variant="tertiary"
-							onClick={ () => toggleCustomIcon() }
-						>
-							Close
-						</Button>
+						<Button variant="tertiary">Close</Button>
 					</div>
 				</Popover>
 			) }

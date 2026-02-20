@@ -55,7 +55,7 @@
       "type": "number",
       "default": 200
     },
-    "fontStyle": {
+    "fontWeight": {
       "type": "number",
       "default": 400
     },
@@ -78,6 +78,30 @@
     "wordSpacing": {
       "type": "number",
       "default": 0
+    },
+    "isItalic": {
+      "type": "boolean",
+      "default": false
+    },
+    "isUnderline": {
+      "type": "boolean",
+      "default": false
+    },
+    "isStrikethrough": {
+      "type": "boolean",
+      "default": false
+    },
+    "textTransform": {
+      "type": "string",
+      "default": "none"
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "padding": {
+      "type": "number",
+      "default": 10
     }
   },
   "textdomain": "icon-list",

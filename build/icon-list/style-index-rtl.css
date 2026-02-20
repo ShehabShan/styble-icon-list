@@ -197,9 +197,3 @@
 .wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item:last-child::after {
   display: none;
 }
-.wp-block-create-block-icon-list {
-  /* style toggles (these affect the pseudo-element border style) */
-}
-.wp-block-create-block-icon-list.is-separator-type-dotted {
-  /* style already applied via --separator-style */
-}

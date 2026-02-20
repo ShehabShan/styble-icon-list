@@ -12,7 +12,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const { textContent } = attributes;
 	const parentAttributes = useParentAttributes( clientId );
 
-	const { selectedIcon, iconSize, itemsWidth, itemWidthType } =
+	const { selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor } =
 		parentAttributes;
 
 	const SelectedIconComponent = selectedIcon
@@ -26,14 +26,23 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	} );
 
 	useEffect( () => {
-		setAttributes( { selectedIcon, iconSize, itemsWidth, itemWidthType } );
-	}, [ selectedIcon, iconSize, itemsWidth, itemWidthType ] );
+		setAttributes( {
+			selectedIcon,
+			iconSize,
+			itemsWidth,
+			itemWidthType,
+			iconColor,
+		} );
+	}, [ selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor ] );
 
 	return (
 		<div { ...blockProps }>
 			<div>
 				{ SelectedIconComponent && (
-					<SelectedIconComponent size={ iconSize } />
+					<SelectedIconComponent
+						size={ iconSize }
+						color={ iconColor }
+					/>
 				) }
 			</div>
 			<RichText

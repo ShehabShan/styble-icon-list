@@ -1,41 +1,49 @@
-.separator-popover-container {
-	max-height: 250px;
-	max-width: 300px;
-	overflow-y: auto;
-	padding-bottom: 10px;
+.custom-item-width-popover-container {
+	padding: 12px; // Give the content some breathing room
+	width: 260px;
 
-	.list-orientation {
+	// Target the specific WordPress Toggle Group
+	.item-width-type-toggle-group.components-toggle-group-control {
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 2px; // Standard WP internal spacing
+		background: #fff;
 		display: flex;
-		border: 1px solid #949494;
-		border-radius: 2px;
-		overflow: hidden;
 
-		.list-orientation-option {
+		// Reset the wrapper divs WordPress adds
+		.et6ln9s1 {
 			flex: 1;
-			height: 32px;
-			background: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 13px;
-			color: #1e1e1e;
-			transition: background 0.1s ease;
+			display: flex;
+		}
 
-			// Divider logic
-			&:not(:last-child) {
-				border-right: 1px solid #949494;
+		.item-width-type-option {
+			flex: 1;
+			border: none !important; // Remove your manual borders
+			background: transparent !important;
+			box-shadow: none !important;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border-radius: 2px;
+
+			// Target the active state using the WP-generated class
+			&.is-active {
+				background-color: #f0f0ff !important;
+				color: #4649ff !important;
+				font-weight: 600;
 			}
 
-			// Active State using the class
-			&.is-active {
-				color: #4649ff;
-				background: #f0f0ff; // Added a light blue background for better UI
-				font-weight: 500;
-				border: 1px solid #a8aaff;
+			&:not(:last-child) {
+				border-right: none;
 			}
 
 			&:hover:not(.is-active) {
-				background-color: #f0f0f0;
+				background-color: #f0f0f0 !important;
 			}
+
+			// Remove that manual divider logic; use WP's natural spacing
 		}
 	}
 }

@@ -101,7 +101,8 @@ function Edit({
     selectedIcon,
     iconSize,
     itemsWidth,
-    itemWidthType
+    itemWidthType,
+    iconColor
   } = parentAttributes;
   const SelectedIconComponent = selectedIcon ? _utils_dataCenter_js__WEBPACK_IMPORTED_MODULE_3__.iconLibrary.find(item => item.name === selectedIcon)?.icon : null;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -114,14 +115,16 @@ function Edit({
       selectedIcon,
       iconSize,
       itemsWidth,
-      itemWidthType
+      itemWidthType,
+      iconColor
     });
-  }, [selectedIcon, iconSize, itemsWidth, itemWidthType]);
+  }, [selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...blockProps,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       children: SelectedIconComponent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SelectedIconComponent, {
-        size: iconSize
+        size: iconSize,
+        color: iconColor
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
       tagName: "h3",
@@ -206,12 +209,13 @@ function save({
     itemsWidth
   } = attributes;
   const SelectedIconComponent = selectedIcon ? _utils_dataCenter__WEBPACK_IMPORTED_MODULE_2__.iconLibrary.find(item => item.name === selectedIcon)?.icon : null;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+    style: {
+      width: `${itemsWidth}px`
+    }
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
-      style: {
-        width: `${itemsWidth}px`
-      }
-    }),
+    ...blockProps,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       children: SelectedIconComponent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SelectedIconComponent, {
         size: iconSize
@@ -345,60 +349,10 @@ const fontFamilies = {
     slug: 'inter',
     fontFamily: 'Inter, sans-serif'
   },
-  roboto: {
-    name: 'Roboto',
-    slug: 'roboto',
-    fontFamily: 'Roboto, sans-serif'
-  },
-  openSans: {
-    name: 'Open Sans',
-    slug: 'open-sans',
-    fontFamily: '"Open Sans", sans-serif'
-  },
-  lato: {
-    name: 'Lato',
-    slug: 'lato',
-    fontFamily: 'Lato, sans-serif'
-  },
-  poppins: {
-    name: 'Poppins',
-    slug: 'poppins',
-    fontFamily: 'Poppins, sans-serif'
-  },
-  montserrat: {
-    name: 'Montserrat',
-    slug: 'montserrat',
-    fontFamily: 'Montserrat, sans-serif'
-  },
-  sourceSansPro: {
-    name: 'Source Sans Pro',
-    slug: 'source-sans-pro',
-    fontFamily: '"Source Sans Pro", sans-serif'
-  },
-  nunito: {
-    name: 'Nunito',
-    slug: 'nunito',
-    fontFamily: 'Nunito, sans-serif'
-  },
-  raleway: {
-    name: 'Raleway',
-    slug: 'raleway',
-    fontFamily: 'Raleway, sans-serif'
-  },
-  ubuntu: {
-    name: 'Ubuntu',
-    slug: 'ubuntu',
-    fontFamily: 'Ubuntu, sans-serif'
-  },
   merriweather: {
     name: 'Merriweather',
     slug: 'merriweather',
     fontFamily: 'Merriweather, serif'
-  },
-  playfairDisplay: {
-    name: 'Playfair Display',
-    slug: 'playfair-display',
-    fontFamily: '"Playfair Display", serif'
   },
   oswald: {
     name: 'Oswald',
@@ -419,11 +373,6 @@ const fontFamilies = {
     name: 'Work Sans',
     slug: 'work-sans',
     fontFamily: '"Work Sans", sans-serif'
-  },
-  archivo: {
-    name: 'Archivo',
-    slug: 'archivo',
-    fontFamily: 'Archivo, sans-serif'
   },
   ptSans: {
     name: 'PT Sans',

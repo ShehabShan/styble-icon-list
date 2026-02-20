@@ -9,16 +9,16 @@ import CustomHelperComponent from './CustomHelperComponent';
 import './side-bar-scss/customItemWidth.scss';
 
 const CustomItemWidth = ( {
-	isItemWidthModalOpen,
-	toggleItemWidthModal,
-
+	isModalOpen,
+	toggleModal,
+	closeAllModals,
 	attributes,
 	setAttributes,
 } ) => {
 	return (
 		<div style={ { position: 'relative' } }>
 			<ToggleGroupControl
-				className="list-orientation"
+				className="item-width-type-toggle-group"
 				__next40pxDefaultSize
 				isBlock
 				label={ __( 'Item Width type', 'icon-list' ) }
@@ -28,7 +28,7 @@ const CustomItemWidth = ( {
 				}
 			>
 				<ToggleGroupControlOption
-					className={ `list-orientation-option ${
+					className={ `item-width-type-option ${
 						attributes?.itemWidthType === 'auto' ? 'is-active' : ''
 					}` }
 					aria-label="auto"
@@ -36,7 +36,7 @@ const CustomItemWidth = ( {
 					value="auto"
 				/>
 				<ToggleGroupControlOption
-					className={ `list-orientation-option ${
+					className={ `item-width-type-option ${
 						attributes?.itemWidthType === 'custom'
 							? 'is-active'
 							: ''
@@ -44,20 +44,20 @@ const CustomItemWidth = ( {
 					aria-label="custom"
 					label={ __( 'Custom', 'icon-list' ) }
 					value="custom"
-					onClick={ toggleItemWidthModal }
+					onClick={ () => toggleModal( 'custom' ) }
 				/>
 			</ToggleGroupControl>
 
-			{ isItemWidthModalOpen && (
+			{ isModalOpen( 'custom' ) && (
 				<Popover
-					onClose={ () => toggleItemWidthModal( false ) }
+					onClose={ () => closeAllModals() }
 					placement="left-start" // Left-start usually matches the sidebar flyout better
 					offset={ 15 }
 				>
-					<div className="separator-popover-container">
+					<div className="custom-item-width-popover-container">
 						{ /* Style Section */ }
 						<ToggleGroupControl
-							className="list-orientation"
+							className="item-width-type-toggle-group"
 							__next40pxDefaultSize
 							isBlock
 							label={ __( 'Item Width Type', 'icon-list' ) }
@@ -66,7 +66,7 @@ const CustomItemWidth = ( {
 							}
 						>
 							<ToggleGroupControlOption
-								className={ `list-orientation-option ${
+								className={ `item-width-type-option ${
 									attributes?.itemWidthType === 'auto'
 										? 'is-active'
 										: ''
@@ -74,10 +74,10 @@ const CustomItemWidth = ( {
 								aria-label="auto"
 								label={ __( 'Auto', 'icon-list' ) }
 								value="auto"
-								onClick={ toggleItemWidthModal }
+								onClick={ closeAllModals }
 							/>
 							<ToggleGroupControlOption
-								className={ `list-orientation-option ${
+								className={ `item-width-type-option ${
 									attributes?.itemWidthType === 'custom'
 										? 'is-active'
 										: ''

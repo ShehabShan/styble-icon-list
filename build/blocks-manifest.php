@@ -60,7 +60,7 @@ return array(
 				'type' => 'number',
 				'default' => 200
 			),
-			'fontStyle' => array(
+			'fontWeight' => array(
 				'type' => 'number',
 				'default' => 400
 			),
@@ -83,6 +83,30 @@ return array(
 			'wordSpacing' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'isItalic' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isUnderline' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isStrikethrough' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'textTransform' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
+			'iconColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'padding' => array(
+				'type' => 'number',
+				'default' => 10
 			)
 		),
 		'textdomain' => 'icon-list',

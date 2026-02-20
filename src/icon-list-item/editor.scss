@@ -1,2 +1,17 @@
 .wp-block-create-block-icon-list-item {
+	padding: var(--padding);
+
+	h3.block-editor-rich-text__editable {
+		font-family: var(--font-family) !important;
+		font-size: var(--font-size) !important;
+		font-weight: var(--font-weight) !important;
+		line-height: var(--font-height) !important;
+		letter-spacing: var(--letter-spacing) !important;
+		word-spacing: var(--word-spacing) !important;
+		text-transform: var(--text-transform) !important;
+		text-decoration: var(--text-decoration) !important;
+
+		// Handle Italic specifically
+		font-style: var(--font-style-italic, normal);
+	}
 }

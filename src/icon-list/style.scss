@@ -89,15 +89,4 @@
 			display: none;
 		}
 	}
-
-	/* style toggles (these affect the pseudo-element border style) */
-	&.is-separator-type-dotted {
-		/* style already applied via --separator-style */
-	}
-
-	&.is-separator-type-dashed {
-	}
-
-	&.is-separator-type-solid {
-	}
 }

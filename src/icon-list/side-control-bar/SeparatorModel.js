@@ -1,5 +1,4 @@
 import {
-	Button,
 	Popover,
 	RangeControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
@@ -10,8 +9,9 @@ import './side-bar-scss/separatorModel.scss';
 import CustomHelperComponent from './CustomHelperComponent.js';
 
 const SeparatorModel = ( {
-	isSeparatorModalOpen,
-	toggleSeparatorModal,
+	isModalOpen,
+	toggleModal,
+	closeAllModals,
 	editIcon,
 	setAttributes,
 	attributes,
@@ -20,14 +20,14 @@ const SeparatorModel = ( {
 		<div style={ { position: 'relative' } }>
 			<CustomHelperComponent
 				icon={ editIcon }
-				toggleModal={ toggleSeparatorModal }
+				toggleModal={ toggleModal }
 				label={ __( 'Separator', 'icon-list' ) }
 			/>
 
-			{ isSeparatorModalOpen && (
+			{ isModalOpen( 'Separator' ) && (
 				// ... imports
 				<Popover
-					onClose={ () => toggleSeparatorModal( false ) }
+					onClose={ () => closeAllModals }
 					placement="left-start" // Left-start usually matches the sidebar flyout better
 					offset={ 15 }
 				>

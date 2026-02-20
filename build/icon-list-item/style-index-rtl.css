@@ -8,3 +8,15 @@
   gap: 10px;
   border: 2px solid rgb(145, 25, 25);
 }
+.wp-block-create-block-icon-list-item h3 {
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size) !important;
+  font-weight: var(--font-weight) !important;
+  line-height: var(--font-height) !important;
+  letter-spacing: var(--letter-spacing) !important;
+  word-spacing: var(--word-spacing) !important;
+  font-style: var(--font-style-italic, normal) !important;
+  -webkit-text-decoration: var(--text-decoration, none) !important;
+          text-decoration: var(--text-decoration, none) !important;
+  text-transform: var(--text-transform, none) !important;
+}
