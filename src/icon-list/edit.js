@@ -17,7 +17,7 @@ import {
 	BorderBoxControl,
 	BorderControl,
 } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 
 import './editor.scss';
 
@@ -60,6 +60,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		textTransform,
 		iconColor,
 		padding,
+		paddingTop,
+		paddingRight,
+		paddingBottom,
+		paddingLeft,
 	} = attributes;
 
 	//Opening modal for icon choose
@@ -76,7 +80,14 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const closeAllModals = () => setOpenModalId( null );
 
-	//ending modal for item width control
+	//padding section
+
+	const basePadding = padding ?? 0;
+
+	const resolvedPaddingTop = paddingTop ?? basePadding;
+	const resolvedPaddingRight = paddingRight ?? basePadding;
+	const resolvedPaddingBottom = paddingBottom ?? basePadding;
+	const resolvedPaddingLeft = paddingLeft ?? basePadding;
 
 	const blockProps = useBlockProps( {
 		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType }`,
@@ -99,7 +110,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				}`.trim() || 'none',
 			'--text-transform': textTransform,
 			'--icon-color': iconColor,
-			'--padding': `${ padding }px`,
+
+			// padding section
+
+			'--padding-top': `${ resolvedPaddingTop }px`,
+			'--padding-right': `${ resolvedPaddingRight }px`,
+			'--padding-bottom': `${ resolvedPaddingBottom }px`,
+			'--padding-left': `${ resolvedPaddingLeft }px`,
 		},
 	} );
 
@@ -236,7 +253,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						setAttributes={ setAttributes }
 						attributes={ attributes }
 						title={ 'Padding' }
-						isPadding={ true }
+						isModalOpen={ isModalOpen }
+						toggleModal={ toggleModal }
+						closeAllModals={ closeAllModals }
+						type="padding"
 					/>
 
 					<ItemStyle

@@ -107,6 +107,18 @@ return array(
 			'padding' => array(
 				'type' => 'number',
 				'default' => 10
+			),
+			'paddingTop' => array(
+				'type' => 'number'
+			),
+			'paddingRight' => array(
+				'type' => 'number'
+			),
+			'paddingLeft' => array(
+				'type' => 'number'
+			),
+			'paddingBottom' => array(
+				'type' => 'number'
 			)
 		),
 		'textdomain' => 'icon-list',

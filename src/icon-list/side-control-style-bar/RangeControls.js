@@ -5,7 +5,7 @@ import {
 	Button,
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+
 import { useState } from '@wordpress/element';
 
 import './RangeControls.scss';
@@ -14,12 +14,32 @@ import BorderIcon from '../../assests/border.svg';
 import UnionIcon from '../../assests/Union.svg';
 import ResetIcon from '../../assests/reset.svg';
 
-const RangeControls = ( { setAttributes, attributes, title, isPadding } ) => {
+const RangeControls = ( {
+	setAttributes,
+	attributes,
+	title,
+	type,
+	isModalOpen,
+	toggleModal,
+} ) => {
 	const [ isToggled, setIsToggled ] = useState( false );
 
 	const handleToggle = () => {
 		setIsToggled( ! isToggled );
 	};
+
+	const baseKey = type;
+
+	const topKey = `${ type }Top`;
+	const rightKey = `${ type }Right`;
+	const bottomKey = `${ type }Bottom`;
+	const leftKey = `${ type }Left`;
+
+	const baseValue = attributes[ baseKey ];
+	const topValue = attributes[ topKey ];
+	const rightValue = attributes[ rightKey ];
+	const bottomValue = attributes[ bottomKey ];
+	const leftValue = attributes[ leftKey ];
 
 	const marks = [
 		{ value: 5, label: '' },
@@ -35,9 +55,13 @@ const RangeControls = ( { setAttributes, attributes, title, isPadding } ) => {
 	];
 
 	const resetAllValue = () => {
-		if ( isPadding ) {
-			setAttributes( { padding: 0 } );
-		}
+		setAttributes( {
+			[ baseKey ]: 0,
+			[ topKey ]: undefined,
+			[ rightKey ]: undefined,
+			[ bottomKey ]: undefined,
+			[ leftKey ]: undefined,
+		} );
 	};
 
 	return (
@@ -55,7 +79,7 @@ const RangeControls = ( { setAttributes, attributes, title, isPadding } ) => {
 							} }
 						/>
 					</Button>
-					<Button>
+					<Button onClick={ () => toggleModal( 'allSideOpen' ) }>
 						<img
 							src={ BorderIcon }
 							alt="All Border Button"
@@ -78,47 +102,224 @@ const RangeControls = ( { setAttributes, attributes, title, isPadding } ) => {
 				</div>
 			</div>
 
-			<Flex align="center" gap={ 3 }>
-				<FlexItem>
-					<img
-						src={ BorderIcon }
-						alt="Border"
-						style={ {
-							width: '16px',
-							height: '16px',
-						} }
-					/>
-				</FlexItem>
-
-				<FlexItem isBlock>
-					<RangeControl
-						value={ attributes?.padding }
-						onChange={ ( value ) =>
-							setAttributes( { padding: value } )
-						}
-						withInputField={ isToggled }
-						min={ 5 }
-						max={ 50 }
-						step={ 5 }
-						marks={ marks }
-						hideLabelFromVision // Keeps label for accessibility but hides it visually
-					/>
-				</FlexItem>
-
-				<FlexItem>
-					<Button
-						variant="secondary"
-						className="custom-toggle-button"
-						onClick={ handleToggle }
-					>
+			{ ! isModalOpen( 'allSideOpen' ) && (
+				<Flex align="center" gap={ 3 }>
+					<FlexItem>
 						<img
-							src={ UnionIcon }
-							alt="Toggle"
-							style={ { width: '16px' } }
+							src={ BorderIcon }
+							alt="Border"
+							style={ {
+								width: '16px',
+								height: '16px',
+							} }
 						/>
-					</Button>
-				</FlexItem>
-			</Flex>
+					</FlexItem>
+
+					<FlexItem isBlock>
+						<RangeControl
+							value={ baseValue }
+							onChange={ ( value ) =>
+								setAttributes( {
+									[ baseKey ]: value,
+									[ topKey ]: undefined,
+									[ rightKey ]: undefined,
+									[ bottomKey ]: undefined,
+									[ leftKey ]: undefined,
+								} )
+							}
+							withInputField={ isToggled }
+							min={ 5 }
+							max={ 50 }
+							step={ 5 }
+							marks={ marks }
+							hideLabelFromVision // Keeps label for accessibility but hides it visually
+						/>
+					</FlexItem>
+
+					<FlexItem>
+						<Button
+							variant="secondary"
+							className="custom-toggle-button"
+							onClick={ handleToggle }
+						>
+							<img
+								src={ UnionIcon }
+								alt="Toggle"
+								style={ { width: '16px' } }
+							/>
+						</Button>
+					</FlexItem>
+				</Flex>
+			) }
+
+			{ isModalOpen( 'allSideOpen' ) && (
+				<div>
+					<Flex align="center" gap={ 3 }>
+						<FlexItem>
+							<img
+								src={ BorderIcon }
+								alt="Border"
+								style={ {
+									width: '16px',
+									height: '16px',
+								} }
+							/>
+						</FlexItem>
+
+						<FlexItem isBlock>
+							<RangeControl
+								value={ topValue }
+								onChange={ ( value ) =>
+									setAttributes( { [ topKey ]: value } )
+								}
+								withInputField={ isToggled }
+								min={ 5 }
+								max={ 50 }
+								step={ 5 }
+								marks={ marks }
+								hideLabelFromVision // Keeps label for accessibility but hides it visually
+							/>
+						</FlexItem>
+
+						<FlexItem>
+							<Button
+								variant="secondary"
+								className="custom-toggle-button"
+								onClick={ handleToggle }
+							>
+								<img
+									src={ UnionIcon }
+									alt="Toggle"
+									style={ { width: '16px' } }
+								/>
+							</Button>
+						</FlexItem>
+					</Flex>
+					<Flex align="center" gap={ 3 }>
+						<FlexItem>
+							<img
+								src={ BorderIcon }
+								alt="Border"
+								style={ {
+									width: '16px',
+									height: '16px',
+								} }
+							/>
+						</FlexItem>
+
+						<FlexItem isBlock>
+							<RangeControl
+								value={ rightValue }
+								onChange={ ( value ) =>
+									setAttributes( { [ rightKey ]: value } )
+								}
+								withInputField={ isToggled }
+								min={ 5 }
+								max={ 50 }
+								step={ 5 }
+								marks={ marks }
+								hideLabelFromVision // Keeps label for accessibility but hides it visually
+							/>
+						</FlexItem>
+
+						<FlexItem>
+							<Button
+								variant="secondary"
+								className="custom-toggle-button"
+								onClick={ handleToggle }
+							>
+								<img
+									src={ UnionIcon }
+									alt="Toggle"
+									style={ { width: '16px' } }
+								/>
+							</Button>
+						</FlexItem>
+					</Flex>
+					<Flex align="center" gap={ 3 }>
+						<FlexItem>
+							<img
+								src={ BorderIcon }
+								alt="Border"
+								style={ {
+									width: '16px',
+									height: '16px',
+								} }
+							/>
+						</FlexItem>
+
+						<FlexItem isBlock>
+							<RangeControl
+								value={ bottomValue }
+								onChange={ ( value ) =>
+									setAttributes( { [ bottomKey ]: value } )
+								}
+								withInputField={ isToggled }
+								min={ 5 }
+								max={ 50 }
+								step={ 5 }
+								marks={ marks }
+								hideLabelFromVision // Keeps label for accessibility but hides it visually
+							/>
+						</FlexItem>
+
+						<FlexItem>
+							<Button
+								variant="secondary"
+								className="custom-toggle-button"
+								onClick={ handleToggle }
+							>
+								<img
+									src={ UnionIcon }
+									alt="Toggle"
+									style={ { width: '16px' } }
+								/>
+							</Button>
+						</FlexItem>
+					</Flex>
+					<Flex align="center" gap={ 3 }>
+						<FlexItem>
+							<img
+								src={ BorderIcon }
+								alt="Border"
+								style={ {
+									width: '16px',
+									height: '16px',
+								} }
+							/>
+						</FlexItem>
+
+						<FlexItem isBlock>
+							<RangeControl
+								value={ leftValue }
+								onChange={ ( value ) =>
+									setAttributes( { [ leftKey ]: value } )
+								}
+								withInputField={ isToggled }
+								min={ 5 }
+								max={ 50 }
+								step={ 5 }
+								marks={ marks }
+								hideLabelFromVision // Keeps label for accessibility but hides it visually
+							/>
+						</FlexItem>
+
+						<FlexItem>
+							<Button
+								variant="secondary"
+								className="custom-toggle-button"
+								onClick={ handleToggle }
+							>
+								<img
+									src={ UnionIcon }
+									alt="Toggle"
+									style={ { width: '16px' } }
+								/>
+							</Button>
+						</FlexItem>
+					</Flex>
+				</div>
+			) }
 		</div>
 	);
 };

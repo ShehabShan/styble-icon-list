@@ -78,7 +78,7 @@ var SvgListPresetsOne = function SvgListPresetsOne(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43MzUwODciIHk9IjAuNzM1MDg3IiB3aWR0aD0iOTQuMDkxMSIgaGVpZ2h0PSI1OS43ODciIHJ4PSIyLjk0MDM1IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIwLjczNTA4NyIgeT0iMC43MzUwODciIHdpZHRoPSI5NC4wOTExIiBoZWlnaHQ9IjU5Ljc4NyIgcng9IjIuOTQwMzUiIHN0cm9rZT0iIzZGNzJBNSIgc3Ryb2tlLXdpZHRoPSIxLjQ3MDE3Ii8+CjxjaXJjbGUgY3g9IjIwLjU1MDQiIGN5PSIxNy41MjMxIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+CjxyZWN0IHg9IjI5LjEyNSIgeT0iMTYuMjk4IiB3aWR0aD0iNTAiIGhlaWdodD0iMi40NTAyOSIgcng9IjEuMjI1MTQiIGZpbGw9IiM2RjcyQTUiLz4KPGNpcmNsZSBjeD0iMjAuNTUwNCIgY3k9IjMwLjk5OTciIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMjkuMTI1IiB5PSIyOS43NzQ1IiB3aWR0aD0iNTAiIGhlaWdodD0iMi40NTAyOSIgcng9IjEuMjI1MTQiIGZpbGw9IiM2RjcyQTUiLz4KPGNpcmNsZSBjeD0iMjAuNTUwNCIgY3k9IjQ0LjQ3NjMiIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMjkuMTI1IiB5PSI0My4yNTEyIiB3aWR0aD0iNTAiIGhlaWdodD0iMi40NTAyOSIgcng9IjEuMjI1MTQiIGZpbGw9IiM2RjcyQTUiLz4KPC9zdmc+Cg==");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgZmlsbD0id2hpdGUiLz4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgc3Ryb2tlPSIjNkY3MkE1IiBzdHJva2Utd2lkdGg9IjEuNDcwMTciLz4NCjxjaXJjbGUgY3g9IjIwLjU1MDQiIGN5PSIxNy41MjMxIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIyOS4xMjUiIHk9IjE2LjI5OCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjIuNDUwMjkiIHJ4PSIxLjIyNTE0IiBmaWxsPSIjNkY3MkE1Ii8+DQo8Y2lyY2xlIGN4PSIyMC41NTA0IiBjeT0iMzAuOTk5NyIgcj0iMy42NzU0MyIgZmlsbD0iIzZGNzJBNSIvPg0KPHJlY3QgeD0iMjkuMTI1IiB5PSIyOS43NzQ1IiB3aWR0aD0iNTAiIGhlaWdodD0iMi40NTAyOSIgcng9IjEuMjI1MTQiIGZpbGw9IiM2RjcyQTUiLz4NCjxjaXJjbGUgY3g9IjIwLjU1MDQiIGN5PSI0NC40NzYzIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIyOS4xMjUiIHk9IjQzLjI1MTIiIHdpZHRoPSI1MCIgaGVpZ2h0PSIyLjQ1MDI5IiByeD0iMS4yMjUxNCIgZmlsbD0iIzZGNzJBNSIvPg0KPC9zdmc+DQo=");
 
 /***/ },
 
@@ -161,7 +161,7 @@ var SvgListPresetsThree = function SvgListPresetsThree(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43MzUwODciIHk9IjAuNzM1MDg3IiB3aWR0aD0iOTQuMDkxMSIgaGVpZ2h0PSI1OS43ODciIHJ4PSIyLjk0MDM1IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIwLjczNTA4NyIgeT0iMC43MzUwODciIHdpZHRoPSI5NC4wOTExIiBoZWlnaHQ9IjU5Ljc4NyIgcng9IjIuOTQwMzUiIHN0cm9rZT0iIzZGNzJBNSIgc3Ryb2tlLXdpZHRoPSIxLjQ3MDE3Ii8+CjxyZWN0IHg9IjIwLjUxOTUiIHk9IjE1LjkyNjkiIHdpZHRoPSIwLjYxMjU3MiIgaGVpZ2h0PSIzMC42Mjg2IiBmaWxsPSIjNkY3MkE1Ii8+CjxjaXJjbGUgY3g9IjIwLjU1MDQiIGN5PSIxNy41MjMxIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+CjxyZWN0IHg9IjI5LjEyNSIgeT0iMTYuMDIzMSIgd2lkdGg9IjUwIiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9IiM2RjcyQTUiLz4KPGNpcmNsZSBjeD0iMjAuNTUwNCIgY3k9IjMwLjk5OTciIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMjkuMTI1IiB5PSIyOS40OTk2IiB3aWR0aD0iNTAiIGhlaWdodD0iMyIgcng9IjEuNSIgZmlsbD0iIzZGNzJBNSIvPgo8Y2lyY2xlIGN4PSIyMC41NTA0IiBjeT0iNDQuNDc2MyIgcj0iMy42NzU0MyIgZmlsbD0iIzZGNzJBNSIvPgo8cmVjdCB4PSIyOS4xMjUiIHk9IjQyLjk3NjMiIHdpZHRoPSI1MCIgaGVpZ2h0PSIzIiByeD0iMS41IiBmaWxsPSIjNkY3MkE1Ii8+Cjwvc3ZnPgo=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgZmlsbD0id2hpdGUiLz4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgc3Ryb2tlPSIjNkY3MkE1IiBzdHJva2Utd2lkdGg9IjEuNDcwMTciLz4NCjxyZWN0IHg9IjIwLjUxOTUiIHk9IjE1LjkyNjkiIHdpZHRoPSIwLjYxMjU3MiIgaGVpZ2h0PSIzMC42Mjg2IiBmaWxsPSIjNkY3MkE1Ii8+DQo8Y2lyY2xlIGN4PSIyMC41NTA0IiBjeT0iMTcuNTIzMSIgcj0iMy42NzU0MyIgZmlsbD0iIzZGNzJBNSIvPg0KPHJlY3QgeD0iMjkuMTI1IiB5PSIxNi4wMjMxIiB3aWR0aD0iNTAiIGhlaWdodD0iMyIgcng9IjEuNSIgZmlsbD0iIzZGNzJBNSIvPg0KPGNpcmNsZSBjeD0iMjAuNTUwNCIgY3k9IjMwLjk5OTciIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4NCjxyZWN0IHg9IjI5LjEyNSIgeT0iMjkuNDk5NiIgd2lkdGg9IjUwIiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9IiM2RjcyQTUiLz4NCjxjaXJjbGUgY3g9IjIwLjU1MDQiIGN5PSI0NC40NzYzIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIyOS4xMjUiIHk9IjQyLjk3NjMiIHdpZHRoPSI1MCIgaGVpZ2h0PSIzIiByeD0iMS41IiBmaWxsPSIjNkY3MkE1Ii8+DQo8L3N2Zz4NCg==");
 
 /***/ },
 
@@ -262,7 +262,7 @@ var SvgListPresetsTwo = function SvgListPresetsTwo(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC43MzUwODciIHk9IjAuNzM1MDg3IiB3aWR0aD0iOTQuMDkxMSIgaGVpZ2h0PSI1OS43ODciIHJ4PSIyLjk0MDM1IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIwLjczNTA4NyIgeT0iMC43MzUwODciIHdpZHRoPSI5NC4wOTExIiBoZWlnaHQ9IjU5Ljc4NyIgcng9IjIuOTQwMzUiIHN0cm9rZT0iIzZGNzJBNSIgc3Ryb2tlLXdpZHRoPSIxLjQ3MDE3Ii8+CjxyZWN0IHg9IjE0LjQyNTgiIHk9IjYuOTQ3ODEiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4KPGNpcmNsZSBjeD0iMzAuNTUwNCIgY3k9IjE0LjI5ODciIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMzkuMTI4OSIgeT0iMTMuMjk4NyIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNkY3MkE1Ii8+CjxyZWN0IHg9IjE0LjQyNTgiIHk9IjIzLjY0OTUiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4KPGNpcmNsZSBjeD0iMzAuNTUwNCIgY3k9IjMxLjAwMDQiIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMzkuMTI4OSIgeT0iMzAuMDAwNCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNkY3MkE1Ii8+CjxyZWN0IHg9IjE0LjQyNTgiIHk9IjQwLjM1MTMiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4KPGNpcmNsZSBjeD0iMzAuNTUwNCIgY3k9IjQ3LjcwMjEiIHI9IjMuNjc1NDMiIGZpbGw9IiM2RjcyQTUiLz4KPHJlY3QgeD0iMzkuMTI4OSIgeT0iNDYuNzAyMSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNkY3MkE1Ii8+Cjwvc3ZnPgo=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCA5NiA2MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgZmlsbD0id2hpdGUiLz4NCjxyZWN0IHg9IjAuNzM1MDg3IiB5PSIwLjczNTA4NyIgd2lkdGg9Ijk0LjA5MTEiIGhlaWdodD0iNTkuNzg3IiByeD0iMi45NDAzNSIgc3Ryb2tlPSIjNkY3MkE1IiBzdHJva2Utd2lkdGg9IjEuNDcwMTciLz4NCjxyZWN0IHg9IjE0LjQyNTgiIHk9IjYuOTQ3ODEiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4NCjxjaXJjbGUgY3g9IjMwLjU1MDQiIGN5PSIxNC4yOTg3IiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIzOS4xMjg5IiB5PSIxMy4yOTg3IiB3aWR0aD0iMzAiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM2RjcyQTUiLz4NCjxyZWN0IHg9IjE0LjQyNTgiIHk9IjIzLjY0OTUiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4NCjxjaXJjbGUgY3g9IjMwLjU1MDQiIGN5PSIzMS4wMDA0IiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIzOS4xMjg5IiB5PSIzMC4wMDA0IiB3aWR0aD0iMzAiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM2RjcyQTUiLz4NCjxyZWN0IHg9IjE0LjQyNTgiIHk9IjQwLjM1MTMiIHdpZHRoPSI2Ny4xNTIiIGhlaWdodD0iMTQuNzAxNyIgcng9IjcuMzUwODciIGZpbGw9IiNFQkVCRkYiLz4NCjxjaXJjbGUgY3g9IjMwLjU1MDQiIGN5PSI0Ny43MDIxIiByPSIzLjY3NTQzIiBmaWxsPSIjNkY3MkE1Ii8+DQo8cmVjdCB4PSIzOS4xMjg5IiB5PSI0Ni43MDIxIiB3aWR0aD0iMzAiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM2RjcyQTUiLz4NCjwvc3ZnPg0K");
 
 /***/ },
 
@@ -294,7 +294,7 @@ var SvgUnion = function SvgUnion(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjE2NjcgMi40Mzc1QzE1LjE2NjcgMS45ODg3NyAxNC44MDI5IDEuNjI1IDE0LjM1NDIgMS42MjVINi45MDI5N0M2LjU2ODM1IDAuNjc4MjgxIDUuNjY1NDcgMCA0LjYwNDE3IDBDMy41NDI4NiAwIDIuNjM5OTggMC42NzgyODEgMi4zMDUzNyAxLjYyNUgwLjgxMjVDMC4zNjM3NjkgMS42MjUgMCAxLjk4ODc3IDAgMi40Mzc1QzAgMi44ODYyMyAwLjM2Mzc2OCAzLjI1IDAuODEyNSAzLjI1SDIuMzA1MzdDMi42Mzk5OCA0LjE5NjcyIDMuNTQyODYgNC44NzUgNC42MDQxNyA0Ljg3NUM1LjY2NTQ3IDQuODc1IDYuNTY4MzUgNC4xOTY3MiA2LjkwMjk3IDMuMjVIMTQuMzU0MkMxNC44MDI5IDMuMjUgMTUuMTY2NyAyLjg4NjIzIDE1LjE2NjcgMi40Mzc1WiIgZmlsbD0iIzJGMkYyRiIvPgo8cGF0aCBkPSJNMTUuMTY2NyAxMC41NjI1QzE1LjE2NjcgMTAuMTEzOCAxNC44MDI5IDkuNzUgMTQuMzU0MiA5Ljc1SDEyLjg2MTNDMTIuNTI2NyA4LjgwMzI4IDExLjYyMzggOC4xMjUgMTAuNTYyNSA4LjEyNUM5LjUwMTIgOC4xMjUgOC41OTgzMiA4LjgwMzI4IDguMjYzNyA5Ljc1SDAuODEyNUMwLjM2Mzc2OSA5Ljc1IDAgMTAuMTEzOCAwIDEwLjU2MjVDMCAxMS4wMTEyIDAuMzYzNzY4IDExLjM3NSAwLjgxMjUgMTEuMzc1SDguMjYzN0M4LjU5ODMyIDEyLjMyMTcgOS41MDEyIDEzIDEwLjU2MjUgMTNDMTEuNjIzOCAxMyAxMi41MjY3IDEyLjMyMTcgMTIuODYxMyAxMS4zNzVIMTQuMzU0MkMxNC44MDI5IDExLjM3NSAxNS4xNjY3IDExLjAxMTIgMTUuMTY2NyAxMC41NjI1WiIgZmlsbD0iIzJGMkYyRiIvPgo8L3N2Zz4K");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNS4xNjY3IDIuNDM3NUMxNS4xNjY3IDEuOTg4NzcgMTQuODAyOSAxLjYyNSAxNC4zNTQyIDEuNjI1SDYuOTAyOTdDNi41NjgzNSAwLjY3ODI4MSA1LjY2NTQ3IDAgNC42MDQxNyAwQzMuNTQyODYgMCAyLjYzOTk4IDAuNjc4MjgxIDIuMzA1MzcgMS42MjVIMC44MTI1QzAuMzYzNzY5IDEuNjI1IDAgMS45ODg3NyAwIDIuNDM3NUMwIDIuODg2MjMgMC4zNjM3NjggMy4yNSAwLjgxMjUgMy4yNUgyLjMwNTM3QzIuNjM5OTggNC4xOTY3MiAzLjU0Mjg2IDQuODc1IDQuNjA0MTcgNC44NzVDNS42NjU0NyA0Ljg3NSA2LjU2ODM1IDQuMTk2NzIgNi45MDI5NyAzLjI1SDE0LjM1NDJDMTQuODAyOSAzLjI1IDE1LjE2NjcgMi44ODYyMyAxNS4xNjY3IDIuNDM3NVoiIGZpbGw9IiMyRjJGMkYiLz4NCjxwYXRoIGQ9Ik0xNS4xNjY3IDEwLjU2MjVDMTUuMTY2NyAxMC4xMTM4IDE0LjgwMjkgOS43NSAxNC4zNTQyIDkuNzVIMTIuODYxM0MxMi41MjY3IDguODAzMjggMTEuNjIzOCA4LjEyNSAxMC41NjI1IDguMTI1QzkuNTAxMiA4LjEyNSA4LjU5ODMyIDguODAzMjggOC4yNjM3IDkuNzVIMC44MTI1QzAuMzYzNzY5IDkuNzUgMCAxMC4xMTM4IDAgMTAuNTYyNUMwIDExLjAxMTIgMC4zNjM3NjggMTEuMzc1IDAuODEyNSAxMS4zNzVIOC4yNjM3QzguNTk4MzIgMTIuMzIxNyA5LjUwMTIgMTMgMTAuNTYyNSAxM0MxMS42MjM4IDEzIDEyLjUyNjcgMTIuMzIxNyAxMi44NjEzIDExLjM3NUgxNC4zNTQyQzE0LjgwMjkgMTEuMzc1IDE1LjE2NjcgMTEuMDExMiAxNS4xNjY3IDEwLjU2MjVaIiBmaWxsPSIjMkYyRjJGIi8+DQo8L3N2Zz4NCg==");
 
 /***/ },
 
@@ -326,7 +326,7 @@ var SvgBorder = function SvgBorder(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMS45NzI2NiIgd2lkdGg9IjcuODg5OTkiIGhlaWdodD0iMS40Nzk0MSIgZmlsbD0iIzFFMUUxRSIvPgo8cmVjdCB4PSIxLjk3MjY2IiB5PSIxMC41MjA3IiB3aWR0aD0iNy44ODk5OSIgaGVpZ2h0PSIxLjQ3OTQxIiBmaWxsPSIjMUUxRTFFIi8+CjxyZWN0IHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAwIDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+CjxyZWN0IHg9IjEwLjUxOTUiIHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAxMC41MTk1IDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+Cjwvc3ZnPgo=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjEuOTcyNjYiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIGZpbGw9IiMxRTFFMUUiLz4NCjxyZWN0IHg9IjEuOTcyNjYiIHk9IjEwLjUyMDciIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIGZpbGw9IiMxRTFFMUUiLz4NCjxyZWN0IHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAwIDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+DQo8cmVjdCB4PSIxMC41MTk1IiB5PSI5Ljg2MzA0IiB3aWR0aD0iNy44ODk5OSIgaGVpZ2h0PSIxLjQ3OTQxIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMTAuNTE5NSA5Ljg2MzA0KSIgZmlsbD0iIzFFMUUxRSIvPg0KPC9zdmc+DQo=");
 
 /***/ },
 
@@ -372,7 +372,7 @@ var SvgEditIcon = function SvgEditIcon(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgcng9IjIiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMjMiIGhlaWdodD0iMjMiIHJ4PSIyIiBzdHJva2U9IiM4QzhGOTQiLz4KPHBhdGggZD0iTTEzLjE2NjMgNi41NDgzNEw2Ljg4MzA5IDEyLjgwMjdDNi43NTExNSAxMi45MzIxIDYuNjU4OTEgMTMuMDk2NiA2LjYxNzE5IDEzLjI3NjdMNS45NTI0NSAxNS45MjQxQzUuOTI0OTkgMTYuMDMwNCA1LjkyMjM0IDE2LjE0MTcgNS45NDQ3IDE2LjI0OTJDNS45NjcwNyAxNi4zNTY4IDYuMDEzODYgMTYuNDU3NyA2LjA4MTQ2IDE2LjU0NDNDNi4xNDkwNSAxNi42MzA5IDYuMjM1NjUgMTYuNzAwOCA2LjMzNDU1IDE2Ljc0ODZDNi40MzM0NiAxNi43OTY0IDYuNTQyMDMgMTYuODIwOCA2LjY1MTg3IDE2LjgyQzYuNzExNDcgMTYuODI1NyA2Ljc3MTQ3IDE2LjgyNTcgNi44MzEwNyAxNi44Mkw5LjQ3ODQ2IDE2LjE1NTNDOS42NTU0OCAxNi4xMSA5LjgxNzE0IDE2LjAxODIgOS45NDY2NyAxNS44ODk0TDE2LjIyOTkgOS41ODMwMkwxMy4xNjYzIDYuNTQ4MzRaIiBmaWxsPSIjMUUxRTFFIi8+CjxwYXRoIGQ9Ik0xNy42MDM5IDUuOTcwNTNMMTYuNzgzMSA1LjE0OTcyQzE2LjQ4IDQuODYxIDE2LjA3NzUgNC42OTk5NSAxNS42NTg4IDQuNjk5OTVDMTUuMjQwMiA0LjY5OTk1IDE0LjgzNzcgNC44NjEgMTQuNTM0NiA1LjE0OTcyTDEzLjc3NzMgNS45MDY5NEwxNi44NDA5IDguOTcwNTNMMTcuNjAzOSA4LjIxMzNDMTcuOTAwNCA3LjkxNTQxIDE4LjA2NjkgNy41MTIyMiAxOC4wNjY5IDcuMDkxOTFDMTguMDY2OSA2LjY3MTYxIDE3LjkwMDQgNi4yNjg0MiAxNy42MDM5IDUuOTcwNTNaIiBmaWxsPSIjMUUxRTFFIi8+CjxyZWN0IHg9IjUuOTI5NjkiIHk9IjE4IiB3aWR0aD0iMTIuMTM4NyIgaGVpZ2h0PSIxLjMiIGZpbGw9IiMxRTFFMUUiLz4KPC9zdmc+Cg==");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMjMiIGhlaWdodD0iMjMiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPg0KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgcng9IjIiIHN0cm9rZT0iIzhDOEY5NCIvPg0KPHBhdGggZD0iTTEzLjE2NjMgNi41NDgzNEw2Ljg4MzA5IDEyLjgwMjdDNi43NTExNSAxMi45MzIxIDYuNjU4OTEgMTMuMDk2NiA2LjYxNzE5IDEzLjI3NjdMNS45NTI0NSAxNS45MjQxQzUuOTI0OTkgMTYuMDMwNCA1LjkyMjM0IDE2LjE0MTcgNS45NDQ3IDE2LjI0OTJDNS45NjcwNyAxNi4zNTY4IDYuMDEzODYgMTYuNDU3NyA2LjA4MTQ2IDE2LjU0NDNDNi4xNDkwNSAxNi42MzA5IDYuMjM1NjUgMTYuNzAwOCA2LjMzNDU1IDE2Ljc0ODZDNi40MzM0NiAxNi43OTY0IDYuNTQyMDMgMTYuODIwOCA2LjY1MTg3IDE2LjgyQzYuNzExNDcgMTYuODI1NyA2Ljc3MTQ3IDE2LjgyNTcgNi44MzEwNyAxNi44Mkw5LjQ3ODQ2IDE2LjE1NTNDOS42NTU0OCAxNi4xMSA5LjgxNzE0IDE2LjAxODIgOS45NDY2NyAxNS44ODk0TDE2LjIyOTkgOS41ODMwMkwxMy4xNjYzIDYuNTQ4MzRaIiBmaWxsPSIjMUUxRTFFIi8+DQo8cGF0aCBkPSJNMTcuNjAzOSA1Ljk3MDUzTDE2Ljc4MzEgNS4xNDk3MkMxNi40OCA0Ljg2MSAxNi4wNzc1IDQuNjk5OTUgMTUuNjU4OCA0LjY5OTk1QzE1LjI0MDIgNC42OTk5NSAxNC44Mzc3IDQuODYxIDE0LjUzNDYgNS4xNDk3MkwxMy43NzczIDUuOTA2OTRMMTYuODQwOSA4Ljk3MDUzTDE3LjYwMzkgOC4yMTMzQzE3LjkwMDQgNy45MTU0MSAxOC4wNjY5IDcuNTEyMjIgMTguMDY2OSA3LjA5MTkxQzE4LjA2NjkgNi42NzE2MSAxNy45MDA0IDYuMjY4NDIgMTcuNjAzOSA1Ljk3MDUzWiIgZmlsbD0iIzFFMUUxRSIvPg0KPHJlY3QgeD0iNS45Mjk2OSIgeT0iMTgiIHdpZHRoPSIxMi4xMzg3IiBoZWlnaHQ9IjEuMyIgZmlsbD0iIzFFMUUxRSIvPg0KPC9zdmc+DQo=");
 
 /***/ },
 
@@ -411,7 +411,7 @@ var SvgIconList = function SvgIconList(props) {
   })))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzU4NjdfMTQwMikiPgo8cGF0aCBkPSJNMyAxOS4yOTk4QzQuMjk5ODcgMTkuMjk5OCA1LjQwMDE4IDIwLjI5OTggNS40MDAzOSAyMS41OTk2QzUuNDAwMzkgMjIuOTk5NiA0LjMgMjQgMyAyNEMxLjcwMDExIDI0IDAuNjAwNjk0IDIzLjEgMC42MDA1ODYgMjEuNzAwMkMwLjYwMDU4NiAyMC4zMDAyIDEuNzAwMDQgMTkuMjk5OSAzIDE5LjI5OThaTTMgMjAuNUMyLjMwMDA1IDIwLjUwMDEgMS43OTk4IDIxLjEwMDIgMS43OTk4IDIxLjcwMDJDMS43OTk5MiAyMi4zMDAxIDIuMzAwMTMgMjIuOTAwMyAzIDIyLjkwMDRDMy41OTk5NCAyMi45MDA0IDQuMjAwMDggMjIuNDAwMSA0LjIwMDIgMjEuNzAwMkM0LjIwMDIgMjEuMTAwMiAzLjcgMjAuNSAzIDIwLjVaTTIyLjcwMDIgMjAuOTAwNEMyMy4wOTk5IDIwLjkwMDUgMjMuNDk5NiAyMS4yOTk3IDIzLjUgMjEuNTk5NkMyMy41IDIxLjg5OTYgMjMuMTAwMSAyMi4yOTk3IDIyLjcwMDIgMjIuMjk5OEg3LjcwMDJDNy40MDAyIDIyLjI5OTggNyAyMS44OTk2IDcgMjEuNTk5NkM3LjAwMDI4IDIxLjI5OTcgNy4zMDAzOCAyMC45MDA0IDcuNzAwMiAyMC45MDA0SDIyLjcwMDJaTTMgMTIuOTAwNEM0LjI5OTk5IDEyLjkwMDQgNS40MDAzOCAxNCA1LjQwMDM5IDE1LjVDNS40MDAzOSAxNi44IDQuNCAxNy43MDAyIDMgMTcuNzAwMkMxLjYwMDA1IDE3LjcwMDEgMC42MDA1ODYgMTYuNjk5OCAwLjYwMDU4NiAxNS4yOTk4QzAuNjAwNzAxIDEzLjkgMS43MDAxMSAxMi45MDA0IDMgMTIuOTAwNFpNMyAxNC4wOTk2QzIuMzAwMTQgMTQuMDk5NyAxLjc5OTkzIDE0LjY5OTkgMS43OTk4IDE1LjI5OThDMS43OTk4IDE1Ljg5OTggMi4zMDAwNSAxNi40OTk5IDMgMTYuNUMzLjYgMTYuNSA0LjIwMDIgMTUuODk5OCA0LjIwMDIgMTUuMjk5OEM0LjIwMDA3IDE0LjY5OTkgMy42OTk5MSAxNC4wOTk2IDMgMTQuMDk5NlpNMjIuNzAwMiAxNC41QzIzLjEgMTQuNTAwMiAyMy40OTk4IDE0Ljk5OTggMjMuNSAxNS4yOTk4QzIzLjUgMTUuNTk5OCAyMy4xMDAxIDE1Ljk5OTkgMjIuNzAwMiAxNkg3LjcwMDJDNy4zMDAyOCAxNiA3LjAwMDEzIDE1LjUwMDIgNyAxNS4yMDAyQzcgMTQuOTAwMiA3LjMwMDIgMTQuNSA3LjcwMDIgMTQuNUgyMi43MDAyWk0zIDYuNDAwMzlDNC4yOTk5MyA2LjQwMDM5IDUuNDAwMjcgNy40OTk5IDUuNDAwMzkgOC43OTk4QzUuNDAwMzkgMTAuMTk5NyA0LjMwMDIgMTEuMiAyLjkwMDM5IDExLjIwMDJDMS41MDAzOSAxMS4yMDAyIDAuNSAxMC4wOTk4IDAuNSA4Ljc5OThDMC41MDAxMTUgNy4zOTk5MiAxLjYwMDA3IDYuNDAwMzkgMyA2LjQwMDM5Wk0zIDcuNTk5NjFDMi4zMDAwOSA3LjU5OTYxIDEuNzk5OTMgOC4xOTk4OCAxLjc5OTggOC43OTk4QzEuNzk5OCA5LjM5OTgxIDIuMyAxMCAzIDEwQzMuNiAxMCA0LjIwMDIgOS40OTk4IDQuMjAwMiA4Ljc5OThDNC4yMDAwNyA4LjE5OTg4IDMuNjk5OTEgNy41OTk2MSAzIDcuNTk5NjFaTTIyLjcwMDIgOEMyMy4xMDAxIDguMDAwMTMgMjMuNDk5OSA4LjM5OTkzIDIzLjUgOC43OTk4QzIzLjUgOS4xOTk3NCAyMy4xMDAxIDkuNTk5NDggMjIuNzAwMiA5LjU5OTYxSDcuNzAwMkM3LjQwMDIgOS41OTk2MSA3IDkuMTk5OCA3IDguNzk5OEM3LjAwMDEgOC4zOTk4NyA3LjMwMDI2IDggNy43MDAyIDhIMjIuNzAwMlpNMyAwQzQuMyAwIDUuNDAwMzkgMS4xMDAzOSA1LjQwMDM5IDIuNDAwMzlDNS40MDAxOSAzLjgwMDA2IDQuMzAwMDcgNC43OTk2MiAyLjkwMDM5IDQuNzk5OEMxLjUwMDUzIDQuNzk5OCAwLjUwMDIgMy43MDAyMiAwLjUgMi40MDAzOUMwLjUgMS4wMDAzOSAxLjYgMCAzIDBaTTMgMS4yMDAyQzIuMzAwMDggMS4yMDAyIDEuNzk5OTEgMS42OTk4OSAxLjc5OTggMi4yOTk4QzEuNzk5OCAyLjg5OTggMi4zIDMuNSAzIDMuNUMzLjU5OTg0IDMuNSA0LjE5OTg4IDIuOTAwMzEgNC4yMDAyIDIuNDAwMzlDNC4yMDAyIDEuODAwMzkgMy43IDEuMjAwMiAzIDEuMjAwMlpNMjIuNzAwMiAxLjVDMjMuMTAwMSAxLjUwMDEzIDIzLjQ5OTkgMS44OTk5MyAyMy41IDIuMjk5OEMyMy41IDIuNjk5NzQgMjMuMTAwMSAzLjA5OTQ4IDIyLjcwMDIgMy4wOTk2MUg3LjcwMDJDNy4zMDAzMyAzLjA5OTYxIDcuMDAwMiAyLjgwMDIgNyAyLjQwMDM5QzcgMi4wMDAzOSA3LjMwMDIgMS42IDcuNzAwMiAxLjVIMjIuNzAwMloiIGZpbGw9IiM0NjQ5RkYiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF81ODY3XzE0MDIiPgo8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81ODY3XzE0MDIpIj4NCjxwYXRoIGQ9Ik0zIDE5LjI5OThDNC4yOTk4NyAxOS4yOTk4IDUuNDAwMTggMjAuMjk5OCA1LjQwMDM5IDIxLjU5OTZDNS40MDAzOSAyMi45OTk2IDQuMyAyNCAzIDI0QzEuNzAwMTEgMjQgMC42MDA2OTQgMjMuMSAwLjYwMDU4NiAyMS43MDAyQzAuNjAwNTg2IDIwLjMwMDIgMS43MDAwNCAxOS4yOTk5IDMgMTkuMjk5OFpNMyAyMC41QzIuMzAwMDUgMjAuNTAwMSAxLjc5OTggMjEuMTAwMiAxLjc5OTggMjEuNzAwMkMxLjc5OTkyIDIyLjMwMDEgMi4zMDAxMyAyMi45MDAzIDMgMjIuOTAwNEMzLjU5OTk0IDIyLjkwMDQgNC4yMDAwOCAyMi40MDAxIDQuMjAwMiAyMS43MDAyQzQuMjAwMiAyMS4xMDAyIDMuNyAyMC41IDMgMjAuNVpNMjIuNzAwMiAyMC45MDA0QzIzLjA5OTkgMjAuOTAwNSAyMy40OTk2IDIxLjI5OTcgMjMuNSAyMS41OTk2QzIzLjUgMjEuODk5NiAyMy4xMDAxIDIyLjI5OTcgMjIuNzAwMiAyMi4yOTk4SDcuNzAwMkM3LjQwMDIgMjIuMjk5OCA3IDIxLjg5OTYgNyAyMS41OTk2QzcuMDAwMjggMjEuMjk5NyA3LjMwMDM4IDIwLjkwMDQgNy43MDAyIDIwLjkwMDRIMjIuNzAwMlpNMyAxMi45MDA0QzQuMjk5OTkgMTIuOTAwNCA1LjQwMDM4IDE0IDUuNDAwMzkgMTUuNUM1LjQwMDM5IDE2LjggNC40IDE3LjcwMDIgMyAxNy43MDAyQzEuNjAwMDUgMTcuNzAwMSAwLjYwMDU4NiAxNi42OTk4IDAuNjAwNTg2IDE1LjI5OThDMC42MDA3MDEgMTMuOSAxLjcwMDExIDEyLjkwMDQgMyAxMi45MDA0Wk0zIDE0LjA5OTZDMi4zMDAxNCAxNC4wOTk3IDEuNzk5OTMgMTQuNjk5OSAxLjc5OTggMTUuMjk5OEMxLjc5OTggMTUuODk5OCAyLjMwMDA1IDE2LjQ5OTkgMyAxNi41QzMuNiAxNi41IDQuMjAwMiAxNS44OTk4IDQuMjAwMiAxNS4yOTk4QzQuMjAwMDcgMTQuNjk5OSAzLjY5OTkxIDE0LjA5OTYgMyAxNC4wOTk2Wk0yMi43MDAyIDE0LjVDMjMuMSAxNC41MDAyIDIzLjQ5OTggMTQuOTk5OCAyMy41IDE1LjI5OThDMjMuNSAxNS41OTk4IDIzLjEwMDEgMTUuOTk5OSAyMi43MDAyIDE2SDcuNzAwMkM3LjMwMDI4IDE2IDcuMDAwMTMgMTUuNTAwMiA3IDE1LjIwMDJDNyAxNC45MDAyIDcuMzAwMiAxNC41IDcuNzAwMiAxNC41SDIyLjcwMDJaTTMgNi40MDAzOUM0LjI5OTkzIDYuNDAwMzkgNS40MDAyNyA3LjQ5OTkgNS40MDAzOSA4Ljc5OThDNS40MDAzOSAxMC4xOTk3IDQuMzAwMiAxMS4yIDIuOTAwMzkgMTEuMjAwMkMxLjUwMDM5IDExLjIwMDIgMC41IDEwLjA5OTggMC41IDguNzk5OEMwLjUwMDExNSA3LjM5OTkyIDEuNjAwMDcgNi40MDAzOSAzIDYuNDAwMzlaTTMgNy41OTk2MUMyLjMwMDA5IDcuNTk5NjEgMS43OTk5MyA4LjE5OTg4IDEuNzk5OCA4Ljc5OThDMS43OTk4IDkuMzk5ODEgMi4zIDEwIDMgMTBDMy42IDEwIDQuMjAwMiA5LjQ5OTggNC4yMDAyIDguNzk5OEM0LjIwMDA3IDguMTk5ODggMy42OTk5MSA3LjU5OTYxIDMgNy41OTk2MVpNMjIuNzAwMiA4QzIzLjEwMDEgOC4wMDAxMyAyMy40OTk5IDguMzk5OTMgMjMuNSA4Ljc5OThDMjMuNSA5LjE5OTc0IDIzLjEwMDEgOS41OTk0OCAyMi43MDAyIDkuNTk5NjFINy43MDAyQzcuNDAwMiA5LjU5OTYxIDcgOS4xOTk4IDcgOC43OTk4QzcuMDAwMSA4LjM5OTg3IDcuMzAwMjYgOCA3LjcwMDIgOEgyMi43MDAyWk0zIDBDNC4zIDAgNS40MDAzOSAxLjEwMDM5IDUuNDAwMzkgMi40MDAzOUM1LjQwMDE5IDMuODAwMDYgNC4zMDAwNyA0Ljc5OTYyIDIuOTAwMzkgNC43OTk4QzEuNTAwNTMgNC43OTk4IDAuNTAwMiAzLjcwMDIyIDAuNSAyLjQwMDM5QzAuNSAxLjAwMDM5IDEuNiAwIDMgMFpNMyAxLjIwMDJDMi4zMDAwOCAxLjIwMDIgMS43OTk5MSAxLjY5OTg5IDEuNzk5OCAyLjI5OThDMS43OTk4IDIuODk5OCAyLjMgMy41IDMgMy41QzMuNTk5ODQgMy41IDQuMTk5ODggMi45MDAzMSA0LjIwMDIgMi40MDAzOUM0LjIwMDIgMS44MDAzOSAzLjcgMS4yMDAyIDMgMS4yMDAyWk0yMi43MDAyIDEuNUMyMy4xMDAxIDEuNTAwMTMgMjMuNDk5OSAxLjg5OTkzIDIzLjUgMi4yOTk4QzIzLjUgMi42OTk3NCAyMy4xMDAxIDMuMDk5NDggMjIuNzAwMiAzLjA5OTYxSDcuNzAwMkM3LjMwMDMzIDMuMDk5NjEgNy4wMDAyIDIuODAwMiA3IDIuNDAwMzlDNyAyLjAwMDM5IDcuMzAwMiAxLjYgNy43MDAyIDEuNUgyMi43MDAyWiIgZmlsbD0iIzQ2NDlGRiIvPg0KPC9nPg0KPGRlZnM+DQo8Y2xpcFBhdGggaWQ9ImNsaXAwXzU4NjdfMTQwMiI+DQo8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IndoaXRlIi8+DQo8L2NsaXBQYXRoPg0KPC9kZWZzPg0KPC9zdmc+DQo=");
 
 /***/ },
 
@@ -453,7 +453,7 @@ var SvgReset = function SvgReset(props) {
   })))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzYwODFfOTg3NykiPgo8cGF0aCBkPSJNMi4yNjc2NyA0LjExNTk1QzMuMzc5ODQgMi4yOTI1IDUuNTAwMDEgMS4yMDE2NiA3Ljc1MTUzIDEuNTA5MjdDMTAuNzgzOSAxLjkyMzU1IDEyLjkwNjMgNC43MTc2NSAxMi40OTIxIDcuNzUwMDZDMTIuMDc3OCAxMC43ODI1IDkuMjgzNjQgMTIuOTA0OSA2LjI1MTI2IDEyLjQ5MDZDMy45OTk3NSAxMi4xODMgMi4yNDk5IDEwLjU2MzQgMS42Njc1NiA4LjUwODVNMi4wMjM5OCAyLjQ5MzAzTDIuMDQ3ODEgNC4zNjU1N0wzLjg0OTQ1IDQuMjE0MyIgc3Ryb2tlPSIjOTQ5NDk0IiBzdHJva2Utd2lkdGg9IjEuNzUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzYwODFfOTg3NyI+CjxyZWN0IHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82MDgxXzk4NzcpIj4NCjxwYXRoIGQ9Ik0yLjI2NzY3IDQuMTE1OTVDMy4zNzk4NCAyLjI5MjUgNS41MDAwMSAxLjIwMTY2IDcuNzUxNTMgMS41MDkyN0MxMC43ODM5IDEuOTIzNTUgMTIuOTA2MyA0LjcxNzY1IDEyLjQ5MjEgNy43NTAwNkMxMi4wNzc4IDEwLjc4MjUgOS4yODM2NCAxMi45MDQ5IDYuMjUxMjYgMTIuNDkwNkMzLjk5OTc1IDEyLjE4MyAyLjI0OTkgMTAuNTYzNCAxLjY2NzU2IDguNTA4NU0yLjAyMzk4IDIuNDkzMDNMMi4wNDc4MSA0LjM2NTU3TDMuODQ5NDUgNC4yMTQzIiBzdHJva2U9IiM5NDk0OTQiIHN0cm9rZS13aWR0aD0iMS43NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L2c+DQo8ZGVmcz4NCjxjbGlwUGF0aCBpZD0iY2xpcDBfNjA4MV85ODc3Ij4NCjxyZWN0IHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0id2hpdGUiLz4NCjwvY2xpcFBhdGg+DQo8L2RlZnM+DQo8L3N2Zz4NCg==");
 
 /***/ },
 
@@ -543,7 +543,11 @@ function Edit({
     isStrikethrough,
     textTransform,
     iconColor,
-    padding
+    padding,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft
   } = attributes;
 
   //Opening modal for icon choose
@@ -558,8 +562,13 @@ function Edit({
   const isModalOpen = id => openModalId === id;
   const closeAllModals = () => setOpenModalId(null);
 
-  //ending modal for item width control
+  //padding section
 
+  const basePadding = padding ?? 0;
+  const resolvedPaddingTop = paddingTop ?? basePadding;
+  const resolvedPaddingRight = paddingRight ?? basePadding;
+  const resolvedPaddingBottom = paddingBottom ?? basePadding;
+  const resolvedPaddingLeft = paddingLeft ?? basePadding;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: `parent-contaner is-list-orientation-${listOrientation} is-items-space-between-${itemsGap} is-separator-type-${separatorType}`,
     style: {
@@ -577,7 +586,12 @@ function Edit({
       '--text-decoration': `${isUnderline ? 'underline' : ''} ${isStrikethrough ? 'line-through' : ''}`.trim() || 'none',
       '--text-transform': textTransform,
       '--icon-color': iconColor,
-      '--padding': `${padding}px`
+      // padding section
+
+      '--padding-top': `${resolvedPaddingTop}px`,
+      '--padding-right': `${resolvedPaddingRight}px`,
+      '--padding-bottom': `${resolvedPaddingBottom}px`,
+      '--padding-left': `${resolvedPaddingLeft}px`
     }
   });
 
@@ -684,7 +698,10 @@ function Edit({
           setAttributes: setAttributes,
           attributes: attributes,
           title: 'Padding',
-          isPadding: true
+          isModalOpen: isModalOpen,
+          toggleModal: toggleModal,
+          closeAllModals: closeAllModals,
+          type: "padding"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_side_control_style_bar_ItemStyle_js__WEBPACK_IMPORTED_MODULE_20__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
@@ -1433,17 +1450,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _RangeControls_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RangeControls.scss */ "./src/icon-list/side-control-style-bar/RangeControls.scss");
-/* harmony import */ var _assests_border_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assests/border.svg */ "./src/assests/border.svg");
-/* harmony import */ var _assests_Union_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assests/Union.svg */ "./src/assests/Union.svg");
-/* harmony import */ var _assests_reset_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assests/reset.svg */ "./src/assests/reset.svg");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _RangeControls_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RangeControls.scss */ "./src/icon-list/side-control-style-bar/RangeControls.scss");
+/* harmony import */ var _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assests/border.svg */ "./src/assests/border.svg");
+/* harmony import */ var _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assests/Union.svg */ "./src/assests/Union.svg");
+/* harmony import */ var _assests_reset_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assests/reset.svg */ "./src/assests/reset.svg");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -1455,12 +1469,24 @@ const RangeControls = ({
   setAttributes,
   attributes,
   title,
-  isPadding
+  type,
+  isModalOpen,
+  toggleModal
 }) => {
-  const [isToggled, setIsToggled] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  const [isToggled, setIsToggled] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
+  const baseKey = type;
+  const topKey = `${type}Top`;
+  const rightKey = `${type}Right`;
+  const bottomKey = `${type}Bottom`;
+  const leftKey = `${type}Left`;
+  const baseValue = attributes[baseKey];
+  const topValue = attributes[topKey];
+  const rightValue = attributes[rightKey];
+  const bottomValue = attributes[bottomKey];
+  const leftValue = attributes[leftKey];
   const marks = [{
     value: 5,
     label: ''
@@ -1493,39 +1519,42 @@ const RangeControls = ({
     label: ''
   }];
   const resetAllValue = () => {
-    if (isPadding) {
-      setAttributes({
-        padding: 0
-      });
-    }
+    setAttributes({
+      [baseKey]: 0,
+      [topKey]: undefined,
+      [rightKey]: undefined,
+      [bottomKey]: undefined,
+      [leftKey]: undefined
+    });
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "range-row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "range-title-bar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
         children: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
           onClick: resetAllValue,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-            src: _assests_reset_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_reset_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
             alt: "Reset Button",
             style: {
               width: '16px',
               height: '16px'
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+          onClick: () => toggleModal('allSideOpen'),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
             alt: "All Border Button",
             style: {
               width: '16px',
               height: '16px'
             }
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalUnitControl
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalUnitControl
         // value={ attributes.padding }
         // onChange={ ( nextValue ) =>
         // 	setAttributes( { padding: nextValue } )
@@ -1542,24 +1571,28 @@ const RangeControls = ({
           }]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
+    }), !isModalOpen('allSideOpen') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
       align: "center",
       gap: 3,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-          src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+          src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
           alt: "Border",
           style: {
             width: '16px',
             height: '16px'
           }
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
         isBlock: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
-          value: attributes?.padding,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+          value: baseValue,
           onChange: value => setAttributes({
-            padding: value
+            [baseKey]: value,
+            [topKey]: undefined,
+            [rightKey]: undefined,
+            [bottomKey]: undefined,
+            [leftKey]: undefined
           }),
           withInputField: isToggled,
           min: 5,
@@ -1568,19 +1601,181 @@ const RangeControls = ({
           marks: marks,
           hideLabelFromVision: true // Keeps label for accessibility but hides it visually
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
           variant: "secondary",
           className: "custom-toggle-button",
           onClick: handleToggle,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-            src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
             alt: "Toggle",
             style: {
               width: '16px'
             }
           })
         })
+      })]
+    }), isModalOpen('allSideOpen') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
+        align: "center",
+        gap: 3,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+            alt: "Border",
+            style: {
+              width: '16px',
+              height: '16px'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          isBlock: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+            value: topValue,
+            onChange: value => setAttributes({
+              [topKey]: value
+            }),
+            withInputField: isToggled,
+            min: 5,
+            max: 50,
+            step: 5,
+            marks: marks,
+            hideLabelFromVision: true // Keeps label for accessibility but hides it visually
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+            variant: "secondary",
+            className: "custom-toggle-button",
+            onClick: handleToggle,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+              alt: "Toggle",
+              style: {
+                width: '16px'
+              }
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
+        align: "center",
+        gap: 3,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+            alt: "Border",
+            style: {
+              width: '16px',
+              height: '16px'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          isBlock: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+            value: rightValue,
+            onChange: value => setAttributes({
+              [rightKey]: value
+            }),
+            withInputField: isToggled,
+            min: 5,
+            max: 50,
+            step: 5,
+            marks: marks,
+            hideLabelFromVision: true // Keeps label for accessibility but hides it visually
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+            variant: "secondary",
+            className: "custom-toggle-button",
+            onClick: handleToggle,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+              alt: "Toggle",
+              style: {
+                width: '16px'
+              }
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
+        align: "center",
+        gap: 3,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+            alt: "Border",
+            style: {
+              width: '16px',
+              height: '16px'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          isBlock: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+            value: bottomValue,
+            onChange: value => setAttributes({
+              [bottomKey]: value
+            }),
+            withInputField: isToggled,
+            min: 5,
+            max: 50,
+            step: 5,
+            marks: marks,
+            hideLabelFromVision: true // Keeps label for accessibility but hides it visually
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+            variant: "secondary",
+            className: "custom-toggle-button",
+            onClick: handleToggle,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+              alt: "Toggle",
+              style: {
+                width: '16px'
+              }
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
+        align: "center",
+        gap: 3,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+            src: _assests_border_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+            alt: "Border",
+            style: {
+              width: '16px',
+              height: '16px'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          isBlock: true,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
+            value: leftValue,
+            onChange: value => setAttributes({
+              [leftKey]: value
+            }),
+            withInputField: isToggled,
+            min: 5,
+            max: 50,
+            step: 5,
+            marks: marks,
+            hideLabelFromVision: true // Keeps label for accessibility but hides it visually
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FlexItem, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+            variant: "secondary",
+            className: "custom-toggle-button",
+            onClick: handleToggle,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: _assests_Union_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+              alt: "Toggle",
+              style: {
+                width: '16px'
+              }
+            })
+          })
+        })]
       })]
     })]
   });
@@ -3468,7 +3663,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string","default":"#000000"},"separatorThickness":{"type":"number","default":1},"itemWidthType":{"type":"string","default":"auto"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number","default":16},"fontHeight":{"type":"number","default":1.2},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string","default":"none"},"iconColor":{"type":"string","default":"#000000"},"padding":{"type":"number","default":10}},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string","default":"#000000"},"separatorThickness":{"type":"number","default":1},"itemWidthType":{"type":"string","default":"auto"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number","default":16},"fontHeight":{"type":"number","default":1.2},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string","default":"none"},"iconColor":{"type":"string","default":"#000000"},"padding":{"type":"number","default":10},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"}},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

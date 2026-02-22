@@ -1,5 +1,8 @@
 .wp-block-create-block-icon-list-item {
-	padding: var(--padding);
+	padding-top: var(--padding-top);
+	padding-right: var(--padding-right);
+	padding-bottom: var(--padding-bottom);
+	padding-left: var(--padding-left);
 
 	h3.block-editor-rich-text__editable {
 		font-family: var(--font-family) !important;

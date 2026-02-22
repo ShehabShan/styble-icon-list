@@ -102,6 +102,18 @@
     "padding": {
       "type": "number",
       "default": 10
+    },
+    "paddingTop": {
+      "type": "number"
+    },
+    "paddingRight": {
+      "type": "number"
+    },
+    "paddingLeft": {
+      "type": "number"
+    },
+    "paddingBottom": {
+      "type": "number"
     }
   },
   "textdomain": "icon-list",
