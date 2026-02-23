@@ -6,6 +6,17 @@
 	--icon-list-gap: 1.5rem;
 }
 
+//This style is to solve popover blur issue
+
+.editor-styles-wrapper {
+	//line break
+	.components-modal__content,
+	.components-popover__content {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+	}
+}
+
 .wp-block-create-block-icon-list {
 	//line break
 	> .block-editor-inner-blocks > .block-editor-block-list__layout {
@@ -14,7 +25,12 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 6px;
+		color: #2f2f2f;
 		border: 1px solid rgb(187, 31, 31);
+		padding-top: var(--padding-top);
+		padding-right: var(--padding-right);
+		padding-bottom: var(--padding-bottom);
+		padding-left: var(--padding-left);
 
 		// .wp-block-your-namespace-icon-list-item {
 		// 	font-family: var(--font-family);

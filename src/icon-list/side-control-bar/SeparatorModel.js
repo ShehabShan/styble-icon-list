@@ -5,7 +5,7 @@ import {
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import './side-bar-scss/separatorModel.scss';
+import './side-bar-scss/customPopoverContainer.scss';
 import CustomHelperComponent from './CustomHelperComponent.js';
 
 const SeparatorModel = ( {
@@ -19,6 +19,7 @@ const SeparatorModel = ( {
 	return (
 		<div style={ { position: 'relative' } }>
 			<CustomHelperComponent
+				hasIcon={ true }
 				icon={ editIcon }
 				toggleModal={ toggleModal }
 				label={ __( 'Separator', 'icon-list' ) }
@@ -31,7 +32,7 @@ const SeparatorModel = ( {
 					placement="left-start" // Left-start usually matches the sidebar flyout better
 					offset={ 15 }
 				>
-					<div className="separator-popover-container">
+					<div className="custom-popover-container">
 						{ /* Style Section */ }
 						<ToggleGroupControl
 							className="list-separator-style-toggle-group"

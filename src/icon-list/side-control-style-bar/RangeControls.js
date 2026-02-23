@@ -14,18 +14,18 @@ import BorderIcon from '../../assests/border.svg';
 import UnionIcon from '../../assests/Union.svg';
 import ResetIcon from '../../assests/reset.svg';
 
-const RangeControls = ( {
-	setAttributes,
-	attributes,
-	title,
-	type,
-	isModalOpen,
-	toggleModal,
-} ) => {
+const RangeControls = ( props ) => {
+	const { setAttributes, attributes, title, type } = props;
+
 	const [ isToggled, setIsToggled ] = useState( false );
+	const [ isExpanded, setIsExpanded ] = useState( false );
 
 	const handleToggle = () => {
 		setIsToggled( ! isToggled );
+	};
+
+	const handleExpand = () => {
+		setIsExpanded( ( prev ) => ! prev );
 	};
 
 	const baseKey = type;
@@ -79,7 +79,7 @@ const RangeControls = ( {
 							} }
 						/>
 					</Button>
-					<Button onClick={ () => toggleModal( 'allSideOpen' ) }>
+					<Button onClick={ () => handleExpand() }>
 						<img
 							src={ BorderIcon }
 							alt="All Border Button"
@@ -102,7 +102,7 @@ const RangeControls = ( {
 				</div>
 			</div>
 
-			{ ! isModalOpen( 'allSideOpen' ) && (
+			{ ! isExpanded && (
 				<Flex align="center" gap={ 3 }>
 					<FlexItem>
 						<img
@@ -128,9 +128,9 @@ const RangeControls = ( {
 								} )
 							}
 							withInputField={ isToggled }
-							min={ 5 }
-							max={ 50 }
-							step={ 5 }
+							min={ 0 }
+							max={ props?.isBorder ? 7 : 50 }
+							step={ props?.isBorder ? 1 : 5 }
 							marks={ marks }
 							hideLabelFromVision // Keeps label for accessibility but hides it visually
 						/>
@@ -152,7 +152,7 @@ const RangeControls = ( {
 				</Flex>
 			) }
 
-			{ isModalOpen( 'allSideOpen' ) && (
+			{ isExpanded && (
 				<div>
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
@@ -173,9 +173,9 @@ const RangeControls = ( {
 									setAttributes( { [ topKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 5 }
-								max={ 50 }
-								step={ 5 }
+								min={ 0 }
+								max={ props?.isBorder ? 7 : 50 }
+								step={ props?.isBorder ? 1 : 5 }
 								marks={ marks }
 								hideLabelFromVision // Keeps label for accessibility but hides it visually
 							/>
@@ -214,9 +214,9 @@ const RangeControls = ( {
 									setAttributes( { [ rightKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 5 }
-								max={ 50 }
-								step={ 5 }
+								min={ 0 }
+								max={ props?.isBorder ? 7 : 50 }
+								step={ props?.isBorder ? 1 : 5 }
 								marks={ marks }
 								hideLabelFromVision // Keeps label for accessibility but hides it visually
 							/>
@@ -255,9 +255,9 @@ const RangeControls = ( {
 									setAttributes( { [ bottomKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 5 }
-								max={ 50 }
-								step={ 5 }
+								min={ 0 }
+								max={ props?.isBorder ? 7 : 50 }
+								step={ props?.isBorder ? 1 : 5 }
 								marks={ marks }
 								hideLabelFromVision // Keeps label for accessibility but hides it visually
 							/>
@@ -296,9 +296,9 @@ const RangeControls = ( {
 									setAttributes( { [ leftKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 5 }
-								max={ 50 }
-								step={ 5 }
+								min={ 0 }
+								max={ props?.isBorder ? 7 : 50 }
+								step={ props?.isBorder ? 1 : 5 }
 								marks={ marks }
 								hideLabelFromVision // Keeps label for accessibility but hides it visually
 							/>

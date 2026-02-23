@@ -1,0 +1,149 @@
+.background-control-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	color: #2f2f2f;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+
+	.control-section {
+		width: 100%;
+	}
+
+	.control-section--background-type {
+		//line break
+		.components-base-control__field {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.components-base-control__label {
+			margin: 0;
+		}
+
+		.components-toggle-group-control {
+			// width: 100px !important;
+			// border: 1px solid transparent !important;
+			flex-direction: row;
+
+			.components-toggle-group-control-option-base {
+				position: relative;
+
+				// Create the icon base
+				&::before {
+					content: "";
+					display: block;
+					width: 24px; // Icon size
+					height: 24px;
+					border-radius: 3px; // Rounded corners like image 9c75d7
+					border: 1px solid transparent;
+					transition: all 0.2s ease;
+				}
+
+				/* Logic for the SOLID icon (first button) */
+				&[data-value="solid"]::before {
+					background-color: #8e8e8e; // Default gray from your image
+				}
+
+				/* Logic for the GRADIENT icon (second button) */
+				&[data-value="gradient"]::before {
+					background: linear-gradient(
+						45deg,
+						#8e8e8e 50%,
+						#cbcbcb 50%
+					);
+				}
+
+				&:not(:last-child) {
+					border-right: 1px solid #949494;
+				}
+
+				// Active State using the class
+				&.is-active {
+					color: #4649ff;
+					background: #f0f0ff; // Added a light blue background for better UI
+					font-weight: 500;
+					border: 1px solid #a8aaff;
+				}
+
+				&:hover:not(.is-active) {
+					background-color: #f0f0f0;
+				}
+			}
+		}
+	}
+
+	.control-section--background-value {
+		//line break
+		.components-base-control__field {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.control-section--separator {
+		flex-direction: column;
+
+		//line break
+		.components-toggle-group-control {
+			width: 100%;
+
+			.custom-border-option {
+				flex: 1;
+				border: none !important;
+				background: transparent !important;
+				box-shadow: none !important;
+				height: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				border-radius: 2px;
+				transition: all 0.1s ease-in-out;
+
+				// The Light Purple highlight you liked
+				&.is-active {
+					background-color: #f0f0ff !important;
+					color: #4649ff !important; // Your custom blue/purple
+					font-weight: 600;
+				}
+
+				// Hover effect for non-active items
+				&:hover:not(.is-active) {
+					background-color: #f0f0f0 !important;
+				}
+			}
+		}
+	}
+
+	//line break
+}
+
+.border-icon {
+	box-sizing: border-box;
+	width: 30px;
+	height: 16px;
+	aspect-ratio: 15/7;
+	border-color: #2f2f2f; // Default dark color
+
+	&.border-none {
+		border: none;
+		font-size: 12px;
+		width: auto;
+		color: inherit;
+	}
+
+	&.border-solid {
+		border: 1px solid currentcolor; // Changes to blue when selected
+	}
+
+	&.border-dashed {
+		border: 1.167px dashed currentcolor;
+	}
+
+	&.border-dotted {
+		border: 1.167px dotted currentcolor;
+	}
+}

@@ -11,13 +11,9 @@ import {
 	TabPanel,
 	RangeControl,
 	ToggleControl,
-	BoxControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
-	BorderBoxControl,
-	BorderControl,
 } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
 
 import './editor.scss';
 
@@ -29,6 +25,8 @@ import presetOne from '../assests/List-presets-one.svg';
 import presetTwo from '../assests/List-presets-two.svg';
 import presetThree from '../assests/List-presets-three.svg';
 import editIcon from '../assests/edit-icon.svg';
+import resetIcon from '../assests/reset.svg';
+
 import CustomItemWidth from './side-control-bar/CustomItemWidth.js';
 import ListPreset from './side-control-bar/ListPreset.js';
 import ListOrientation from './side-control-bar/ListOrientation.js';
@@ -37,6 +35,7 @@ import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
 
 import RangeControls from './side-control-style-bar/RangeControls.js';
 import ItemStyle from './side-control-style-bar/ItemStyle.js';
+import { useState } from '@wordpress/element';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -59,14 +58,22 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		isStrikethrough,
 		textTransform,
 		iconColor,
+		border,
+		borderType,
 		padding,
 		paddingTop,
 		paddingRight,
 		paddingBottom,
 		paddingLeft,
+		backgroundColor,
+		backgroundGradient,
+		borderColor,
+		borderRadius,
 	} = attributes;
 
 	//Opening modal for icon choose
+
+	console.log( 'border radius', borderRadius );
 
 	// Initial state: null means no modal is open
 	const [ openModalId, setOpenModalId ] = useState( null );
@@ -117,6 +124,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			'--padding-right': `${ resolvedPaddingRight }px`,
 			'--padding-bottom': `${ resolvedPaddingBottom }px`,
 			'--padding-left': `${ resolvedPaddingLeft }px`,
+			'--background-color': `${ backgroundColor ?? backgroundGradient }`,
+			'--border': `${ border }px ${ borderType } ${ borderColor }`,
+			'--border-radius': `${ borderRadius }px`,
 		},
 	} );
 
@@ -169,9 +179,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						onChange={ ( value ) =>
 							setAttributes( { itemsGap: value } )
 						}
-						min={ 10 }
+						min={ 0 }
 						max={ 50 }
-						step={ 10 }
+						step={ 5 }
 					/>
 
 					<ToggleControl
@@ -262,6 +272,11 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<ItemStyle
 						attributes={ attributes }
 						setAttributes={ setAttributes }
+						resetIcon={ resetIcon }
+						editIcon={ editIcon }
+						isModalOpen={ isModalOpen }
+						toggleModal={ toggleModal }
+						closeAllModals={ closeAllModals }
 					/>
 				</>
 			);

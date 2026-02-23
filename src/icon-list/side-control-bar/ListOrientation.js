@@ -3,12 +3,12 @@ import {
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import './side-bar-scss/listOrientation.scss';
+import './side-bar-scss/customOrientation.scss';
 
 const ListOrientation = ( { listOrientation, setAttributes } ) => {
 	return (
 		<ToggleGroupControl
-			className="list-orientation"
+			className="custom-orientation "
 			__next40pxDefaultSize
 			isBlock
 			label={ __( 'List Orientation', 'icon-list' ) }
@@ -18,7 +18,7 @@ const ListOrientation = ( { listOrientation, setAttributes } ) => {
 			}
 		>
 			<ToggleGroupControlOption
-				className={ `list-orientation-option ${
+				className={ `custom-orientation-option ${
 					listOrientation === 'horizontal' ? 'is-active' : ''
 				}` }
 				aria-label="horizontal"
@@ -26,7 +26,7 @@ const ListOrientation = ( { listOrientation, setAttributes } ) => {
 				value="horizontal"
 			/>
 			<ToggleGroupControlOption
-				className={ `list-orientation-option ${
+				className={ `custom-orientation-option ${
 					listOrientation === 'vertical' ? 'is-active' : ''
 				}` }
 				aria-label="vertical"

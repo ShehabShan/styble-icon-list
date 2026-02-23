@@ -51,6 +51,21 @@
       "type": "string",
       "default": "auto"
     },
+    "itemStyleType": {
+      "type": "string",
+      "default": "normal"
+    },
+    "backgroundType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "backgroundGradient": {
+      "type": "string"
+    },
     "itemsWidth": {
       "type": "number",
       "default": 200
@@ -114,6 +129,22 @@
     },
     "paddingBottom": {
       "type": "number"
+    },
+    "borderType": {
+      "type": "string",
+      "default": "none"
+    },
+    "border": {
+      "type": "number",
+      "default": 1
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#2F2F2F"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 0
     }
   },
   "textdomain": "icon-list",

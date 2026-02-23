@@ -7,6 +7,8 @@ import {
 } from '@wordpress/components';
 import CustomHelperComponent from './CustomHelperComponent';
 import './side-bar-scss/customItemWidth.scss';
+import './side-bar-scss/customPopoverContainer.scss';
+import './side-bar-scss/customOrientation.scss';
 
 const CustomItemWidth = ( {
 	isModalOpen,
@@ -18,7 +20,7 @@ const CustomItemWidth = ( {
 	return (
 		<div style={ { position: 'relative' } }>
 			<ToggleGroupControl
-				className="item-width-type-toggle-group"
+				className="custom-orientation"
 				__next40pxDefaultSize
 				isBlock
 				label={ __( 'Item Width type', 'icon-list' ) }
@@ -28,7 +30,7 @@ const CustomItemWidth = ( {
 				}
 			>
 				<ToggleGroupControlOption
-					className={ `item-width-type-option ${
+					className={ `custom-orientation-option ${
 						attributes?.itemWidthType === 'auto' ? 'is-active' : ''
 					}` }
 					aria-label="auto"
@@ -36,7 +38,7 @@ const CustomItemWidth = ( {
 					value="auto"
 				/>
 				<ToggleGroupControlOption
-					className={ `item-width-type-option ${
+					className={ `custom-orientation-option ${
 						attributes?.itemWidthType === 'custom'
 							? 'is-active'
 							: ''
@@ -54,10 +56,10 @@ const CustomItemWidth = ( {
 					placement="left-start" // Left-start usually matches the sidebar flyout better
 					offset={ 15 }
 				>
-					<div className="custom-item-width-popover-container">
+					<div className="custom-popover-container">
 						{ /* Style Section */ }
 						<ToggleGroupControl
-							className="item-width-type-toggle-group"
+							className="custom-orientation"
 							__next40pxDefaultSize
 							isBlock
 							label={ __( 'Item Width Type', 'icon-list' ) }
@@ -66,7 +68,7 @@ const CustomItemWidth = ( {
 							}
 						>
 							<ToggleGroupControlOption
-								className={ `item-width-type-option ${
+								className={ `custom-orientation-option ${
 									attributes?.itemWidthType === 'auto'
 										? 'is-active'
 										: ''
@@ -77,7 +79,7 @@ const CustomItemWidth = ( {
 								onClick={ closeAllModals }
 							/>
 							<ToggleGroupControlOption
-								className={ `item-width-type-option ${
+								className={ `custom-orientation-option ${
 									attributes?.itemWidthType === 'custom'
 										? 'is-active'
 										: ''

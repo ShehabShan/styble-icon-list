@@ -13,7 +13,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 16px;
   margin: 0;
   box-sizing: border-box;
 }
@@ -71,13 +70,23 @@
   --Visual-primary: #007cba;
   --icon-list-gap: 1.5rem;
 }
+.editor-styles-wrapper .components-modal__content,
+.editor-styles-wrapper .components-popover__content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 .wp-block-create-block-icon-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
   display: flex;
   width: 900px;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
+  color: #2f2f2f;
   border: 1px solid rgb(187, 31, 31);
+  padding-top: var(--padding-top);
+  padding-right: var(--padding-right);
+  padding-bottom: var(--padding-bottom);
+  padding-left: var(--padding-left);
 }
 .wp-block-create-block-icon-list {
   /* gap control */
@@ -452,13 +461,12 @@
 .icon-library-item svg {
   pointer-events: none;
 }
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/separatorModel.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
-.separator-popover-container {
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/customPopoverContainer.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+.custom-popover-container {
   padding: 16px;
-  width: 320px;
-  height: 300px;
+  width: 320px !important;
   background: #fff;
   border-radius: 8px;
 }
@@ -474,7 +482,7 @@
 }
 .custom-sidebar-row .row-label {
   font-size: 13px;
-  color: #1e1e1e;
+  color: #2f2f2f;
   font-weight: 400;
   flex: 1;
 }
@@ -482,6 +490,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+}
+.custom-sidebar-row .row-control .inline-color-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #8c8f94;
+  cursor: pointer;
+  padding: 0;
+}
+.custom-sidebar-row .row-control .inline-color-indicator:hover {
+  border-color: #007cba;
+}
+.custom-sidebar-row .row-control .inline-color-popover {
+  padding: 8px;
+}
+.custom-sidebar-row .row-control {
   /* Stylized Text Button (e.g., "%", "px", "Auto") */
 }
 .custom-sidebar-row .row-control .components-button.custom-helper-button {
@@ -540,7 +565,7 @@
   \******************************************************************************************************************************************************************************************************************************************************************************************/
 .custom-item-width-popover-container {
   padding: 12px;
-  width: 260px;
+  width: 320px;
 }
 .custom-item-width-popover-container .item-width-type-toggle-group.components-toggle-group-control {
   border: 1px solid #ccc;
@@ -575,6 +600,37 @@
 }
 .custom-item-width-popover-container .item-width-type-toggle-group.components-toggle-group-control .item-width-type-option:hover:not(.is-active) {
   background-color: #f0f0f0 !important;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/customOrientation.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.custom-orientation {
+  display: flex;
+  border: 1px solid #949494;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.custom-orientation .custom-orientation-option {
+  flex: 1;
+  height: 32px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #1e1e1e;
+  transition: background 0.1s ease;
+}
+.custom-orientation .custom-orientation-option:not(:last-child) {
+  border-right: 1px solid #949494;
+}
+.custom-orientation .custom-orientation-option.is-active {
+  color: #4649ff;
+  background: #f0f0ff;
+  font-weight: 500;
+  border: 1px solid #a8aaff;
+}
+.custom-orientation .custom-orientation-option:hover:not(.is-active) {
+  background-color: #f0f0f0;
 }
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/listPreset.scss ***!
@@ -616,37 +672,6 @@
 .list-preset .components-toggle-group-control__group {
   display: flex;
   gap: 8px;
-}
-/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-bar/side-bar-scss/listOrientation.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************/
-.list-orientation {
-  display: flex;
-  border: 1px solid #949494;
-  border-radius: 2px;
-  overflow: hidden;
-}
-.list-orientation .list-orientation-option {
-  flex: 1;
-  height: 32px;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  color: #1e1e1e;
-  transition: background 0.1s ease;
-}
-.list-orientation .list-orientation-option:not(:last-child) {
-  border-right: 1px solid #949494;
-}
-.list-orientation .list-orientation-option.is-active {
-  color: #4649ff;
-  background: #f0f0ff;
-  font-weight: 500;
-  border: 1px solid #a8aaff;
-}
-.list-orientation .list-orientation-option:hover:not(.is-active) {
-  background-color: #f0f0f0;
 }
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-style-bar/typography.scss ***!
@@ -773,6 +798,121 @@
 }
 .range-row .components-base-control.components-range-control .components-range-control__wrapper {
   margin-bottom: 0;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/side-control-style-bar/customItemstyle.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.background-control-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #2f2f2f;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+.background-control-container .control-section {
+  width: 100%;
+}
+.background-control-container .control-section--background-type .components-base-control__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.background-control-container .control-section--background-type .components-base-control__label {
+  margin: 0;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control {
+  flex-direction: row;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base {
+  position: relative;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base {
+  /* Logic for the SOLID icon (first button) */
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base[data-value=solid]::before {
+  background-color: #8e8e8e;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base {
+  /* Logic for the GRADIENT icon (second button) */
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base[data-value=gradient]::before {
+  background: linear-gradient(45deg, #8e8e8e 50%, #cbcbcb 50%);
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base:not(:last-child) {
+  border-right: 1px solid #949494;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base.is-active {
+  color: #4649ff;
+  background: #f0f0ff;
+  font-weight: 500;
+  border: 1px solid #a8aaff;
+}
+.background-control-container .control-section--background-type .components-toggle-group-control .components-toggle-group-control-option-base:hover:not(.is-active) {
+  background-color: #f0f0f0;
+}
+.background-control-container .control-section--background-value .components-base-control__field {
+  display: flex;
+  flex-direction: column;
+}
+.background-control-container .control-section--separator {
+  flex-direction: column;
+}
+.background-control-container .control-section--separator .components-toggle-group-control {
+  width: 100%;
+}
+.background-control-container .control-section--separator .components-toggle-group-control .custom-border-option {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+}
+.background-control-container .control-section--separator .components-toggle-group-control .custom-border-option.is-active {
+  background-color: #f0f0ff !important;
+  color: #4649ff !important;
+  font-weight: 600;
+}
+.background-control-container .control-section--separator .components-toggle-group-control .custom-border-option:hover:not(.is-active) {
+  background-color: #f0f0f0 !important;
+}
+.border-icon {
+  box-sizing: border-box;
+  width: 30px;
+  height: 16px;
+  aspect-ratio: 15/7;
+  border-color: #2f2f2f;
+}
+.border-icon.border-none {
+  border: none;
+  font-size: 12px;
+  width: auto;
+  color: inherit;
+}
+.border-icon.border-solid {
+  border: 1px solid currentcolor;
+}
+.border-icon.border-dashed {
+  border: 1.167px dashed currentcolor;
+}
+.border-icon.border-dotted {
+  border: 1.167px dotted currentcolor;
 }
 
 /*# sourceMappingURL=index.css.map*/

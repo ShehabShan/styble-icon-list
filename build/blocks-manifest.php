@@ -56,6 +56,21 @@ return array(
 				'type' => 'string',
 				'default' => 'auto'
 			),
+			'itemStyleType' => array(
+				'type' => 'string',
+				'default' => 'normal'
+			),
+			'backgroundType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'backgroundColor' => array(
+				'type' => 'string',
+				'default' => '#fff'
+			),
+			'backgroundGradient' => array(
+				'type' => 'string'
+			),
 			'itemsWidth' => array(
 				'type' => 'number',
 				'default' => 200
@@ -119,6 +134,22 @@ return array(
 			),
 			'paddingBottom' => array(
 				'type' => 'number'
+			),
+			'borderType' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
+			'border' => array(
+				'type' => 'number',
+				'default' => 1
+			),
+			'borderColor' => array(
+				'type' => 'string',
+				'default' => '#2F2F2F'
+			),
+			'borderRadius' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'textdomain' => 'icon-list',
