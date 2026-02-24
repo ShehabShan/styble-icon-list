@@ -1,4 +1,7 @@
 .wp-block-create-block-icon-list-item {
+	position: relative;
+	box-sizing: border-box;
+
 	/* ----------------------------
 	   Normal State
 	----------------------------- */
@@ -81,10 +84,6 @@
 		);
 	}
 
-	/* ----------------------------
-	   Typography
-	----------------------------- */
-
 	h3 {
 		font-family: var(--font-family, inherit);
 		font-size: var(--font-size, inherit);
@@ -96,4 +95,21 @@
 		text-decoration: var(--text-decoration, inherit);
 		font-style: var(--font-style-italic, normal);
 	}
+
+	/* ----------------------------
+	   Typography
+	----------------------------- */
+}
+
+.wp-block-create-block-icon-list-item::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: auto;
+	z-index: 1;
+}
+
+.wp-block-create-block-icon-list-item > * {
+	position: relative;
+	z-index: 2;
 }

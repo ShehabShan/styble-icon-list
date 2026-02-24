@@ -29,8 +29,7 @@
       "default": "solid"
     },
     "backgroundColor": {
-      "type": "string",
-      "default": "#fff"
+      "type": "string"
     },
     "backgroundGradient": {
       "type": "string"
@@ -52,8 +51,7 @@
       "type": "number"
     },
     "border": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "borderTop": {
       "type": "number"
@@ -68,8 +66,7 @@
       "type": "number"
     },
     "margin": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "marginTop": {
       "type": "number"
@@ -84,16 +81,13 @@
       "type": "number"
     },
     "borderType": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "borderColor": {
-      "type": "string",
-      "default": "#2F2F2F"
+      "type": "string"
     },
     "borderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "borderRadiusTop": {
       "type": "number"
@@ -108,12 +102,10 @@
       "type": "number"
     },
     "hadBoxShadow": {
-      "type": "boolean",
-      "default": "none"
+      "type": "boolean"
     },
     "hoverBackgroundType": {
-      "type": "string",
-      "default": "solid"
+      "type": "string"
     },
     "hoverBackgroundColor": {
       "type": "string"
@@ -122,15 +114,13 @@
       "type": "string"
     },
     "hoverBorderType": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "hoverBorderColor": {
       "type": "string"
     },
     "hoverBorder": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverBorderTop": {
       "type": "number"
@@ -145,8 +135,7 @@
       "type": "number"
     },
     "hoverBorderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverBorderRadiusTop": {
       "type": "number"
@@ -161,12 +150,10 @@
       "type": "number"
     },
     "hoverHasBoxShadow": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "hoverPadding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverPaddingTop": {
       "type": "number"

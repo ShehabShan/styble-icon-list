@@ -304,8 +304,7 @@ return array(
 				'default' => 'solid'
 			),
 			'backgroundColor' => array(
-				'type' => 'string',
-				'default' => '#fff'
+				'type' => 'string'
 			),
 			'backgroundGradient' => array(
 				'type' => 'string'
@@ -327,8 +326,7 @@ return array(
 				'type' => 'number'
 			),
 			'border' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'borderTop' => array(
 				'type' => 'number'
@@ -343,8 +341,7 @@ return array(
 				'type' => 'number'
 			),
 			'margin' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'marginTop' => array(
 				'type' => 'number'
@@ -359,16 +356,13 @@ return array(
 				'type' => 'number'
 			),
 			'borderType' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string',
-				'default' => '#2F2F2F'
+				'type' => 'string'
 			),
 			'borderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'borderRadiusTop' => array(
 				'type' => 'number'
@@ -383,12 +377,10 @@ return array(
 				'type' => 'number'
 			),
 			'hadBoxShadow' => array(
-				'type' => 'boolean',
-				'default' => 'none'
+				'type' => 'boolean'
 			),
 			'hoverBackgroundType' => array(
-				'type' => 'string',
-				'default' => 'solid'
+				'type' => 'string'
 			),
 			'hoverBackgroundColor' => array(
 				'type' => 'string'
@@ -397,15 +389,13 @@ return array(
 				'type' => 'string'
 			),
 			'hoverBorderType' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'hoverBorderColor' => array(
 				'type' => 'string'
 			),
 			'hoverBorder' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverBorderTop' => array(
 				'type' => 'number'
@@ -420,8 +410,7 @@ return array(
 				'type' => 'number'
 			),
 			'hoverBorderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverBorderRadiusTop' => array(
 				'type' => 'number'
@@ -436,12 +425,10 @@ return array(
 				'type' => 'number'
 			),
 			'hoverHasBoxShadow' => array(
-				'type' => 'boolean',
-				'default' => false
+				'type' => 'boolean'
 			),
 			'hoverPadding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverPaddingTop' => array(
 				'type' => 'number'

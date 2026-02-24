@@ -29,8 +29,7 @@
 			"default": "solid"
 		},
 		"backgroundColor": {
-			"type": "string",
-			"default": "#fff"
+			"type": "string"
 		},
 		"backgroundGradient": {
 			"type": "string"
@@ -54,16 +53,14 @@
 		},
 
 		"border": {
-			"type": "number",
-			"default": 0
+			"type": "number"
 		},
 		"borderTop": { "type": "number" },
 		"borderRight": { "type": "number" },
 		"borderBottom": { "type": "number" },
 		"borderLeft": { "type": "number" },
 		"margin": {
-			"type": "number",
-			"default": 0
+			"type": "number"
 		},
 		"marginTop": { "type": "number" },
 		"marginRight": { "type": "number" },
@@ -71,45 +68,42 @@
 		"marginLeft": { "type": "number" },
 
 		"borderType": {
-			"type": "string",
-			"default": "none"
+			"type": "string"
 		},
 
 		"borderColor": {
-			"type": "string",
-			"default": "#2F2F2F"
+			"type": "string"
 		},
-		"borderRadius": { "type": "number", "default": 0 },
+		"borderRadius": { "type": "number" },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
 		"borderRadiusBottom": { "type": "number" },
 		"borderRadiusLeft": { "type": "number" },
 		"hadBoxShadow": {
-			"type": "boolean",
-			"default": "none"
+			"type": "boolean"
 		},
-		"hoverBackgroundType": { "type": "string", "default": "solid" },
+		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
 
-		"hoverBorderType": { "type": "string", "default": "none" },
+		"hoverBorderType": { "type": "string" },
 		"hoverBorderColor": { "type": "string" },
 
-		"hoverBorder": { "type": "number", "default": 0 },
+		"hoverBorder": { "type": "number" },
 		"hoverBorderTop": { "type": "number" },
 		"hoverBorderRight": { "type": "number" },
 		"hoverBorderBottom": { "type": "number" },
 		"hoverBorderLeft": { "type": "number" },
 
-		"hoverBorderRadius": { "type": "number", "default": 0 },
+		"hoverBorderRadius": { "type": "number" },
 		"hoverBorderRadiusTop": { "type": "number" },
 		"hoverBorderRadiusRight": { "type": "number" },
 		"hoverBorderRadiusBottom": { "type": "number" },
 		"hoverBorderRadiusLeft": { "type": "number" },
 
-		"hoverHasBoxShadow": { "type": "boolean", "default": false },
+		"hoverHasBoxShadow": { "type": "boolean" },
 
-		"hoverPadding": { "type": "number", "default": 0 },
+		"hoverPadding": { "type": "number" },
 		"hoverPaddingTop": { "type": "number" },
 		"hoverPaddingRight": { "type": "number" },
 		"hoverPaddingBottom": { "type": "number" },

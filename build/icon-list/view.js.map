@@ -1,1 +1,0 @@
-{"version":3,"file":"icon-list/view.js","mappings":";;;;AAAA;AACAA,OAAO,CAACC,GAAG,CAAE,kDAAmD,CAAC;AACjE,8B","sources":["webpack://icon-list/./src/icon-list/view.js"],"sourcesContent":["/* eslint-disable no-console */\nconsole.log( 'Hello World! (from create-block-icon-list block)' );\n/* eslint-enable no-console */\n"],"names":["console","log"],"sourceRoot":""}
