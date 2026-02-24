@@ -32,10 +32,12 @@ import ListPreset from './side-control-bar/ListPreset.js';
 import ListOrientation from './side-control-bar/ListOrientation.js';
 import Typography from './side-control-style-bar/Typography.js';
 import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
+import { getBlockStyles } from '../utils/style.js';
 
 import RangeControls from './side-control-style-bar/RangeControls.js';
 import ItemStyle from './side-control-style-bar/ItemStyle.js';
 import { useState } from '@wordpress/element';
+import { Palette, Settings } from 'lucide-react';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -44,36 +46,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		itemsGap,
 		hasIcon,
 		iconSize,
-		separatorColor,
 		separatorType,
-		separatorThickness,
-		fontWeight,
-		fontFamily,
-		fontSize,
-		fontHeight,
-		letterSpacing,
-		wordSpacing,
-		isItalic,
-		isUnderline,
-		isStrikethrough,
-		textTransform,
 		iconColor,
-		border,
-		borderType,
-		padding,
-		paddingTop,
-		paddingRight,
-		paddingBottom,
-		paddingLeft,
-		backgroundColor,
-		backgroundGradient,
-		borderColor,
-		borderRadius,
 	} = attributes;
 
-	//Opening modal for icon choose
+	const parentStyle = getBlockStyles( attributes );
 
-	console.log( 'border radius', borderRadius );
+	//Opening modal for icon choose
 
 	// Initial state: null means no modal is open
 	const [ openModalId, setOpenModalId ] = useState( null );
@@ -87,47 +66,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const closeAllModals = () => setOpenModalId( null );
 
-	//padding section
-
-	const basePadding = padding ?? 0;
-
-	const resolvedPaddingTop = paddingTop ?? basePadding;
-	const resolvedPaddingRight = paddingRight ?? basePadding;
-	const resolvedPaddingBottom = paddingBottom ?? basePadding;
-	const resolvedPaddingLeft = paddingLeft ?? basePadding;
-
 	const blockProps = useBlockProps( {
 		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType }`,
 
-		style: {
-			'--separator-thickness': `${ separatorThickness }px`,
-			'--separator-color': separatorColor,
-			'--separator-style': separatorType,
-			'--icon-size': `${ iconSize }px`,
-			'--font-family': fontFamily,
-			'--font-size': `${ fontSize }px`,
-			'--font-weight': fontWeight,
-			'--font-height': fontHeight,
-			'--letter-spacing': `${ letterSpacing }px`,
-			'--word-spacing': `${ wordSpacing }px`,
-			'--font-style-italic': isItalic ? 'italic' : 'normal',
-			'--text-decoration':
-				`${ isUnderline ? 'underline' : '' } ${
-					isStrikethrough ? 'line-through' : ''
-				}`.trim() || 'none',
-			'--text-transform': textTransform,
-			'--icon-color': iconColor,
-
-			// padding section
-
-			'--padding-top': `${ resolvedPaddingTop }px`,
-			'--padding-right': `${ resolvedPaddingRight }px`,
-			'--padding-bottom': `${ resolvedPaddingBottom }px`,
-			'--padding-left': `${ resolvedPaddingLeft }px`,
-			'--background-color': `${ backgroundColor ?? backgroundGradient }`,
-			'--border': `${ border }px ${ borderType } ${ borderColor }`,
-			'--border-radius': `${ borderRadius }px`,
-		},
+		style: { ...parentStyle },
 	} );
 
 	// Preset Handling checking if there are inner blocks to show placeholder or not
@@ -263,10 +205,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						setAttributes={ setAttributes }
 						attributes={ attributes }
 						title={ 'Padding' }
-						isModalOpen={ isModalOpen }
-						toggleModal={ toggleModal }
-						closeAllModals={ closeAllModals }
-						type="padding"
+						type="allPadding"
 					/>
 
 					<ItemStyle
@@ -309,12 +248,22 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						tabs={ [
 							{
 								name: 'settings',
-								title: __( 'Settings', 'feature-card-block' ),
+								title: (
+									<>
+										<Settings size={ 16 } />
+										{ __( 'Settings', 'icon-list' ) }
+									</>
+								),
 								className: 'tab-settings',
 							},
 							{
 								name: 'styles',
-								title: __( 'Style', 'feature-card-block' ),
+								title: (
+									<>
+										<Palette size={ 16 } />
+										{ __( 'Style', 'icon-list' ) }
+									</>
+								),
 								className: 'tab-styles',
 							},
 						] }

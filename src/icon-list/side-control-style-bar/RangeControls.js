@@ -28,18 +28,20 @@ const RangeControls = ( props ) => {
 		setIsExpanded( ( prev ) => ! prev );
 	};
 
-	const baseKey = type;
-
-	const topKey = `${ type }Top`;
+	const baseKey = type; // "borderRadius"
+	const topKey = `${ type }Top`; // "borderRadiusTop"
 	const rightKey = `${ type }Right`;
 	const bottomKey = `${ type }Bottom`;
 	const leftKey = `${ type }Left`;
 
-	const baseValue = attributes[ baseKey ];
-	const topValue = attributes[ topKey ];
-	const rightValue = attributes[ rightKey ];
-	const bottomValue = attributes[ bottomKey ];
-	const leftValue = attributes[ leftKey ];
+	// 1. Get the "Master" value
+	const baseValue = attributes[ baseKey ] ?? 0;
+
+	// 2. Get the side values, falling back to the Master value if they are undefined
+	const topValue = attributes[ topKey ] ?? baseValue;
+	const rightValue = attributes[ rightKey ] ?? baseValue;
+	const bottomValue = attributes[ bottomKey ] ?? baseValue;
+	const leftValue = attributes[ leftKey ] ?? baseValue;
 
 	const marks = [
 		{ value: 5, label: '' },

@@ -1,8 +1,5 @@
 .wp-block-create-block-icon-list-item {
-	background: var(--background-color);
-	border: var(--border);
-	border-radius: var(--border-radius);
-
+	//line break
 	h3.block-editor-rich-text__editable {
 		font-family: var(--font-family) !important;
 		font-size: var(--font-size) !important;
@@ -15,5 +12,84 @@
 
 		// Handle Italic specifically
 		font-style: var(--font-style-italic, normal);
+	}
+}
+
+.my-custom-tabs {
+	// 1. The Container for the Tab Buttons
+	.components-tab-panel__tabs {
+		display: flex;
+		border-bottom: 1px solid #e0e0e0; // The light gray baseline
+		margin-bottom: 20px;
+		padding: 0;
+		background: #fff;
+
+		// 2. Individual Tab Buttons
+		.components-button.components-tab-panel__tabs-item {
+			flex: 1; // Makes both tabs equal width (50/50)
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px; // Space between Lucide icon and text
+			padding: 12px 16px;
+			border-radius: 0;
+			border: none;
+			background: transparent;
+			color: #757575; // Gray color for inactive text
+			font-weight: 500;
+			font-size: 13px;
+			position: relative;
+			height: 48px;
+			box-shadow: none !important; // Remove WordPress default button shadows
+			transition: all 0.2s ease;
+
+			// 3. Lucide Icon Styling
+			svg {
+				stroke: currentcolor;
+				fill: none;
+				stroke-width: 2px;
+				width: 18px;
+				height: 18px;
+				display: block;
+			}
+
+			&:focus {
+				box-shadow: none !important;
+				outline: none;
+			}
+
+			// 4. Hover State
+			&:hover:not(.is-active) {
+				color: #1e1e1e;
+				background-color: #f8f9fa;
+			}
+
+			// 5. The Active State (Blue)
+			&.is-active {
+				color: #3858e9; // Professional Blue
+
+				// The underline indicator
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: -1px; // Sits exactly on the container border
+					left: 0;
+					right: 0;
+					height: 2px;
+					background-color: #3858e9;
+				}
+
+				svg {
+					stroke: #3858e9;
+				}
+			}
+
+			// Focus states for accessibility
+		}
+	}
+
+	// 6. Content Area below the tabs
+	.components-tab-panel__tab-content {
+		padding-top: 5px;
 	}
 }

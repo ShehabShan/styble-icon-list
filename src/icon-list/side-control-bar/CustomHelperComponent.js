@@ -1,4 +1,3 @@
-import { ColorPalette, PanelColorSettings } from '@wordpress/block-editor'; // Use ColorPalette for inline items
 import { Button, ColorPicker, Dropdown } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 

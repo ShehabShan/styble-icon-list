@@ -21,6 +21,7 @@
 		"@wordpress/data": "^10.39.0",
 		"@wordpress/element": "^6.39.0",
 		"@wordpress/i18n": "latest",
+		"@wordpress/icons": "^11.7.0",
 		"lucide-react": "^0.574.0"
 	},
 	"devDependencies": {

@@ -13,7 +13,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0;
   box-sizing: border-box;
 }
 .parent-contaner {
@@ -83,10 +82,10 @@
   gap: 6px;
   color: #2f2f2f;
   border: 1px solid rgb(187, 31, 31);
-  padding-top: var(--padding-top);
-  padding-right: var(--padding-right);
-  padding-bottom: var(--padding-bottom);
-  padding-left: var(--padding-left);
+  padding-top: var(--all-padding-top);
+  padding-right: var(--all-padding-top);
+  padding-bottom: var(--all-padding-top);
+  padding-left: var(--all-padding-top);
 }
 .wp-block-create-block-icon-list {
   /* gap control */

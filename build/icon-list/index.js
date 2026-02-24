@@ -491,12 +491,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _side_control_bar_ListOrientation_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./side-control-bar/ListOrientation.js */ "./src/icon-list/side-control-bar/ListOrientation.js");
 /* harmony import */ var _side_control_style_bar_Typography_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./side-control-style-bar/Typography.js */ "./src/icon-list/side-control-style-bar/Typography.js");
 /* harmony import */ var _side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./side-control-bar/CustomHelperComponent.js */ "./src/icon-list/side-control-bar/CustomHelperComponent.js");
-/* harmony import */ var _side_control_style_bar_RangeControls_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./side-control-style-bar/RangeControls.js */ "./src/icon-list/side-control-style-bar/RangeControls.js");
-/* harmony import */ var _side_control_style_bar_ItemStyle_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./side-control-style-bar/ItemStyle.js */ "./src/icon-list/side-control-style-bar/ItemStyle.js");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _utils_style_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/style.js */ "./src/utils/style.js");
+/* harmony import */ var _side_control_style_bar_RangeControls_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./side-control-style-bar/RangeControls.js */ "./src/icon-list/side-control-style-bar/RangeControls.js");
+/* harmony import */ var _side_control_style_bar_ItemStyle_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./side-control-style-bar/ItemStyle.js */ "./src/icon-list/side-control-style-bar/ItemStyle.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/palette.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/settings.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__);
+
+
 
 
 
@@ -531,39 +536,15 @@ function Edit({
     itemsGap,
     hasIcon,
     iconSize,
-    separatorColor,
     separatorType,
-    separatorThickness,
-    fontWeight,
-    fontFamily,
-    fontSize,
-    fontHeight,
-    letterSpacing,
-    wordSpacing,
-    isItalic,
-    isUnderline,
-    isStrikethrough,
-    textTransform,
-    iconColor,
-    border,
-    borderType,
-    padding,
-    paddingTop,
-    paddingRight,
-    paddingBottom,
-    paddingLeft,
-    backgroundColor,
-    backgroundGradient,
-    borderColor,
-    borderRadius
+    iconColor
   } = attributes;
+  const parentStyle = (0,_utils_style_js__WEBPACK_IMPORTED_MODULE_19__.getBlockStyles)(attributes);
 
   //Opening modal for icon choose
 
-  console.log('border radius', borderRadius);
-
   // Initial state: null means no modal is open
-  const [openModalId, setOpenModalId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_21__.useState)(null);
+  const [openModalId, setOpenModalId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_22__.useState)(null);
   const toggleModal = id => {
     setOpenModalId(prev => prev === id ? null : id);
   };
@@ -571,40 +552,10 @@ function Edit({
   // Helper to check if a specific modal is open
   const isModalOpen = id => openModalId === id;
   const closeAllModals = () => setOpenModalId(null);
-
-  //padding section
-
-  const basePadding = padding ?? 0;
-  const resolvedPaddingTop = paddingTop ?? basePadding;
-  const resolvedPaddingRight = paddingRight ?? basePadding;
-  const resolvedPaddingBottom = paddingBottom ?? basePadding;
-  const resolvedPaddingLeft = paddingLeft ?? basePadding;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: `parent-contaner is-list-orientation-${listOrientation} is-items-space-between-${itemsGap} is-separator-type-${separatorType}`,
     style: {
-      '--separator-thickness': `${separatorThickness}px`,
-      '--separator-color': separatorColor,
-      '--separator-style': separatorType,
-      '--icon-size': `${iconSize}px`,
-      '--font-family': fontFamily,
-      '--font-size': `${fontSize}px`,
-      '--font-weight': fontWeight,
-      '--font-height': fontHeight,
-      '--letter-spacing': `${letterSpacing}px`,
-      '--word-spacing': `${wordSpacing}px`,
-      '--font-style-italic': isItalic ? 'italic' : 'normal',
-      '--text-decoration': `${isUnderline ? 'underline' : ''} ${isStrikethrough ? 'line-through' : ''}`.trim() || 'none',
-      '--text-transform': textTransform,
-      '--icon-color': iconColor,
-      // padding section
-
-      '--padding-top': `${resolvedPaddingTop}px`,
-      '--padding-right': `${resolvedPaddingRight}px`,
-      '--padding-bottom': `${resolvedPaddingBottom}px`,
-      '--padding-left': `${resolvedPaddingLeft}px`,
-      '--background-color': `${backgroundColor ?? backgroundGradient}`,
-      '--border': `${border}px ${borderType} ${borderColor}`,
-      '--border-radius': `${borderRadius}px`
+      ...parentStyle
     }
   });
 
@@ -629,17 +580,17 @@ function Edit({
 
   const renderTabContent = tab => {
     if (tab.name === 'settings') {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_ListPreset_js__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_ListPreset_js__WEBPACK_IMPORTED_MODULE_15__["default"], {
           preset: preset,
           setAttributes: setAttributes,
           presetOne: _assests_List_presets_one_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
           presetTwo: _assests_List_presets_two_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
           presetThree: _assests_List_presets_three_svg__WEBPACK_IMPORTED_MODULE_11__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_ListOrientation_js__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_ListOrientation_js__WEBPACK_IMPORTED_MODULE_16__["default"], {
           listOrientation: listOrientation,
           setAttributes: setAttributes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
           __next40pxDefaultSize: true,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Space Between', 'icon-list'),
           value: itemsGap,
@@ -649,21 +600,21 @@ function Edit({
           min: 0,
           max: 50,
           step: 5
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show Icons', 'icon-list'),
           className: "my-custom-troggle",
           checked: hasIcon,
           onChange: value => setAttributes({
             hasIcon: value
           })
-        }), hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_uploadIcon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        }), hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_uploadIcon__WEBPACK_IMPORTED_MODULE_7__["default"], {
             attributes: attributes,
             setAttributes: setAttributes,
             isModalOpen: isModalOpen,
             toggleModal: toggleModal,
             closeAllModals: closeAllModals
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
             __next40pxDefaultSize: true,
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Size', 'icon-list'),
             value: iconSize,
@@ -674,14 +625,14 @@ function Edit({
             max: 100,
             step: 10
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_SeparatorModel_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_SeparatorModel_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
           isModalOpen: isModalOpen,
           toggleModal: toggleModal,
           closeAllModals: closeAllModals,
           editIcon: _assests_edit_icon_svg__WEBPACK_IMPORTED_MODULE_12__["default"],
           setAttributes: setAttributes,
           attributes: attributes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_CustomItemWidth_js__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_CustomItemWidth_js__WEBPACK_IMPORTED_MODULE_14__["default"], {
           isModalOpen: isModalOpen,
           toggleModal: toggleModal,
           closeAllModals: closeAllModals,
@@ -692,30 +643,27 @@ function Edit({
       });
     }
     if (tab.name === 'styles') {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_style_bar_Typography_js__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_style_bar_Typography_js__WEBPACK_IMPORTED_MODULE_17__["default"], {
           isModalOpen: isModalOpen,
           toggleModal: toggleModal,
           closeAllModals: closeAllModals,
           attributes: attributes,
           setAttributes: setAttributes,
           clientId: clientId
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_18__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon Colour', 'icon-list'),
           hasColor: true,
           color: iconColor,
           onColorChange: color => setAttributes({
             iconColor: color
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_style_bar_RangeControls_js__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_style_bar_RangeControls_js__WEBPACK_IMPORTED_MODULE_20__["default"], {
           setAttributes: setAttributes,
           attributes: attributes,
           title: 'Padding',
-          isModalOpen: isModalOpen,
-          toggleModal: toggleModal,
-          closeAllModals: closeAllModals,
-          type: "padding"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_style_bar_ItemStyle_js__WEBPACK_IMPORTED_MODULE_20__["default"], {
+          type: "allPadding"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_style_bar_ItemStyle_js__WEBPACK_IMPORTED_MODULE_21__["default"], {
           attributes: attributes,
           setAttributes: setAttributes,
           resetIcon: _assests_reset_svg__WEBPACK_IMPORTED_MODULE_13__["default"],
@@ -729,7 +677,7 @@ function Edit({
     return null;
   };
   if (!hasInnerBlocks) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_side_control_bar_Placeholder_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_side_control_bar_Placeholder_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
       presetOne: _assests_List_presets_one_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
       presetTwo: _assests_List_presets_two_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
       presetThree: _assests_List_presets_three_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
@@ -739,28 +687,36 @@ function Edit({
       setAttributes: setAttributes
     });
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon List', 'icon-list'),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TabPanel, {
           className: "my-custom-tabs",
           activeClass: "is-active",
           tabs: [{
             name: 'settings',
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'feature-card-block'),
+            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_24__["default"], {
+                size: 16
+              }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'icon-list')]
+            }),
             className: 'tab-settings'
           }, {
             name: 'styles',
-            title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'feature-card-block'),
+            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_23__["default"], {
+                size: 16
+              }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'icon-list')]
+            }),
             className: 'tab-styles'
           }],
           children: renderTabContent
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)("div", {
       ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_22__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
         allowedBlocks: ['create-block/icon-list-item']
       })
     })]
@@ -820,52 +776,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_style_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/style.js */ "./src/utils/style.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function save({
   attributes
 }) {
-  const {
-    itemsGap,
-    listOrientation,
-    separatorType,
-    separatorThickness,
-    separatorColor,
-    iconSize,
-    fontFamily,
-    fontSize,
-    fontWeight,
-    fontHeight,
-    letterSpacing,
-    wordSpacing,
-    isItalic,
-    isUnderline,
-    isStrikethrough,
-    textTransform
-  } = attributes;
+  const parentStyle = (0,_utils_style_js__WEBPACK_IMPORTED_MODULE_1__.getBlockStyles)(attributes);
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
-    className: `is-items-space-between-${itemsGap} is-list-orientation-${listOrientation} is-separator-type-${separatorType}`,
+    className: `is-items-space-between-${attributes?.itemsGap} is-list-orientation-${attributes?.listOrientation} is-separator-type-${attributes?.separatorType}`,
     style: {
-      '--font-family': fontFamily,
-      '--separator-thickness': `${separatorThickness}px`,
-      '--separator-color': separatorColor,
-      '--separator-style': separatorType,
-      '--icon-size': `${iconSize}px`,
-      '--font-size': `${fontSize}px`,
-      '--font-weight': fontWeight,
-      '--font-height': fontHeight,
-      '--letter-spacing': `${letterSpacing}px`,
-      '--word-spacing': `${wordSpacing}px`,
-      '--font-style-italic': isItalic ? 'italic' : 'normal',
-      '--text-decoration': `${isUnderline ? 'underline' : ''} ${isStrikethrough ? 'line-through' : ''}`.trim() || 'none',
-      '--text-transform': textTransform
+      ...parentStyle
     }
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ...blockProps,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
   });
 }
 
@@ -881,44 +810,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _side_bar_scss_customHelperComponent_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./side-bar-scss/customHelperComponent.scss */ "./src/icon-list/side-control-bar/side-bar-scss/customHelperComponent.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
- // Use ColorPalette for inline items
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _side_bar_scss_customHelperComponent_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./side-bar-scss/customHelperComponent.scss */ "./src/icon-list/side-control-bar/side-bar-scss/customHelperComponent.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 const CustomHelperComponent = props => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "custom-sidebar-row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "row-label",
       children: props?.label
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row-control",
-      children: [props?.hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      children: [props?.hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "pencil-edit-button",
-        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: props?.icon,
-          alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Edit', 'icon-list'),
+          alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit', 'icon-list'),
           style: {
             width: '18px',
             height: '18px'
           }
         }),
         onClick: () => props?.toggleModal(props?.label)
-      }), props?.hasReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      }), props?.hasReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "pencil-edit-button",
-        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: props?.icon,
-          alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Edit', 'icon-list'),
+          alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit', 'icon-list'),
           style: {
             width: '18px',
             height: '18px'
@@ -927,11 +853,11 @@ const CustomHelperComponent = props => {
         onClick: () => props?.setAttributes({
           [props?.resetAttributes]: undefined
         })
-      }), props?.hasColor && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Dropdown, {
+      }), props?.hasColor && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dropdown, {
         renderToggle: ({
           isOpen,
           onToggle
-        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
           className: "inline-color-indicator",
           onClick: onToggle,
           "aria-expanded": isOpen,
@@ -939,15 +865,15 @@ const CustomHelperComponent = props => {
             backgroundColor: props?.color || '#000'
           }
         }),
-        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "inline-color-popover",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPicker, {
             color: props?.color,
             onChange: props?.onColorChange,
             enableAlpha: true
           })
         })
-      }), props?.hasText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      }), props?.hasText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "custom-helper-button",
         onClick: () => props?.toggleModal(props?.label),
         variant: "secondary",
@@ -1679,6 +1605,165 @@ const ItemStyle = ({
               closeAllModals: closeAllModals,
               type: "borderRadius"
             })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--box-shadow",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Box Shadow', 'icon-list'),
+              className: "my-custom-troggle",
+              checked: attributes?.hasBoxShadow,
+              onChange: value => setAttributes({
+                hasBoxShadow: value
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--item-padding",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_RangeControls__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              setAttributes: setAttributes,
+              attributes: attributes,
+              title: 'Padding',
+              type: "padding"
+            })
+          })]
+        }), attributes?.itemStyleType === 'hover' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          className: "background-control-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--background-type",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BaseControl, {
+              id: 'lksa',
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'icon-list'),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControl, {
+                className: "background-type-toggel-group",
+                value: attributes?.hoverBackgroundType,
+                onChange: value => setAttributes({
+                  hoverBackgroundType: value
+                }),
+                isBlock: true,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `${attributes?.hoverBackgroundType === 'solid' ? 'is-active' : ''}`,
+                  value: "solid",
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Solid', 'text-domain'),
+                  icon: 'square'
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `${attributes?.hoverBackgroundType === 'gradient' ? 'is-active' : ''}`,
+                  value: "gradient",
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Gradient', 'text-domain'),
+                  icon: 'marker'
+                })]
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--background-value",
+            children: attributes?.hoverBackgroundType === 'solid' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+              hasReset: true,
+              resetAttributes: "hoverBackgroundColor",
+              hasColor: true,
+              icon: resetIcon,
+              toggleModal: toggleModal,
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'icon-list'),
+              color: attributes?.hoverBackgroundColor,
+              setAttributes: setAttributes,
+              onColorChange: color => setAttributes({
+                hoverBackgroundColor: color,
+                hoverBackgroundGradient: undefined
+              })
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.GradientPicker, {
+              value: attributes?.hoverBackgroundGradient,
+              onChange: gradient => setAttributes({
+                hoverBackgroundGradient: gradient,
+                hoverBackgroundColor: undefined
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "control-section control-section--separator toggle-group-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "row-label",
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border', 'icon-list')
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "row-control",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControl, {
+                className: "custom-border-toggle-group",
+                __next40pxDefaultSize: true,
+                isBlock: false,
+                value: attributes?.hoverBorderType,
+                onChange: value => setAttributes({
+                  hoverBorderType: value
+                }),
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `custom-border-option ${attributes?.hoverBorderType === 'none' ? 'is-active' : ''}`,
+                  value: "none",
+                  label: IconNone,
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('None', 'icon-list')
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `custom-border-option ${attributes?.hoverBorderType === 'solid' ? 'is-active' : ''}`,
+                  value: "solid",
+                  label: IconSolid,
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Solid', 'icon-list')
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `custom-border-option ${attributes?.hoverBorderType === 'dashed' ? 'is-active' : ''}`,
+                  value: "dashed",
+                  label: IconDashed,
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dashed', 'icon-list')
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
+                  className: `custom-border-option ${attributes?.hoverBorderType === 'dotted' ? 'is-active' : ''}`,
+                  value: "dotted",
+                  label: IconDotted,
+                  "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dotted', 'icon-list')
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--border-range",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_RangeControls__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              setAttributes: setAttributes,
+              attributes: attributes,
+              isBorder: true,
+              title: 'border Width',
+              type: "hoverBorder"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--border-color",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+              hasReset: true,
+              resetAttributes: "hoverBorderColor",
+              hasColor: true,
+              icon: resetIcon,
+              toggleModal: toggleModal,
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Color', 'icon-list'),
+              color: attributes?.hoverBorderColor,
+              setAttributes: setAttributes,
+              onColorChange: color => setAttributes({
+                hoverBorderColor: color
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--border-radius",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_RangeControls__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              setAttributes: setAttributes,
+              attributes: attributes,
+              title: 'border Radius',
+              isModalOpen: isModalOpen,
+              toggleModal: toggleModal,
+              closeAllModals: closeAllModals,
+              type: "hoverBorderRadius"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--box-shadow",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Box Shadow', 'icon-list'),
+              className: "my-custom-troggle",
+              checked: attributes?.hoverHasBoxShadow,
+              onChange: value => setAttributes({
+                hoverHasBoxShadow: value
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            className: "control-section control-section--item-padding",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_RangeControls__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              setAttributes: setAttributes,
+              attributes: attributes,
+              title: 'Padding',
+              type: "hoverPadding"
+            })
           })]
         })]
       })
@@ -1731,16 +1816,20 @@ const RangeControls = props => {
   const handleExpand = () => {
     setIsExpanded(prev => !prev);
   };
-  const baseKey = type;
-  const topKey = `${type}Top`;
+  const baseKey = type; // "borderRadius"
+  const topKey = `${type}Top`; // "borderRadiusTop"
   const rightKey = `${type}Right`;
   const bottomKey = `${type}Bottom`;
   const leftKey = `${type}Left`;
-  const baseValue = attributes[baseKey];
-  const topValue = attributes[topKey];
-  const rightValue = attributes[rightKey];
-  const bottomValue = attributes[bottomKey];
-  const leftValue = attributes[leftKey];
+
+  // 1. Get the "Master" value
+  const baseValue = attributes[baseKey] ?? 0;
+
+  // 2. Get the side values, falling back to the Master value if they are undefined
+  const topValue = attributes[topKey] ?? baseValue;
+  const rightValue = attributes[rightKey] ?? baseValue;
+  const bottomValue = attributes[bottomKey] ?? baseValue;
+  const leftValue = attributes[leftKey] ?? baseValue;
   const marks = [{
     value: 5,
     label: ''
@@ -2413,6 +2502,192 @@ const fontOptions = [{
 
 /***/ },
 
+/***/ "./src/utils/style.js"
+/*!****************************!*\
+  !*** ./src/utils/style.js ***!
+  \****************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBlockStyles: () => (/* binding */ getBlockStyles),
+/* harmony export */   getChildBlockStyles: () => (/* binding */ getChildBlockStyles),
+/* harmony export */   getResolvedSides: () => (/* binding */ getResolvedSides)
+/* harmony export */ });
+const getResolvedSides = (base, top, right, bottom, left) => {
+  const isValid = v => v !== undefined && v !== null && v !== '';
+  const resolve = val => {
+    if (isValid(val)) {
+      return Number(val);
+    }
+    if (isValid(base)) {
+      return Number(base);
+    }
+    return 0;
+  };
+  return {
+    top: resolve(top),
+    right: resolve(right),
+    bottom: resolve(bottom),
+    left: resolve(left)
+  };
+};
+
+// ===============================
+// PARENT BLOCK STYLES
+// ===============================
+const getBlockStyles = attributes => {
+  const SHADOW_VAL = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+
+  // -------------------------------
+  // Resolve Parent Box Sides
+  // -------------------------------
+  const allPadding = getResolvedSides(attributes?.allPadding, attributes?.allPaddingTop, attributes?.allPaddingRight, attributes?.allPaddingBottom, attributes?.allPaddingLeft);
+  const itemPadding = getResolvedSides(attributes?.padding, attributes?.paddingTop, attributes?.paddingRight, attributes?.paddingBottom, attributes?.paddingLeft);
+  const itemBorder = getResolvedSides(attributes?.border, attributes?.borderTop, attributes?.borderRight, attributes?.borderBottom, attributes?.borderLeft);
+  const itemRadius = getResolvedSides(attributes?.borderRadius, attributes?.borderRadiusTop, attributes?.borderRadiusRight, attributes?.borderRadiusBottom, attributes?.borderRadiusLeft);
+  const hoverItemPadding = getResolvedSides(attributes?.hoverPadding, attributes?.hoverPaddingTop, attributes?.hoverPaddingRight, attributes?.hoverPaddingBottom, attributes?.hoverPaddingLeft);
+  const hoverItemBorder = getResolvedSides(attributes?.hoverBorder, attributes?.hoverBorderTop, attributes?.hoverBorderRight, attributes?.hoverBorderBottom, attributes?.hoverBorderLeft);
+  const hoverItemRadius = getResolvedSides(attributes?.hoverBorderRadius, attributes?.hoverBorderRadiusTop, attributes?.hoverBorderRadiusRight, attributes?.hoverBorderRadiusBottom, attributes?.hoverBorderRadiusLeft);
+  return {
+    // ===============================
+    // GENERAL
+    // ===============================
+    '--separator-thickness': `${attributes?.separatorThickness}px`,
+    '--separator-color': attributes?.separatorColor,
+    '--separator-style': attributes?.separatorType,
+    '--icon-size': `${attributes?.iconSize}px`,
+    '--icon-color': attributes?.iconColor,
+    // ===============================
+    // TYPOGRAPHY DEFAULTS
+    // ===============================
+    '--font-family': attributes?.fontFamily,
+    '--font-size': `${attributes?.fontSize}px`,
+    '--font-weight': attributes?.fontWeight,
+    '--font-height': attributes?.fontHeight,
+    '--letter-spacing': `${attributes?.letterSpacing}px`,
+    '--word-spacing': `${attributes?.wordSpacing}px`,
+    '--font-style-italic': attributes?.isItalic ? 'italic' : 'normal',
+    '--text-decoration': `${attributes?.isUnderline ? 'underline' : ''} ${attributes?.isStrikethrough ? 'line-through' : ''}`.trim() || 'none',
+    '--text-transform': attributes?.textTransform,
+    // ===============================
+    // PARENT CONTAINER STYLES
+    // ===============================
+    '--all-padding-top': `${allPadding.top}px`,
+    '--all-padding-right': `${allPadding.right}px`,
+    '--all-padding-bottom': `${allPadding.bottom}px`,
+    '--all-padding-left': `${allPadding.left}px`,
+    // ===============================
+    // CHILD DEFAULTS (IMPORTANT)
+    // ===============================
+    // 🔥 These are what children fallback to
+
+    '--item-background-color': attributes?.backgroundColor ?? attributes?.backgroundGradient ?? 'transparent',
+    '--item-border-color': attributes?.borderColor || 'transparent',
+    '--item-border-style': attributes?.borderType || 'solid',
+    '--item-box-shadow': attributes?.hasBoxShadow ? SHADOW_VAL : 'none',
+    // Padding Defaults
+    '--item-padding-top': `${itemPadding.top}px`,
+    '--item-padding-right': `${itemPadding.right}px`,
+    '--item-padding-bottom': `${itemPadding.bottom}px`,
+    '--item-padding-left': `${itemPadding.left}px`,
+    // Border Width Defaults
+    '--item-border-top-width': `${itemBorder.top}px`,
+    '--item-border-right-width': `${itemBorder.right}px`,
+    '--item-border-bottom-width': `${itemBorder.bottom}px`,
+    '--item-border-left-width': `${itemBorder.left}px`,
+    // Border Radius Defaults
+    '--item-border-radius-top': `${itemRadius.top}px`,
+    '--item-border-radius-right': `${itemRadius.right}px`,
+    '--item-border-radius-bottom': `${itemRadius.bottom}px`,
+    '--item-border-radius-left': `${itemRadius.left}px`,
+    // ===============================
+    // HOVER DEFAULTS FOR CHILD
+    // ===============================
+    '--item-bg-h': attributes?.hoverBackgroundColor ?? attributes?.backgroundColor ?? 'transparent',
+    '--item-border-color-h': attributes?.hoverBorderColor ?? attributes?.borderColor ?? 'transparent',
+    '--item-border-style-h': attributes?.hoverBorderType ?? attributes?.borderType ?? 'solid',
+    '--item-box-shadow-h': attributes?.hoverHasBoxShadow ? SHADOW_VAL : 'none',
+    '--item-padding-top-h': `${hoverItemPadding.top}px`,
+    '--item-padding-right-h': `${hoverItemPadding.right}px`,
+    '--item-padding-bottom-h': `${hoverItemPadding.bottom}px`,
+    '--item-padding-left-h': `${hoverItemPadding.left}px`,
+    '--item-border-top-h': `${hoverItemBorder.top}px`,
+    '--item-border-right-h': `${hoverItemBorder.right}px`,
+    '--item-border-bottom-h': `${hoverItemBorder.bottom}px`,
+    '--item-border-left-h': `${hoverItemBorder.left}px`,
+    '--item-radius-top-h': `${hoverItemRadius.top}px`,
+    '--item-radius-right-h': `${hoverItemRadius.right}px`,
+    '--item-radius-bottom-h': `${hoverItemRadius.bottom}px`,
+    '--item-radius-left-h': `${hoverItemRadius.left}px`
+  };
+};
+const getChildBlockStyles = attributes => {
+  const SHADOW_VAL = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+
+  // -------------------------
+  // Resolve ONLY child values
+  // -------------------------
+  const padding = getResolvedSides(attributes?.padding, attributes?.paddingTop, attributes?.paddingRight, attributes?.paddingBottom, attributes?.paddingLeft);
+  const margin = getResolvedSides(attributes?.margin, attributes?.marginTop, attributes?.marginRight, attributes?.marginBottom, attributes?.marginLeft);
+  const border = getResolvedSides(attributes?.border, attributes?.borderTop, attributes?.borderRight, attributes?.borderBottom, attributes?.borderLeft);
+  const borderRadius = getResolvedSides(attributes?.borderRadius, attributes?.borderRadiusTop, attributes?.borderRadiusRight, attributes?.borderRadiusBottom, attributes?.borderRadiusLeft);
+  const hoverPadding = getResolvedSides(attributes?.hoverPadding, attributes?.hoverPaddingTop, attributes?.hoverPaddingRight, attributes?.hoverPaddingBottom, attributes?.hoverPaddingLeft);
+  const hoverMargin = getResolvedSides(attributes?.hoverMargin, attributes?.hoverMarginTop, attributes?.hoverMarginRight, attributes?.hoverMarginBottom, attributes?.hoverMarginLeft);
+  const hoverBorder = getResolvedSides(attributes?.hoverBorder, attributes?.hoverBorderTop, attributes?.hoverBorderRight, attributes?.hoverBorderBottom, attributes?.hoverBorderLeft);
+  const hoverBorderRadius = getResolvedSides(attributes?.hoverBorderRadius, attributes?.hoverBorderRadiusTop, attributes?.hoverBorderRadiusRight, attributes?.hoverBorderRadiusBottom, attributes?.hoverBorderRadiusLeft);
+
+  // -------------------------
+  // Return ONLY child overrides
+  // -------------------------
+  return {
+    // Normal State
+    '--background-color': attributes?.backgroundColor ?? attributes?.backgroundGradient,
+    '--border-color': attributes?.borderColor,
+    '--border-style': attributes?.borderType,
+    '--box-shadow': attributes?.hasBoxShadow ? SHADOW_VAL : undefined,
+    '--padding-top': attributes?.padding ? `${padding.top}px` : undefined,
+    '--padding-right': attributes?.padding ? `${padding.right}px` : undefined,
+    '--padding-bottom': attributes?.padding ? `${padding.bottom}px` : undefined,
+    '--padding-left': attributes?.padding ? `${padding.left}px` : undefined,
+    '--margin-top': attributes?.margin ? `${margin.top}px` : undefined,
+    '--margin-right': attributes?.margin ? `${margin.right}px` : undefined,
+    '--margin-bottom': attributes?.margin ? `${margin.bottom}px` : undefined,
+    '--margin-left': attributes?.margin ? `${margin.left}px` : undefined,
+    '--border-top-width': attributes?.border ? `${border.top}px` : undefined,
+    '--border-right-width': attributes?.border ? `${border.right}px` : undefined,
+    '--border-bottom-width': attributes?.border ? `${border.bottom}px` : undefined,
+    '--border-left-width': attributes?.border ? `${border.left}px` : undefined,
+    '--border-radius-top': attributes?.borderRadius ? `${borderRadius.top}px` : undefined,
+    '--border-radius-right': attributes?.borderRadius ? `${borderRadius.right}px` : undefined,
+    '--border-radius-bottom': attributes?.borderRadius ? `${borderRadius.bottom}px` : undefined,
+    '--border-radius-left': attributes?.borderRadius ? `${borderRadius.left}px` : undefined,
+    // Hover State
+    '--bg-h': attributes?.hoverBackgroundColor,
+    '--border-color-h': attributes?.hoverBorderColor,
+    '--border-style-h': attributes?.hoverBorderType,
+    '--box-shadow-h': attributes?.hoverHasBoxShadow ? SHADOW_VAL : undefined,
+    '--padding-top-h': attributes?.hoverPadding ? `${hoverPadding.top}px` : undefined,
+    '--padding-right-h': attributes?.hoverPadding ? `${hoverPadding.right}px` : undefined,
+    '--padding-bottom-h': attributes?.hoverPadding ? `${hoverPadding.bottom}px` : undefined,
+    '--padding-left-h': attributes?.hoverPadding ? `${hoverPadding.left}px` : undefined,
+    '--margin-top-h': attributes?.hoverMargin ? `${hoverMargin.top}px` : undefined,
+    '--margin-right-h': attributes?.hoverMargin ? `${hoverMargin.right}px` : undefined,
+    '--margin-bottom-h': attributes?.hoverMargin ? `${hoverMargin.bottom}px` : undefined,
+    '--margin-left-h': attributes?.hoverMargin ? `${hoverMargin.left}px` : undefined,
+    '--border-top-h': attributes?.hoverBorder ? `${hoverBorder.top}px` : undefined,
+    '--border-right-h': attributes?.hoverBorder ? `${hoverBorder.right}px` : undefined,
+    '--border-bottom-h': attributes?.hoverBorder ? `${hoverBorder.bottom}px` : undefined,
+    '--border-left-h': attributes?.hoverBorder ? `${hoverBorder.left}px` : undefined,
+    '--radius-top-h': attributes?.hoverBorderRadius ? `${hoverBorderRadius.top}px` : undefined,
+    '--radius-right-h': attributes?.hoverBorderRadius ? `${hoverBorderRadius.right}px` : undefined,
+    '--radius-bottom-h': attributes?.hoverBorderRadius ? `${hoverBorderRadius.bottom}px` : undefined,
+    '--radius-left-h': attributes?.hoverBorderRadius ? `${hoverBorderRadius.left}px` : undefined
+  };
+};
+
+/***/ },
+
 /***/ "./node_modules/lucide-react/dist/esm/Icon.js"
 /*!****************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/Icon.js ***!
@@ -3016,6 +3291,48 @@ const Minus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("
 
 
 //# sourceMappingURL=minus.js.map
+
+
+/***/ },
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/palette.js"
+/*!*************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/palette.js ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Palette)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.574.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z",
+      key: "e79jfc"
+    }
+  ],
+  ["circle", { cx: "13.5", cy: "6.5", r: ".5", fill: "currentColor", key: "1okk4w" }],
+  ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor", key: "f64h9f" }],
+  ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
+  ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
+];
+const Palette = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("palette", __iconNode);
+
+
+//# sourceMappingURL=palette.js.map
 
 
 /***/ },
@@ -3929,7 +4246,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string","default":"#000000"},"separatorThickness":{"type":"number","default":1},"itemWidthType":{"type":"string","default":"auto"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string","default":"#fff"},"backgroundGradient":{"type":"string"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number","default":16},"fontHeight":{"type":"number","default":1.2},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string","default":"none"},"iconColor":{"type":"string","default":"#000000"},"padding":{"type":"number","default":10},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"},"borderType":{"type":"string","default":"none"},"border":{"type":"number","default":1},"borderColor":{"type":"string","default":"#2F2F2F"},"borderRadius":{"type":"number","default":0}},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string","default":"#000000"},"separatorThickness":{"type":"number","default":1},"itemWidthType":{"type":"string","default":"auto"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number","default":16},"fontHeight":{"type":"number","default":1.2},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string","default":"none"},"iconColor":{"type":"string","default":"#000000"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string","default":"#fff"},"backgroundGradient":{"type":"string"},"allPadding":{"type":"number","default":0},"allPaddingTop":{"type":"number"},"allPaddingRight":{"type":"number"},"allPaddingLeft":{"type":"number"},"allPaddingBottom":{"type":"number"},"padding":{"type":"number","default":0},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingBottom":{"type":"number"},"paddingLeft":{"type":"number"},"border":{"type":"number","default":0},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"borderType":{"type":"string","default":"none"},"borderColor":{"type":"string","default":"#2F2F2F"},"borderRadius":{"type":"number","default":0},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hadBoxShadow":{"type":"boolean","default":"none"},"hoverBackgroundType":{"type":"string","default":"solid"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string","default":"none"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number","default":0},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number","default":0},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean","default":false},"hoverPadding":{"type":"number","default":0},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"}},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

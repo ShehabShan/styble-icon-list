@@ -51,21 +51,6 @@
       "type": "string",
       "default": "auto"
     },
-    "itemStyleType": {
-      "type": "string",
-      "default": "normal"
-    },
-    "backgroundType": {
-      "type": "string",
-      "default": "solid"
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#fff"
-    },
-    "backgroundGradient": {
-      "type": "string"
-    },
     "itemsWidth": {
       "type": "number",
       "default": 200
@@ -114,9 +99,40 @@
       "type": "string",
       "default": "#000000"
     },
+    "itemStyleType": {
+      "type": "string",
+      "default": "normal"
+    },
+    "backgroundType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#fff"
+    },
+    "backgroundGradient": {
+      "type": "string"
+    },
+    "allPadding": {
+      "type": "number",
+      "default": 0
+    },
+    "allPaddingTop": {
+      "type": "number"
+    },
+    "allPaddingRight": {
+      "type": "number"
+    },
+    "allPaddingLeft": {
+      "type": "number"
+    },
+    "allPaddingBottom": {
+      "type": "number"
+    },
     "padding": {
       "type": "number",
-      "default": 10
+      "default": 0
     },
     "paddingTop": {
       "type": "number"
@@ -124,19 +140,31 @@
     "paddingRight": {
       "type": "number"
     },
+    "paddingBottom": {
+      "type": "number"
+    },
     "paddingLeft": {
       "type": "number"
     },
-    "paddingBottom": {
+    "border": {
+      "type": "number",
+      "default": 0
+    },
+    "borderTop": {
+      "type": "number"
+    },
+    "borderRight": {
+      "type": "number"
+    },
+    "borderBottom": {
+      "type": "number"
+    },
+    "borderLeft": {
       "type": "number"
     },
     "borderType": {
       "type": "string",
       "default": "none"
-    },
-    "border": {
-      "type": "number",
-      "default": 1
     },
     "borderColor": {
       "type": "string",
@@ -145,6 +173,91 @@
     "borderRadius": {
       "type": "number",
       "default": 0
+    },
+    "borderRadiusTop": {
+      "type": "number"
+    },
+    "borderRadiusRight": {
+      "type": "number"
+    },
+    "borderRadiusBottom": {
+      "type": "number"
+    },
+    "borderRadiusLeft": {
+      "type": "number"
+    },
+    "hadBoxShadow": {
+      "type": "boolean",
+      "default": "none"
+    },
+    "hoverBackgroundType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "hoverBackgroundColor": {
+      "type": "string"
+    },
+    "hoverBackgroundGradient": {
+      "type": "string"
+    },
+    "hoverBorderType": {
+      "type": "string",
+      "default": "none"
+    },
+    "hoverBorderColor": {
+      "type": "string"
+    },
+    "hoverBorder": {
+      "type": "number",
+      "default": 0
+    },
+    "hoverBorderTop": {
+      "type": "number"
+    },
+    "hoverBorderRight": {
+      "type": "number"
+    },
+    "hoverBorderBottom": {
+      "type": "number"
+    },
+    "hoverBorderLeft": {
+      "type": "number"
+    },
+    "hoverBorderRadius": {
+      "type": "number",
+      "default": 0
+    },
+    "hoverBorderRadiusTop": {
+      "type": "number"
+    },
+    "hoverBorderRadiusRight": {
+      "type": "number"
+    },
+    "hoverBorderRadiusBottom": {
+      "type": "number"
+    },
+    "hoverBorderRadiusLeft": {
+      "type": "number"
+    },
+    "hoverHasBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "hoverPadding": {
+      "type": "number",
+      "default": 0
+    },
+    "hoverPaddingTop": {
+      "type": "number"
+    },
+    "hoverPaddingRight": {
+      "type": "number"
+    },
+    "hoverPaddingBottom": {
+      "type": "number"
+    },
+    "hoverPaddingLeft": {
+      "type": "number"
     }
   },
   "textdomain": "icon-list",

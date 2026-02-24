@@ -4,6 +4,14 @@
 	box-sizing: border-box;
 	width: 100%;
 
+	border: none !important;
+	border-width: 0 !important;
+
+	padding-top: var(--padding-top);
+	padding-right: var(--padding-right);
+	padding-bottom: var(--padding-bottom);
+	padding-left: var(--padding-left);
+
 	/* gap util (keep your for-loop if you have many values) */
 	@for $i from 10 through 50 {
 		&.is-items-space-between-#{$i} {
@@ -21,8 +29,6 @@
 		position: relative; /* required for pseudo-element separators */
 		display: flex;
 		align-items: center;
-		gap: 16px;
-		padding: 18px 16px;
 		margin: 0;
 		box-sizing: border-box;
 	}
