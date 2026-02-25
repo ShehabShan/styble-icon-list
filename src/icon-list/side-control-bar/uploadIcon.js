@@ -2,7 +2,7 @@ import { Button, Popover } from '@wordpress/components';
 
 import './side-bar-scss/uploadIcon.scss';
 
-import { iconLibrary } from '../../utils/dataCenter.js';
+import * as LucideIcons from 'lucide-react';
 
 const UploadIcon = ( {
 	isModalOpen,
@@ -11,20 +11,31 @@ const UploadIcon = ( {
 	attributes,
 	setAttributes,
 } ) => {
-	const { selectedIcon } = attributes;
-	const SelectedIconComponent = selectedIcon
-		? iconLibrary.find( ( item ) => item.name === selectedIcon )?.icon
-		: null;
+	const { selectedIcon, iconType } = attributes;
+
+	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
+
+	const limitedIcons = Object.entries( LucideIcons )
+		.filter( ( [ name ] ) => ! name.endsWith( 'Icon' ) )
+		.slice( 0, 100 );
+
+	const extractedIcons = limitedIcons.map( ( [ iconName, data ] ) => ( {
+		keyName: iconName,
+		displayName: data.displayName,
+	} ) );
+
 	return (
 		<div
 			className="icon-sidebar-container"
 			style={ { position: 'relative' } }
 		>
-			<div className="icon-sidebar-container-image-box">
-				{ SelectedIconComponent && (
-					<SelectedIconComponent size={ 30 } />
-				) }
-			</div>
+			{ iconType === 'library' && (
+				<div className="icon-sidebar-container-image-box">
+					{ SelectedIconComponent && (
+						<SelectedIconComponent size={ 40 } />
+					) }
+				</div>
+			) }
 
 			<div className="icon-sidebar-container-button-box">
 				<Button
@@ -51,23 +62,27 @@ const UploadIcon = ( {
 					offset={ 10 }
 				>
 					<div className="icon-library-grid">
-						{ iconLibrary.map( ( item ) => {
-							const IconComponent = item.icon;
-							const isActive = attributes.icon === item.name;
+						{ extractedIcons.map( ( item ) => {
+							const IconComponent = LucideIcons[ item.keyName ];
+							const isActive =
+								attributes.selectedIcon === item.keyName;
 
 							return (
 								<Button
-									key={ item.name }
+									key={ item.keyName }
 									className={ `icon-library-item ${
 										isActive ? 'is-active' : ''
 									}` }
 									onClick={ () => {
 										setAttributes( {
-											selectedIcon: item.name,
+											selectedIcon: item.keyName,
+											iconType: 'library',
 										} );
 									} }
 								>
-									<IconComponent size={ 20 } />
+									{ IconComponent && (
+										<IconComponent size={ 20 } />
+									) }
 								</Button>
 							);
 						} ) }

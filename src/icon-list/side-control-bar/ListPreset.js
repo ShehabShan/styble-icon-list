@@ -12,12 +12,58 @@ const ListPreset = ( {
 	presetTwo,
 	presetThree,
 } ) => {
+	// Define the actual values each preset represents
+	const presetData = {
+		'preset-1': {
+			backgroundColor: '#FFFFFF',
+			borderColor: '#FFFFFF',
+			borderType: 'none',
+			hadBoxShadow: false,
+			// Define values for preset 1
+		},
+		'preset-2': {
+			backgroundColor: '#F5F5FF',
+			borderColor: '#4649FF',
+			borderType: 'solid',
+			hadBoxShadow: false, // Assuming boolean based on your JSON
+
+			// Border Widths (Individual attributes)
+			borderTop: 1,
+			borderRight: 1,
+			borderBottom: 1,
+			borderLeft: 1,
+
+			// Border Radius (Individual attributes)
+			borderRadiusTop: 30,
+			borderRadiusRight: 30,
+			borderRadiusBottom: 30,
+			borderRadiusLeft: 30,
+		},
+		'preset-3': {
+			// Define values for preset 3
+		},
+	};
+
+	const handlePresetChange = ( value ) => {
+		const selectedStyles = presetData[ value ];
+
+		if ( selectedStyles ) {
+			setAttributes( {
+				preset: value,
+				...selectedStyles,
+			} );
+		} else {
+			// If they click a preset that isn't defined, just update the name
+			setAttributes( { preset: value } );
+		}
+	};
+
 	return (
 		<ToggleGroupControl
 			className="list-preset"
 			label="List Preset"
 			value={ preset }
-			onChange={ ( value ) => setAttributes( { preset: value } ) }
+			onChange={ handlePresetChange } // Use the new handler
 			isBlock
 			__next40pxDefaultSize
 		>

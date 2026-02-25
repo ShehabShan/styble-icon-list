@@ -23,6 +23,12 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 // PARENT BLOCK STYLES
 // ===============================
 export const getBlockStyles = ( attributes ) => {
+	const cleanStyles = ( obj ) => {
+		return Object.fromEntries(
+			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+		);
+	};
+
 	const SHADOW_VAL =
 		'0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
 
@@ -85,105 +91,120 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.hoverBorderRadiusLeft
 	);
 
-	return {
+	let itemsWidthValue = null;
+
+	if ( attributes?.itemWidthType === 'auto' ) {
+		itemsWidthValue = 'auto';
+	} else if ( attributes?.itemWidthType === 'custom' ) {
+		itemsWidthValue = `${ attributes.itemsWidth }px`;
+	}
+
+	return cleanStyles( {
 		// ===============================
 		// GENERAL
 		// ===============================
-		'--separator-thickness': `${ attributes?.separatorThickness }px`,
+		'--items-width': itemsWidthValue,
+		'--selectedIcon': attributes?.selectedIcon,
+		'--iconSize': attributes?.iconSize,
+		'--separator-thickness':
+			attributes?.separatorThickness &&
+			`${ attributes.separatorThickness }px`,
 		'--separator-color': attributes?.separatorColor,
 		'--separator-style': attributes?.separatorType,
-		'--icon-size': `${ attributes?.iconSize }px`,
+		'--icon-size': attributes?.iconSize && `${ attributes.iconSize }px`,
 		'--icon-color': attributes?.iconColor,
 
 		// ===============================
 		// TYPOGRAPHY DEFAULTS
 		// ===============================
 		'--font-family': attributes?.fontFamily,
-		'--font-size': `${ attributes?.fontSize }px`,
+		'--font-size': attributes?.fontSize && `${ attributes.fontSize }px`,
 		'--font-weight': attributes?.fontWeight,
 		'--font-height': attributes?.fontHeight,
-		'--letter-spacing': `${ attributes?.letterSpacing }px`,
-		'--word-spacing': `${ attributes?.wordSpacing }px`,
-		'--font-style-italic': attributes?.isItalic ? 'italic' : 'normal',
+		'--letter-spacing':
+			attributes?.letterSpacing && `${ attributes.letterSpacing }px`,
+		'--word-spacing':
+			attributes?.wordSpacing && `${ attributes.wordSpacing }px`,
+		'--font-style-italic': attributes?.isItalic && 'italic',
 		'--text-decoration':
+			( attributes?.isUnderline || attributes?.isStrikethrough ) &&
 			`${ attributes?.isUnderline ? 'underline' : '' } ${
 				attributes?.isStrikethrough ? 'line-through' : ''
-			}`.trim() || 'none',
+			}`.trim(),
 		'--text-transform': attributes?.textTransform,
 
 		// ===============================
 		// PARENT CONTAINER STYLES
 		// ===============================
-		'--all-padding-top': `${ allPadding.top }px`,
-		'--all-padding-right': `${ allPadding.right }px`,
-		'--all-padding-bottom': `${ allPadding.bottom }px`,
-		'--all-padding-left': `${ allPadding.left }px`,
+		'--all-padding-top': allPadding?.top && `${ allPadding.top }px`,
+		'--all-padding-right': allPadding?.right && `${ allPadding.right }px`,
+		'--all-padding-bottom':
+			allPadding?.bottom && `${ allPadding.bottom }px`,
+		'--all-padding-left': allPadding?.left && `${ allPadding.left }px`,
 
 		// ===============================
 		// CHILD DEFAULTS (IMPORTANT)
 		// ===============================
-		// 🔥 These are what children fallback to
-
 		'--background-color':
-			attributes?.backgroundColor ??
-			attributes?.backgroundGradient ??
-			'transparent',
-
-		'--border-color': attributes?.borderColor || 'transparent',
-		'--border-style': attributes?.borderType || 'solid',
-		'--box-shadow': attributes?.hasBoxShadow ? SHADOW_VAL : 'none',
+			attributes?.backgroundColor || attributes?.backgroundGradient,
+		'--border-color': attributes?.borderColor,
+		'--border-style': attributes?.borderType,
+		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
 
 		// Padding Defaults
-		'--padding-top': `${ itemPadding.top }px`,
-		'--padding-right': `${ itemPadding.right }px`,
-		'--padding-bottom': `${ itemPadding.bottom }px`,
-		'--padding-left': `${ itemPadding.left }px`,
+		'--padding-top': itemPadding?.top && `${ itemPadding.top }px`,
+		'--padding-right': itemPadding?.right && `${ itemPadding.right }px`,
+		'--padding-bottom': itemPadding?.bottom && `${ itemPadding.bottom }px`,
+		'--padding-left': itemPadding?.left && `${ itemPadding.left }px`,
 
 		// Border Width Defaults
-		'--border-top-width': `${ itemBorder.top }px`,
-		'--border-right-width': `${ itemBorder.right }px`,
-		'--border-bottom-width': `${ itemBorder.bottom }px`,
-		'--border-left-width': `${ itemBorder.left }px`,
+		'--border-top-width': itemBorder?.top && `${ itemBorder.top }px`,
+		'--border-right-width': itemBorder?.right && `${ itemBorder.right }px`,
+		'--border-bottom-width':
+			itemBorder?.bottom && `${ itemBorder.bottom }px`,
+		'--border-left-width': itemBorder?.left && `${ itemBorder.left }px`,
 
 		// Border Radius Defaults
-		'--border-radius-top': `${ itemRadius.top }px`,
-		'--border-radius-right': `${ itemRadius.right }px`,
-		'--border-radius-bottom': `${ itemRadius.bottom }px`,
-		'--border-radius-left': `${ itemRadius.left }px`,
+		'--border-radius-top': itemRadius?.top && `${ itemRadius.top }px`,
+		'--border-radius-right': itemRadius?.right && `${ itemRadius.right }px`,
+		'--border-radius-bottom':
+			itemRadius?.bottom && `${ itemRadius.bottom }px`,
+		'--border-radius-left': itemRadius?.left && `${ itemRadius.left }px`,
 
 		// ===============================
 		// HOVER DEFAULTS FOR CHILD
 		// ===============================
 		'--bg-h':
-			attributes?.hoverBackgroundColor ??
-			attributes?.backgroundColor ??
-			'transparent',
+			attributes?.hoverBackgroundColor || attributes?.backgroundColor,
+		'--border-color-h': attributes?.hoverBorderColor,
+		'--border-style-h': attributes?.hoverBorderType,
+		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
 
-		'--border-color-h':
-			attributes?.hoverBorderColor ??
-			attributes?.borderColor ??
-			'transparent',
+		'--padding-top-h':
+			hoverItemPadding?.top && `${ hoverItemPadding.top }px`,
+		'--padding-right-h':
+			hoverItemPadding?.right && `${ hoverItemPadding.right }px`,
+		'--padding-bottom-h':
+			hoverItemPadding?.bottom && `${ hoverItemPadding.bottom }px`,
+		'--padding-left-h':
+			hoverItemPadding?.left && `${ hoverItemPadding.left }px`,
 
-		'--border-style-h':
-			attributes?.hoverBorderType ?? attributes?.borderType ?? 'solid',
+		'--border-top-h': hoverItemBorder?.top && `${ hoverItemBorder.top }px`,
+		'--border-right-h':
+			hoverItemBorder?.right && `${ hoverItemBorder.right }px`,
+		'--border-bottom-h':
+			hoverItemBorder?.bottom && `${ hoverItemBorder.bottom }px`,
+		'--border-left-h':
+			hoverItemBorder?.left && `${ hoverItemBorder.left }px`,
 
-		'--box-shadow-h': attributes?.hoverHasBoxShadow ? SHADOW_VAL : 'none',
-
-		'--padding-top-h': `${ hoverItemPadding.top }px`,
-		'--padding-right-h': `${ hoverItemPadding.right }px`,
-		'--padding-bottom-h': `${ hoverItemPadding.bottom }px`,
-		'--padding-left-h': `${ hoverItemPadding.left }px`,
-
-		'--border-top-h': `${ hoverItemBorder.top }px`,
-		'--border-right-h': `${ hoverItemBorder.right }px`,
-		'--border-bottom-h': `${ hoverItemBorder.bottom }px`,
-		'--border-left-h': `${ hoverItemBorder.left }px`,
-
-		'--radius-top-h': `${ hoverItemRadius.top }px`,
-		'--radius-right-h': `${ hoverItemRadius.right }px`,
-		'--radius-bottom-h': `${ hoverItemRadius.bottom }px`,
-		'--radius-left-h': `${ hoverItemRadius.left }px`,
-	};
+		'--radius-top-h': hoverItemRadius?.top && `${ hoverItemRadius.top }px`,
+		'--radius-right-h':
+			hoverItemRadius?.right && `${ hoverItemRadius.right }px`,
+		'--radius-bottom-h':
+			hoverItemRadius?.bottom && `${ hoverItemRadius.bottom }px`,
+		'--radius-left-h':
+			hoverItemRadius?.left && `${ hoverItemRadius.left }px`,
+	} );
 };
 
 export const getChildBlockStyles = ( attributes ) => {
@@ -196,9 +217,6 @@ export const getChildBlockStyles = ( attributes ) => {
 	const SHADOW_VAL =
 		'0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
 
-	// -------------------------
-	// Resolve ONLY child values
-	// -------------------------
 	const padding = getResolvedSides(
 		attributes?.padding,
 		attributes?.paddingTop,
@@ -268,6 +286,7 @@ export const getChildBlockStyles = ( attributes ) => {
 	// -------------------------
 	return cleanStyles( {
 		// --- Normal State ---
+
 		'--background-color':
 			attributes?.backgroundColor || attributes?.backgroundGradient,
 		'--border-color': attributes?.borderColor,
@@ -335,5 +354,17 @@ export const getChildBlockStyles = ( attributes ) => {
 			hoverBorderRadius?.bottom && `${ hoverBorderRadius.bottom }px`,
 		'--radius-left-h':
 			hoverBorderRadius?.left && `${ hoverBorderRadius.left }px`,
+	} );
+};
+
+export const getIconStyles = ( attributes ) => {
+	const cleanStyles = ( obj ) => {
+		return Object.fromEntries(
+			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+		);
+	};
+	return cleanStyles( {
+		'--icon-size': attributes?.iconSize && `${ attributes.iconSize }px`,
+		'--icon-color': attributes?.iconColor,
 	} );
 };

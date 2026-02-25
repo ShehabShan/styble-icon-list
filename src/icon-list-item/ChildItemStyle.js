@@ -63,7 +63,6 @@ const ChildItemStyle = ( {
 			{ attributes?.itemStyleType === 'normal' && (
 				<div className="background-control-container">
 					{ /* 1. The Toggle Switch (Your Image UI) */ }
-
 					<div className="control-section control-section--background-type">
 						<BaseControl
 							id={ 'lksa' }
@@ -107,15 +106,14 @@ const ChildItemStyle = ( {
 						</BaseControl>
 					</div>
 					{ /* 2. Conditional Rendering */ }
-
+					{ /*Inconsidaration */ }
 					<div className="control-section control-section--background-value">
 						{ attributes?.backgroundType === 'solid' ? (
 							<CustomHelperComponent
 								hasReset={ true }
+								icon={ resetIcon }
 								resetAttributes="backgroundColor"
 								hasColor={ true }
-								icon={ resetIcon }
-								toggleModal={ toggleModal }
 								label={ __( 'Background Color', 'icon-list' ) }
 								color={ attributes?.backgroundColor }
 								setAttributes={ setAttributes }
@@ -138,7 +136,6 @@ const ChildItemStyle = ( {
 							/>
 						) }
 					</div>
-
 					<div className="control-section control-section--separator toggle-group-row">
 						<div className="row-label">
 							{ __( 'Border', 'icon-list' ) }
@@ -199,7 +196,6 @@ const ChildItemStyle = ( {
 							</ToggleGroupControl>
 						</div>
 					</div>
-
 					<div className="control-section control-section--border-range">
 						<RangeControls
 							setAttributes={ setAttributes }
@@ -209,7 +205,6 @@ const ChildItemStyle = ( {
 							type="border"
 						/>
 					</div>
-
 					<div className="control-section control-section--border-color">
 						<CustomHelperComponent
 							hasReset={ true }
@@ -227,7 +222,6 @@ const ChildItemStyle = ( {
 							}
 						/>
 					</div>
-
 					<div className="control-section control-section--border-radius">
 						<RangeControls
 							setAttributes={ setAttributes }
@@ -236,7 +230,6 @@ const ChildItemStyle = ( {
 							type="borderRadius"
 						/>
 					</div>
-
 					<div className="control-section control-section--box-shadow">
 						<ToggleControl
 							label={ __( 'Box Shadow', 'icon-list' ) }
@@ -249,7 +242,6 @@ const ChildItemStyle = ( {
 							}
 						/>
 					</div>
-
 					<div className="control-section control-section--padding">
 						<RangeControls
 							setAttributes={ setAttributes }

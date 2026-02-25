@@ -67,7 +67,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const closeAllModals = () => setOpenModalId( null );
 
 	const blockProps = useBlockProps( {
-		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType }`,
+		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType } is-preset-${ preset }`,
 
 		style: { ...parentStyle },
 	} );

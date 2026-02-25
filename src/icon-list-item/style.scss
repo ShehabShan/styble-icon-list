@@ -1,6 +1,11 @@
 .wp-block-create-block-icon-list-item {
-	position: relative;
-	box-sizing: border-box;
+	height: auto !important; // NEVER set a fixed height here
+	position: relative; // Needed for the separator ::after absolute positioning
+	min-height: 40px;
+	display: block;
+	width: var(--items-width);
+
+	// Target Gutenberg's internal layout wrapper
 
 	/* ----------------------------
 	   Normal State
@@ -96,20 +101,55 @@
 		font-style: var(--font-style-italic, normal);
 	}
 
+	&::after {
+		content: "";
+		position: absolute;
+
+		// Horizontal centering: (Icon Size / 2)
+		// Note: we use the variable from the parent
+		left: calc(var(--icon-size) / 2);
+
+		// Vertical positioning
+		top: var(--icon-size); // Start from bottom of the icon
+		bottom: 0; // Stretch to the bottom of the item container
+
+		// Styling from Parent Variables
+		width: 0;
+		border-left: var(--separator-thickness) var(--separator-style)
+			var(--separator-color);
+
+		// Alignment
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+
+	// Hide the line for the last item so it doesn't hang off the bottom
+	&:last-of-type::after {
+		display: none;
+	}
+
+	// Ensure Icon and Text stay above the line
+	> * {
+		position: relative;
+		z-index: 2;
+	}
+
+	// Target the icon container specifically
+	> div:first-child {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		// Apply the circular/box styles you already have
+		width: var(--icon-size);
+		height: var(--icon-size);
+		background: var(--background-color);
+		border: var(--border-top-width) var(--border-style) var(--border-color);
+		border-radius: var(--border-radius-top);
+	}
+
 	/* ----------------------------
 	   Typography
 	----------------------------- */
-}
-
-.wp-block-create-block-icon-list-item::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	pointer-events: auto;
-	z-index: 1;
-}
-
-.wp-block-create-block-icon-list-item > * {
-	position: relative;
-	z-index: 2;
 }

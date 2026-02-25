@@ -23,7 +23,7 @@
 		},
 		"itemsGap": {
 			"type": "number",
-			"default": 10
+			"default": 0
 		},
 		"selectedIcon": {
 			"type": "string"
@@ -46,7 +46,7 @@
 		},
 		"separatorThickness": {
 			"type": "number",
-			"default": 1
+			"default": 0
 		},
 		"itemWidthType": {
 			"type": "string",
@@ -149,13 +149,11 @@
 		"borderLeft": { "type": "number" },
 
 		"borderType": {
-			"type": "string",
-			"default": "none"
+			"type": "string"
 		},
 
 		"borderColor": {
-			"type": "string",
-			"default": "#2F2F2F"
+			"type": "string"
 		},
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
@@ -164,22 +162,22 @@
 		"borderRadiusLeft": { "type": "number" },
 		"hadBoxShadow": {
 			"type": "boolean",
-			"default": "none"
+			"default": "false"
 		},
-		"hoverBackgroundType": { "type": "string", "default": "solid" },
+		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
 
-		"hoverBorderType": { "type": "string", "default": "none" },
+		"hoverBorderType": { "type": "string" },
 		"hoverBorderColor": { "type": "string" },
 
-		"hoverBorder": { "type": "number", "default": 0 },
+		"hoverBorder": { "type": "number" },
 		"hoverBorderTop": { "type": "number" },
 		"hoverBorderRight": { "type": "number" },
 		"hoverBorderBottom": { "type": "number" },
 		"hoverBorderLeft": { "type": "number" },
 
-		"hoverBorderRadius": { "type": "number", "default": 0 },
+		"hoverBorderRadius": { "type": "number" },
 		"hoverBorderRadiusTop": { "type": "number" },
 		"hoverBorderRadiusRight": { "type": "number" },
 		"hoverBorderRadiusBottom": { "type": "number" },
@@ -187,7 +185,7 @@
 
 		"hoverHasBoxShadow": { "type": "boolean", "default": false },
 
-		"hoverPadding": { "type": "number", "default": 0 },
+		"hoverPadding": { "type": "number" },
 		"hoverPaddingTop": { "type": "number" },
 		"hoverPaddingRight": { "type": "number" },
 		"hoverPaddingBottom": { "type": "number" },

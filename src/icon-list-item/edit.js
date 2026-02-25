@@ -1,14 +1,13 @@
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
-	RichText,
 	InspectorControls,
+	InnerBlocks,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
-import { iconLibrary } from '../utils/dataCenter.js';
 import { useParentAttributes } from '../hooks/useParentAttributes.js';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import { PanelBody, RangeControl, TabPanel } from '@wordpress/components';
 import { Settings, Palette } from 'lucide-react';
 import ChildItemStyle from './ChildItemStyle.js';
@@ -18,23 +17,12 @@ import { getChildBlockStyles } from '../utils/style.js';
 // This is the checkmark icon from your image
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { textContent } = attributes;
 	const parentAttributes = useParentAttributes( clientId );
 
 	const { selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor } =
 		parentAttributes;
 
-	const SelectedIconComponent = selectedIcon
-		? iconLibrary.find( ( item ) => item.name === selectedIcon )?.icon
-		: null;
-
 	const childStyle = getChildBlockStyles( attributes, parentAttributes );
-
-	const [ openModalId, setOpenModalId ] = useState( null );
-
-	const toggleModal = ( id ) => {
-		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
-	};
 
 	// Helper to check if a specific modal is open
 
@@ -65,7 +53,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<ChildItemStyle
 						attributes={ attributes }
 						setAttributes={ setAttributes }
-						toggleModal={ toggleModal }
 						resetIcon={ resetIcon }
 					/>
 				</>
@@ -89,6 +76,11 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		// NEVER return null here
 		return null;
 	};
+
+	const TEMPLATE = [
+		[ 'create-block/icon-picker', {} ],
+		[ 'create-block/advanced-text', { placeholder: 'List Text Here' } ],
+	];
 
 	return (
 		<>
@@ -125,21 +117,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...blockProps }>
-				<div>
-					{ SelectedIconComponent && (
-						<SelectedIconComponent
-							size={ iconSize }
-							color={ iconColor }
-						/>
-					) }
-				</div>
-				<RichText
-					tagName="h3"
-					value={ textContent }
-					placeholder={ __( 'List Text Here', 'icon-list' ) }
-					onChange={ ( newValue ) =>
-						setAttributes( { textContent: newValue } )
-					}
+				<InnerBlocks
+					allowedBlocks={ [
+						'create-block/icon-picker',
+						'create-block/advanced-text',
+					] }
+					template={ TEMPLATE }
 				/>
 			</div>
 		</>

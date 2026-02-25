@@ -31,18 +31,6 @@
 		padding-right: var(--all-padding-top);
 		padding-bottom: var(--all-padding-top);
 		padding-left: var(--all-padding-top);
-
-		// .wp-block-your-namespace-icon-list-item {
-		// 	font-family: var(--font-family);
-		// 	font-size: var(--font-size);
-		// 	font-weight: var(--font-weight);
-		// 	line-height: var(--font-height);
-		// 	letter-spacing: var(--letter-spacing);
-		// 	word-spacing: var(--word-spacing);
-		// 	text-transform: var(--text-transform);
-		// 	text-decoration: var(--text-decoration);
-		// 	padding: var(--padding);
-		// }
 	}
 
 	/* gap control */
@@ -61,6 +49,14 @@
 		flex-direction: row;
 		align-items: stretch;
 	}
+
+	// &.is-preset-preset-2
+	// 	> .block-editor-inner-blocks
+	// 	> .block-editor-block-list__layout {
+	// 	border-radius: 30px !important;
+	// 	border: 1px solid #4649ff !important;
+	// 	background: #f5f5ff !important;
+	// }
 }
 
 // Sidebar List Preset style css

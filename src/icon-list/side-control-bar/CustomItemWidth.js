@@ -36,6 +36,7 @@ const CustomItemWidth = ( {
 					aria-label="auto"
 					label={ __( 'Auto', 'icon-list' ) }
 					value="auto"
+					onClick={ () => toggleModal( 'auto' ) }
 				/>
 				<ToggleGroupControlOption
 					className={ `custom-orientation-option ${
@@ -64,7 +65,9 @@ const CustomItemWidth = ( {
 							isBlock
 							label={ __( 'Item Width Type', 'icon-list' ) }
 							onChange={ ( value ) =>
-								setAttributes( { itemWidthType: value } )
+								setAttributes( {
+									itemWidthType: value,
+								} )
 							}
 						>
 							<ToggleGroupControlOption
@@ -76,7 +79,7 @@ const CustomItemWidth = ( {
 								aria-label="auto"
 								label={ __( 'Auto', 'icon-list' ) }
 								value="auto"
-								onClick={ closeAllModals }
+								onClick={ () => closeAllModals }
 							/>
 							<ToggleGroupControlOption
 								className={ `custom-orientation-option ${
@@ -100,7 +103,9 @@ const CustomItemWidth = ( {
 							__next40pxDefaultSize
 							value={ attributes?.itemsWidth }
 							onChange={ ( value ) =>
-								setAttributes( { itemsWidth: value } )
+								setAttributes( {
+									itemsWidth: value,
+								} )
 							}
 							min={ 150 }
 							max={ 1200 }
