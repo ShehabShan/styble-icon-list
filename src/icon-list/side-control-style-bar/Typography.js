@@ -13,13 +13,8 @@ import { __ } from '@wordpress/i18n';
 import './typography.scss';
 import { fontOptions } from '../../utils/dataCenter';
 import CustomHelperComponent from '../side-control-bar/CustomHelperComponent';
-const Typography = ( {
-	isModalOpen,
-	toggleModal,
-	closeAllModals,
-	attributes,
-	setAttributes,
-} ) => {
+import { useState } from '@wordpress/element';
+const Typography = ( { attributes, setAttributes } ) => {
 	const {
 		fontFamily,
 		fontSize,
@@ -33,6 +28,17 @@ const Typography = ( {
 		textTransform,
 	} = attributes;
 
+	const [ openModalId, setOpenModalId ] = useState( null );
+
+	const toggleModal = ( id ) => {
+		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
+	};
+
+	// Helper to check if a specific modal is open
+	const isModalOpen = ( id ) => openModalId === id;
+
+	const closeAllModals = () => setOpenModalId( null );
+
 	return (
 		<div>
 			<CustomHelperComponent
@@ -45,7 +51,7 @@ const Typography = ( {
 			{ isModalOpen( 'Typography' ) && (
 				<Popover
 					onClose={ () => closeAllModals }
-					placement="left-start" // Left-start usually matches the sidebar flyout better
+					placement="bottom"
 					offset={ 15 }
 				>
 					<div className="typography-popover-container">

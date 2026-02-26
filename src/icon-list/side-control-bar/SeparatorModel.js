@@ -29,7 +29,7 @@ const SeparatorModel = ( {
 				// ... imports
 				<Popover
 					onClose={ () => closeAllModals }
-					placement="left-start" // Left-start usually matches the sidebar flyout better
+					placement="bottom"
 					offset={ 15 }
 				>
 					<div className="custom-popover-container">

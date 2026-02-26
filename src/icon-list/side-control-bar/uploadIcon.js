@@ -29,13 +29,11 @@ const UploadIcon = ( {
 			className="icon-sidebar-container"
 			style={ { position: 'relative' } }
 		>
-			{ iconType === 'library' && (
-				<div className="icon-sidebar-container-image-box">
-					{ SelectedIconComponent && (
-						<SelectedIconComponent size={ 40 } />
-					) }
-				</div>
-			) }
+			<div className="icon-sidebar-container-image-box">
+				{ SelectedIconComponent && (
+					<SelectedIconComponent size={ 40 } />
+				) }
+			</div>
 
 			<div className="icon-sidebar-container-button-box">
 				<Button

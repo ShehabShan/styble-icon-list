@@ -12,26 +12,70 @@
 		"html": false
 	},
 	"attributes": {
-		"iconType": {
-			"type": "string",
-			"default": "library"
-		},
-		"selectedIcon": {
-			"type": "string",
-			"default": "AArrowDown"
-		},
-		"iconUrl": {
-			"type": "string",
-			"default": ""
-		},
-		"iconSize": {
-			"type": "number",
-			"default": 50
-		},
-		"iconColor": {
-			"type": "string",
-			"default": "#000000"
-		}
+		"iconType": { "type": "string", "default": "library" },
+		"selectedIcon": { "type": "string", "default": "AArrowDown" },
+		"iconUrl": { "type": "string", "default": "" },
+		"iconSize": { "type": "number", "default": 30 },
+		"iconColor": { "type": "string", "default": "#000000" },
+		"hasLink": { "type": "boolean", "default": false },
+		"itemStyleType": { "type": "string", "default": "normal" },
+		"backgroundType": { "type": "string", "default": "solid" },
+		"hoverBackgroundType": { "type": "string", "default": "solid" },
+
+		"backgroundColor": { "type": "string" },
+		"backgroundGradient": { "type": "string" },
+
+		"padding": { "type": "number" },
+		"paddingTop": { "type": "number" },
+		"paddingRight": { "type": "number" },
+		"paddingLeft": { "type": "number" },
+		"paddingBottom": { "type": "number" },
+
+		"border": { "type": "number" },
+		"borderTop": { "type": "number" },
+		"borderRight": { "type": "number" },
+		"borderBottom": { "type": "number" },
+		"borderLeft": { "type": "number" },
+		"margin": { "type": "number" },
+		"marginTop": { "type": "number" },
+		"marginRight": { "type": "number" },
+		"marginBottom": { "type": "number" },
+		"marginLeft": { "type": "number" },
+
+		"borderType": { "type": "string" },
+
+		"borderColor": { "type": "string" },
+		"borderRadius": { "type": "number" },
+		"borderRadiusTop": { "type": "number" },
+		"borderRadiusRight": { "type": "number" },
+		"borderRadiusBottom": { "type": "number" },
+		"borderRadiusLeft": { "type": "number" },
+		"hadBoxShadow": { "type": "boolean" },
+		"hoverBackgroundColor": { "type": "string" },
+		"hoverBackgroundGradient": { "type": "string" },
+
+		"hoverBorderType": { "type": "string" },
+		"hoverBorderColor": { "type": "string" },
+
+		"hoverBorder": { "type": "number" },
+		"hoverBorderTop": { "type": "number" },
+		"hoverBorderRight": { "type": "number" },
+		"hoverBorderBottom": { "type": "number" },
+		"hoverBorderLeft": { "type": "number" },
+
+		"hoverBorderRadius": { "type": "number" },
+		"hoverBorderRadiusTop": { "type": "number" },
+		"hoverBorderRadiusRight": { "type": "number" },
+		"hoverBorderRadiusBottom": { "type": "number" },
+		"hoverBorderRadiusLeft": { "type": "number" },
+
+		"hoverHasBoxShadow": { "type": "boolean" },
+
+		"hoverPadding": { "type": "number" },
+		"hoverPaddingTop": { "type": "number" },
+		"hoverPaddingRight": { "type": "number" },
+		"hoverPaddingBottom": { "type": "number" },
+		"hoverPaddingLeft": { "type": "number" }
 	},
 	"textdomain": "icon-picker",
 	"editorScript": "file:./index.js",

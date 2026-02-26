@@ -123,7 +123,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						}
 						min={ 0 }
 						max={ 50 }
-						step={ 5 }
 					/>
 
 					<ToggleControl
@@ -184,12 +183,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			return (
 				<>
 					<Typography
-						isModalOpen={ isModalOpen }
-						toggleModal={ toggleModal }
-						closeAllModals={ closeAllModals }
 						attributes={ attributes }
 						setAttributes={ setAttributes }
-						clientId={ clientId }
 					/>
 
 					<CustomHelperComponent

@@ -15,11 +15,16 @@
 		flex: 1;
 	}
 
+	.alignment-set {
+		height: 32px !important;
+	}
+
 	/* Selected state */
 	.list-preset-option.is-active {
+		color: #4649ff;
+		background: #f0f0ff; // Added a light blue background for better UI
+		font-weight: 500;
 		border: 1px solid #a8aaff;
-		background-color: #f0f7ff;
-		box-shadow: 0 0 0 1px #635bff;
 	}
 
 	/* Hover (only when not active) */

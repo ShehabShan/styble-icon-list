@@ -7,14 +7,10 @@
 
 	// Target Gutenberg's internal layout wrapper
 
-	/* ----------------------------
-	   Normal State
-	----------------------------- */
-
 	/* Box */
 	background: var(--background-color, transparent);
 	border-color: var(--border-color, transparent);
-	border-style: var(--border-style, solid);
+	border-style: var(--border-style, none);
 	box-shadow: var(--box-shadow, none);
 
 	/* Margin */
@@ -50,7 +46,7 @@
 	&:hover {
 		background: var(--bg-h, var(--background-color, transparent));
 		border-color: var(--border-color-h, var(--border-color, transparent));
-		border-style: var(--border-style-h, var(--border-style, solid));
+		border-style: var(--border-style-h, var(--border-style, none));
 		box-shadow: var(--box-shadow-h, var(--box-shadow, none));
 
 		padding-top: var(--padding-top-h, var(--padding-top, initial));
@@ -99,54 +95,6 @@
 		text-transform: var(--text-transform, inherit);
 		text-decoration: var(--text-decoration, inherit);
 		font-style: var(--font-style-italic, normal);
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-
-		// Horizontal centering: (Icon Size / 2)
-		// Note: we use the variable from the parent
-		left: calc(var(--icon-size) / 2);
-
-		// Vertical positioning
-		top: var(--icon-size); // Start from bottom of the icon
-		bottom: 0; // Stretch to the bottom of the item container
-
-		// Styling from Parent Variables
-		width: 0;
-		border-left: var(--separator-thickness) var(--separator-style)
-			var(--separator-color);
-
-		// Alignment
-		transform: translateX(-50%);
-		z-index: 1;
-	}
-
-	// Hide the line for the last item so it doesn't hang off the bottom
-	&:last-of-type::after {
-		display: none;
-	}
-
-	// Ensure Icon and Text stay above the line
-	> * {
-		position: relative;
-		z-index: 2;
-	}
-
-	// Target the icon container specifically
-	> div:first-child {
-		flex-shrink: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		// Apply the circular/box styles you already have
-		width: var(--icon-size);
-		height: var(--icon-size);
-		background: var(--background-color);
-		border: var(--border-top-width) var(--border-style) var(--border-color);
-		border-radius: var(--border-radius-top);
 	}
 
 	/* ----------------------------

@@ -2,12 +2,22 @@ import { Button, ColorPicker, Dropdown } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
 import './side-bar-scss/customHelperComponent.scss';
+import { URLInput } from '@wordpress/block-editor';
 
 const CustomHelperComponent = ( props ) => {
 	return (
 		<div className="custom-sidebar-row">
 			<div className="row-label">{ props?.label }</div>
 			<div className="row-control">
+				{ /* { props?.hasInput && (
+					<URLInput
+						value={ props?.attributes?.url }
+						onChange={ ( nextUrl ) =>
+							props?.setAttributes( { url: nextUrl } )
+						}
+						placeholder="Type or paste your URL"
+					/>
+				) } */ }
 				{ props?.hasIcon && (
 					<Button
 						className="pencil-edit-button"

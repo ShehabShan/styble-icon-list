@@ -7,3 +7,46 @@
 .wp-block-create-block-advanced-text {
 	border: 1px dotted #f00;
 }
+
+.components-base-control__label {
+	text-transform: none !important;
+}
+
+.orientation-type {
+	margin-top: 10px;
+	border: none !important;
+
+	.orientation-type-option {
+		flex-shrink: 0;
+		transition: all 0.2s ease-in-out;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		padding: 5px 10px;
+		align-items: center;
+		gap: 10px;
+		border-radius: 2px;
+		border: 1px solid #ddd;
+		background: #fff;
+	}
+
+	/* Selected state */
+	.orientation-type-option.is-active {
+		border-radius: 2px;
+		border: 1px solid #a8aaff;
+		background: #ebebff;
+		box-shadow: 0 0 0 1px #635bff;
+	}
+
+	/* Hover (only when not active) */
+	.orientation-type-option:not(.is-active):hover {
+		border-color: #b0b0b0;
+		background-color: #f9f9f9;
+	}
+
+	/* Make them equal width */
+	.components-toggle-group-control__group {
+		display: flex;
+		gap: 8px;
+	}
+}

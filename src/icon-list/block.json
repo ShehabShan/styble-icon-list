@@ -13,125 +13,41 @@
 	},
 
 	"attributes": {
-		"preset": {
-			"type": "string",
-			"default": "preset-1"
-		},
-		"listOrientation": {
-			"type": "string",
-			"default": "vertical"
-		},
-		"itemsGap": {
-			"type": "number",
-			"default": 0
-		},
-		"selectedIcon": {
-			"type": "string"
-		},
-		"hasIcon": {
-			"type": "boolean",
-			"default": false
-		},
-		"iconSize": {
-			"type": "number",
-			"default": 20
-		},
-		"separatorType": {
-			"type": "string",
-			"default": "none"
-		},
-		"separatorColor": {
-			"type": "string",
-			"default": "#000000"
-		},
-		"separatorThickness": {
-			"type": "number",
-			"default": 0
-		},
-		"itemWidthType": {
-			"type": "string",
-			"default": "auto"
-		},
+		"preset": { "type": "string", "default": "preset-1" },
+		"listOrientation": { "type": "string", "default": "vertical" },
+		"itemsGap": { "type": "number", "default": 0 },
+		"selectedIcon": { "type": "string" },
+		"hasIcon": { "type": "boolean", "default": false },
+		"iconSize": { "type": "number", "default": 20 },
+		"separatorType": { "type": "string", "default": "none" },
+		"separatorColor": { "type": "string", "default": "#000000" },
+		"separatorThickness": { "type": "number", "default": 0 },
+		"itemWidthType": { "type": "string", "default": "auto" },
 
-		"itemsWidth": {
-			"type": "number",
-			"default": 200
-		},
-		"fontWeight": {
-			"type": "number",
-			"default": 400
-		},
+		"itemsWidth": { "type": "number", "default": 200 },
+		"fontWeight": { "type": "number", "default": 400 },
 		"fontFamily": {
 			"type": "string",
 			"default": "\"Open Sans\", sans-serif"
 		},
-		"fontSize": {
-			"type": "number",
-			"default": 16
-		},
-		"fontHeight": {
-			"type": "number",
-			"default": 1.2
-		},
-		"letterSpacing": {
-			"type": "number",
-			"default": 0
-		},
-		"wordSpacing": {
-			"type": "number",
-			"default": 0
-		},
-		"isItalic": {
-			"type": "boolean",
-			"default": false
-		},
-		"isUnderline": {
-			"type": "boolean",
-			"default": false
-		},
-		"isStrikethrough": {
-			"type": "boolean",
-			"default": false
-		},
-		"textTransform": {
-			"type": "string",
-			"default": "none"
-		},
-		"iconColor": {
-			"type": "string",
-			"default": "#000000"
-		},
-		"itemStyleType": {
-			"type": "string",
-			"default": "normal"
-		},
-		"backgroundType": {
-			"type": "string",
-			"default": "solid"
-		},
-		"backgroundColor": {
-			"type": "string",
-			"default": "#fff"
-		},
-		"backgroundGradient": {
-			"type": "string"
-		},
-		"allPadding": {
-			"type": "number",
-			"default": 0
-		},
-		"allPaddingTop": {
-			"type": "number"
-		},
-		"allPaddingRight": {
-			"type": "number"
-		},
-		"allPaddingLeft": {
-			"type": "number"
-		},
-		"allPaddingBottom": {
-			"type": "number"
-		},
+		"fontSize": { "type": "number", "default": 16 },
+		"fontHeight": { "type": "number", "default": 1.2 },
+		"letterSpacing": { "type": "number", "default": 0 },
+		"wordSpacing": { "type": "number", "default": 0 },
+		"isItalic": { "type": "boolean", "default": false },
+		"isUnderline": { "type": "boolean", "default": false },
+		"isStrikethrough": { "type": "boolean", "default": false },
+		"textTransform": { "type": "string", "default": "none" },
+		"iconColor": { "type": "string", "default": "#000000" },
+		"itemStyleType": { "type": "string", "default": "normal" },
+		"backgroundType": { "type": "string", "default": "solid" },
+		"backgroundColor": { "type": "string", "default": "#fff" },
+		"backgroundGradient": { "type": "string" },
+		"allPadding": { "type": "number", "default": 0 },
+		"allPaddingTop": { "type": "number" },
+		"allPaddingRight": { "type": "number" },
+		"allPaddingLeft": { "type": "number" },
+		"allPaddingBottom": { "type": "number" },
 
 		"padding": { "type": "number", "default": 0 },
 		"paddingTop": { "type": "number" },
@@ -139,31 +55,21 @@
 		"paddingBottom": { "type": "number" },
 		"paddingLeft": { "type": "number" },
 
-		"border": {
-			"type": "number",
-			"default": 0
-		},
+		"border": { "type": "number", "default": 0 },
 		"borderTop": { "type": "number" },
 		"borderRight": { "type": "number" },
 		"borderBottom": { "type": "number" },
 		"borderLeft": { "type": "number" },
 
-		"borderType": {
-			"type": "string"
-		},
+		"borderType": { "type": "string" },
 
-		"borderColor": {
-			"type": "string"
-		},
+		"borderColor": { "type": "string" },
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
 		"borderRadiusBottom": { "type": "number" },
 		"borderRadiusLeft": { "type": "number" },
-		"hadBoxShadow": {
-			"type": "boolean",
-			"default": "false"
-		},
+		"hadBoxShadow": { "type": "boolean", "default": "false" },
 		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },

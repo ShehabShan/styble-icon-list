@@ -1,6 +1,242 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
+	'advanced-text' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'create-block/advanced-text',
+		'version' => '0.1.0',
+		'title' => 'Advanced Text',
+		'category' => 'widgets',
+		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'textType' => array(
+				'type' => 'string'
+			),
+			'alignment' => array(
+				'type' => 'string'
+			),
+			'textOrientation' => array(
+				'type' => 'string'
+			),
+			'maxContentWidth' => array(
+				'type' => 'number'
+			),
+			'textLimit' => array(
+				'type' => 'number'
+			),
+			'textColumns' => array(
+				'type' => 'number'
+			),
+			'itemStyleType' => array(
+				'type' => 'string'
+			),
+			'textColor' => array(
+				'type' => 'string'
+			),
+			'backgroundType' => array(
+				'type' => 'string'
+			),
+			'backgroundColor' => array(
+				'type' => 'string'
+			),
+			'backgroundGradient' => array(
+				'type' => 'string'
+			),
+			'borderType' => array(
+				'type' => 'string'
+			),
+			'borderColor' => array(
+				'type' => 'string'
+			),
+			'hasBoxShadow' => array(
+				'type' => 'boolean'
+			),
+			'fontWeight' => array(
+				'type' => 'number',
+				'default' => 400
+			),
+			'fontFamily' => array(
+				'type' => 'string',
+				'default' => '"Open Sans", sans-serif'
+			),
+			'fontSize' => array(
+				'type' => 'number',
+				'default' => 16
+			),
+			'fontHeight' => array(
+				'type' => 'number',
+				'default' => 1.2
+			),
+			'letterSpacing' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'wordSpacing' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'isItalic' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isUnderline' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isStrikethrough' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'textTransform' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
+			'allPadding' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'allPaddingTop' => array(
+				'type' => 'number'
+			),
+			'allPaddingRight' => array(
+				'type' => 'number'
+			),
+			'allPaddingLeft' => array(
+				'type' => 'number'
+			),
+			'allPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'padding' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'paddingTop' => array(
+				'type' => 'number'
+			),
+			'paddingRight' => array(
+				'type' => 'number'
+			),
+			'paddingBottom' => array(
+				'type' => 'number'
+			),
+			'paddingLeft' => array(
+				'type' => 'number'
+			),
+			'border' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'borderTop' => array(
+				'type' => 'number'
+			),
+			'borderRight' => array(
+				'type' => 'number'
+			),
+			'borderBottom' => array(
+				'type' => 'number'
+			),
+			'borderLeft' => array(
+				'type' => 'number'
+			),
+			'borderRadius' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'borderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'borderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'borderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'borderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'hadBoxShadow' => array(
+				'type' => 'boolean',
+				'default' => 'false'
+			),
+			'hoverBorder' => array(
+				'type' => 'number'
+			),
+			'hoverBorderTop' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRight' => array(
+				'type' => 'number'
+			),
+			'hoverBorderBottom' => array(
+				'type' => 'number'
+			),
+			'hoverBorderLeft' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadius' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'hoverPadding' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingTop' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingRight' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingLeft' => array(
+				'type' => 'number'
+			),
+			'hoverBackgroundType' => array(
+				'type' => 'string'
+			),
+			'hoverBackgroundColor' => array(
+				'type' => 'string'
+			),
+			'hoverBackgroundGradient' => array(
+				'type' => 'string'
+			),
+			'hoverBorderType' => array(
+				'type' => 'string'
+			),
+			'hoverBorderColor' => array(
+				'type' => 'string'
+			),
+			'hoverHasBoxShadow' => array(
+				'type' => 'boolean'
+			)
+		),
+		'textdomain' => 'advanced-text',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'icon-list' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -27,7 +263,7 @@ return array(
 			),
 			'itemsGap' => array(
 				'type' => 'number',
-				'default' => 10
+				'default' => 0
 			),
 			'selectedIcon' => array(
 				'type' => 'string'
@@ -50,7 +286,7 @@ return array(
 			),
 			'separatorThickness' => array(
 				'type' => 'number',
-				'default' => 1
+				'default' => 0
 			),
 			'itemWidthType' => array(
 				'type' => 'string',
@@ -168,12 +404,10 @@ return array(
 				'type' => 'number'
 			),
 			'borderType' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string',
-				'default' => '#2F2F2F'
+				'type' => 'string'
 			),
 			'borderRadius' => array(
 				'type' => 'number',
@@ -193,11 +427,10 @@ return array(
 			),
 			'hadBoxShadow' => array(
 				'type' => 'boolean',
-				'default' => 'none'
+				'default' => 'false'
 			),
 			'hoverBackgroundType' => array(
-				'type' => 'string',
-				'default' => 'solid'
+				'type' => 'string'
 			),
 			'hoverBackgroundColor' => array(
 				'type' => 'string'
@@ -206,15 +439,13 @@ return array(
 				'type' => 'string'
 			),
 			'hoverBorderType' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'hoverBorderColor' => array(
 				'type' => 'string'
 			),
 			'hoverBorder' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverBorderTop' => array(
 				'type' => 'number'
@@ -229,8 +460,7 @@ return array(
 				'type' => 'number'
 			),
 			'hoverBorderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverBorderRadiusTop' => array(
 				'type' => 'number'
@@ -249,8 +479,7 @@ return array(
 				'default' => false
 			),
 			'hoverPadding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'hoverPaddingTop' => array(
 				'type' => 'number'
@@ -288,12 +517,10 @@ return array(
 		),
 		'attributes' => array(
 			'textContent' => array(
-				'type' => 'string',
-				'default' => ''
+				'type' => 'string'
 			),
 			'selectedIcon' => array(
-				'type' => 'string',
-				'default' => ''
+				'type' => 'string'
 			),
 			'itemStyleType' => array(
 				'type' => 'string',
@@ -444,6 +671,200 @@ return array(
 			)
 		),
 		'textdomain' => 'icon-list-item',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'icon-picker' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'create-block/icon-picker',
+		'version' => '0.1.0',
+		'title' => 'Icon Picker',
+		'category' => 'widgets',
+		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'iconType' => array(
+				'type' => 'string',
+				'default' => 'library'
+			),
+			'selectedIcon' => array(
+				'type' => 'string',
+				'default' => 'AArrowDown'
+			),
+			'iconUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'iconSize' => array(
+				'type' => 'number',
+				'default' => 30
+			),
+			'iconColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'hasLink' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'itemStyleType' => array(
+				'type' => 'string',
+				'default' => 'normal'
+			),
+			'backgroundType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'hoverBackgroundType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'backgroundColor' => array(
+				'type' => 'string'
+			),
+			'backgroundGradient' => array(
+				'type' => 'string'
+			),
+			'padding' => array(
+				'type' => 'number'
+			),
+			'paddingTop' => array(
+				'type' => 'number'
+			),
+			'paddingRight' => array(
+				'type' => 'number'
+			),
+			'paddingLeft' => array(
+				'type' => 'number'
+			),
+			'paddingBottom' => array(
+				'type' => 'number'
+			),
+			'border' => array(
+				'type' => 'number'
+			),
+			'borderTop' => array(
+				'type' => 'number'
+			),
+			'borderRight' => array(
+				'type' => 'number'
+			),
+			'borderBottom' => array(
+				'type' => 'number'
+			),
+			'borderLeft' => array(
+				'type' => 'number'
+			),
+			'margin' => array(
+				'type' => 'number'
+			),
+			'marginTop' => array(
+				'type' => 'number'
+			),
+			'marginRight' => array(
+				'type' => 'number'
+			),
+			'marginBottom' => array(
+				'type' => 'number'
+			),
+			'marginLeft' => array(
+				'type' => 'number'
+			),
+			'borderType' => array(
+				'type' => 'string'
+			),
+			'borderColor' => array(
+				'type' => 'string'
+			),
+			'borderRadius' => array(
+				'type' => 'number'
+			),
+			'borderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'borderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'borderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'borderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'hadBoxShadow' => array(
+				'type' => 'boolean'
+			),
+			'hoverBackgroundColor' => array(
+				'type' => 'string'
+			),
+			'hoverBackgroundGradient' => array(
+				'type' => 'string'
+			),
+			'hoverBorderType' => array(
+				'type' => 'string'
+			),
+			'hoverBorderColor' => array(
+				'type' => 'string'
+			),
+			'hoverBorder' => array(
+				'type' => 'number'
+			),
+			'hoverBorderTop' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRight' => array(
+				'type' => 'number'
+			),
+			'hoverBorderBottom' => array(
+				'type' => 'number'
+			),
+			'hoverBorderLeft' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadius' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'hoverBorderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'hoverHasBoxShadow' => array(
+				'type' => 'boolean'
+			),
+			'hoverPadding' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingTop' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingRight' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'hoverPaddingLeft' => array(
+				'type' => 'number'
+			)
+		),
+		'textdomain' => 'icon-picker',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',

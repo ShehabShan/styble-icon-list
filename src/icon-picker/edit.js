@@ -1,12 +1,28 @@
 import { __ } from '@wordpress/i18n';
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	URLInput,
+	useBlockProps,
+} from '@wordpress/block-editor';
 import './editor.scss';
 import * as LucideIcons from 'lucide-react';
-import { RangeControl, PanelBody } from '@wordpress/components';
+import {
+	RangeControl,
+	PanelBody,
+	Button,
+	Popover,
+	TabPanel,
+	ToggleControl,
+} from '@wordpress/components';
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
 import { useState } from '@wordpress/element';
 
-import { getIconStyles } from '../utils/style.js';
+import { getChildBlockStyles } from '../utils/style.js';
+import editIcon from '../assests/edit-icon.svg';
+import resetIcon from '../assests/reset.svg';
+import { Palette, Settings } from 'lucide-react';
+import IconPickerStyleControl from './IconPickerStyleControl.js';
+import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { iconType, iconUrl, selectedIcon, iconSize, iconColor } = attributes;
@@ -17,7 +33,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const isModalOpen = ( id ) => openModalId === id;
 	const closeAllModals = () => setOpenModalId( null );
 
-	const iconPickerStyle = getIconStyles( attributes );
+	const iconPickerStyle = getChildBlockStyles( attributes );
 
 	const SelectedIcon = LucideIcons[ selectedIcon ];
 
@@ -26,10 +42,10 @@ export default function Edit( { attributes, setAttributes } ) {
 		style: { ...iconPickerStyle },
 	} );
 
-	return (
-		<>
-			<InspectorControls>
-				<PanelBody title={ __( 'Icon Settings', 'icon-list' ) }>
+	const renderTabContent = ( tab ) => {
+		if ( tab.name === 'settings' ) {
+			return (
+				<>
 					<UploadIcon
 						attributes={ attributes }
 						setAttributes={ setAttributes }
@@ -37,6 +53,82 @@ export default function Edit( { attributes, setAttributes } ) {
 						toggleModal={ toggleModal }
 						closeAllModals={ closeAllModals }
 					/>
+
+					<div className="url-link-container">
+						<URLInput
+							className="url-container"
+							label="Add Link"
+							value={ attributes?.url }
+							onChange={ ( nextUrl ) =>
+								setAttributes( { url: nextUrl } )
+							}
+							placeholder="Type or paste your URL"
+						/>
+						<Button
+							className="pencil-edit-button"
+							icon={
+								<img
+									src={ editIcon }
+									alt={ __( 'Edit', 'icon-picker' ) }
+									style={ {
+										width: '36px',
+										height: '36px',
+									} }
+								/>
+							}
+							onClick={ () =>
+								setAttributes( {
+									hasLink: ! attributes?.hasLink,
+								} )
+							}
+						/>
+
+						{ attributes?.hasLink && (
+							<Popover
+								onClose={ () => closeAllModals }
+								placement="bottom"
+								offset={ 10 }
+							>
+								<div className="link-popover-container">
+									<ToggleControl
+										className="my-custom-troggle"
+										label={ __(
+											'open in new tab',
+											'icon-picker'
+										) }
+										checked={ attributes?.newTab }
+										onChange={ ( value ) =>
+											setAttributes( { newTab: value } )
+										}
+									/>
+									<ToggleControl
+										className="my-custom-troggle"
+										label={ __(
+											'Mark As No Follow',
+											'icon-picker'
+										) }
+										checked={ attributes?.noFollow }
+										onChange={ ( value ) =>
+											setAttributes( { noFollow: value } )
+										}
+									/>
+									<URLInput
+										className="custom-link-relation"
+										label="Custom Link Relation"
+										value={ attributes?.url }
+										onChange={ ( nextUrl ) =>
+											setAttributes( { url: nextUrl } )
+										}
+									/>
+									<p className="extra-text">
+										Enter one or more link Relations (e.g.,
+										nofollow noopener sponsored), separated
+										by spaces.
+									</p>
+								</div>
+							</Popover>
+						) }
+					</div>
 
 					<RangeControl
 						__next40pxDefaultSize
@@ -49,6 +141,61 @@ export default function Edit( { attributes, setAttributes } ) {
 						max={ 100 }
 						step={ 10 }
 					/>
+				</>
+			);
+		}
+
+		if ( tab.name === 'styles' ) {
+			return (
+				<>
+					<ChildItemStyle
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+						resetIcon={ resetIcon }
+						type="iconPicker"
+					/>
+				</>
+			);
+		}
+
+		return null;
+	};
+
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody
+					title={ __( 'Icon Settings', 'icon-picker' ) }
+					className="panel-body-container"
+				>
+					<TabPanel
+						className="my-custom-tabs"
+						activeClass="is-active"
+						tabs={ [
+							{
+								name: 'settings',
+								title: (
+									<>
+										<Settings size={ 16 } />
+										{ __( 'Settings', 'icon-list' ) }
+									</>
+								),
+								className: 'tab-settings',
+							},
+							{
+								name: 'styles',
+								title: (
+									<>
+										<Palette size={ 16 } />
+										{ __( 'Style', 'icon-list' ) }
+									</>
+								),
+								className: 'tab-styles',
+							},
+						] }
+					>
+						{ renderTabContent }
+					</TabPanel>
 				</PanelBody>
 			</InspectorControls>
 

@@ -5,5 +5,49 @@
  */
 
 .wp-block-create-block-icon-picker {
-	border: 1px dotted #f00;
+}
+
+.panel-body-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.url-link-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.url-container {
+		min-width: 150px !important;
+		width: 150px !important;
+	}
+}
+
+.link-popover-container {
+	padding: 16px;
+	width: 260px !important;
+	background: #fff;
+	z-index: 999999;
+	border-radius: 8px;
+
+	.custom-link-relation {
+		min-width: 240px !important;
+		width: 240px !important;
+	}
+
+	.extra-text {
+		color: var(--Gutenberg-Gray-700, #757575);
+		font-size: 11px;
+		font-style: italic;
+		font-weight: 300;
+		line-height: 16px;
+	}
+}
+
+.control-section--view-type .components-flex {
+	display: flex;
+	flex-direction: row !important;
+	gap: calc(128px) !important;
+	align-items: center !important;
 }

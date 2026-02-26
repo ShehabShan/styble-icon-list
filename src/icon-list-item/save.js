@@ -1,15 +1,23 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
+
+import * as LucideIcons from 'lucide-react';
 
 export default function save( { attributes } ) {
-	const { itemsWidth } = attributes;
+	const { textContent, selectedIcon } = attributes;
 
-	const blockProps = useBlockProps.save( {
-		style: { width: `${ itemsWidth }px` },
-	} );
+	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
+
+	const blockProps = useBlockProps.save();
 
 	return (
+		// <div { ...blockProps }>
+		// 	<InnerBlocks.Content />
+		// </div>
+
 		<div { ...blockProps }>
-			<InnerBlocks.Content />
+			<div>{ SelectedIconComponent && <SelectedIconComponent /> }</div>
+
+			<RichText.Content tagName="h3" value={ textContent } />
 		</div>
 	);
 }

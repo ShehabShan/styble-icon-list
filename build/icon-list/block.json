@@ -22,7 +22,7 @@
     },
     "itemsGap": {
       "type": "number",
-      "default": 10
+      "default": 0
     },
     "selectedIcon": {
       "type": "string"
@@ -45,7 +45,7 @@
     },
     "separatorThickness": {
       "type": "number",
-      "default": 1
+      "default": 0
     },
     "itemWidthType": {
       "type": "string",
@@ -163,12 +163,10 @@
       "type": "number"
     },
     "borderType": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "borderColor": {
-      "type": "string",
-      "default": "#2F2F2F"
+      "type": "string"
     },
     "borderRadius": {
       "type": "number",
@@ -188,11 +186,10 @@
     },
     "hadBoxShadow": {
       "type": "boolean",
-      "default": "none"
+      "default": "false"
     },
     "hoverBackgroundType": {
-      "type": "string",
-      "default": "solid"
+      "type": "string"
     },
     "hoverBackgroundColor": {
       "type": "string"
@@ -201,15 +198,13 @@
       "type": "string"
     },
     "hoverBorderType": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "hoverBorderColor": {
       "type": "string"
     },
     "hoverBorder": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverBorderTop": {
       "type": "number"
@@ -224,8 +219,7 @@
       "type": "number"
     },
     "hoverBorderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverBorderRadiusTop": {
       "type": "number"
@@ -244,8 +238,7 @@
       "default": false
     },
     "hoverPadding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "hoverPaddingTop": {
       "type": "number"

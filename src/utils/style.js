@@ -28,9 +28,8 @@ export const getBlockStyles = ( attributes ) => {
 			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
 		);
 	};
-
 	const SHADOW_VAL =
-		'0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
 
 	// -------------------------------
 	// Resolve Parent Box Sides
@@ -43,7 +42,15 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.allPaddingLeft
 	);
 
-	const itemPadding = getResolvedSides(
+	const margin = getResolvedSides(
+		attributes?.margin,
+		attributes?.marginTop,
+		attributes?.marginRight,
+		attributes?.marginBottom,
+		attributes?.marginLeft
+	);
+
+	const padding = getResolvedSides(
 		attributes?.padding,
 		attributes?.paddingTop,
 		attributes?.paddingRight,
@@ -51,7 +58,7 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.paddingLeft
 	);
 
-	const itemBorder = getResolvedSides(
+	const border = getResolvedSides(
 		attributes?.border,
 		attributes?.borderTop,
 		attributes?.borderRight,
@@ -59,7 +66,7 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.borderLeft
 	);
 
-	const itemRadius = getResolvedSides(
+	const borderRadius = getResolvedSides(
 		attributes?.borderRadius,
 		attributes?.borderRadiusTop,
 		attributes?.borderRadiusRight,
@@ -67,7 +74,7 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.borderRadiusLeft
 	);
 
-	const hoverItemPadding = getResolvedSides(
+	const hoverPadding = getResolvedSides(
 		attributes?.hoverPadding,
 		attributes?.hoverPaddingTop,
 		attributes?.hoverPaddingRight,
@@ -75,7 +82,7 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.hoverPaddingLeft
 	);
 
-	const hoverItemBorder = getResolvedSides(
+	const hoverBorder = getResolvedSides(
 		attributes?.hoverBorder,
 		attributes?.hoverBorderTop,
 		attributes?.hoverBorderRight,
@@ -83,7 +90,15 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.hoverBorderLeft
 	);
 
-	const hoverItemRadius = getResolvedSides(
+	const hoverMargin = getResolvedSides(
+		attributes?.hoverMargin,
+		attributes?.hoverMarginTop,
+		attributes?.hoverMarginRight,
+		attributes?.hoverMarginBottom,
+		attributes?.hoverMarginLeft
+	);
+
+	const hoverRadius = getResolvedSides(
 		attributes?.hoverBorderRadius,
 		attributes?.hoverBorderRadiusTop,
 		attributes?.hoverBorderRadiusRight,
@@ -105,7 +120,6 @@ export const getBlockStyles = ( attributes ) => {
 		// ===============================
 		'--items-width': itemsWidthValue,
 		'--selectedIcon': attributes?.selectedIcon,
-		'--iconSize': attributes?.iconSize,
 		'--separator-thickness':
 			attributes?.separatorThickness &&
 			`${ attributes.separatorThickness }px`,
@@ -152,24 +166,31 @@ export const getBlockStyles = ( attributes ) => {
 		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
 
 		// Padding Defaults
-		'--padding-top': itemPadding?.top && `${ itemPadding.top }px`,
-		'--padding-right': itemPadding?.right && `${ itemPadding.right }px`,
-		'--padding-bottom': itemPadding?.bottom && `${ itemPadding.bottom }px`,
-		'--padding-left': itemPadding?.left && `${ itemPadding.left }px`,
+		'--padding-top': padding?.top && `${ padding.top }px`,
+		'--padding-right': padding?.right && `${ padding.right }px`,
+		'--padding-bottom': padding?.bottom && `${ padding.bottom }px`,
+		'--padding-left': padding?.left && `${ padding.left }px`,
+
+		//margin
+		'--margin-top': margin?.top && `${ margin.top }px`,
+		'--margin-right': margin?.right && `${ margin.right }px`,
+		'--margin-bottom': margin?.bottom && `${ margin.bottom }px`,
+		'--margin-left': margin?.left && `${ margin.left }px`,
 
 		// Border Width Defaults
-		'--border-top-width': itemBorder?.top && `${ itemBorder.top }px`,
-		'--border-right-width': itemBorder?.right && `${ itemBorder.right }px`,
-		'--border-bottom-width':
-			itemBorder?.bottom && `${ itemBorder.bottom }px`,
-		'--border-left-width': itemBorder?.left && `${ itemBorder.left }px`,
+		'--border-top-width': border?.top && `${ border.top }px`,
+		'--border-right-width': border?.right && `${ border.right }px`,
+		'--border-bottom-width': border?.bottom && `${ border.bottom }px`,
+		'--border-left-width': border?.left && `${ border.left }px`,
 
 		// Border Radius Defaults
-		'--border-radius-top': itemRadius?.top && `${ itemRadius.top }px`,
-		'--border-radius-right': itemRadius?.right && `${ itemRadius.right }px`,
+		'--border-radius-top': borderRadius?.top && `${ borderRadius.top }px`,
+		'--border-radius-right':
+			borderRadius?.right && `${ borderRadius.right }px`,
 		'--border-radius-bottom':
-			itemRadius?.bottom && `${ itemRadius.bottom }px`,
-		'--border-radius-left': itemRadius?.left && `${ itemRadius.left }px`,
+			borderRadius?.bottom && `${ borderRadius.bottom }px`,
+		'--border-radius-left':
+			borderRadius?.left && `${ borderRadius.left }px`,
 
 		// ===============================
 		// HOVER DEFAULTS FOR CHILD
@@ -180,30 +201,27 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-style-h': attributes?.hoverBorderType,
 		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
 
-		'--padding-top-h':
-			hoverItemPadding?.top && `${ hoverItemPadding.top }px`,
-		'--padding-right-h':
-			hoverItemPadding?.right && `${ hoverItemPadding.right }px`,
+		'--padding-top-h': hoverPadding?.top && `${ hoverPadding.top }px`,
+		'--padding-right-h': hoverPadding?.right && `${ hoverPadding.right }px`,
 		'--padding-bottom-h':
-			hoverItemPadding?.bottom && `${ hoverItemPadding.bottom }px`,
-		'--padding-left-h':
-			hoverItemPadding?.left && `${ hoverItemPadding.left }px`,
+			hoverPadding?.bottom && `${ hoverPadding.bottom }px`,
+		'--padding-left-h': hoverPadding?.left && `${ hoverPadding.left }px`,
 
-		'--border-top-h': hoverItemBorder?.top && `${ hoverItemBorder.top }px`,
-		'--border-right-h':
-			hoverItemBorder?.right && `${ hoverItemBorder.right }px`,
-		'--border-bottom-h':
-			hoverItemBorder?.bottom && `${ hoverItemBorder.bottom }px`,
-		'--border-left-h':
-			hoverItemBorder?.left && `${ hoverItemBorder.left }px`,
+		// Hover Margin
+		'--margin-top-h': hoverMargin?.top && `${ hoverMargin.top }px`,
+		'--margin-right-h': hoverMargin?.right && `${ hoverMargin.right }px`,
+		'--margin-bottom-h': hoverMargin?.bottom && `${ hoverMargin.bottom }px`,
+		'--margin-left-h': hoverMargin?.left && `${ hoverMargin.left }px`,
 
-		'--radius-top-h': hoverItemRadius?.top && `${ hoverItemRadius.top }px`,
-		'--radius-right-h':
-			hoverItemRadius?.right && `${ hoverItemRadius.right }px`,
-		'--radius-bottom-h':
-			hoverItemRadius?.bottom && `${ hoverItemRadius.bottom }px`,
-		'--radius-left-h':
-			hoverItemRadius?.left && `${ hoverItemRadius.left }px`,
+		'--border-top-h': hoverBorder?.top && `${ hoverBorder.top }px`,
+		'--border-right-h': hoverBorder?.right && `${ hoverBorder.right }px`,
+		'--border-bottom-h': hoverBorder?.bottom && `${ hoverBorder.bottom }px`,
+		'--border-left-h': hoverBorder?.left && `${ hoverBorder.left }px`,
+
+		'--radius-top-h': hoverRadius?.top && `${ hoverRadius.top }px`,
+		'--radius-right-h': hoverRadius?.right && `${ hoverRadius.right }px`,
+		'--radius-bottom-h': hoverRadius?.bottom && `${ hoverRadius.bottom }px`,
+		'--radius-left-h': hoverRadius?.left && `${ hoverRadius.left }px`,
 	} );
 };
 
@@ -213,9 +231,8 @@ export const getChildBlockStyles = ( attributes ) => {
 			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
 		);
 	};
-
 	const SHADOW_VAL =
-		'0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
 
 	const padding = getResolvedSides(
 		attributes?.padding,
@@ -354,17 +371,5 @@ export const getChildBlockStyles = ( attributes ) => {
 			hoverBorderRadius?.bottom && `${ hoverBorderRadius.bottom }px`,
 		'--radius-left-h':
 			hoverBorderRadius?.left && `${ hoverBorderRadius.left }px`,
-	} );
-};
-
-export const getIconStyles = ( attributes ) => {
-	const cleanStyles = ( obj ) => {
-		return Object.fromEntries(
-			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
-		);
-	};
-	return cleanStyles( {
-		'--icon-size': attributes?.iconSize && `${ attributes.iconSize }px`,
-		'--icon-color': attributes?.iconColor,
 	} );
 };

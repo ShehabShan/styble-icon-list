@@ -3,6 +3,7 @@ import {
 	useBlockProps,
 	InspectorControls,
 	InnerBlocks,
+	RichText,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
@@ -14,25 +15,31 @@ import ChildItemStyle from './ChildItemStyle.js';
 import resetIcon from '../assests/reset.svg';
 import { getChildBlockStyles } from '../utils/style.js';
 
+import * as LucideIcons from 'lucide-react';
+
 // This is the checkmark icon from your image
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const parentAttributes = useParentAttributes( clientId );
 
-	const { selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor } =
-		parentAttributes;
+	const {
+		selectedIcon,
+		iconSize,
+		itemsWidth,
+		textContent,
+		itemWidthType,
+		iconColor,
+	} = parentAttributes;
 
 	const childStyle = getChildBlockStyles( attributes, parentAttributes );
+
+	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
 
 	// Helper to check if a specific modal is open
 
 	const blockProps = useBlockProps( {
 		style: {
 			...childStyle, // This spreads all properties from getChildBlockStyles
-			width:
-				itemWidthType === 'custom' && itemsWidth
-					? `${ itemsWidth }px`
-					: undefined,
 		},
 	} );
 
@@ -43,8 +50,16 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			itemsWidth,
 			itemWidthType,
 			iconColor,
+			textContent,
 		} );
-	}, [ selectedIcon, iconSize, itemsWidth, itemWidthType, iconColor ] );
+	}, [
+		selectedIcon,
+		iconSize,
+		itemsWidth,
+		textContent,
+		itemWidthType,
+		iconColor,
+	] );
 
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {
@@ -116,13 +131,28 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					</TabPanel>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...blockProps }>
+			{ /* <div { ...blockProps }>
 				<InnerBlocks
 					allowedBlocks={ [
 						'create-block/icon-picker',
 						'create-block/advanced-text',
 					] }
 					template={ TEMPLATE }
+				/>
+			</div> */ }
+
+			<div { ...blockProps }>
+				<div className="icon-container">
+					{ SelectedIconComponent && <SelectedIconComponent /> }
+				</div>
+
+				<RichText
+					tagName="h3"
+					value={ textContent }
+					placeholder={ __( 'List Text Here', 'icon-list' ) }
+					onChange={ ( newValue ) =>
+						setAttributes( { textContent: newValue } )
+					}
 				/>
 			</div>
 		</>

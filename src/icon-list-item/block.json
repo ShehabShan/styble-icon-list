@@ -12,76 +12,39 @@
 		"html": false
 	},
 	"attributes": {
-		"textContent": {
-			"type": "string",
-			"default": ""
-		},
-		"selectedIcon": {
-			"type": "string",
-			"default": ""
-		},
-		"itemStyleType": {
-			"type": "string",
-			"default": "normal"
-		},
-		"backgroundType": {
-			"type": "string",
-			"default": "solid"
-		},
-		"backgroundColor": {
-			"type": "string"
-		},
-		"backgroundGradient": {
-			"type": "string"
-		},
+		"textContent": { "type": "string" },
+		"selectedIcon": { "type": "string" },
+		"itemStyleType": { "type": "string", "default": "normal" },
+		"backgroundType": { "type": "string", "default": "solid" },
+		"backgroundColor": { "type": "string" },
+		"backgroundGradient": { "type": "string" },
 
-		"padding": {
-			"type": "number",
-			"default": 10
-		},
-		"paddingTop": {
-			"type": "number"
-		},
-		"paddingRight": {
-			"type": "number"
-		},
-		"paddingLeft": {
-			"type": "number"
-		},
-		"paddingBottom": {
-			"type": "number"
-		},
+		"padding": { "type": "number", "default": 10 },
+		"paddingTop": { "type": "number" },
+		"paddingRight": { "type": "number" },
+		"paddingLeft": { "type": "number" },
+		"paddingBottom": { "type": "number" },
 
-		"border": {
-			"type": "number"
-		},
+		"border": { "type": "number" },
 		"borderTop": { "type": "number" },
 		"borderRight": { "type": "number" },
 		"borderBottom": { "type": "number" },
 		"borderLeft": { "type": "number" },
-		"margin": {
-			"type": "number"
-		},
+		"margin": { "type": "number" },
 		"marginTop": { "type": "number" },
 		"marginRight": { "type": "number" },
 		"marginBottom": { "type": "number" },
 		"marginLeft": { "type": "number" },
 
-		"borderType": {
-			"type": "string"
-		},
+		"borderType": { "type": "string" },
 
-		"borderColor": {
-			"type": "string"
-		},
+		"borderColor": { "type": "string" },
 		"borderRadius": { "type": "number" },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
 		"borderRadiusBottom": { "type": "number" },
 		"borderRadiusLeft": { "type": "number" },
-		"hadBoxShadow": {
-			"type": "boolean"
-		},
+		"hadBoxShadow": { "type": "boolean" },
 		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },

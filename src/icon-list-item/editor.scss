@@ -1,5 +1,12 @@
 .wp-block-create-block-icon-list-item {
 	//line break
+
+	.icon-container svg {
+		width: var(--icon-size);
+		height: var(--icon-size);
+		color: var(--icon-color);
+	}
+
 	h3.block-editor-rich-text__editable {
 		font-family: var(--font-family) !important;
 		font-size: var(--font-size) !important;
@@ -10,7 +17,6 @@
 		text-transform: var(--text-transform) !important;
 		text-decoration: var(--text-decoration) !important;
 
-		// Handle Italic specifically
 		font-style: var(--font-style-italic, normal);
 	}
 }

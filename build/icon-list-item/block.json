@@ -13,12 +13,10 @@
   },
   "attributes": {
     "textContent": {
-      "type": "string",
-      "default": ""
+      "type": "string"
     },
     "selectedIcon": {
-      "type": "string",
-      "default": ""
+      "type": "string"
     },
     "itemStyleType": {
       "type": "string",

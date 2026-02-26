@@ -8,7 +8,7 @@ import './side-bar-scss/customOrientation.scss';
 const ListOrientation = ( { listOrientation, setAttributes } ) => {
 	return (
 		<ToggleGroupControl
-			className="custom-orientation "
+			className="custom-orientation"
 			__next40pxDefaultSize
 			isBlock
 			label={ __( 'List Orientation', 'icon-list' ) }

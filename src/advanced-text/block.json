@@ -11,6 +11,113 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"textType": { "type": "string" },
+		"alignment": { "type": "string" },
+		"textOrientation": { "type": "string" },
+		"maxContentWidth": { "type": "number" },
+		"textLimit": { "type": "number" },
+		"textColumns": { "type": "number" },
+		"itemStyleType": {
+			"type": "string"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"backgroundType": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"backgroundGradient": {
+			"type": "string"
+		},
+		"borderType": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"hasBoxShadow": {
+			"type": "boolean"
+		},
+
+		"fontWeight": { "type": "number", "default": 400 },
+		"fontFamily": {
+			"type": "string",
+			"default": "\"Open Sans\", sans-serif"
+		},
+		"fontSize": { "type": "number", "default": 16 },
+		"fontHeight": { "type": "number", "default": 1.2 },
+		"letterSpacing": { "type": "number", "default": 0 },
+		"wordSpacing": { "type": "number", "default": 0 },
+		"isItalic": { "type": "boolean", "default": false },
+		"isUnderline": { "type": "boolean", "default": false },
+		"isStrikethrough": { "type": "boolean", "default": false },
+		"textTransform": { "type": "string", "default": "none" },
+
+		"allPadding": { "type": "number", "default": 0 },
+		"allPaddingTop": { "type": "number" },
+		"allPaddingRight": { "type": "number" },
+		"allPaddingLeft": { "type": "number" },
+		"allPaddingBottom": { "type": "number" },
+
+		"padding": { "type": "number", "default": 0 },
+		"paddingTop": { "type": "number" },
+		"paddingRight": { "type": "number" },
+		"paddingBottom": { "type": "number" },
+		"paddingLeft": { "type": "number" },
+
+		"border": { "type": "number", "default": 0 },
+		"borderTop": { "type": "number" },
+		"borderRight": { "type": "number" },
+		"borderBottom": { "type": "number" },
+		"borderLeft": { "type": "number" },
+
+		"borderRadius": { "type": "number", "default": 0 },
+		"borderRadiusTop": { "type": "number" },
+		"borderRadiusRight": { "type": "number" },
+		"borderRadiusBottom": { "type": "number" },
+		"borderRadiusLeft": { "type": "number" },
+		"hadBoxShadow": { "type": "boolean", "default": "false" },
+
+		"hoverBorder": { "type": "number" },
+		"hoverBorderTop": { "type": "number" },
+		"hoverBorderRight": { "type": "number" },
+		"hoverBorderBottom": { "type": "number" },
+		"hoverBorderLeft": { "type": "number" },
+
+		"hoverBorderRadius": { "type": "number" },
+		"hoverBorderRadiusTop": { "type": "number" },
+		"hoverBorderRadiusRight": { "type": "number" },
+		"hoverBorderRadiusBottom": { "type": "number" },
+		"hoverBorderRadiusLeft": { "type": "number" },
+
+		"hoverPadding": { "type": "number" },
+		"hoverPaddingTop": { "type": "number" },
+		"hoverPaddingRight": { "type": "number" },
+		"hoverPaddingBottom": { "type": "number" },
+		"hoverPaddingLeft": { "type": "number" },
+		"hoverBackgroundType": {
+			"type": "string"
+		},
+		"hoverBackgroundColor": {
+			"type": "string"
+		},
+		"hoverBackgroundGradient": {
+			"type": "string"
+		},
+		"hoverBorderType": {
+			"type": "string"
+		},
+		"hoverBorderColor": {
+			"type": "string"
+		},
+		"hoverHasBoxShadow": {
+			"type": "boolean"
+		}
+	},
 	"textdomain": "advanced-text",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
