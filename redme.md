@@ -1,4 +1,0 @@
-fontSizeUnits
-fontHeightUnits
-letterSpacingUnits
-wordSpacingUnits
