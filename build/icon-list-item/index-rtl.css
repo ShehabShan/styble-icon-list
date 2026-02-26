@@ -1,23 +1,13 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list-item/editor.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************/
-.wp-block-create-block-icon-list-item .icon-container svg {
-  width: var(--icon-size);
-  height: var(--icon-size);
-  color: var(--icon-color);
+.wp-block-create-block-icon-list-item > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.wp-block-create-block-icon-list-item h3.block-editor-rich-text__editable {
-  font-family: var(--font-family) !important;
-  font-size: var(--font-size) !important;
-  font-weight: var(--font-weight) !important;
-  line-height: var(--font-height) !important;
-  letter-spacing: var(--letter-spacing) !important;
-  word-spacing: var(--word-spacing) !important;
-  text-transform: var(--text-transform) !important;
-  -webkit-text-decoration: var(--text-decoration) !important;
-          text-decoration: var(--text-decoration) !important;
-  font-style: var(--font-style-italic, normal);
-}
+
 .my-custom-tabs .components-tab-panel__tabs {
   display: flex;
   border-bottom: 1px solid #e0e0e0;
@@ -25,6 +15,7 @@
   padding: 0;
   background: #fff;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item {
   flex: 1;
   display: flex;
@@ -43,6 +34,7 @@
   box-shadow: none !important;
   transition: all 0.2s ease;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item svg {
   stroke: currentcolor;
   fill: none;
@@ -51,17 +43,21 @@
   height: 18px;
   display: block;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item:focus {
   box-shadow: none !important;
   outline: none;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item:hover:not(.is-active) {
   color: #1e1e1e;
   background-color: #f8f9fa;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item.is-active {
   color: #3858e9;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item.is-active::after {
   content: "";
   position: absolute;
@@ -71,9 +67,11 @@
   height: 2px;
   background-color: #3858e9;
 }
+
 .my-custom-tabs .components-tab-panel__tabs .components-button.components-tab-panel__tabs-item.is-active svg {
   stroke: #3858e9;
 }
+
 .my-custom-tabs .components-tab-panel__tab-content {
   padding-top: 5px;
 }
@@ -388,9 +386,12 @@
   gap: 8px;
 }
 .range-row .range-title-bar .components-unit-control-wrapper {
-  width: 30px !important;
+  width: 35px !important;
   min-height: 30px !important;
   margin-bottom: 0 !important;
+}
+.range-row .range-title-bar .components-unit-control-wrapper .components-base-control__field .components-flex.components-input-base {
+  height: 35px !important;
 }
 .range-row .range-title-bar .components-unit-control-wrapper .components-input-control__container {
   margin-top: 5px;
@@ -403,6 +404,7 @@
   padding-left: 10px !important;
   padding-right: 3px;
   width: 100% !important;
+  text-transform: none;
 }
 .range-row .range-title-bar .components-button {
   padding: 2px !important;
@@ -427,6 +429,31 @@
   background: #fff;
   border-radius: 8px;
   z-index: 999999;
+}
+.typography-popover-container .unit-control-container {
+  position: relative;
+}
+.typography-popover-container .unit-control-container .components-unit-control-wrapper {
+  width: 35px !important;
+  min-height: 30px !important;
+  margin-bottom: 0 !important;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  z-index: 10;
+}
+.typography-popover-container .unit-control-container .components-unit-control-wrapper .components-input-control__container {
+  margin-top: 5px;
+}
+.typography-popover-container .unit-control-container .components-unit-control-wrapper .components-input-control__input {
+  display: none;
+}
+.typography-popover-container .unit-control-container .components-unit-control-wrapper .components-unit-control__select {
+  font-size: 13px !important;
+  padding-left: 10px !important;
+  padding-right: 3px;
+  width: 100% !important;
+  text-transform: none;
 }
 .typography-popover-container .typography-popover-selected-options {
   display: flex;

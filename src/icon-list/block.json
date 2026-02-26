@@ -13,6 +13,19 @@
 	},
 
 	"attributes": {
+		"fontSizeUnits": { "type": "string", "default": "px" },
+		"fontHeightUnits": { "type": "string", "default": "px" },
+		"letterSpacingUnits": { "type": "string", "default": "px" },
+		"wordSpacingUnits": { "type": "string", "default": "px" },
+		"paddingUnits": { "type": "string", "default": "px" },
+		"marginUnits": { "type": "string", "default": "px" },
+		"borderUnits": { "type": "string", "default": "px" },
+		"borderRadiusUnits": { "type": "string", "default": "px" },
+		"hoverPaddingUnits": { "type": "string", "default": "px" },
+		"hoverMarginUnits": { "type": "string", "default": "px" },
+		"hoverBorderUnits": { "type": "string", "default": "px" },
+		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
+
 		"preset": { "type": "string", "default": "preset-1" },
 		"listOrientation": { "type": "string", "default": "vertical" },
 		"itemsGap": { "type": "number", "default": 0 },

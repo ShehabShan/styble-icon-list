@@ -5,6 +5,7 @@ import {
 	TextControl,
 	Button,
 	__experimentalHStack as HStack,
+	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
 import { Italic, Underline, Strikethrough } from 'lucide-react';
@@ -85,51 +86,74 @@ const Typography = ( { attributes, setAttributes } ) => {
 								__next40pxDefaultSize
 							/>
 						</div>
-						<CustomHelperComponent
-							label={ __( 'Font Size', 'icon-list' ) }
-							hasText={ true }
-							text={
-								__( 'px', 'icon-list' ) // You can change this to 'em' or '%' based on your needs
-							}
-						/>
-						<RangeControl
-							label={ __( 'Font Size', 'icon-list' ) }
-							value={ fontSize }
-							onChange={ ( value ) =>
-								setAttributes( {
-									fontSize: value,
-								} )
-							}
-							min={ 10 }
-							max={ 60 }
-						/>
-						<CustomHelperComponent
-							label={ __( 'Font Height', 'icon-list' ) }
-							hasText={ true }
-							text={
-								__( 'px', 'icon-list' ) // You can change this to 'em' or '%' based on your needs
-							}
-						/>
-						<RangeControl
-							label={ __( 'Font Height', 'icon-list' ) }
-							value={ fontHeight }
-							onChange={ ( value ) =>
-								setAttributes( { fontHeight: value } )
-							}
-							min={ 0.5 }
-							max={ 3 }
-							step={ 0.1 }
-						/>
+
+						<div className="unit-control-container">
+							<UnitControl
+								value={ attributes.fontSizeUnits }
+								onChange={ ( nextValue ) =>
+									setAttributes( {
+										fontSizeUnits: nextValue,
+									} )
+								}
+								units={ [
+									{ value: 'px', label: 'px' },
+									{ value: '%', label: '%' },
+									{ value: 'em', label: 'em' },
+								] }
+							/>
+							<RangeControl
+								label={ __( 'Font Size', 'icon-list' ) }
+								value={ fontSize }
+								onChange={ ( value ) =>
+									setAttributes( {
+										fontSize: value,
+									} )
+								}
+								min={ 10 }
+								max={ 60 }
+							/>
+						</div>
+
+						<div className="unit-control-container">
+							<UnitControl
+								value={ attributes.fontHeightUnits }
+								onChange={ ( nextValue ) =>
+									setAttributes( {
+										fontHeightUnits: nextValue,
+									} )
+								}
+								units={ [
+									{ value: 'px', label: 'px' },
+									{ value: '%', label: '%' },
+									{ value: 'em', label: 'em' },
+								] }
+							/>
+							<RangeControl
+								label={ __( 'Font Height', 'icon-list' ) }
+								value={ fontHeight }
+								onChange={ ( value ) =>
+									setAttributes( { fontHeight: value } )
+								}
+								min={ 0.5 }
+								max={ 3 }
+								step={ 0.1 }
+							/>
+						</div>
 
 						<div className="typography-spacing-controls">
-							<div>
-								<CustomHelperComponent
-									label={ __(
-										'Letter Spacing',
-										'icon-list'
-									) }
-									hasText={ true }
-									text={ __( 'px', 'icon-list' ) }
+							<div className="unit-control-container">
+								<UnitControl
+									value={ attributes.letterSpacingUnits }
+									onChange={ ( nextValue ) =>
+										setAttributes( {
+											letterSpacingUnits: nextValue,
+										} )
+									}
+									units={ [
+										{ value: 'px', label: 'px' },
+										{ value: '%', label: '%' },
+										{ value: 'em', label: 'em' },
+									] }
 								/>
 								<TextControl
 									type="number"
@@ -144,11 +168,19 @@ const Typography = ( { attributes, setAttributes } ) => {
 									max={ 10 }
 								/>
 							</div>
-							<div>
-								<CustomHelperComponent
-									label={ __( 'Word Spacing', 'icon-list' ) }
-									hasText={ true }
-									text={ __( 'px', 'icon-list' ) }
+							<div className="unit-control-container">
+								<UnitControl
+									value={ attributes.wordSpacingUnits }
+									onChange={ ( nextValue ) =>
+										setAttributes( {
+											wordSpacingUnits: nextValue,
+										} )
+									}
+									units={ [
+										{ value: 'px', label: 'px' },
+										{ value: '%', label: '%' },
+										{ value: 'em', label: 'em' },
+									] }
 								/>
 								<TextControl
 									type="number"

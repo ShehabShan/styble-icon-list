@@ -28,6 +28,7 @@ const RangeControls = ( props ) => {
 		setIsExpanded( ( prev ) => ! prev );
 	};
 
+	const unitKey = `${ type }Units`;
 	const baseKey = type; // "borderRadius"
 	const topKey = `${ type }Top`; // "borderRadiusTop"
 	const rightKey = `${ type }Right`;
@@ -92,13 +93,13 @@ const RangeControls = ( props ) => {
 						/>
 					</Button>
 					<UnitControl
-						// value={ attributes.padding }
-						// onChange={ ( nextValue ) =>
-						// 	setAttributes( { padding: nextValue } )
-						// }
+						value={ attributes[ unitKey ] }
+						onChange={ ( nextValue ) => {
+							setAttributes( { [ unitKey ]: nextValue } );
+						} }
 						units={ [
-							{ value: 'px', label: 'px', default: 0 },
-							{ value: '%', label: '%', default: 0 },
+							{ value: 'px', label: 'px' },
+							{ value: 'em', label: 'em' },
 						] }
 					/>
 				</div>

@@ -17,8 +17,60 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
-			'textType' => array(
+			'fontSizeUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'fontHeightUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'letterSpacingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'wordSpacingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'paddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'marginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'textContent' => array(
 				'type' => 'string'
+			),
+			'textType' => array(
+				'type' => 'string',
+				'default' => 'h3'
 			),
 			'alignment' => array(
 				'type' => 'string'
@@ -68,20 +120,16 @@ return array(
 				'default' => '"Open Sans", sans-serif'
 			),
 			'fontSize' => array(
-				'type' => 'number',
-				'default' => 16
+				'type' => 'number'
 			),
 			'fontHeight' => array(
-				'type' => 'number',
-				'default' => 1.2
+				'type' => 'number'
 			),
 			'letterSpacing' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'wordSpacing' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'isItalic' => array(
 				'type' => 'boolean',
@@ -253,6 +301,54 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
+			'fontSizeUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'fontHeightUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'letterSpacingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'wordSpacingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'paddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'marginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
 			'preset' => array(
 				'type' => 'string',
 				'default' => 'preset-1'
@@ -516,6 +612,38 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
+			'paddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'marginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
 			'textContent' => array(
 				'type' => 'string'
 			),
@@ -537,8 +665,7 @@ return array(
 				'type' => 'string'
 			),
 			'padding' => array(
-				'type' => 'number',
-				'default' => 10
+				'type' => 'number'
 			),
 			'paddingTop' => array(
 				'type' => 'number'
@@ -692,6 +819,38 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
+			'paddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'marginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'borderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'hoverBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
 			'iconType' => array(
 				'type' => 'string',
 				'default' => 'library'

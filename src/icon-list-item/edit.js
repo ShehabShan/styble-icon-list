@@ -13,7 +13,7 @@ import { PanelBody, RangeControl, TabPanel } from '@wordpress/components';
 import { Settings, Palette } from 'lucide-react';
 import ChildItemStyle from './ChildItemStyle.js';
 import resetIcon from '../assests/reset.svg';
-import { getChildBlockStyles } from '../utils/style.js';
+import { getBlockStyles } from '../utils/style.js';
 
 import * as LucideIcons from 'lucide-react';
 
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		iconColor,
 	} = parentAttributes;
 
-	const childStyle = getChildBlockStyles( attributes, parentAttributes );
+	const childStyle = getBlockStyles( attributes );
 
 	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
 
@@ -131,7 +131,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					</TabPanel>
 				</PanelBody>
 			</InspectorControls>
-			{ /* <div { ...blockProps }>
+			<div { ...blockProps }>
 				<InnerBlocks
 					allowedBlocks={ [
 						'create-block/icon-picker',
@@ -139,9 +139,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					] }
 					template={ TEMPLATE }
 				/>
-			</div> */ }
+			</div>
 
-			<div { ...blockProps }>
+			{ /* <div { ...blockProps }>
 				<div className="icon-container">
 					{ SelectedIconComponent && <SelectedIconComponent /> }
 				</div>
@@ -154,7 +154,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						setAttributes( { textContent: newValue } )
 					}
 				/>
-			</div>
+			</div> */ }
 		</>
 	);
 }

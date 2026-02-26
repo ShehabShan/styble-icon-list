@@ -12,6 +12,15 @@
 		"html": false
 	},
 	"attributes": {
+		"paddingUnits": { "type": "string", "default": "px" },
+		"marginUnits": { "type": "string", "default": "px" },
+		"borderUnits": { "type": "string", "default": "px" },
+		"borderRadiusUnits": { "type": "string", "default": "px" },
+		"hoverPaddingUnits": { "type": "string", "default": "px" },
+		"hoverMarginUnits": { "type": "string", "default": "px" },
+		"hoverBorderUnits": { "type": "string", "default": "px" },
+		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
+
 		"iconType": { "type": "string", "default": "library" },
 		"selectedIcon": { "type": "string", "default": "AArrowDown" },
 		"iconUrl": { "type": "string", "default": "" },

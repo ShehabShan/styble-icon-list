@@ -26,9 +26,15 @@
 
 		// Targeting the UnitControl to be small (20px-30px range)
 		.components-unit-control-wrapper {
-			width: 30px !important; // 20px is too small for a number + unit; 60px is the functional minimum
+			width: 35px !important; // 20px is too small for a number + unit; 60px is the functional minimum
 			min-height: 30px !important;
 			margin-bottom: 0 !important;
+
+			.components-base-control__field {
+				.components-flex.components-input-base {
+					height: 35px !important;
+				}
+			}
 
 			.components-input-control__container {
 				margin-top: 5px;
@@ -43,6 +49,7 @@
 				padding-right: 10px !important;
 				padding-left: 3px;
 				width: 100% !important;
+				text-transform: none;
 			}
 		}
 

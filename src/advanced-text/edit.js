@@ -11,7 +11,8 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
-import { Palette, Settings, Weight } from 'lucide-react';
+import { Palette, Settings } from 'lucide-react';
+import { getBlockStyles } from '../utils/style.js';
 import './editor.scss';
 
 import '../icon-list/side-control-bar/side-bar-scss/listPreset.scss';
@@ -27,8 +28,11 @@ import alignmentVerticalRotated from '../assests/text-orientation-vertical-rotat
 import ChildItemStyle from '../icon-list-item/ChildItemStyle';
 
 export default function Edit( { attributes, setAttributes } ) {
+	const advanceTextStyle = getBlockStyles( attributes );
+
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-advanced-text',
+		style: { ...advanceTextStyle },
 	} );
 
 	const renderTabContent = ( tab ) => {
@@ -301,15 +305,17 @@ export default function Edit( { attributes, setAttributes } ) {
 					</TabPanel>
 				</PanelBody>
 			</InspectorControls>
-			<RichText
-				{ ...blockProps }
-				tagName="h3" // This matches your previous design
-				value={ attributes.textContent }
-				onChange={ ( content ) =>
-					setAttributes( { textContent: content } )
-				}
-				placeholder={ __( 'List Text Here…', 'advanced-text' ) }
-			/>
+
+			<div { ...blockProps }>
+				<RichText
+					tagName={ attributes?.textType }
+					value={ attributes.textContent }
+					onChange={ ( content ) =>
+						setAttributes( { textContent: content } )
+					}
+					placeholder={ __( 'List Text Here…', 'advanced-text' ) }
+				/>
+			</div>
 		</>
 	);
 }

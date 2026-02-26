@@ -12,6 +12,15 @@
 		"html": false
 	},
 	"attributes": {
+		"paddingUnits": { "type": "string", "default": "px" },
+		"marginUnits": { "type": "string", "default": "px" },
+		"borderUnits": { "type": "string", "default": "px" },
+		"borderRadiusUnits": { "type": "string", "default": "px" },
+		"hoverPaddingUnits": { "type": "string", "default": "px" },
+		"hoverMarginUnits": { "type": "string", "default": "px" },
+		"hoverBorderUnits": { "type": "string", "default": "px" },
+		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
+
 		"textContent": { "type": "string" },
 		"selectedIcon": { "type": "string" },
 		"itemStyleType": { "type": "string", "default": "normal" },
@@ -19,7 +28,7 @@
 		"backgroundColor": { "type": "string" },
 		"backgroundGradient": { "type": "string" },
 
-		"padding": { "type": "number", "default": 10 },
+		"padding": { "type": "number" },
 		"paddingTop": { "type": "number" },
 		"paddingRight": { "type": "number" },
 		"paddingLeft": { "type": "number" },

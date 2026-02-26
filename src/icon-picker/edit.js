@@ -17,11 +17,10 @@ import {
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
 import { useState } from '@wordpress/element';
 
-import { getChildBlockStyles } from '../utils/style.js';
+import { getBlockStyles } from '../utils/style.js';
 import editIcon from '../assests/edit-icon.svg';
 import resetIcon from '../assests/reset.svg';
 import { Palette, Settings } from 'lucide-react';
-import IconPickerStyleControl from './IconPickerStyleControl.js';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 
 export default function Edit( { attributes, setAttributes } ) {
@@ -33,7 +32,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const isModalOpen = ( id ) => openModalId === id;
 	const closeAllModals = () => setOpenModalId( null );
 
-	const iconPickerStyle = getChildBlockStyles( attributes );
+	const iconPickerStyle = getBlockStyles( attributes );
 
 	const SelectedIcon = LucideIcons[ selectedIcon ];
 
@@ -200,36 +199,21 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				<div
-					className="icon-wrapper"
-					style={ {
-						width: 'auto',
-						height: 'auto',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						overflow: 'hidden',
-					} }
-				>
-					{ iconType === 'upload' && iconUrl ? (
-						<img
-							src={ iconUrl }
-							alt="Custom Icon"
-							style={ {
-								width: '100%',
-								height: '100%',
-								objectFit: 'cover',
-							} }
-						/>
-					) : (
-						SelectedIcon && (
-							<SelectedIcon
-								size={ iconSize }
-								color={ iconColor }
-							/>
-						)
-					) }
-				</div>
+				{ iconType === 'upload' && iconUrl ? (
+					<img
+						src={ iconUrl }
+						alt="Custom Icon"
+						style={ {
+							width: '100%',
+							height: '100%',
+							objectFit: 'cover',
+						} }
+					/>
+				) : (
+					SelectedIcon && (
+						<SelectedIcon size={ iconSize } color={ iconColor } />
+					)
+				) }
 			</div>
 		</>
 	);
