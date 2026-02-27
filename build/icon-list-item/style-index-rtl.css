@@ -5,14 +5,24 @@
   height: auto !important;
   position: relative;
   min-height: 40px;
-  display: block;
+  display: flex;
+  align-items: center;
   width: var(--items-width);
-  /* Box */
   background: var(--background-color, transparent);
   border-color: var(--border-color, transparent);
+  /* 2. Individual Border Styles */
   border-style: var(--border-style, none);
-  box-shadow: var(--box-shadow, none);
-  /* Margin */
+  /* 3. Individual Border Widths */
+  border-top-width: var(--border-top-width, initial);
+  border-left-width: var(--border-right-width, initial);
+  border-bottom-width: var(--border-bottom-width, initial);
+  border-right-width: var(--border-left-width, initial);
+  /* 4. Individual Border Radii */
+  border-top-right-radius: var(--border-radius-top, initial);
+  border-top-left-radius: var(--border-radius-right, initial);
+  border-bottom-left-radius: var(--border-radius-bottom, initial);
+  border-bottom-right-radius: var(--border-radius-left, initial);
+  /* 5. Individual Padding */
   margin-top: var(--margin-top, initial);
   margin-left: var(--margin-right, initial);
   margin-bottom: var(--margin-bottom, initial);
@@ -22,57 +32,64 @@
   padding-left: var(--padding-right, initial);
   padding-bottom: var(--padding-bottom, initial);
   padding-right: var(--padding-left, initial);
-  /* Border Width */
-  border-top-width: var(--border-top-width, 0);
-  border-left-width: var(--border-right-width, 0);
-  border-bottom-width: var(--border-bottom-width, 0);
-  border-right-width: var(--border-left-width, 0);
-  /* Border Radius */
-  border-top-right-radius: var(--border-radius-top, 0);
-  border-top-left-radius: var(--border-radius-right, 0);
-  border-bottom-left-radius: var(--border-radius-bottom, 0);
-  border-bottom-right-radius: var(--border-radius-left, 0);
+  /* 7. Box Shadow */
+  box-shadow: var(--box-shadow, none);
   transition: all 0.2s ease-in-out;
-  /* ----------------------------
-     Hover State
-  ----------------------------- */
 }
 .wp-block-create-block-icon-list-item:hover {
+  /* 1. Background & Shadow */
   background: var(--bg-h, var(--background-color, transparent));
+  box-shadow: var(--box-shadow-h, var(--box-shadow, none));
+  /* 2. Border Style & Color */
   border-color: var(--border-color-h, var(--border-color, transparent));
   border-style: var(--border-style-h, var(--border-style, none));
-  box-shadow: var(--box-shadow-h, var(--box-shadow, none));
+  /* 3. Border Widths on Hover */
+  border-top-width: var(--border-top-h, var(--border-top-width, initial));
+  border-left-width: var(--border-right-h, var(--border-right-width, initial));
+  border-bottom-width: var(--border-bottom-h, var(--border-bottom-width, initial));
+  border-right-width: var(--border-left-h, var(--border-left-width, initial));
+  /* 4. Border Radius on Hover */
+  border-top-right-radius: var(--radius-top-h, var(--border-radius-top, initial));
+  border-top-left-radius: var(--radius-right-h, var(--border-radius-right, initial));
+  border-bottom-left-radius: var(--radius-bottom-h, var(--border-radius-bottom, initial));
+  border-bottom-right-radius: var(--radius-left-h, var(--border-radius-left, initial));
+  /* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
   padding-top: var(--padding-top-h, var(--padding-top, initial));
   padding-left: var(--padding-right-h, var(--padding-right, initial));
   padding-bottom: var(--padding-bottom-h, var(--padding-bottom, initial));
   padding-right: var(--padding-left-h, var(--padding-left, initial));
+  /* 6. Margin on Hover */
   margin-top: var(--margin-top-h, var(--margin-top, initial));
   margin-left: var(--margin-right-h, var(--margin-right, initial));
   margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
   margin-right: var(--margin-left-h, var(--margin-left, initial));
-  border-top-width: var(--border-top-h, var(--border-top-width, 0));
-  border-left-width: var(--border-right-h, var(--border-right-width, 0));
-  border-bottom-width: var(--border-bottom-h, var(--border-bottom-width, 0));
-  border-right-width: var(--border-left-h, var(--border-left-width, 0));
-  border-top-right-radius: var(--radius-top-h, var(--border-radius-top, 0));
-  border-top-left-radius: var(--radius-right-h, var(--border-radius-right, 0));
-  border-bottom-left-radius: var(--radius-bottom-h, var(--border-radius-bottom, 0));
-  border-bottom-right-radius: var(--radius-left-h, var(--border-radius-left, 0));
 }
-.wp-block-create-block-icon-list-item h3 {
-  font-family: var(--font-family, inherit);
-  font-size: var(--font-size, inherit);
-  font-weight: var(--font-weight, inherit);
-  line-height: var(--font-height, inherit);
-  letter-spacing: var(--letter-spacing, inherit);
-  word-spacing: var(--word-spacing, inherit);
-  text-transform: var(--text-transform, inherit);
-  -webkit-text-decoration: var(--text-decoration, inherit);
-          text-decoration: var(--text-decoration, inherit);
-  font-style: var(--font-style-italic, normal);
+.wp-block-create-block-icon-list-item .wp-block-create-block-icon-picker,
+.wp-block-create-block-icon-list-item .wp-block-create-block-advanced-text {
+  background: transparent !important;
+  box-shadow: none !important;
+  /* 4. Individual Border Radii */
+  border-top-right-radius: var(--border-radius-top, initial);
+  border-top-left-radius: var(--border-radius-right, initial);
+  border-bottom-left-radius: var(--border-radius-bottom, initial);
+  border-bottom-right-radius: var(--border-radius-left, initial);
+  border-color: var(--child-border-color, transparent);
+  border-style: var(--child-border-style, none);
+  border-top-width: var(--child-border-top-width, 0);
+  border-left-width: var(--child-border-right-width, 0);
+  border-bottom-width: var(--child-border-bottom-width, 0);
+  border-right-width: var(--child-border-left-width, 0);
+  padding-top: var(--padding-top-h, var(--padding-top, initial));
+  padding-left: var(--padding-right-h, var(--padding-right, initial));
+  padding-bottom: var(--padding-bottom-h, var(--padding-bottom, initial));
+  padding-right: var(--padding-left-h, var(--padding-left, initial));
+  /* 6. Margin on Hover */
+  margin-top: var(--margin-top-h, var(--margin-top, initial));
+  margin-left: var(--margin-right-h, var(--margin-right, initial));
+  margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
+  margin-right: var(--margin-left-h, var(--margin-left, initial));
 }
-.wp-block-create-block-icon-list-item {
-  /* ----------------------------
-     Typography
-  ----------------------------- */
+.wp-block-create-block-icon-list-item .wp-block-create-block-icon-picker:hover,
+.wp-block-create-block-icon-list-item .wp-block-create-block-advanced-text:hover {
+  background: var(--bg-h, var(--background-color, transparent)) !important;
 }

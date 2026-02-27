@@ -41,8 +41,8 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
-			'borderUnits' => array(
-				'type' => 'string',
+			'childBorderUnits' => array(
+				'type' => 'number',
 				'default' => 'px'
 			),
 			'borderRadiusUnits' => array(
@@ -64,6 +64,10 @@ return array(
 			'hoverBorderRadiusUnits' => array(
 				'type' => 'string',
 				'default' => 'px'
+			),
+			'itemStyleType' => array(
+				'type' => 'string',
+				'default' => 'normal'
 			),
 			'textContent' => array(
 				'type' => 'string'
@@ -87,9 +91,6 @@ return array(
 			'textColumns' => array(
 				'type' => 'number'
 			),
-			'itemStyleType' => array(
-				'type' => 'string'
-			),
 			'textColor' => array(
 				'type' => 'string'
 			),
@@ -102,22 +103,14 @@ return array(
 			'backgroundGradient' => array(
 				'type' => 'string'
 			),
-			'borderType' => array(
-				'type' => 'string'
-			),
-			'borderColor' => array(
-				'type' => 'string'
-			),
 			'hasBoxShadow' => array(
 				'type' => 'boolean'
 			),
 			'fontWeight' => array(
-				'type' => 'number',
-				'default' => 400
+				'type' => 'number'
 			),
 			'fontFamily' => array(
-				'type' => 'string',
-				'default' => '"Open Sans", sans-serif'
+				'type' => 'string'
 			),
 			'fontSize' => array(
 				'type' => 'number'
@@ -132,20 +125,16 @@ return array(
 				'type' => 'number'
 			),
 			'isItalic' => array(
-				'type' => 'boolean',
-				'default' => false
+				'type' => 'boolean'
 			),
 			'isUnderline' => array(
-				'type' => 'boolean',
-				'default' => false
+				'type' => 'boolean'
 			),
 			'isStrikethrough' => array(
-				'type' => 'boolean',
-				'default' => false
+				'type' => 'boolean'
 			),
 			'textTransform' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'allPadding' => array(
 				'type' => 'number',
@@ -179,21 +168,26 @@ return array(
 			'paddingLeft' => array(
 				'type' => 'number'
 			),
-			'border' => array(
-				'type' => 'number',
-				'default' => 0
-			),
-			'borderTop' => array(
+			'childBorder' => array(
 				'type' => 'number'
 			),
-			'borderRight' => array(
+			'childBorderTop' => array(
 				'type' => 'number'
 			),
-			'borderBottom' => array(
+			'childBorderRight' => array(
 				'type' => 'number'
 			),
-			'borderLeft' => array(
+			'childBorderBottom' => array(
 				'type' => 'number'
+			),
+			'childBorderLeft' => array(
+				'type' => 'number'
+			),
+			'childBorderType' => array(
+				'type' => 'string'
+			),
+			'ChildBorderColor' => array(
+				'type' => 'string'
 			),
 			'borderRadius' => array(
 				'type' => 'number',
@@ -215,19 +209,25 @@ return array(
 				'type' => 'boolean',
 				'default' => 'false'
 			),
-			'hoverBorder' => array(
+			'childHoverBorderType' => array(
+				'type' => 'string'
+			),
+			'childHoverBorderColor' => array(
+				'type' => 'string'
+			),
+			'childHoverBorder' => array(
 				'type' => 'number'
 			),
-			'hoverBorderTop' => array(
+			'childHoverBorderTop' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRight' => array(
+			'childHoverBorderRight' => array(
 				'type' => 'number'
 			),
-			'hoverBorderBottom' => array(
+			'childHoverBorderBottom' => array(
 				'type' => 'number'
 			),
-			'hoverBorderLeft' => array(
+			'childHoverBorderLeft' => array(
 				'type' => 'number'
 			),
 			'hoverBorderRadius' => array(
@@ -267,12 +267,6 @@ return array(
 				'type' => 'string'
 			),
 			'hoverBackgroundGradient' => array(
-				'type' => 'string'
-			),
-			'hoverBorderType' => array(
-				'type' => 'string'
-			),
-			'hoverBorderColor' => array(
 				'type' => 'string'
 			),
 			'hoverHasBoxShadow' => array(
@@ -359,7 +353,7 @@ return array(
 			),
 			'itemsGap' => array(
 				'type' => 'number',
-				'default' => 0
+				'default' => 10
 			),
 			'selectedIcon' => array(
 				'type' => 'string'
@@ -377,8 +371,7 @@ return array(
 				'default' => 'none'
 			),
 			'separatorColor' => array(
-				'type' => 'string',
-				'default' => '#000000'
+				'type' => 'string'
 			),
 			'separatorThickness' => array(
 				'type' => 'number',
@@ -401,12 +394,10 @@ return array(
 				'default' => '"Open Sans", sans-serif'
 			),
 			'fontSize' => array(
-				'type' => 'number',
-				'default' => 16
+				'type' => 'number'
 			),
 			'fontHeight' => array(
-				'type' => 'number',
-				'default' => 1.2
+				'type' => 'number'
 			),
 			'letterSpacing' => array(
 				'type' => 'number',
@@ -429,12 +420,10 @@ return array(
 				'default' => false
 			),
 			'textTransform' => array(
-				'type' => 'string',
-				'default' => 'none'
+				'type' => 'string'
 			),
 			'iconColor' => array(
-				'type' => 'string',
-				'default' => '#000000'
+				'type' => 'string'
 			),
 			'itemStyleType' => array(
 				'type' => 'string',
@@ -589,6 +578,9 @@ return array(
 			'hoverPaddingLeft' => array(
 				'type' => 'number'
 			)
+		),
+		'providesContext' => array(
+			'my-plugin/selectedIcon' => 'selectedIcon'
 		),
 		'textdomain' => 'icon-list',
 		'editorScript' => 'file:./index.js',
@@ -827,8 +819,8 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
-			'borderUnits' => array(
-				'type' => 'string',
+			'childBorderUnits' => array(
+				'type' => 'number',
 				'default' => 'px'
 			),
 			'borderRadiusUnits' => array(
@@ -851,25 +843,28 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
+			'globalIcon' => array(
+				'type' => 'string'
+			),
 			'iconType' => array(
 				'type' => 'string',
 				'default' => 'library'
 			),
 			'selectedIcon' => array(
-				'type' => 'string',
-				'default' => 'AArrowDown'
+				'type' => 'string'
 			),
 			'iconUrl' => array(
 				'type' => 'string',
 				'default' => ''
 			),
 			'iconSize' => array(
-				'type' => 'number',
-				'default' => 30
+				'type' => 'number'
 			),
 			'iconColor' => array(
-				'type' => 'string',
-				'default' => '#000000'
+				'type' => 'string'
+			),
+			'hoverIconColor' => array(
+				'type' => 'string'
 			),
 			'hasLink' => array(
 				'type' => 'boolean',
@@ -908,21 +903,6 @@ return array(
 			'paddingBottom' => array(
 				'type' => 'number'
 			),
-			'border' => array(
-				'type' => 'number'
-			),
-			'borderTop' => array(
-				'type' => 'number'
-			),
-			'borderRight' => array(
-				'type' => 'number'
-			),
-			'borderBottom' => array(
-				'type' => 'number'
-			),
-			'borderLeft' => array(
-				'type' => 'number'
-			),
 			'margin' => array(
 				'type' => 'number'
 			),
@@ -938,10 +918,25 @@ return array(
 			'marginLeft' => array(
 				'type' => 'number'
 			),
-			'borderType' => array(
+			'childBorder' => array(
+				'type' => 'number'
+			),
+			'childBorderTop' => array(
+				'type' => 'number'
+			),
+			'childBorderRight' => array(
+				'type' => 'number'
+			),
+			'childBorderBottom' => array(
+				'type' => 'number'
+			),
+			'childBorderLeft' => array(
+				'type' => 'number'
+			),
+			'childBorderType' => array(
 				'type' => 'string'
 			),
-			'borderColor' => array(
+			'ChildBorderColor' => array(
 				'type' => 'string'
 			),
 			'borderRadius' => array(
@@ -968,25 +963,25 @@ return array(
 			'hoverBackgroundGradient' => array(
 				'type' => 'string'
 			),
-			'hoverBorderType' => array(
+			'childHoverBorderType' => array(
 				'type' => 'string'
 			),
-			'hoverBorderColor' => array(
+			'childHoverBorderColor' => array(
 				'type' => 'string'
 			),
-			'hoverBorder' => array(
+			'childHoverBorder' => array(
 				'type' => 'number'
 			),
-			'hoverBorderTop' => array(
+			'childHoverBorderTop' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRight' => array(
+			'childHoverBorderRight' => array(
 				'type' => 'number'
 			),
-			'hoverBorderBottom' => array(
+			'childHoverBorderBottom' => array(
 				'type' => 'number'
 			),
-			'hoverBorderLeft' => array(
+			'childHoverBorderLeft' => array(
 				'type' => 'number'
 			),
 			'hoverBorderRadius' => array(

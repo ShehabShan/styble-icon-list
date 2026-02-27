@@ -93,11 +93,6 @@ const CustomItemWidth = ( {
 							/>
 						</ToggleGroupControl>
 
-						<CustomHelperComponent
-							label={ __( 'Item Width', 'icon-list' ) }
-							hasText={ true }
-							text={ __( '%', 'icon-list' ) }
-						/>
 						{ /* Thickness Section */ }
 						<RangeControl
 							__next40pxDefaultSize
@@ -107,8 +102,8 @@ const CustomItemWidth = ( {
 									itemsWidth: value,
 								} )
 							}
-							min={ 150 }
-							max={ 1200 }
+							min={ 50 }
+							max={ 600 }
 						/>
 						{ /* Color Section */ }
 					</div>

@@ -28,12 +28,12 @@
 
 		"preset": { "type": "string", "default": "preset-1" },
 		"listOrientation": { "type": "string", "default": "vertical" },
-		"itemsGap": { "type": "number", "default": 0 },
+		"itemsGap": { "type": "number", "default": 10 },
 		"selectedIcon": { "type": "string" },
 		"hasIcon": { "type": "boolean", "default": false },
 		"iconSize": { "type": "number", "default": 20 },
 		"separatorType": { "type": "string", "default": "none" },
-		"separatorColor": { "type": "string", "default": "#000000" },
+		"separatorColor": { "type": "string" },
 		"separatorThickness": { "type": "number", "default": 0 },
 		"itemWidthType": { "type": "string", "default": "auto" },
 
@@ -43,15 +43,15 @@
 			"type": "string",
 			"default": "\"Open Sans\", sans-serif"
 		},
-		"fontSize": { "type": "number", "default": 16 },
-		"fontHeight": { "type": "number", "default": 1.2 },
+		"fontSize": { "type": "number" },
+		"fontHeight": { "type": "number" },
 		"letterSpacing": { "type": "number", "default": 0 },
 		"wordSpacing": { "type": "number", "default": 0 },
 		"isItalic": { "type": "boolean", "default": false },
 		"isUnderline": { "type": "boolean", "default": false },
 		"isStrikethrough": { "type": "boolean", "default": false },
-		"textTransform": { "type": "string", "default": "none" },
-		"iconColor": { "type": "string", "default": "#000000" },
+		"textTransform": { "type": "string" },
+		"iconColor": { "type": "string" },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
 		"backgroundColor": { "type": "string", "default": "#fff" },
@@ -110,7 +110,9 @@
 		"hoverPaddingBottom": { "type": "number" },
 		"hoverPaddingLeft": { "type": "number" }
 	},
-
+	"providesContext": {
+		"my-plugin/selectedIcon": "selectedIcon"
+	},
 	"textdomain": "icon-list",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

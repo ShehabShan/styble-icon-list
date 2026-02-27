@@ -19,13 +19,12 @@ const ListPreset = ( {
 			borderColor: '#FFFFFF',
 			borderType: 'none',
 			hadBoxShadow: false,
-			// Define values for preset 1
 		},
 		'preset-2': {
 			backgroundColor: '#F5F5FF',
 			borderColor: '#4649FF',
 			borderType: 'solid',
-			hadBoxShadow: false, // Assuming boolean based on your JSON
+			hadBoxShadow: false,
 
 			// Border Widths (Individual attributes)
 			borderTop: 1,

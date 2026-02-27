@@ -36,8 +36,8 @@
       "type": "string",
       "default": "px"
     },
-    "borderUnits": {
-      "type": "string",
+    "childBorderUnits": {
+      "type": "number",
       "default": "px"
     },
     "borderRadiusUnits": {
@@ -59,6 +59,10 @@
     "hoverBorderRadiusUnits": {
       "type": "string",
       "default": "px"
+    },
+    "itemStyleType": {
+      "type": "string",
+      "default": "normal"
     },
     "textContent": {
       "type": "string"
@@ -82,9 +86,6 @@
     "textColumns": {
       "type": "number"
     },
-    "itemStyleType": {
-      "type": "string"
-    },
     "textColor": {
       "type": "string"
     },
@@ -97,22 +98,14 @@
     "backgroundGradient": {
       "type": "string"
     },
-    "borderType": {
-      "type": "string"
-    },
-    "borderColor": {
-      "type": "string"
-    },
     "hasBoxShadow": {
       "type": "boolean"
     },
     "fontWeight": {
-      "type": "number",
-      "default": 400
+      "type": "number"
     },
     "fontFamily": {
-      "type": "string",
-      "default": "\"Open Sans\", sans-serif"
+      "type": "string"
     },
     "fontSize": {
       "type": "number"
@@ -127,20 +120,16 @@
       "type": "number"
     },
     "isItalic": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "isUnderline": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "isStrikethrough": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "textTransform": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "allPadding": {
       "type": "number",
@@ -174,21 +163,26 @@
     "paddingLeft": {
       "type": "number"
     },
-    "border": {
-      "type": "number",
-      "default": 0
-    },
-    "borderTop": {
+    "childBorder": {
       "type": "number"
     },
-    "borderRight": {
+    "childBorderTop": {
       "type": "number"
     },
-    "borderBottom": {
+    "childBorderRight": {
       "type": "number"
     },
-    "borderLeft": {
+    "childBorderBottom": {
       "type": "number"
+    },
+    "childBorderLeft": {
+      "type": "number"
+    },
+    "childBorderType": {
+      "type": "string"
+    },
+    "ChildBorderColor": {
+      "type": "string"
     },
     "borderRadius": {
       "type": "number",
@@ -210,19 +204,25 @@
       "type": "boolean",
       "default": "false"
     },
-    "hoverBorder": {
+    "childHoverBorderType": {
+      "type": "string"
+    },
+    "childHoverBorderColor": {
+      "type": "string"
+    },
+    "childHoverBorder": {
       "type": "number"
     },
-    "hoverBorderTop": {
+    "childHoverBorderTop": {
       "type": "number"
     },
-    "hoverBorderRight": {
+    "childHoverBorderRight": {
       "type": "number"
     },
-    "hoverBorderBottom": {
+    "childHoverBorderBottom": {
       "type": "number"
     },
-    "hoverBorderLeft": {
+    "childHoverBorderLeft": {
       "type": "number"
     },
     "hoverBorderRadius": {
@@ -262,12 +262,6 @@
       "type": "string"
     },
     "hoverBackgroundGradient": {
-      "type": "string"
-    },
-    "hoverBorderType": {
-      "type": "string"
-    },
-    "hoverBorderColor": {
       "type": "string"
     },
     "hoverHasBoxShadow": {

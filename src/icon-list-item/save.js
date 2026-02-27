@@ -1,23 +1,17 @@
-import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
-
-import * as LucideIcons from 'lucide-react';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { getBlockStyles } from '../utils/style.js'; // Assuming you use the same utility
 
 export default function save( { attributes } ) {
-	const { textContent, selectedIcon } = attributes;
+	const itemStyles = getBlockStyles( attributes );
 
-	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
-
-	const blockProps = useBlockProps.save();
+	const blockProps = useBlockProps.save( {
+		className: 'wp-block-create-block-icon-list-item',
+		style: { ...itemStyles },
+	} );
 
 	return (
-		// <div { ...blockProps }>
-		// 	<InnerBlocks.Content />
-		// </div>
-
 		<div { ...blockProps }>
-			<div>{ SelectedIconComponent && <SelectedIconComponent /> }</div>
-
-			<RichText.Content tagName="h3" value={ textContent } />
+			<InnerBlocks.Content />
 		</div>
 	);
 }

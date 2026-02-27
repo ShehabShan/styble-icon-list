@@ -3,37 +3,20 @@ import {
 	useBlockProps,
 	InspectorControls,
 	InnerBlocks,
-	RichText,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
-import { useParentAttributes } from '../hooks/useParentAttributes.js';
-import { useEffect } from '@wordpress/element';
+
 import { PanelBody, RangeControl, TabPanel } from '@wordpress/components';
 import { Settings, Palette } from 'lucide-react';
 import ChildItemStyle from './ChildItemStyle.js';
 import resetIcon from '../assests/reset.svg';
 import { getBlockStyles } from '../utils/style.js';
 
-import * as LucideIcons from 'lucide-react';
-
 // This is the checkmark icon from your image
 
-export default function Edit( { attributes, setAttributes, clientId } ) {
-	const parentAttributes = useParentAttributes( clientId );
-
-	const {
-		selectedIcon,
-		iconSize,
-		itemsWidth,
-		textContent,
-		itemWidthType,
-		iconColor,
-	} = parentAttributes;
-
+export default function Edit( { attributes, setAttributes } ) {
 	const childStyle = getBlockStyles( attributes );
-
-	const SelectedIconComponent = LucideIcons[ selectedIcon ] || null;
 
 	// Helper to check if a specific modal is open
 
@@ -42,24 +25,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			...childStyle, // This spreads all properties from getChildBlockStyles
 		},
 	} );
-
-	useEffect( () => {
-		setAttributes( {
-			selectedIcon,
-			iconSize,
-			itemsWidth,
-			itemWidthType,
-			iconColor,
-			textContent,
-		} );
-	}, [
-		selectedIcon,
-		iconSize,
-		itemsWidth,
-		textContent,
-		itemWidthType,
-		iconColor,
-	] );
 
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {

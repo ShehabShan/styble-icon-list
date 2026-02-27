@@ -28,6 +28,21 @@ const ChildItemStyle = ( props ) => {
 	const IconDashed = <span className="border-icon border-dashed"></span>;
 	const IconDotted = <span className="border-icon border-dotted"></span>;
 
+	// 1. Define logic at the root level
+	const isChild = [ 'advanceText', 'iconPicker' ].includes( props?.type );
+
+	const borderKey = isChild ? 'childBorder' : 'border';
+	const typeKey = isChild ? 'childBorderType' : 'borderType';
+	const colorKey = isChild ? 'childBorderColor' : 'borderColor';
+	const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
+	const hoverTypeKey = isChild ? 'childBorderType' : 'borderType';
+	const hoverColorKey = isChild ? 'childBorderColor' : 'borderColor';
+
+	const getOptionClass = ( value, targetKey ) => {
+		const isActive = attributes[ targetKey ] === value;
+		return `custom-border-option ${ isActive ? 'is-active' : '' }`;
+	};
+
 	return (
 		<div>
 			{ props?.type === 'iconPicker' && (
@@ -207,50 +222,46 @@ const ChildItemStyle = ( props ) => {
 								className="custom-border-toggle-group"
 								__next40pxDefaultSize
 								isBlock={ false }
-								value={ attributes?.borderType }
+								value={ attributes[ typeKey ] }
 								onChange={ ( value ) =>
 									setAttributes( {
-										borderType: value,
+										[ typeKey ]: value,
 									} )
 								}
 							>
 								<ToggleGroupControlOption
-									className={ `custom-border-option ${
-										attributes?.borderType === 'none'
-											? 'is-active'
-											: ''
-									}` }
+									className={ getOptionClass(
+										'none',
+										borderKey
+									) }
 									value="none"
 									label={ IconNone }
 									aria-label={ __( 'None', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ `custom-border-option ${
-										attributes?.borderType === 'solid'
-											? 'is-active'
-											: ''
-									}` }
+									className={ getOptionClass(
+										'solid',
+										borderKey
+									) }
 									value="solid"
 									label={ IconSolid }
 									aria-label={ __( 'Solid', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ `custom-border-option ${
-										attributes?.borderType === 'dashed'
-											? 'is-active'
-											: ''
-									}` }
+									className={ getOptionClass(
+										'dashed',
+										borderKey
+									) }
 									s
 									value="dashed"
 									label={ IconDashed }
 									aria-label={ __( 'Dashed', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ `custom-border-option ${
-										attributes?.borderType === 'dotted'
-											? 'is-active'
-											: ''
-									}` }
+									className={ getOptionClass(
+										'dotted',
+										borderKey
+									) }
 									value="dotted"
 									label={ IconDotted }
 									aria-label={ __( 'Dotted', 'icon-list' ) }
@@ -264,7 +275,7 @@ const ChildItemStyle = ( props ) => {
 							attributes={ attributes }
 							isBorder={ true }
 							title={ 'border Width' }
-							type="border"
+							type={ borderKey }
 						/>
 					</div>
 					<div className="control-section control-section--border-color">
@@ -274,11 +285,11 @@ const ChildItemStyle = ( props ) => {
 							hasColor={ true }
 							icon={ resetIcon }
 							label={ __( 'Border Color', 'icon-list' ) }
-							color={ attributes?.borderColor }
+							color={ attributes[ colorKey ] }
 							setAttributes={ setAttributes }
 							onColorChange={ ( color ) =>
 								setAttributes( {
-									borderColor: color,
+									[ colorKey ]: color,
 								} )
 							}
 						/>
@@ -325,6 +336,24 @@ const ChildItemStyle = ( props ) => {
 			{ attributes?.itemStyleType === 'hover' && (
 				<>
 					<div className="background-control-container">
+						{ props?.type === 'iconPicker' && (
+							<div className="control-section control-section--icon-color">
+								<CustomHelperComponent
+									label={ __( 'Icon Colour', 'icon-list' ) }
+									hasColor={ true }
+									hasReset={ true }
+									icon={ resetIcon }
+									resetAttributes="iconColor"
+									color={ attributes?.hoverIconColor }
+									setAttributes={ setAttributes }
+									onColorChange={ ( color ) =>
+										setAttributes( {
+											hoverIconColor: color,
+										} )
+									}
+								/>
+							</div>
+						) }
 						{ /* 1. Background Section */ }
 						<div className="control-section control-section--background-type">
 							<BaseControl
@@ -419,31 +448,27 @@ const ChildItemStyle = ( props ) => {
 									className="custom-border-toggle-group"
 									__next40pxDefaultSize
 									isBlock={ false }
-									value={ attributes?.hoverBorderType }
+									value={ attributes[ hoverTypeKey ] }
 									onChange={ ( value ) =>
 										setAttributes( {
-											hoverBorderType: value,
+											[ hoverTypeKey ]: value,
 										} )
 									}
 								>
 									<ToggleGroupControlOption
-										className={ `custom-border-option ${
-											attributes?.hoverBorderType ===
-											'none'
-												? 'is-active'
-												: ''
-										}` }
+										className={ getOptionClass(
+											'none',
+											hoverBorderkey
+										) }
 										value="none"
 										label={ IconNone }
 										aria-label={ __( 'None', 'icon-list' ) }
 									/>
 									<ToggleGroupControlOption
-										className={ `custom-border-option ${
-											attributes?.hoverBorderType ===
-											'solid'
-												? 'is-active'
-												: ''
-										}` }
+										className={ getOptionClass(
+											'solid',
+											hoverBorderkey
+										) }
 										value="solid"
 										label={ IconSolid }
 										aria-label={ __(
@@ -452,12 +477,10 @@ const ChildItemStyle = ( props ) => {
 										) }
 									/>
 									<ToggleGroupControlOption
-										className={ `custom-border-option ${
-											attributes?.hoverBorderType ===
-											'dashed'
-												? 'is-active'
-												: ''
-										}` }
+										className={ getOptionClass(
+											'dashed',
+											hoverBorderkey
+										) }
 										value="dashed"
 										label={ IconDashed }
 										aria-label={ __(
@@ -466,12 +489,10 @@ const ChildItemStyle = ( props ) => {
 										) }
 									/>
 									<ToggleGroupControlOption
-										className={ `custom-border-option ${
-											attributes?.hoverBorderType ===
-											'dotted'
-												? 'is-active'
-												: ''
-										}` }
+										className={ getOptionClass(
+											'dotted',
+											hoverBorderkey
+										) }
 										value="dotted"
 										label={ IconDotted }
 										aria-label={ __(
@@ -490,7 +511,7 @@ const ChildItemStyle = ( props ) => {
 								attributes={ attributes }
 								isBorder={ true }
 								title={ 'border Width' }
-								type="hoverBorder"
+								type={ hoverBorderkey }
 							/>
 						</div>
 
@@ -502,11 +523,11 @@ const ChildItemStyle = ( props ) => {
 								hasColor={ true }
 								icon={ resetIcon }
 								label={ __( 'Border Color', 'icon-list' ) }
-								color={ attributes?.hoverBorderColor }
+								color={ attributes[ hoverColorKey ] }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
 									setAttributes( {
-										hoverBorderColor: color,
+										[ hoverColorKey ]: color,
 									} )
 								}
 							/>

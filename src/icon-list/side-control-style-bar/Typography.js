@@ -95,11 +95,7 @@ const Typography = ( { attributes, setAttributes } ) => {
 										fontSizeUnits: nextValue,
 									} )
 								}
-								units={ [
-									{ value: 'px', label: 'px' },
-									{ value: '%', label: '%' },
-									{ value: 'em', label: 'em' },
-								] }
+								units={ [ { value: 'px', label: 'px' } ] }
 							/>
 							<RangeControl
 								label={ __( 'Font Size', 'icon-list' ) }
@@ -122,11 +118,7 @@ const Typography = ( { attributes, setAttributes } ) => {
 										fontHeightUnits: nextValue,
 									} )
 								}
-								units={ [
-									{ value: 'px', label: 'px' },
-									{ value: '%', label: '%' },
-									{ value: 'em', label: 'em' },
-								] }
+								units={ [ { value: 'em', label: 'em' } ] }
 							/>
 							<RangeControl
 								label={ __( 'Font Height', 'icon-list' ) }
@@ -149,11 +141,7 @@ const Typography = ( { attributes, setAttributes } ) => {
 											letterSpacingUnits: nextValue,
 										} )
 									}
-									units={ [
-										{ value: 'px', label: 'px' },
-										{ value: '%', label: '%' },
-										{ value: 'em', label: 'em' },
-									] }
+									units={ [ { value: 'em', label: 'em' } ] }
 								/>
 								<TextControl
 									type="number"
@@ -178,7 +166,6 @@ const Typography = ( { attributes, setAttributes } ) => {
 									}
 									units={ [
 										{ value: 'px', label: 'px' },
-										{ value: '%', label: '%' },
 										{ value: 'em', label: 'em' },
 									] }
 								/>

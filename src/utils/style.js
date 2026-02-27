@@ -19,9 +19,6 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 	};
 };
 
-// ===============================
-// PARENT BLOCK STYLES
-// ===============================
 export const getBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
 		return Object.fromEntries(
@@ -29,9 +26,16 @@ export const getBlockStyles = ( attributes ) => {
 		);
 	};
 
-	const withUnit = ( value, unit = 'px' ) => {
-		// If value is missing OR is exactly 0, return null
+	// const cleanStyles = ( obj ) => {
+	// 	return Object.fromEntries(
+	// 		Object.entries( obj ).filter(
+	// 			( [ _, value ] ) =>
+	// 				value !== undefined && value !== null && value !== ''
+	// 		)
+	// 	);
+	// };
 
+	const withUnit = ( value, unit = 'px' ) => {
 		if ( ! value || value === 0 || value === '0' ) {
 			return null;
 		}
@@ -44,7 +48,7 @@ export const getBlockStyles = ( attributes ) => {
 
 	// Units Logic
 	const fzU = attributes?.fontSizeUnits || 'px';
-	const fhU = attributes?.fontHeightUnits || '';
+	const fhU = attributes?.fontHeightUnits || 'px';
 	const lsU = attributes?.letterSpacingUnits || 'px';
 	const wsU = attributes?.wordSpacingUnits || 'px';
 
@@ -93,6 +97,14 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.borderLeft
 	);
 
+	const childBorder = getResolvedSides(
+		attributes?.childBorder,
+		attributes?.childBorderTop,
+		attributes?.childBorderRight,
+		attributes?.childBorderBottom,
+		attributes?.childBorderLeft
+	);
+
 	const borderRadius = getResolvedSides(
 		attributes?.borderRadius,
 		attributes?.borderRadiusTop,
@@ -115,6 +127,14 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.hoverBorderRight,
 		attributes?.hoverBorderBottom,
 		attributes?.hoverBorderLeft
+	);
+
+	const childHoverBorder = getResolvedSides(
+		attributes?.childHoverBorder,
+		attributes?.childHoverBorderTop,
+		attributes?.childHoverBorderRigchildHt,
+		attributes?.childHoverBorderBottom,
+		attributes?.childHoverBorderLeft
 	);
 
 	const hoverMargin = getResolvedSides(
@@ -144,6 +164,9 @@ export const getBlockStyles = ( attributes ) => {
 	const background =
 		attributes?.backgroundColor ?? attributes?.backgroundGradient;
 
+	const hoverBackground =
+		attributes?.hoverBackgroundColor ?? attributes?.hoverBackgroundGradient;
+
 	return cleanStyles( {
 		// ===============================
 		// GENERAL
@@ -158,6 +181,7 @@ export const getBlockStyles = ( attributes ) => {
 		'--separator-style': attributes?.separatorType,
 		'--icon-size': withUnit( attributes?.iconSize, 'px' ),
 		'--icon-color': attributes?.iconColor,
+		'--hover-icon-color': attributes?.hoverIconColor,
 
 		// ===============================
 		// TYPOGRAPHY DEFAULTS
@@ -166,7 +190,7 @@ export const getBlockStyles = ( attributes ) => {
 		'--font-size': withUnit( attributes?.fontSize, fzU ),
 		'--text-color': attributes?.textColor,
 		'--font-weight': attributes?.fontWeight,
-		'--font-height': withUnit( attributes?.fontHeight, fhU ),
+		'--font-height': withUnit( attributes?.fontHeight, 'em' ),
 		'--letter-spacing': withUnit( attributes?.letterSpacing, lsU ),
 		'--word-spacing': withUnit( attributes?.wordSpacing, wsU ),
 		'--font-style-italic': attributes?.isItalic && 'italic',
@@ -191,8 +215,6 @@ export const getBlockStyles = ( attributes ) => {
 		'--background-color':
 			( attributes?.backgroundColor || attributes?.backgroundGradient ) &&
 			`${ background }`,
-		'--border-color': attributes?.borderColor,
-		'--border-style': attributes?.borderType,
 		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
 
 		// Padding (use pU)
@@ -201,6 +223,22 @@ export const getBlockStyles = ( attributes ) => {
 		'--padding-bottom': withUnit( padding?.bottom, pU ),
 		'--padding-left': withUnit( padding?.left, pU ),
 
+		//parent border
+		'--border-color': attributes?.borderColor,
+		'--border-style': attributes?.borderType,
+		'--border-top-width': withUnit( border?.top, bU ),
+		'--border-right-width': withUnit( border?.right, bU ),
+		'--border-bottom-width': withUnit( border?.bottom, bU ),
+		'--border-left-width': withUnit( border?.left, bU ),
+
+		//Child Border
+		'--child-border-color': attributes?.childBorderColor,
+		'--child-border-style': attributes?.childBorderType,
+		'--child-border-top-width': withUnit( childBorder?.top, bU ),
+		'--child-border-right-width': withUnit( childBorder?.right, bU ),
+		'--child-border-bottom-width': withUnit( childBorder?.bottom, bU ),
+		'--child-border-left-width': withUnit( childBorder?.left, bU ),
+
 		// Margin (use mU)
 		'--margin-top': withUnit( margin?.top, mU ),
 		'--margin-right': withUnit( margin?.right, mU ),
@@ -208,10 +246,6 @@ export const getBlockStyles = ( attributes ) => {
 		'--margin-left': withUnit( margin?.left, mU ),
 
 		// Border Width (use bU)
-		'--border-top-width': withUnit( border?.top, bU ),
-		'--border-right-width': withUnit( border?.right, bU ),
-		'--border-bottom-width': withUnit( border?.bottom, bU ),
-		'--border-left-width': withUnit( border?.left, bU ),
 
 		// Border Radius (use rU)
 		'--border-radius-top': withUnit( borderRadius?.top, rU ),
@@ -223,10 +257,19 @@ export const getBlockStyles = ( attributes ) => {
 		// HOVER DEFAULTS
 		// ===============================
 		'--bg-h':
-			attributes?.hoverBackgroundColor || attributes?.backgroundColor,
+			( attributes?.hoverBackgroundColor ||
+				attributes?.hoverBackgroundGradient ) &&
+			`${ hoverBackground }`,
+
+		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+
 		'--border-color-h': attributes?.hoverBorderColor,
 		'--border-style-h': attributes?.hoverBorderType,
-		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+
+		//child border-color-h and border-style-h
+
+		'--child-border-color-h': attributes?.childHoverBorderColor,
+		'--child-border-style-h': attributes?.childHoverBorderType,
 
 		// Hover Padding (use hpU)
 		'--padding-top-h': withUnit( hoverPadding?.top, hpU ),
@@ -246,6 +289,13 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-bottom-h': withUnit( hoverBorder?.bottom, hbU ),
 		'--border-left-h': withUnit( hoverBorder?.left, hbU ),
 
+		//Child hover border
+
+		'--child-border-top-h': withUnit( childHoverBorder?.top, hbU ),
+		'--child-border-right-h': withUnit( childHoverBorder?.right, hbU ),
+		'--child-border-bottom-h': withUnit( childHoverBorder?.bottom, hbU ),
+		'--child-border-left-h': withUnit( childHoverBorder?.left, hbU ),
+
 		// Hover Radius (use hrU)
 		'--radius-top-h': withUnit( hoverRadius?.top, hrU ),
 		'--radius-right-h': withUnit( hoverRadius?.right, hrU ),
@@ -253,152 +303,3 @@ export const getBlockStyles = ( attributes ) => {
 		'--radius-left-h': withUnit( hoverRadius?.left, hrU ),
 	} );
 };
-
-// export const getChildBlockStyles = ( attributes ) => {
-// 	const cleanStyles = ( obj ) => {
-// 		return Object.fromEntries(
-// 			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
-// 		);
-// 	};
-// 	const SHADOW_VAL =
-// 		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
-
-// 	const padding = getResolvedSides(
-// 		attributes?.padding,
-// 		attributes?.paddingTop,
-// 		attributes?.paddingRight,
-// 		attributes?.paddingBottom,
-// 		attributes?.paddingLeft
-// 	);
-
-// 	const margin = getResolvedSides(
-// 		attributes?.margin,
-// 		attributes?.marginTop,
-// 		attributes?.marginRight,
-// 		attributes?.marginBottom,
-// 		attributes?.marginLeft
-// 	);
-
-// 	const border = getResolvedSides(
-// 		attributes?.border,
-// 		attributes?.borderTop,
-// 		attributes?.borderRight,
-// 		attributes?.borderBottom,
-// 		attributes?.borderLeft
-// 	);
-
-// 	const borderRadius = getResolvedSides(
-// 		attributes?.borderRadius,
-// 		attributes?.borderRadiusTop,
-// 		attributes?.borderRadiusRight,
-// 		attributes?.borderRadiusBottom,
-// 		attributes?.borderRadiusLeft
-// 	);
-
-// 	const hoverPadding = getResolvedSides(
-// 		attributes?.hoverPadding,
-// 		attributes?.hoverPaddingTop,
-// 		attributes?.hoverPaddingRight,
-// 		attributes?.hoverPaddingBottom,
-// 		attributes?.hoverPaddingLeft
-// 	);
-
-// 	const hoverMargin = getResolvedSides(
-// 		attributes?.hoverMargin,
-// 		attributes?.hoverMarginTop,
-// 		attributes?.hoverMarginRight,
-// 		attributes?.hoverMarginBottom,
-// 		attributes?.hoverMarginLeft
-// 	);
-
-// 	const hoverBorder = getResolvedSides(
-// 		attributes?.hoverBorder,
-// 		attributes?.hoverBorderTop,
-// 		attributes?.hoverBorderRight,
-// 		attributes?.hoverBorderBottom,
-// 		attributes?.hoverBorderLeft
-// 	);
-
-// 	const hoverBorderRadius = getResolvedSides(
-// 		attributes?.hoverBorderRadius,
-// 		attributes?.hoverBorderRadiusTop,
-// 		attributes?.hoverBorderRadiusRight,
-// 		attributes?.hoverBorderRadiusBottom,
-// 		attributes?.hoverBorderRadiusLeft
-// 	);
-
-// 	// -------------------------
-// 	// Return ONLY child overrides
-// 	// -------------------------
-// 	return cleanStyles( {
-// 		// --- Normal State ---
-
-// 		'--background-color':
-// 			attributes?.backgroundColor || attributes?.backgroundGradient,
-// 		'--border-color': attributes?.borderColor,
-// 		'--border-style': attributes?.borderType,
-// 		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
-
-// 		// Padding
-// 		'--padding-top': padding?.top && `${ padding.top }px`,
-// 		'--padding-right': padding?.right && `${ padding.right }px`,
-// 		'--padding-bottom': padding?.bottom && `${ padding.bottom }px`,
-// 		'--padding-left': padding?.left && `${ padding.left }px`,
-
-// 		// Margin
-// 		'--margin-top': margin?.top && `${ margin.top }px`,
-// 		'--margin-right': margin?.right && `${ margin.right }px`,
-// 		'--margin-bottom': margin?.bottom && `${ margin.bottom }px`,
-// 		'--margin-left': margin?.left && `${ margin.left }px`,
-
-// 		// Border Width
-// 		'--border-top-width': border?.top && `${ border.top }px`,
-// 		'--border-right-width': border?.right && `${ border.right }px`,
-// 		'--border-bottom-width': border?.bottom && `${ border.bottom }px`,
-// 		'--border-left-width': border?.left && `${ border.left }px`,
-
-// 		// Border Radius
-// 		'--border-radius-top': borderRadius?.top && `${ borderRadius.top }px`,
-// 		'--border-radius-right':
-// 			borderRadius?.right && `${ borderRadius.right }px`,
-// 		'--border-radius-bottom':
-// 			borderRadius?.bottom && `${ borderRadius.bottom }px`,
-// 		'--border-radius-left':
-// 			borderRadius?.left && `${ borderRadius.left }px`,
-
-// 		// --- Hover State ---
-// 		'--bg-h': attributes?.hoverBackgroundColor,
-// 		'--border-color-h': attributes?.hoverBorderColor,
-// 		'--border-style-h': attributes?.hoverBorderType,
-// 		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
-
-// 		// Hover Padding
-// 		'--padding-top-h': hoverPadding?.top && `${ hoverPadding.top }px`,
-// 		'--padding-right-h': hoverPadding?.right && `${ hoverPadding.right }px`,
-// 		'--padding-bottom-h':
-// 			hoverPadding?.bottom && `${ hoverPadding.bottom }px`,
-// 		'--padding-left-h': hoverPadding?.left && `${ hoverPadding.left }px`,
-
-// 		// Hover Margin
-// 		'--margin-top-h': hoverMargin?.top && `${ hoverMargin.top }px`,
-// 		'--margin-right-h': hoverMargin?.right && `${ hoverMargin.right }px`,
-// 		'--margin-bottom-h': hoverMargin?.bottom && `${ hoverMargin.bottom }px`,
-// 		'--margin-left-h': hoverMargin?.left && `${ hoverMargin.left }px`,
-
-// 		// Hover Border
-// 		'--border-top-h': hoverBorder?.top && `${ hoverBorder.top }px`,
-// 		'--border-right-h': hoverBorder?.right && `${ hoverBorder.right }px`,
-// 		'--border-bottom-h': hoverBorder?.bottom && `${ hoverBorder.bottom }px`,
-// 		'--border-left-h': hoverBorder?.left && `${ hoverBorder.left }px`,
-
-// 		// Hover Radius
-// 		'--radius-top-h':
-// 			hoverBorderRadius?.top && `${ hoverBorderRadius.top }px`,
-// 		'--radius-right-h':
-// 			hoverBorderRadius?.right && `${ hoverBorderRadius.right }px`,
-// 		'--radius-bottom-h':
-// 			hoverBorderRadius?.bottom && `${ hoverBorderRadius.bottom }px`,
-// 		'--radius-left-h':
-// 			hoverBorderRadius?.left && `${ hoverBorderRadius.left }px`,
-// 	} );
-// };

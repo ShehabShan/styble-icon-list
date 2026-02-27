@@ -35,6 +35,16 @@ export default function Edit( { attributes, setAttributes } ) {
 		style: { ...advanceTextStyle },
 	} );
 
+	const TEXT_HIERARCHY = {
+		h1: { size: 44, weight: 700, height: 1.3 },
+		h2: { size: 36, weight: 700, height: 1.3 },
+		h3: { size: 28, weight: 700, height: 1.3 },
+		h4: { size: 24, weight: 700, height: 1.3 },
+		h5: { size: 20, weight: 700, height: 1.3 },
+		h6: { size: 16, weight: 700, height: 1.3 },
+		p: { size: 16, weight: 400, height: 1.6 },
+	};
+
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {
 			return (
@@ -43,10 +53,18 @@ export default function Edit( { attributes, setAttributes } ) {
 						label={ __( 'HTML Tag', 'advanced-text' ) }
 						className="custom-orientation"
 						value={ attributes?.textType } // e.g., 'h3'
-						onChange={ ( newtextType ) =>
-							setAttributes( { textType: newtextType } )
-						}
-						isBlock // Makes it span the full width of the sidebar
+						isBlock
+						onChange={ ( newTextType ) => {
+							const preset = TEXT_HIERARCHY[ newTextType ];
+
+							setAttributes( {
+								textType: newTextType,
+								// Automatically update typography based on the image specs
+								fontSize: preset.size,
+								fontWeight: preset.weight,
+								fontHeight: preset.height,
+							} );
+						} }
 					>
 						<ToggleGroupControlOption
 							value="h1"

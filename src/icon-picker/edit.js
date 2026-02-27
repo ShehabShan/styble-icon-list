@@ -15,16 +15,30 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
-import { useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 
 import { getBlockStyles } from '../utils/style.js';
 import editIcon from '../assests/edit-icon.svg';
 import resetIcon from '../assests/reset.svg';
 import { Palette, Settings } from 'lucide-react';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
+import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 
-export default function Edit( { attributes, setAttributes } ) {
-	const { iconType, iconUrl, selectedIcon, iconSize, iconColor } = attributes;
+export default function Edit( { attributes, setAttributes, clientId } ) {
+	const { iconType, iconUrl, iconSize } = attributes;
+
+	const { selectedIcon: globalIcon } = useGrandparentAttributes( clientId );
+
+	useEffect( () => {
+		if ( globalIcon ) {
+			setAttributes( { globalIcon } );
+		}
+	}, [ globalIcon ] );
+
+	const iconName = attributes?.selectedIcon || globalIcon || 'ActivitySquare';
+
+	const SelectedIcon = LucideIcons[ iconName ] || LucideIcons.ActivitySquare;
+
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const toggleModal = ( id ) => {
 		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
@@ -33,8 +47,6 @@ export default function Edit( { attributes, setAttributes } ) {
 	const closeAllModals = () => setOpenModalId( null );
 
 	const iconPickerStyle = getBlockStyles( attributes );
-
-	const SelectedIcon = LucideIcons[ selectedIcon ];
 
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-icon-picker',
@@ -137,8 +149,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { iconSize: value } )
 						}
 						min={ 20 }
-						max={ 100 }
-						step={ 10 }
+						max={ 400 }
 					/>
 				</>
 			);
@@ -210,9 +221,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						} }
 					/>
 				) : (
-					SelectedIcon && (
-						<SelectedIcon size={ iconSize } color={ iconColor } />
-					)
+					SelectedIcon && <SelectedIcon />
 				) }
 			</div>
 		</>

@@ -20,8 +20,8 @@
       "type": "string",
       "default": "px"
     },
-    "borderUnits": {
-      "type": "string",
+    "childBorderUnits": {
+      "type": "number",
       "default": "px"
     },
     "borderRadiusUnits": {
@@ -44,25 +44,28 @@
       "type": "string",
       "default": "px"
     },
+    "globalIcon": {
+      "type": "string"
+    },
     "iconType": {
       "type": "string",
       "default": "library"
     },
     "selectedIcon": {
-      "type": "string",
-      "default": "AArrowDown"
+      "type": "string"
     },
     "iconUrl": {
       "type": "string",
       "default": ""
     },
     "iconSize": {
-      "type": "number",
-      "default": 30
+      "type": "number"
     },
     "iconColor": {
-      "type": "string",
-      "default": "#000000"
+      "type": "string"
+    },
+    "hoverIconColor": {
+      "type": "string"
     },
     "hasLink": {
       "type": "boolean",
@@ -101,21 +104,6 @@
     "paddingBottom": {
       "type": "number"
     },
-    "border": {
-      "type": "number"
-    },
-    "borderTop": {
-      "type": "number"
-    },
-    "borderRight": {
-      "type": "number"
-    },
-    "borderBottom": {
-      "type": "number"
-    },
-    "borderLeft": {
-      "type": "number"
-    },
     "margin": {
       "type": "number"
     },
@@ -131,10 +119,25 @@
     "marginLeft": {
       "type": "number"
     },
-    "borderType": {
+    "childBorder": {
+      "type": "number"
+    },
+    "childBorderTop": {
+      "type": "number"
+    },
+    "childBorderRight": {
+      "type": "number"
+    },
+    "childBorderBottom": {
+      "type": "number"
+    },
+    "childBorderLeft": {
+      "type": "number"
+    },
+    "childBorderType": {
       "type": "string"
     },
-    "borderColor": {
+    "ChildBorderColor": {
       "type": "string"
     },
     "borderRadius": {
@@ -161,25 +164,25 @@
     "hoverBackgroundGradient": {
       "type": "string"
     },
-    "hoverBorderType": {
+    "childHoverBorderType": {
       "type": "string"
     },
-    "hoverBorderColor": {
+    "childHoverBorderColor": {
       "type": "string"
     },
-    "hoverBorder": {
+    "childHoverBorder": {
       "type": "number"
     },
-    "hoverBorderTop": {
+    "childHoverBorderTop": {
       "type": "number"
     },
-    "hoverBorderRight": {
+    "childHoverBorderRight": {
       "type": "number"
     },
-    "hoverBorderBottom": {
+    "childHoverBorderBottom": {
       "type": "number"
     },
-    "hoverBorderLeft": {
+    "childHoverBorderLeft": {
       "type": "number"
     },
     "hoverBorderRadius": {

@@ -57,3 +57,29 @@ export const fontOptions = [
 		value: font.fontFamily,
 	} ) ),
 ];
+
+// src/utils/presets.js
+export const presetData = {
+	'preset-1': {
+		backgroundColor: '#FFFFFF',
+		borderColor: '#FFFFFF',
+		borderType: 'none',
+		hadBoxShadow: false,
+	},
+	'preset-2': {
+		backgroundColor: '#F5F5FF',
+		borderColor: '#4649FF',
+		borderType: 'solid',
+		borderTop: 1,
+		borderRight: 1,
+		borderBottom: 1,
+		borderLeft: 1,
+		borderRadiusTop: 30,
+		borderRadiusRight: 30,
+		borderRadiusBottom: 30,
+		borderRadiusLeft: 30,
+	},
+	scratch: {
+		// Default empty values
+	},
+};

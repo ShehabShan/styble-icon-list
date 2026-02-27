@@ -18,13 +18,14 @@
 		"wordSpacingUnits": { "type": "string", "default": "px" },
 		"paddingUnits": { "type": "string", "default": "px" },
 		"marginUnits": { "type": "string", "default": "px" },
-		"borderUnits": { "type": "string", "default": "px" },
+		"childBorderUnits": { "type": "number", "default": "px" },
 		"borderRadiusUnits": { "type": "string", "default": "px" },
 		"hoverPaddingUnits": { "type": "string", "default": "px" },
 		"hoverMarginUnits": { "type": "string", "default": "px" },
 		"hoverBorderUnits": { "type": "string", "default": "px" },
 		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
 
+		"itemStyleType": { "type": "string", "default": "normal" },
 		"textContent": { "type": "string" },
 		"textType": { "type": "string", "default": "h3" },
 		"alignment": { "type": "string" },
@@ -32,44 +33,25 @@
 		"maxContentWidth": { "type": "number" },
 		"textLimit": { "type": "number" },
 		"textColumns": { "type": "number" },
-		"itemStyleType": {
-			"type": "string"
-		},
-		"textColor": {
-			"type": "string"
-		},
-		"backgroundType": {
-			"type": "string"
-		},
-		"backgroundColor": {
-			"type": "string"
-		},
-		"backgroundGradient": {
-			"type": "string"
-		},
-		"borderType": {
-			"type": "string"
-		},
-		"borderColor": {
-			"type": "string"
-		},
-		"hasBoxShadow": {
-			"type": "boolean"
-		},
+		"textColor": { "type": "string" },
+		"backgroundType": { "type": "string" },
+		"backgroundColor": { "type": "string" },
+		"backgroundGradient": { "type": "string" },
 
-		"fontWeight": { "type": "number", "default": 400 },
+		"hasBoxShadow": { "type": "boolean" },
+
+		"fontWeight": { "type": "number" },
 		"fontFamily": {
-			"type": "string",
-			"default": "\"Open Sans\", sans-serif"
+			"type": "string"
 		},
 		"fontSize": { "type": "number" },
 		"fontHeight": { "type": "number" },
 		"letterSpacing": { "type": "number" },
 		"wordSpacing": { "type": "number" },
-		"isItalic": { "type": "boolean", "default": false },
-		"isUnderline": { "type": "boolean", "default": false },
-		"isStrikethrough": { "type": "boolean", "default": false },
-		"textTransform": { "type": "string", "default": "none" },
+		"isItalic": { "type": "boolean" },
+		"isUnderline": { "type": "boolean" },
+		"isStrikethrough": { "type": "boolean" },
+		"textTransform": { "type": "string" },
 
 		"allPadding": { "type": "number", "default": 0 },
 		"allPaddingTop": { "type": "number" },
@@ -83,11 +65,13 @@
 		"paddingBottom": { "type": "number" },
 		"paddingLeft": { "type": "number" },
 
-		"border": { "type": "number", "default": 0 },
-		"borderTop": { "type": "number" },
-		"borderRight": { "type": "number" },
-		"borderBottom": { "type": "number" },
-		"borderLeft": { "type": "number" },
+		"childBorder": { "type": "number" },
+		"childBorderTop": { "type": "number" },
+		"childBorderRight": { "type": "number" },
+		"childBorderBottom": { "type": "number" },
+		"childBorderLeft": { "type": "number" },
+		"childBorderType": { "type": "string" },
+		"ChildBorderColor": { "type": "string" },
 
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
@@ -96,11 +80,14 @@
 		"borderRadiusLeft": { "type": "number" },
 		"hadBoxShadow": { "type": "boolean", "default": "false" },
 
-		"hoverBorder": { "type": "number" },
-		"hoverBorderTop": { "type": "number" },
-		"hoverBorderRight": { "type": "number" },
-		"hoverBorderBottom": { "type": "number" },
-		"hoverBorderLeft": { "type": "number" },
+		"childHoverBorderType": { "type": "string" },
+		"childHoverBorderColor": { "type": "string" },
+
+		"childHoverBorder": { "type": "number" },
+		"childHoverBorderTop": { "type": "number" },
+		"childHoverBorderRight": { "type": "number" },
+		"childHoverBorderBottom": { "type": "number" },
+		"childHoverBorderLeft": { "type": "number" },
 
 		"hoverBorderRadius": { "type": "number" },
 		"hoverBorderRadiusTop": { "type": "number" },
@@ -120,12 +107,6 @@
 			"type": "string"
 		},
 		"hoverBackgroundGradient": {
-			"type": "string"
-		},
-		"hoverBorderType": {
-			"type": "string"
-		},
-		"hoverBorderColor": {
 			"type": "string"
 		},
 		"hoverHasBoxShadow": {
