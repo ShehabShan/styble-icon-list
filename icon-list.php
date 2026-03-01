@@ -21,3 +21,10 @@ function create_block_icon_list_block_init() {
 	wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
 }
 add_action( 'init', 'create_block_icon_list_block_init' );
+
+
+
+function feature_card_block_enqueue_dashicons() {
+	wp_enqueue_style( 'dashicons' );
+}
+add_action( 'enqueue_block_assets', 'feature_card_block_enqueue_dashicons' );

@@ -21,14 +21,29 @@ export const useGrandparentAttributes = ( clientId ) =>
 
 			// --- LIMIT THE FETCH HERE ---
 			// Only extract exactly what the Icon Picker needs to function
-			const {
-				selectedIcon,
-				iconSize,
-				hasIcon,
-				iconColor, // Optional if you handle this via CSS cascade
-			} = allAttrs;
+			return {
+				selectedIcon: allAttrs.selectedIcon,
+				mediaUrl: allAttrs.mediaUrl,
+				iconType: allAttrs.iconType,
+				iconSize: allAttrs.iconSize,
+				iconColor: allAttrs.iconColor,
+				backgroundColor: allAttrs.backgroundColor,
 
-			return { selectedIcon, iconSize, hasIcon, iconColor };
+				fontFamily: allAttrs.fontFamily,
+				fontSize: allAttrs.fontSize,
+				fontSizeUnits: allAttrs.fontSizeUnits,
+				fontWeight: allAttrs.fontWeight,
+				fontHeight: allAttrs.fontHeight,
+				fontHeightUnits: allAttrs.fontHeightUnits,
+				letterSpacing: allAttrs.letterSpacing,
+				letterSpacingUnits: allAttrs.letterSpacingUnits,
+				wordSpacing: allAttrs.wordSpacing,
+				wordSpacingUnits: allAttrs.wordSpacingUnits,
+				textTransform: allAttrs.textTransform,
+				isItalic: allAttrs.isItalic,
+				isUnderline: allAttrs.isUnderline,
+				isStrikethrough: allAttrs.isStrikethrough,
+			};
 		},
 		[ clientId ]
 	);

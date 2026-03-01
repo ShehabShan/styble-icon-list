@@ -30,7 +30,7 @@ var SvgUnion = function SvgUnion(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjE2NjcgMi40Mzc1QzE1LjE2NjcgMS45ODg3NyAxNC44MDI5IDEuNjI1IDE0LjM1NDIgMS42MjVINi45MDI5N0M2LjU2ODM1IDAuNjc4MjgxIDUuNjY1NDcgMCA0LjYwNDE3IDBDMy41NDI4NiAwIDIuNjM5OTggMC42NzgyODEgMi4zMDUzNyAxLjYyNUgwLjgxMjVDMC4zNjM3NjkgMS42MjUgMCAxLjk4ODc3IDAgMi40Mzc1QzAgMi44ODYyMyAwLjM2Mzc2OCAzLjI1IDAuODEyNSAzLjI1SDIuMzA1MzdDMi42Mzk5OCA0LjE5NjcyIDMuNTQyODYgNC44NzUgNC42MDQxNyA0Ljg3NUM1LjY2NTQ3IDQuODc1IDYuNTY4MzUgNC4xOTY3MiA2LjkwMjk3IDMuMjVIMTQuMzU0MkMxNC44MDI5IDMuMjUgMTUuMTY2NyAyLjg4NjIzIDE1LjE2NjcgMi40Mzc1WiIgZmlsbD0iIzJGMkYyRiIvPgo8cGF0aCBkPSJNMTUuMTY2NyAxMC41NjI1QzE1LjE2NjcgMTAuMTEzOCAxNC44MDI5IDkuNzUgMTQuMzU0MiA5Ljc1SDEyLjg2MTNDMTIuNTI2NyA4LjgwMzI4IDExLjYyMzggOC4xMjUgMTAuNTYyNSA4LjEyNUM5LjUwMTIgOC4xMjUgOC41OTgzMiA4LjgwMzI4IDguMjYzNyA5Ljc1SDAuODEyNUMwLjM2Mzc2OSA5Ljc1IDAgMTAuMTEzOCAwIDEwLjU2MjVDMCAxMS4wMTEyIDAuMzYzNzY4IDExLjM3NSAwLjgxMjUgMTEuMzc1SDguMjYzN0M4LjU5ODMyIDEyLjMyMTcgOS41MDEyIDEzIDEwLjU2MjUgMTNDMTEuNjIzOCAxMyAxMi41MjY3IDEyLjMyMTcgMTIuODYxMyAxMS4zNzVIMTQuMzU0MkMxNC44MDI5IDExLjM3NSAxNS4xNjY3IDExLjAxMTIgMTUuMTY2NyAxMC41NjI1WiIgZmlsbD0iIzJGMkYyRiIvPgo8L3N2Zz4K");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNS4xNjY3IDIuNDM3NUMxNS4xNjY3IDEuOTg4NzcgMTQuODAyOSAxLjYyNSAxNC4zNTQyIDEuNjI1SDYuOTAyOTdDNi41NjgzNSAwLjY3ODI4MSA1LjY2NTQ3IDAgNC42MDQxNyAwQzMuNTQyODYgMCAyLjYzOTk4IDAuNjc4MjgxIDIuMzA1MzcgMS42MjVIMC44MTI1QzAuMzYzNzY5IDEuNjI1IDAgMS45ODg3NyAwIDIuNDM3NUMwIDIuODg2MjMgMC4zNjM3NjggMy4yNSAwLjgxMjUgMy4yNUgyLjMwNTM3QzIuNjM5OTggNC4xOTY3MiAzLjU0Mjg2IDQuODc1IDQuNjA0MTcgNC44NzVDNS42NjU0NyA0Ljg3NSA2LjU2ODM1IDQuMTk2NzIgNi45MDI5NyAzLjI1SDE0LjM1NDJDMTQuODAyOSAzLjI1IDE1LjE2NjcgMi44ODYyMyAxNS4xNjY3IDIuNDM3NVoiIGZpbGw9IiMyRjJGMkYiLz4NCjxwYXRoIGQ9Ik0xNS4xNjY3IDEwLjU2MjVDMTUuMTY2NyAxMC4xMTM4IDE0LjgwMjkgOS43NSAxNC4zNTQyIDkuNzVIMTIuODYxM0MxMi41MjY3IDguODAzMjggMTEuNjIzOCA4LjEyNSAxMC41NjI1IDguMTI1QzkuNTAxMiA4LjEyNSA4LjU5ODMyIDguODAzMjggOC4yNjM3IDkuNzVIMC44MTI1QzAuMzYzNzY5IDkuNzUgMCAxMC4xMTM4IDAgMTAuNTYyNUMwIDExLjAxMTIgMC4zNjM3NjggMTEuMzc1IDAuODEyNSAxMS4zNzVIOC4yNjM3QzguNTk4MzIgMTIuMzIxNyA5LjUwMTIgMTMgMTAuNTYyNSAxM0MxMS42MjM4IDEzIDEyLjUyNjcgMTIuMzIxNyAxMi44NjEzIDExLjM3NUgxNC4zNTQyQzE0LjgwMjkgMTEuMzc1IDE1LjE2NjcgMTEuMDExMiAxNS4xNjY3IDEwLjU2MjVaIiBmaWxsPSIjMkYyRjJGIi8+DQo8L3N2Zz4NCg==");
 
 /***/ },
 
@@ -62,7 +62,7 @@ var SvgBorder = function SvgBorder(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMS45NzI2NiIgd2lkdGg9IjcuODg5OTkiIGhlaWdodD0iMS40Nzk0MSIgZmlsbD0iIzFFMUUxRSIvPgo8cmVjdCB4PSIxLjk3MjY2IiB5PSIxMC41MjA3IiB3aWR0aD0iNy44ODk5OSIgaGVpZ2h0PSIxLjQ3OTQxIiBmaWxsPSIjMUUxRTFFIi8+CjxyZWN0IHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAwIDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+CjxyZWN0IHg9IjEwLjUxOTUiIHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAxMC41MTk1IDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+Cjwvc3ZnPgo=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHg9IjEuOTcyNjYiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIGZpbGw9IiMxRTFFMUUiLz4NCjxyZWN0IHg9IjEuOTcyNjYiIHk9IjEwLjUyMDciIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIGZpbGw9IiMxRTFFMUUiLz4NCjxyZWN0IHk9IjkuODYzMDQiIHdpZHRoPSI3Ljg4OTk5IiBoZWlnaHQ9IjEuNDc5NDEiIHRyYW5zZm9ybT0icm90YXRlKC05MCAwIDkuODYzMDQpIiBmaWxsPSIjMUUxRTFFIi8+DQo8cmVjdCB4PSIxMC41MTk1IiB5PSI5Ljg2MzA0IiB3aWR0aD0iNy44ODk5OSIgaGVpZ2h0PSIxLjQ3OTQxIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMTAuNTE5NSA5Ljg2MzA0KSIgZmlsbD0iIzFFMUUxRSIvPg0KPC9zdmc+DQo=");
 
 /***/ },
 
@@ -94,7 +94,75 @@ var SvgIconListItem = function SvgIconListItem(props) {
   })));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNSAxMy42QzUuMSAxMy42IDQgMTQuNiA0IDE2QzQgMTcuMyA1IDE4LjQgNi40IDE4LjRDNy44IDE4LjQgOC45IDE3LjQgOC45IDE2QzguOSAxNC43IDcuOCAxMy42IDYuNSAxMy42Wk02LjUgMTcuMkM1LjggMTcuMiA1LjMgMTYuNiA1LjMgMTZDNS4zIDE1LjQgNS44IDE0LjggNi41IDE0LjhDNy4yIDE0LjggNy43IDE1LjQgNy43IDE2QzcuNyAxNi43IDcuMSAxNy4yIDYuNSAxNy4yWiIgZmlsbD0iIzQ2NDlGRiIvPgo8cGF0aCBkPSJNMjcuMTY5MyAxNS4ySDExLjYyMzlDMTEuMjA5MyAxNS4yIDEwLjg5ODQgMTUuNiAxMC44OTg0IDE2QzEwLjg5ODQgMTYuNCAxMS4zMTMgMTYuOCAxMS42MjM5IDE2LjhIMjcuMTY5M0MyNy41ODM5IDE2LjggMjcuOTk4NCAxNi40IDI3Ljk5ODQgMTZDMjcuOTk4NCAxNS42IDI3LjU4MzkgMTUuMiAyNy4xNjkzIDE1LjJaIiBmaWxsPSIjNDY0OUZGIi8+Cjwvc3ZnPgo=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik02LjUgMTMuNkM1LjEgMTMuNiA0IDE0LjYgNCAxNkM0IDE3LjMgNSAxOC40IDYuNCAxOC40QzcuOCAxOC40IDguOSAxNy40IDguOSAxNkM4LjkgMTQuNyA3LjggMTMuNiA2LjUgMTMuNlpNNi41IDE3LjJDNS44IDE3LjIgNS4zIDE2LjYgNS4zIDE2QzUuMyAxNS40IDUuOCAxNC44IDYuNSAxNC44QzcuMiAxNC44IDcuNyAxNS40IDcuNyAxNkM3LjcgMTYuNyA3LjEgMTcuMiA2LjUgMTcuMloiIGZpbGw9IiM0NjQ5RkYiLz4NCjxwYXRoIGQ9Ik0yNy4xNjkzIDE1LjJIMTEuNjIzOUMxMS4yMDkzIDE1LjIgMTAuODk4NCAxNS42IDEwLjg5ODQgMTZDMTAuODk4NCAxNi40IDExLjMxMyAxNi44IDExLjYyMzkgMTYuOEgyNy4xNjkzQzI3LjU4MzkgMTYuOCAyNy45OTg0IDE2LjQgMjcuOTk4NCAxNkMyNy45OTg0IDE1LjYgMjcuNTgzOSAxNS4yIDI3LjE2OTMgMTUuMloiIGZpbGw9IiM0NjQ5RkYiLz4NCjwvc3ZnPg0K");
+
+/***/ },
+
+/***/ "./src/assests/italic.svg"
+/*!********************************!*\
+  !*** ./src/assests/italic.svg ***!
+  \********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgItalic),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgItalic = function SvgItalic(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 800,
+    height: 800,
+    fill: "none",
+    viewBox: "0 0 16 16"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#000",
+    d: "M14 1H5v3h2.752l-2.666 8H2v3h9v-3H8.248l2.667-8H14z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNCAxSDVWNEg3Ljc1MjE5TDUuMDg1NTMgMTJIMlYxNUgxMVYxMkg4LjI0NzgxTDEwLjkxNDUgNEgxNFYxWiIgZmlsbD0iIzAwMDAwMCIvPg0KPC9zdmc+");
+
+/***/ },
+
+/***/ "./src/assests/palette.svg"
+/*!*********************************!*\
+  !*** ./src/assests/palette.svg ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgPalette),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgPalette = function SvgPalette(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 800,
+    height: 800,
+    fill: "none",
+    viewBox: "0 0 16 16"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#000",
+    fillRule: "evenodd",
+    d: "M16 8q0 .508-.062 1H8v2l3 3v1.418A8 8 0 1 1 16 8M3 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2m6-6a1 1 0 1 1-2 0 1 1 0 0 1 2 0M5.171 5.172a1 1 0 1 0-1.414-1.415 1 1 0 0 0 1.414 1.415m7.072 0a1 1 0 1 1-1.415-1.415 1 1 0 0 1 1.415 1.415M5.17 10.828a1 1 0 1 0-1.414 1.415 1 1 0 0 0 1.414-1.415",
+    clipRule: "evenodd"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYgOEMxNiA4LjMzODY2IDE1Ljk3OSA4LjY3MjQxIDE1LjkzODEgOUg4VjExTDExIDE0VjE1LjQxODVDMTAuMDczNiAxNS43OTM1IDkuMDYwOSAxNiA4IDE2QzMuNTgxNzIgMTYgMCAxMi40MTgzIDAgOEMwIDMuNTgxNzIgMy41ODE3MiAwIDggMEMxMi40MTgzIDAgMTYgMy41ODE3MiAxNiA4Wk0zIDlDMy41NTIyOCA5IDQgOC41NTIyOSA0IDhDNCA3LjQ0NzcyIDMuNTUyMjggNyAzIDdDMi40NDc3MiA3IDIgNy40NDc3MiAyIDhDMiA4LjU1MjI5IDIuNDQ3NzIgOSAzIDlaTTkgM0M5IDMuNTUyMjggOC41NTIyOSA0IDggNEM3LjQ0NzcyIDQgNyAzLjU1MjI4IDcgM0M3IDIuNDQ3NzIgNy40NDc3MiAyIDggMkM4LjU1MjI5IDIgOSAyLjQ0NzcyIDkgM1pNNS4xNzEzNyA1LjE3MTU4QzUuNTYxODkgNC43ODEwNiA1LjU2MTg5IDQuMTQ3ODkgNS4xNzEzNyAzLjc1NzM3QzQuNzgwODQgMy4zNjY4NSA0LjE0NzY4IDMuMzY2ODUgMy43NTcxNiAzLjc1NzM3QzMuMzY2NjMgNC4xNDc4OSAzLjM2NjYzIDQuNzgxMDYgMy43NTcxNiA1LjE3MTU4QzQuMTQ3NjggNS41NjIxMSA0Ljc4MDg0IDUuNTYyMTEgNS4xNzEzNyA1LjE3MTU4Wk0xMi4yNDI4IDUuMTcxNjFDMTEuODUyMiA1LjU2MjE0IDExLjIxOTEgNS41NjIxNCAxMC44Mjg1IDUuMTcxNjFDMTAuNDM4IDQuNzgxMDkgMTAuNDM4IDQuMTQ3OTIgMTAuODI4NSAzLjc1NzRDMTEuMjE5MSAzLjM2Njg4IDExLjg1MjIgMy4zNjY4OCAxMi4yNDI4IDMuNzU3NEMxMi42MzMzIDQuMTQ3OTIgMTIuNjMzMyA0Ljc4MTA5IDEyLjI0MjggNS4xNzE2MVpNNS4xNzE0NiAxMC44Mjg0QzQuNzgwOTQgMTAuNDM3OSA0LjE0Nzc3IDEwLjQzNzkgMy43NTcyNSAxMC44Mjg0QzMuMzY2NzIgMTEuMjE4OSAzLjM2NjcyIDExLjg1MjEgMy43NTcyNSAxMi4yNDI2QzQuMTQ3NzcgMTIuNjMzMSA0Ljc4MDk0IDEyLjYzMzEgNS4xNzE0NiAxMi4yNDI2QzUuNTYxOTkgMTEuODUyMSA1LjU2MTk5IDExLjIxODkgNS4xNzE0NiAxMC44Mjg0WiIgZmlsbD0iIzAwMDAwMCIvPg0KPC9zdmc+");
 
 /***/ },
 
@@ -136,7 +204,199 @@ var SvgReset = function SvgReset(props) {
   })))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzYwODFfOTg3NykiPgo8cGF0aCBkPSJNMi4yNjc2NyA0LjExNTk1QzMuMzc5ODQgMi4yOTI1IDUuNTAwMDEgMS4yMDE2NiA3Ljc1MTUzIDEuNTA5MjdDMTAuNzgzOSAxLjkyMzU1IDEyLjkwNjMgNC43MTc2NSAxMi40OTIxIDcuNzUwMDZDMTIuMDc3OCAxMC43ODI1IDkuMjgzNjQgMTIuOTA0OSA2LjI1MTI2IDEyLjQ5MDZDMy45OTk3NSAxMi4xODMgMi4yNDk5IDEwLjU2MzQgMS42Njc1NiA4LjUwODVNMi4wMjM5OCAyLjQ5MzAzTDIuMDQ3ODEgNC4zNjU1N0wzLjg0OTQ1IDQuMjE0MyIgc3Ryb2tlPSIjOTQ5NDk0IiBzdHJva2Utd2lkdGg9IjEuNzUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzYwODFfOTg3NyI+CjxyZWN0IHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82MDgxXzk4NzcpIj4NCjxwYXRoIGQ9Ik0yLjI2NzY3IDQuMTE1OTVDMy4zNzk4NCAyLjI5MjUgNS41MDAwMSAxLjIwMTY2IDcuNzUxNTMgMS41MDkyN0MxMC43ODM5IDEuOTIzNTUgMTIuOTA2MyA0LjcxNzY1IDEyLjQ5MjEgNy43NTAwNkMxMi4wNzc4IDEwLjc4MjUgOS4yODM2NCAxMi45MDQ5IDYuMjUxMjYgMTIuNDkwNkMzLjk5OTc1IDEyLjE4MyAyLjI0OTkgMTAuNTYzNCAxLjY2NzU2IDguNTA4NU0yLjAyMzk4IDIuNDkzMDNMMi4wNDc4MSA0LjM2NTU3TDMuODQ5NDUgNC4yMTQzIiBzdHJva2U9IiM5NDk0OTQiIHN0cm9rZS13aWR0aD0iMS43NSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L2c+DQo8ZGVmcz4NCjxjbGlwUGF0aCBpZD0iY2xpcDBfNjA4MV85ODc3Ij4NCjxyZWN0IHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0id2hpdGUiLz4NCjwvY2xpcFBhdGg+DQo8L2RlZnM+DQo8L3N2Zz4NCg==");
+
+/***/ },
+
+/***/ "./src/assests/setting.svg"
+/*!*********************************!*\
+  !*** ./src/assests/setting.svg ***!
+  \*********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgSetting),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgSetting = function SvgSetting(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 800,
+    height: 800,
+    fill: "none",
+    viewBox: "0 0 24 24"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "#000",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 1.5,
+    d: "M11.7 14c-1.077 0-1.95-.895-1.95-2s.873-2 1.95-2 1.95.895 1.95 2c0 .53-.206 1.04-.571 1.414A1.93 1.93 0 0 1 11.7 14",
+    clipRule: "evenodd"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "#000",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 1.5,
+    d: "M16.884 16.063v-1.342c0-.332.129-.651.358-.886l.925-.949a1.276 1.276 0 0 0 0-1.772l-.925-.949a1.27 1.27 0 0 1-.358-.886V7.936c0-.692-.547-1.253-1.222-1.253h-1.309c-.324 0-.635-.132-.864-.367l-.925-.949a1.2 1.2 0 0 0-1.728 0l-.925.949c-.23.235-.54.367-.864.367h-1.31c-.324 0-.634.132-.864.367a1.27 1.27 0 0 0-.357.887v1.342c0 .332-.129.651-.358.886l-.925.949a1.276 1.276 0 0 0 0 1.772l.925.949c.23.235.358.554.358.886v1.342c0 .692.547 1.253 1.222 1.253h1.309c.324 0 .635.132.864.367l.925.949a1.2 1.2 0 0 0 1.728 0l.925-.949c.23-.235.54-.367.864-.367h1.308c.325 0 .636-.132.865-.367a1.27 1.27 0 0 0 .358-.886",
+    clipRule: "evenodd"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNyAxNEMxMC42MjMgMTQgOS43NDk5OSAxMy4xMDQ2IDkuNzQ5OTkgMTJDOS43NDk5OSAxMC44OTU0IDEwLjYyMyAxMCAxMS43IDEwQzEyLjc3NjkgMTAgMTMuNjUgMTAuODk1NCAxMy42NSAxMkMxMy42NSAxMi41MzA0IDEzLjQ0NDUgMTMuMDM5MSAxMy4wNzg5IDEzLjQxNDJDMTIuNzEzMiAxMy43ODkzIDEyLjIxNzIgMTQgMTEuNyAxNFoiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNi44ODQxIDE2LjA2M1YxNC43MjFDMTYuODg0MSAxNC4zODg3IDE3LjAxMjggMTQuMDcgMTcuMjQxOSAxMy44MzVMMTguMTY3MiAxMi44ODZDMTguNjQ0MyAxMi4zOTY3IDE4LjY0NDMgMTEuNjAzMyAxOC4xNjcyIDExLjExNEwxNy4yNDE5IDEwLjE2NUMxNy4wMTI4IDkuOTMwMDEgMTYuODg0MSA5LjYxMTMxIDE2Ljg4NDEgOS4yNzg5OVY3LjkzNTk5QzE2Ljg4NDEgNy4yNDM5OCAxNi4zMzcxIDYuNjgyOTkgMTUuNjYyNCA2LjY4Mjk5SDE0LjM1M0MxNC4wMjkgNi42ODI5OSAxMy43MTgyIDYuNTUwOTcgMTMuNDg5MSA2LjMxNTk5TDEyLjU2MzggNS4zNjY5OUMxMi4wODY3IDQuODc3NjcgMTEuMzEzMiA0Ljg3NzY3IDEwLjgzNjEgNS4zNjY5OUw5LjkxMDg3IDYuMzE1OTlDOS42ODE3NiA2LjU1MDk3IDkuMzcxMDIgNi42ODI5OSA5LjA0NzAyIDYuNjgyOTlINy43Mzc1OUM3LjQxMzQxIDYuNjgyOTkgNy4xMDI1MyA2LjgxNTE0IDYuODczMzkgNy4wNTAzNEM2LjY0NDI1IDcuMjg1NTQgNi41MTU2NiA3LjYwNDUgNi41MTU5MiA3LjkzNjk5VjkuMjc4OTlDNi41MTU5MSA5LjYxMTMxIDYuMzg3MiA5LjkzMDAxIDYuMTU4MDkgMTAuMTY1TDUuMjMyODIgMTEuMTE0QzQuNzU1NzMgMTEuNjAzMyA0Ljc1NTczIDEyLjM5NjcgNS4yMzI4MiAxMi44ODZMNi4xNTgwOSAxMy44MzVDNi4zODcyIDE0LjA3IDYuNTE1OTEgMTQuMzg4NyA2LjUxNTkyIDE0LjcyMVYxNi4wNjNDNi41MTU5MiAxNi43NTUgNy4wNjI4OCAxNy4zMTYgNy43Mzc1OSAxNy4zMTZIOS4wNDcwMkM5LjM3MTAyIDE3LjMxNiA5LjY4MTc2IDE3LjQ0OCA5LjkxMDg3IDE3LjY4M0wxMC44MzYxIDE4LjYzMkMxMS4zMTMyIDE5LjEyMTMgMTIuMDg2NyAxOS4xMjEzIDEyLjU2MzggMTguNjMyTDEzLjQ4OTEgMTcuNjgzQzEzLjcxODIgMTcuNDQ4IDE0LjAyOSAxNy4zMTYgMTQuMzUzIDE3LjMxNkgxNS42NjE0QzE1Ljk4NTYgMTcuMzE2MyAxNi4yOTY2IDE3LjE4NDQgMTYuNTI1OSAxNi45NDkzQzE2Ljc1NTIgMTYuNzE0MyAxNi44ODQxIDE2LjM5NTUgMTYuODg0MSAxNi4wNjNaIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4NCjwvc3ZnPg==");
+
+/***/ },
+
+/***/ "./src/assests/strikethrough.svg"
+/*!***************************************!*\
+  !*** ./src/assests/strikethrough.svg ***!
+  \***************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgStrikethrough),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgStrikethrough = function SvgStrikethrough(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 800,
+    height: 800,
+    fill: "none",
+    viewBox: "0 0 24 24"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "#000",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M12 12c.896 0 1.775.193 2.546.557q.524.248.955.587c.347.272.645.585.881.93.432.627.644 1.336.616 2.052s-.296 1.412-.776 2.017-1.154 1.096-1.952 1.42a6.1 6.1 0 0 1-2.583.43 5.9 5.9 0 0 1-2.497-.685c-.74-.402-1.332-.957-1.713-1.605M12 12H4m8 0h8m-3.476-5.703c-.381-.648-.973-1.202-1.714-1.605a5.9 5.9 0 0 0-2.496-.684 6.1 6.1 0 0 0-2.584.428c-.798.325-1.472.816-1.952 1.42-.48.606-.747 1.303-.776 2.019q-.011.315.037.625"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KPGcgaWQ9IkVkaXQgLyBTdHJpa2V0aHJvdWdoIj4NCjxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik0xMi4wMDA1IDEyLjAwMDFDMTIuODk1OSAxMi4wMDAxIDEzLjc3NDkgMTIuMTkyNSAxNC41NDU3IDEyLjU1NzFDMTQuODkzOSAxMi43MjE4IDE1LjIxNDYgMTIuOTE5MiAxNS41MDA5IDEzLjE0MzdDMTUuODQ4NCAxMy40MTYyIDE2LjE0NTcgMTMuNzI5IDE2LjM4MjIgMTQuMDczMkMxNi44MTM2IDE0LjcwMDkgMTcuMDI2MyAxNS40MDk2IDE2Ljk5ODIgMTYuMTI1NkMxNi45NyAxNi44NDE2IDE2LjcwMiAxNy41Mzg1IDE2LjIyMjIgMTguMTQzM0MxNS43NDI0IDE4Ljc0ODEgMTUuMDY4NCAxOS4yMzg2IDE0LjI3MDUgMTkuNTYzOEMxMy40NzI3IDE5Ljg4OSAxMi41ODAyIDIwLjAzNzMgMTEuNjg2NSAxOS45OTIzQzEwLjc5MjggMTkuOTQ3MyA5LjkzMTA0IDE5LjcxMDggOS4xOTA0MyAxOS4zMDgyQzguNDQ5ODIgMTguOTA1NSA3Ljg1NzgyIDE4LjM1MTQgNy40NzY1NiAxNy43MDMyTTEyLjAwMDUgMTIuMDAwMUg0TTEyLjAwMDUgMTIuMDAwMUgyME0xNi41MjQzIDYuMjk3MThDMTYuMTQzIDUuNjQ5IDE1LjU1MTIgNS4wOTQ2MiAxNC44MTA1IDQuNjkxOTdDMTQuMDY5OSA0LjI4OTMyIDEzLjIwNzYgNC4wNTI4NyAxMi4zMTQgNC4wMDc4OUMxMS40MjAzIDMuOTYyOTEgMTAuNTI3OCA0LjExMDkxIDkuNzI5OTggNC40MzYxM0M4LjkzMjEzIDQuNzYxMzUgOC4yNTgxMiA1LjI1MjA1IDcuNzc4MzIgNS44NTY4OUM3LjI5ODUyIDYuNDYxNzMgNy4wMzA1NyA3LjE1ODg1IDcuMDAyNDQgNy44NzQ4NUM2Ljk5NDIgOC4wODQ2MyA3LjAwNjY5IDguMjkzNDUgNy4wMzkyNCA4LjUwMDE0IiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L2c+DQo8L3N2Zz4=");
+
+/***/ },
+
+/***/ "./src/assests/underline.svg"
+/*!***********************************!*\
+  !*** ./src/assests/underline.svg ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUnderline),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgUnderline = function SvgUnderline(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 800,
+    height: 800,
+    fill: "none",
+    viewBox: "0 0 24 24"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "#000",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M4 21h16M18 4v7a6 6 0 0 1-12 0V4M4 3h4m8 0h4"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik00IDIxSDIwTTE4IDRWMTFDMTggMTQuMzEzNyAxNS4zMTM3IDE3IDEyIDE3QzguNjg2MjkgMTcgNiAxNC4zMTM3IDYgMTFWNE00IDNIOE0xNiAzSDIwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L3N2Zz4=");
+
+/***/ },
+
+/***/ "./src/hooks/useParentAttributes.js"
+/*!******************************************!*\
+  !*** ./src/hooks/useParentAttributes.js ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useParentAttributes: () => (/* binding */ useParentAttributes)
+/* harmony export */ });
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
+
+const useParentAttributes = clientId => (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => {
+  const {
+    getBlockRootClientId,
+    getBlockAttributes
+  } = select('core/block-editor');
+
+  // Get the immediate parent ID
+  const parentId = getBlockRootClientId(clientId);
+
+  // Get the parent's attributes
+  const parentAttrs = parentId ? getBlockAttributes(parentId) : null;
+  if (!parentAttrs) {
+    return {};
+  }
+
+  // Return only what the child needs from the parent
+  return {
+    // Standard Layout
+    padding: parentAttrs.padding,
+    paddingTop: parentAttrs.paddingTop,
+    paddingRight: parentAttrs.paddingRight,
+    paddingBottom: parentAttrs.paddingBottom,
+    paddingLeft: parentAttrs.paddingLeft,
+    margin: parentAttrs.margin,
+    marginTop: parentAttrs.marginTop,
+    marginRight: parentAttrs.marginRight,
+    marginBottom: parentAttrs.marginBottom,
+    marginLeft: parentAttrs.marginLeft,
+    border: parentAttrs.border,
+    borderTop: parentAttrs.borderTop,
+    borderRight: parentAttrs.borderRight,
+    borderBottom: parentAttrs.borderBottom,
+    borderLeft: parentAttrs.borderLeft,
+    borderType: parentAttrs.borderType,
+    borderColor: parentAttrs.borderColor,
+    borderRadius: parentAttrs.borderRadius,
+    borderRadiusTop: parentAttrs.borderRadiusTop,
+    borderRadiusRight: parentAttrs.borderRadiusRight,
+    borderRadiusBottom: parentAttrs.borderRadiusBottom,
+    borderRadiusLeft: parentAttrs.borderRadiusLeft,
+    // Hover Layout
+    hoverPadding: parentAttrs.hoverPadding,
+    hoverPaddingTop: parentAttrs.hoverPaddingTop,
+    hoverPaddingRight: parentAttrs.hoverPaddingRight,
+    hoverPaddingBottom: parentAttrs.hoverPaddingBottom,
+    hoverPaddingLeft: parentAttrs.hoverPaddingLeft,
+    hoverBorder: parentAttrs.hoverBorder,
+    hoverBorderTop: parentAttrs.hoverBorderTop,
+    hoverBorderRight: parentAttrs.hoverBorderRight,
+    hoverBorderBottom: parentAttrs.hoverBorderBottom,
+    hoverBorderLeft: parentAttrs.hoverBorderLeft,
+    hoverBorderType: parentAttrs.hoverBorderType,
+    hoverBorderColor: parentAttrs.hoverBorderColor,
+    hoverBorderRadius: parentAttrs.hoverBorderRadius,
+    hoverBorderRadiusTop: parentAttrs.hoverBorderRadiusTop,
+    hoverBorderRadiusRight: parentAttrs.hoverBorderRadiusRight,
+    hoverBorderRadiusBottom: parentAttrs.hoverBorderRadiusBottom,
+    hoverBorderRadiusLeft: parentAttrs.hoverBorderRadiusLeft
+  };
+}, [clientId]);
 
 /***/ },
 
@@ -198,6 +458,12 @@ const ChildItemStyle = props => {
   const borderKey = isChild ? 'childBorder' : 'border';
   const typeKey = isChild ? 'childBorderType' : 'borderType';
   const colorKey = isChild ? 'childBorderColor' : 'borderColor';
+  const marginKey = isChild ? 'childMargin' : 'margin';
+  const paddingKey = isChild ? 'childPadding' : 'padding';
+  const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
+  const hoverMarginKey = isChild ? 'childHoverMargin' : 'hoverMargin';
+  const hoverPaddingKey = isChild ? 'childHoverPadding' : 'hoverPadding';
+  const hoverBorderRadiusKey = isChild ? 'childHoverborderRadius' : 'hoverborderRadius';
   const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
   const hoverTypeKey = isChild ? 'childBorderType' : 'borderType';
   const hoverColorKey = isChild ? 'childBorderColor' : 'borderColor';
@@ -391,7 +657,7 @@ const ChildItemStyle = props => {
           setAttributes: setAttributes,
           attributes: attributes,
           title: 'border Radius',
-          type: "borderRadius"
+          type: borderRadiusKey
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "control-section control-section--box-shadow",
@@ -409,7 +675,7 @@ const ChildItemStyle = props => {
           setAttributes: setAttributes,
           attributes: attributes,
           title: 'Padding',
-          type: "padding"
+          type: paddingKey
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         className: "control-section control-section--margin",
@@ -417,7 +683,7 @@ const ChildItemStyle = props => {
           setAttributes: setAttributes,
           attributes: attributes,
           title: 'Margin',
-          type: "margin"
+          type: marginKey
         })
       })]
     }), attributes?.itemStyleType === 'hover' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
@@ -550,7 +816,7 @@ const ChildItemStyle = props => {
             setAttributes: setAttributes,
             attributes: attributes,
             title: 'border Radius',
-            type: "hoverBorderRadius"
+            type: hoverBorderRadiusKey
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "control-section control-section--box-shadow",
@@ -568,7 +834,7 @@ const ChildItemStyle = props => {
             setAttributes: setAttributes,
             attributes: attributes,
             title: 'Padding',
-            type: "hoverPadding"
+            type: hoverPaddingKey
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
           className: "control-section control-section--margin",
@@ -576,7 +842,7 @@ const ChildItemStyle = props => {
             setAttributes: setAttributes,
             attributes: attributes,
             title: 'Margin',
-            type: "hoverMargin"
+            type: hoverMarginKey
           })
         })]
       })
@@ -604,13 +870,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/icon-list-item/editor.scss");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/palette.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/settings.js");
+/* harmony import */ var _assests_setting_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assests/setting.svg */ "./src/assests/setting.svg");
+/* harmony import */ var _assests_palette_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assests/palette.svg */ "./src/assests/palette.svg");
 /* harmony import */ var _ChildItemStyle_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ChildItemStyle.js */ "./src/icon-list-item/ChildItemStyle.js");
 /* harmony import */ var _assests_reset_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assests/reset.svg */ "./src/assests/reset.svg");
 /* harmony import */ var _utils_style_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/style.js */ "./src/utils/style.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _hooks_useParentAttributes_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hooks/useParentAttributes.js */ "./src/hooks/useParentAttributes.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
+
+
+
 
 
 
@@ -624,9 +896,35 @@ __webpack_require__.r(__webpack_exports__);
 
 function Edit({
   attributes,
-  setAttributes
+  setAttributes,
+  clientId
 }) {
   const childStyle = (0,_utils_style_js__WEBPACK_IMPORTED_MODULE_8__.getBlockStyles)(attributes);
+  const parentLayout = (0,_hooks_useParentAttributes_js__WEBPACK_IMPORTED_MODULE_9__.useParentAttributes)(clientId);
+  const prevLayout = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_10__.useRef)({});
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_10__.useEffect)(() => {
+    const current = parentLayout || {};
+    const previous = prevLayout.current || {};
+
+    // Find only keys that changed on parent
+    const changedKeys = Object.keys(current).filter(key => current[key] !== previous[key]);
+    if (changedKeys.length === 0) {
+      return;
+    }
+    const updates = {};
+    changedKeys.forEach(key => {
+      // Only update child if value actually differs
+      if (attributes[key] !== current[key]) {
+        updates[key] = current[key];
+      }
+    });
+    if (Object.keys(updates).length > 0) {
+      setAttributes(updates);
+    }
+    prevLayout.current = {
+      ...current
+    };
+  }, [parentLayout, attributes, setAttributes]);
 
   // Helper to check if a specific modal is open
 
@@ -637,8 +935,8 @@ function Edit({
   });
   const renderTabContent = tab => {
     if (tab.name === 'settings') {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ChildItemStyle_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_ChildItemStyle_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
           attributes: attributes,
           setAttributes: setAttributes,
           resetIcon: _assests_reset_svg__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -646,8 +944,8 @@ function Edit({
       });
     }
     if (tab.name === 'styles') {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
           __next40pxDefaultSize: true,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Space Between', 'icon-list'),
           min: 0,
@@ -663,26 +961,32 @@ function Edit({
   const TEMPLATE = [['create-block/icon-picker', {}], ['create-block/advanced-text', {
     placeholder: 'List Text Here'
   }]];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon List', 'icon-list'),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
           className: "my-custom-tabs",
           activeClass: "is-active",
           tabs: [{
             name: 'settings',
-            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                size: 16
+            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+                src: _assests_setting_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+                width: 16,
+                height: 16,
+                alt: "Settings"
               }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Settings', 'icon-list')]
             }),
             className: 'tab-settings'
           }, {
             name: 'styles',
-            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                size: 16
+            title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
+                src: _assests_palette_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+                width: 16,
+                height: 16,
+                alt: "Palette"
               }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style', 'icon-list')]
             }),
             className: 'tab-styles'
@@ -690,9 +994,9 @@ function Edit({
           children: renderTabContent
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
         allowedBlocks: ['create-block/icon-picker', 'create-block/advanced-text'],
         template: TEMPLATE
       })
@@ -792,26 +1096,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _side_bar_scss_customHelperComponent_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./side-bar-scss/customHelperComponent.scss */ "./src/icon-list/side-control-bar/side-bar-scss/customHelperComponent.scss");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 const CustomHelperComponent = props => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "custom-sidebar-row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "row-label",
       children: props?.label
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "row-control",
-      children: [props?.hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      children: [props?.hasIcon && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "pencil-edit-button",
-        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: props?.icon,
           alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit', 'icon-list'),
           style: {
@@ -820,9 +1121,9 @@ const CustomHelperComponent = props => {
           }
         }),
         onClick: () => props?.toggleModal(props?.label)
-      }), props?.hasReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      }), props?.hasReset && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "pencil-edit-button",
-        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+        icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           src: props?.icon,
           alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit', 'icon-list'),
           style: {
@@ -833,11 +1134,11 @@ const CustomHelperComponent = props => {
         onClick: () => props?.setAttributes({
           [props?.resetAttributes]: undefined
         })
-      }), props?.hasColor && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dropdown, {
+      }), props?.hasColor && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dropdown, {
         renderToggle: ({
           isOpen,
           onToggle
-        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
           className: "inline-color-indicator",
           onClick: onToggle,
           "aria-expanded": isOpen,
@@ -845,15 +1146,15 @@ const CustomHelperComponent = props => {
             backgroundColor: props?.color || '#000'
           }
         }),
-        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        renderContent: () => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "inline-color-popover",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPicker, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ColorPicker, {
             color: props?.color,
             onChange: props?.onColorChange,
             enableAlpha: true
           })
         })
-      }), props?.hasText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      }), props?.hasText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
         className: "custom-helper-button",
         onClick: () => props?.toggleModal(props?.label),
         variant: "secondary",
@@ -1231,9 +1532,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/italic.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/strikethrough.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/underline.js");
+/* harmony import */ var _assests_italic_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assests/italic.svg */ "./src/assests/italic.svg");
+/* harmony import */ var _assests_underline_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assests/underline.svg */ "./src/assests/underline.svg");
+/* harmony import */ var _assests_strikethrough_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assests/strikethrough.svg */ "./src/assests/strikethrough.svg");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _typography_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./typography.scss */ "./src/icon-list/side-control-style-bar/typography.scss");
@@ -1243,6 +1544,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
+
+
 
 
 
@@ -1282,11 +1585,12 @@ const Typography = ({
       text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Ab', 'icon-list'),
       toggleModal: toggleModal
     }), isModalOpen('Typography') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Popover, {
-      onClose: () => closeAllModals,
+      onClose: closeAllModals,
       placement: "bottom",
       offset: 15,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
         className: "typography-popover-container",
+        onMouseLeave: closeAllModals,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           className: "typography-popover-selected-options",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
@@ -1421,9 +1725,11 @@ const Typography = ({
               isItalic: !isItalic
             }),
             className: "segment-button",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-              size: 16,
-              strokeWidth: 2.5
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+              src: _assests_italic_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
+              alt: "Italic",
+              width: 16,
+              height: 16
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
             isPressed: isUnderline,
@@ -1431,9 +1737,11 @@ const Typography = ({
               isUnderline: !isUnderline
             }),
             className: "segment-button",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              size: 16,
-              strokeWidth: 2.5
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+              src: _assests_underline_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+              alt: "Underline",
+              width: 16,
+              height: 16
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
             isPressed: isStrikethrough,
@@ -1441,9 +1749,11 @@ const Typography = ({
               isStrikethrough: !isStrikethrough
             }),
             className: "segment-button",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              size: 16,
-              strokeWidth: 2.5
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+              src: _assests_strikethrough_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+              alt: "Strikethrough",
+              width: 16,
+              height: 16
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
             isPressed: attributes.textTransform === 'uppercase',
@@ -1470,6 +1780,7 @@ const Typography = ({
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   extractedIcons: () => (/* binding */ extractedIcons),
 /* harmony export */   fontOptions: () => (/* binding */ fontOptions),
 /* harmony export */   presetData: () => (/* binding */ presetData)
 /* harmony export */ });
@@ -1553,6 +1864,191 @@ const presetData = {
     // Default empty values
   }
 };
+const extractedIcons = [{
+  keyName: 'admin-site'
+}, {
+  keyName: 'admin-media'
+}, {
+  keyName: 'admin-page'
+}, {
+  keyName: 'admin-comments'
+}, {
+  keyName: 'admin-appearance'
+}, {
+  keyName: 'admin-plugins'
+}, {
+  keyName: 'admin-users'
+}, {
+  keyName: 'admin-tools'
+}, {
+  keyName: 'admin-settings'
+}, {
+  keyName: 'admin-network'
+}, {
+  keyName: 'dashboard'
+}, {
+  keyName: 'menu'
+}, {
+  keyName: 'menu-alt'
+}, {
+  keyName: 'menu-alt2'
+}, {
+  keyName: 'menu-alt3'
+}, {
+  keyName: 'star-filled'
+}, {
+  keyName: 'star-half'
+}, {
+  keyName: 'star-empty'
+}, {
+  keyName: 'heart'
+}, {
+  keyName: 'smiley'
+}, {
+  keyName: 'format-image'
+}, {
+  keyName: 'format-gallery'
+}, {
+  keyName: 'format-audio'
+}, {
+  keyName: 'format-video'
+}, {
+  keyName: 'format-chat'
+}, {
+  keyName: 'format-status'
+}, {
+  keyName: 'format-aside'
+}, {
+  keyName: 'format-links'
+}, {
+  keyName: 'format-quote'
+}, {
+  keyName: 'media-archive'
+}, {
+  keyName: 'media-audio'
+}, {
+  keyName: 'media-code'
+}, {
+  keyName: 'media-default'
+}, {
+  keyName: 'media-document'
+}, {
+  keyName: 'media-interactive'
+}, {
+  keyName: 'media-spreadsheet'
+}, {
+  keyName: 'media-text'
+}, {
+  keyName: 'media-video'
+}, {
+  keyName: 'image-crop'
+}, {
+  keyName: 'image-rotate'
+}, {
+  keyName: 'image-rotate-left'
+}, {
+  keyName: 'image-rotate-right'
+}, {
+  keyName: 'image-flip-vertical'
+}, {
+  keyName: 'image-flip-horizontal'
+}, {
+  keyName: 'image-filter'
+}, {
+  keyName: 'yes'
+}, {
+  keyName: 'no'
+}, {
+  keyName: 'plus'
+}, {
+  keyName: 'plus-alt'
+}, {
+  keyName: 'minus'
+}, {
+  keyName: 'dismiss'
+}, {
+  keyName: 'marker'
+}, {
+  keyName: 'arrow-up'
+}, {
+  keyName: 'arrow-down'
+}, {
+  keyName: 'arrow-left'
+}, {
+  keyName: 'arrow-right'
+}, {
+  keyName: 'arrow-up-alt'
+}, {
+  keyName: 'arrow-down-alt'
+}, {
+  keyName: 'arrow-left-alt'
+}, {
+  keyName: 'arrow-right-alt'
+}, {
+  keyName: 'arrow-up-alt2'
+}, {
+  keyName: 'arrow-down-alt2'
+}, {
+  keyName: 'arrow-left-alt2'
+}, {
+  keyName: 'arrow-right-alt2'
+}, {
+  keyName: 'external'
+}, {
+  keyName: 'location'
+}, {
+  keyName: 'location-alt'
+}, {
+  keyName: 'calendar'
+}, {
+  keyName: 'clock'
+}, {
+  keyName: 'email'
+}, {
+  keyName: 'phone'
+}, {
+  keyName: 'cart'
+}, {
+  keyName: 'money'
+}, {
+  keyName: 'search'
+}, {
+  keyName: 'visibility'
+}, {
+  keyName: 'hidden'
+}, {
+  keyName: 'edit'
+}, {
+  keyName: 'trash'
+}, {
+  keyName: 'download'
+}, {
+  keyName: 'upload'
+}, {
+  keyName: 'backup'
+}, {
+  keyName: 'clipboard'
+}, {
+  keyName: 'lock'
+}, {
+  keyName: 'unlock'
+}, {
+  keyName: 'shield'
+}, {
+  keyName: 'warning'
+}, {
+  keyName: 'info'
+}, {
+  keyName: 'lightbulb'
+}, {
+  keyName: 'admin-home'
+}, {
+  keyName: 'admin-collapse'
+}, {
+  keyName: 'admin-generic'
+}, {
+  keyName: 'wordpress'
+}];
 
 /***/ },
 
@@ -1565,6 +2061,7 @@ const presetData = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getBlockStyles: () => (/* binding */ getBlockStyles),
+/* harmony export */   getIconPickerBlockStyles: () => (/* binding */ getIconPickerBlockStyles),
 /* harmony export */   getResolvedSides: () => (/* binding */ getResolvedSides)
 /* harmony export */ });
 const getResolvedSides = (base, top, right, bottom, left) => {
@@ -1589,16 +2086,6 @@ const getBlockStyles = attributes => {
   const cleanStyles = obj => {
     return Object.fromEntries(Object.entries(obj).filter(([_, value]) => !!value));
   };
-
-  // const cleanStyles = ( obj ) => {
-  // 	return Object.fromEntries(
-  // 		Object.entries( obj ).filter(
-  // 			( [ _, value ] ) =>
-  // 				value !== undefined && value !== null && value !== ''
-  // 		)
-  // 	);
-  // };
-
   const withUnit = (value, unit = 'px') => {
     if (!value || value === 0 || value === '0') {
       return null;
@@ -1608,36 +2095,37 @@ const getBlockStyles = attributes => {
   const SHADOW_VAL = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
 
   // Units Logic
-  const fzU = attributes?.fontSizeUnits || 'px';
-  const fhU = attributes?.fontHeightUnits || 'px';
-  const lsU = attributes?.letterSpacingUnits || 'px';
-  const wsU = attributes?.wordSpacingUnits || 'px';
-  const pU = attributes?.paddingUnits || 'px';
-  const mU = attributes?.marginUnits || 'px';
-  const bU = attributes?.borderUnits || 'px';
-  const rU = attributes?.borderRadiusUnits || 'px';
-  const hpU = attributes?.hoverPaddingUnits || 'px';
-  const hmU = attributes?.hoverMarginUnits || 'px';
-  const hbU = attributes?.hoverBorderUnits || 'px';
-  const hrU = attributes?.hoverBorderRadiusUnits || 'px';
+
+  const getUnit = key => attributes?.[key] || 'px';
+  const fzU = getUnit('fontSizeUnits');
+  const fhU = getUnit('fontHeightUnits');
+  const lsU = getUnit('letterSpacingUnits');
+  const wsU = getUnit('wordSpacingUnits');
+  const pU = getUnit('paddingUnits');
+  const mU = getUnit('marginUnits');
+  const bU = getUnit('borderUnits');
+  const rU = getUnit('borderRadiusUnits');
+  const hpU = getUnit('hoverPaddingUnits');
+  const hmU = getUnit('hoverMarginUnits');
+  const hbU = getUnit('hoverBorderUnits');
+  const hrU = getUnit('hoverBorderRadiusUnits');
 
   // -------------------------------
   // Resolve Parent Box Sides
   // -------------------------------
-  const allPadding = getResolvedSides(attributes?.allPadding, attributes?.allPaddingTop, attributes?.allPaddingRight, attributes?.allPaddingBottom, attributes?.allPaddingLeft);
-  const margin = getResolvedSides(attributes?.margin, attributes?.marginTop, attributes?.marginRight, attributes?.marginBottom, attributes?.marginLeft);
-  const padding = getResolvedSides(attributes?.padding, attributes?.paddingTop, attributes?.paddingRight, attributes?.paddingBottom, attributes?.paddingLeft);
-  const border = getResolvedSides(attributes?.border, attributes?.borderTop, attributes?.borderRight, attributes?.borderBottom, attributes?.borderLeft);
-  const childBorder = getResolvedSides(attributes?.childBorder, attributes?.childBorderTop, attributes?.childBorderRight, attributes?.childBorderBottom, attributes?.childBorderLeft);
-  const borderRadius = getResolvedSides(attributes?.borderRadius, attributes?.borderRadiusTop, attributes?.borderRadiusRight, attributes?.borderRadiusBottom, attributes?.borderRadiusLeft);
-  const hoverPadding = getResolvedSides(attributes?.hoverPadding, attributes?.hoverPaddingTop, attributes?.hoverPaddingRight, attributes?.hoverPaddingBottom, attributes?.hoverPaddingLeft);
-  const hoverBorder = getResolvedSides(attributes?.hoverBorder, attributes?.hoverBorderTop, attributes?.hoverBorderRight, attributes?.hoverBorderBottom, attributes?.hoverBorderLeft);
-  const childHoverBorder = getResolvedSides(attributes?.childHoverBorder, attributes?.childHoverBorderTop, attributes?.childHoverBorderRigchildHt, attributes?.childHoverBorderBottom, attributes?.childHoverBorderLeft);
-  const hoverMargin = getResolvedSides(attributes?.hoverMargin, attributes?.hoverMarginTop, attributes?.hoverMarginRight, attributes?.hoverMarginBottom, attributes?.hoverMarginLeft);
-  const hoverRadius = getResolvedSides(attributes?.hoverBorderRadius, attributes?.hoverBorderRadiusTop, attributes?.hoverBorderRadiusRight, attributes?.hoverBorderRadiusBottom, attributes?.hoverBorderRadiusLeft);
+
+  const getBox = (attrs, prefix) => getResolvedSides(attrs?.[prefix], attrs?.[`${prefix}Top`], attrs?.[`${prefix}Right`], attrs?.[`${prefix}Bottom`], attrs?.[`${prefix}Left`]);
+  const allPadding = getBox(attributes, 'allPadding');
+  const margin = getBox(attributes, 'margin');
+  const padding = getBox(attributes, 'padding');
+  const border = getBox(attributes, 'border');
+  const borderRadius = getBox(attributes, 'borderRadius');
+  const hoverPadding = getBox(attributes, 'hoverPadding');
+  const hoverBorder = getBox(attributes, 'hoverBorder');
+  const hoverMargin = getBox(attributes, 'hoverMargin');
   let itemsWidthValue = null;
   if (attributes?.itemWidthType === 'auto') {
-    itemsWidthValue = 'auto';
+    itemsWidthValue = 'fit-content';
   } else if (attributes?.itemWidthType === 'custom') {
     itemsWidthValue = `${attributes.itemsWidth}px`;
   }
@@ -1652,9 +2140,10 @@ const getBlockStyles = attributes => {
     '--separator-thickness': withUnit(attributes?.separatorThickness, 'px'),
     '--separator-color': attributes?.separatorColor,
     '--separator-style': attributes?.separatorType,
-    '--icon-size': withUnit(attributes?.iconSize, 'px'),
+    // '--icon-size': withUnit( attributes?.iconSize, 'px' ),
     '--icon-color': attributes?.iconColor,
     '--hover-icon-color': attributes?.hoverIconColor,
+    '--container-bg-color': attributes?.containerColor,
     // ===============================
     // TYPOGRAPHY DEFAULTS
     // ===============================
@@ -1692,13 +2181,6 @@ const getBlockStyles = attributes => {
     '--border-right-width': withUnit(border?.right, bU),
     '--border-bottom-width': withUnit(border?.bottom, bU),
     '--border-left-width': withUnit(border?.left, bU),
-    //Child Border
-    '--child-border-color': attributes?.childBorderColor,
-    '--child-border-style': attributes?.childBorderType,
-    '--child-border-top-width': withUnit(childBorder?.top, bU),
-    '--child-border-right-width': withUnit(childBorder?.right, bU),
-    '--child-border-bottom-width': withUnit(childBorder?.bottom, bU),
-    '--child-border-left-width': withUnit(childBorder?.left, bU),
     // Margin (use mU)
     '--margin-top': withUnit(margin?.top, mU),
     '--margin-right': withUnit(margin?.right, mU),
@@ -1736,495 +2218,111 @@ const getBlockStyles = attributes => {
     '--border-top-h': withUnit(hoverBorder?.top, hbU),
     '--border-right-h': withUnit(hoverBorder?.right, hbU),
     '--border-bottom-h': withUnit(hoverBorder?.bottom, hbU),
-    '--border-left-h': withUnit(hoverBorder?.left, hbU),
-    //Child hover border
-
-    '--child-border-top-h': withUnit(childHoverBorder?.top, hbU),
-    '--child-border-right-h': withUnit(childHoverBorder?.right, hbU),
-    '--child-border-bottom-h': withUnit(childHoverBorder?.bottom, hbU),
-    '--child-border-left-h': withUnit(childHoverBorder?.left, hbU),
-    // Hover Radius (use hrU)
-    '--radius-top-h': withUnit(hoverRadius?.top, hrU),
-    '--radius-right-h': withUnit(hoverRadius?.right, hrU),
-    '--radius-bottom-h': withUnit(hoverRadius?.bottom, hrU),
-    '--radius-left-h': withUnit(hoverRadius?.left, hrU)
+    '--border-left-h': withUnit(hoverBorder?.left, hbU)
   });
 };
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/Icon.js"
-/*!****************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/Icon.js ***!
-  \****************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Icon)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.js */ "./node_modules/lucide-react/dist/esm/defaultAttributes.js");
-/* harmony import */ var _shared_src_utils_hasA11yProp_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils/hasA11yProp.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.js");
-/* harmony import */ var _shared_src_utils_mergeClasses_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/src/utils/mergeClasses.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-
-const Icon = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
-  ({
-    color = "currentColor",
-    size = 24,
-    strokeWidth = 2,
-    absoluteStrokeWidth,
-    className = "",
-    children,
-    iconNode,
-    ...rest
-  }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
-    "svg",
-    {
-      ref,
-      ..._defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-      width: size,
-      height: size,
-      stroke: color,
-      strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
-      className: (0,_shared_src_utils_mergeClasses_js__WEBPACK_IMPORTED_MODULE_3__.mergeClasses)("lucide", className),
-      ...!children && !(0,_shared_src_utils_hasA11yProp_js__WEBPACK_IMPORTED_MODULE_2__.hasA11yProp)(rest) && { "aria-hidden": "true" },
-      ...rest
-    },
-    [
-      ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
-      ...Array.isArray(children) ? children : [children]
-    ]
-  )
-);
-
-
-//# sourceMappingURL=Icon.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/createLucideIcon.js"
-/*!****************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/createLucideIcon.js ***!
-  \****************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ createLucideIcon)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _shared_src_utils_mergeClasses_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/src/utils/mergeClasses.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js");
-/* harmony import */ var _shared_src_utils_toKebabCase_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils/toKebabCase.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.js");
-/* harmony import */ var _shared_src_utils_toPascalCase_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/src/utils/toPascalCase.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.js");
-/* harmony import */ var _Icon_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Icon.js */ "./node_modules/lucide-react/dist/esm/Icon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-
-
-const createLucideIcon = (iconName, iconNode) => {
-  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
-    ({ className, ...props }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Icon_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      ref,
-      iconNode,
-      className: (0,_shared_src_utils_mergeClasses_js__WEBPACK_IMPORTED_MODULE_1__.mergeClasses)(
-        `lucide-${(0,_shared_src_utils_toKebabCase_js__WEBPACK_IMPORTED_MODULE_2__.toKebabCase)((0,_shared_src_utils_toPascalCase_js__WEBPACK_IMPORTED_MODULE_3__.toPascalCase)(iconName))}`,
-        `lucide-${iconName}`,
-        className
-      ),
-      ...props
-    })
-  );
-  Component.displayName = (0,_shared_src_utils_toPascalCase_js__WEBPACK_IMPORTED_MODULE_3__.toPascalCase)(iconName);
-  return Component;
-};
-
-
-//# sourceMappingURL=createLucideIcon.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/defaultAttributes.js"
-/*!*****************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/defaultAttributes.js ***!
-  \*****************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ defaultAttributes)
-/* harmony export */ });
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-var defaultAttributes = {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
-};
-
-
-//# sourceMappingURL=defaultAttributes.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/italic.js"
-/*!************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/italic.js ***!
-  \************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Italic)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
-  ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
-  ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
-];
-const Italic = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("italic", __iconNode);
-
-
-//# sourceMappingURL=italic.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/palette.js"
-/*!*************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/palette.js ***!
-  \*************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Palette)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  [
-    "path",
-    {
-      d: "M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z",
-      key: "e79jfc"
+const getIconPickerBlockStyles = attributes => {
+  const cleanStyles = obj => {
+    return Object.fromEntries(Object.entries(obj).filter(([_, value]) => !!value));
+  };
+  const withUnit = (value, unit = 'px') => {
+    if (!value || value === 0 || value === '0') {
+      return null;
     }
-  ],
-  ["circle", { cx: "13.5", cy: "6.5", r: ".5", fill: "currentColor", key: "1okk4w" }],
-  ["circle", { cx: "17.5", cy: "10.5", r: ".5", fill: "currentColor", key: "f64h9f" }],
-  ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
-  ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
-];
-const Palette = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("palette", __iconNode);
+    return `${value}${unit}`;
+  };
+  const SHADOW_VAL = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
 
+  // Units Logic
 
-//# sourceMappingURL=palette.js.map
+  const getUnit = key => attributes?.[key] || 'px';
+  const pU = getUnit('paddingUnits');
+  const mU = getUnit('marginUnits');
+  const bU = getUnit('borderUnits');
+  const rU = getUnit('borderRadiusUnits');
+  const hpU = getUnit('hoverPaddingUnits');
+  const hmU = getUnit('hoverMarginUnits');
+  const hbU = getUnit('hoverBorderUnits');
+  const hrU = getUnit('hoverBorderRadiusUnits');
 
+  // -------------------------------
+  // Resolve Parent Box Sides
+  // -------------------------------
 
-/***/ },
+  const getBox = (attrs, prefix) => getResolvedSides(attrs?.[prefix], attrs?.[`${prefix}Top`], attrs?.[`${prefix}Right`], attrs?.[`${prefix}Bottom`], attrs?.[`${prefix}Left`]);
+  const margin = getBox(attributes, 'childMargin');
+  const padding = getBox(attributes, 'childPadding');
+  const border = getBox(attributes, 'childBorder');
+  const borderRadius = getBox(attributes, 'childBorderRadius');
+  const hoverPadding = getBox(attributes, 'childHoverPadding');
+  const hoverBorder = getBox(attributes, 'childHoverBorder');
+  const hoverMargin = getBox(attributes, 'childHoverMargin');
+  const hoverRadius = getBox(attributes, 'childHoverborderRadius');
+  const background = attributes?.backgroundColor ?? attributes?.backgroundGradient;
+  const hoverBackground = attributes?.hoverBackgroundColor ?? attributes?.hoverBackgroundGradient;
+  return cleanStyles({
+    // ===============================
+    // GENERAL
+    // ===============================
+    '--icon-size': withUnit(attributes?.iconSize, 'px'),
+    '--icon-color': attributes?.iconColor,
+    '--hover-icon-color': attributes?.hoverIconColor,
+    // ===============================
+    // CHILD DEFAULTS
+    // ===============================
+    '--background-color-IP': (attributes?.backgroundColor || attributes?.backgroundGradient) && `${background}`,
+    '--box-shadow-IP': attributes?.hasBoxShadow && SHADOW_VAL,
+    '--padding-top-IP': withUnit(padding?.top, pU),
+    '--padding-right-IP': withUnit(padding?.right, pU),
+    '--padding-bottom-IP': withUnit(padding?.bottom, pU),
+    '--padding-left-IP': withUnit(padding?.left, pU),
+    '--border-color-IP': attributes?.childBorderColor,
+    '--border-style-IP': attributes?.childBorderType,
+    '--border-top-width-IP': withUnit(border?.top, bU),
+    '--border-right-width-IP': withUnit(border?.right, bU),
+    '--border-bottom-width-IP': withUnit(border?.bottom, bU),
+    '--border-left-width-IP': withUnit(border?.left, bU),
+    // Margin (use mU)
+    '--margin-top-IP': withUnit(margin?.top, mU),
+    '--margin-right-IP': withUnit(margin?.right, mU),
+    '--margin-bottom-IP': withUnit(margin?.bottom, mU),
+    '--margin-left-IP': withUnit(margin?.left, mU),
+    // Border Radius (use rU)
+    '--border-radius-top-IP': withUnit(borderRadius?.top, rU),
+    '--border-radius-right-IP': withUnit(borderRadius?.right, rU),
+    '--border-radius-bottom-IP': withUnit(borderRadius?.bottom, rU),
+    '--border-radius-left-IP': withUnit(borderRadius?.left, rU),
+    // ===============================
+    // HOVER DEFAULTS
+    // ===============================
+    '--bg-h-IP': (attributes?.hoverBackgroundColor || attributes?.hoverBackgroundGradient) && `${hoverBackground}`,
+    '--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+    '--border-color-h-IP': attributes?.hoverBorderColor,
+    '--border-style-h-IP': attributes?.hoverBorderType,
+    // Hover Padding (use hpU)
+    '--padding-top-h-IP': withUnit(hoverPadding?.top, hpU),
+    '--padding-right-h-IP': withUnit(hoverPadding?.right, hpU),
+    '--padding-bottom-h-IP': withUnit(hoverPadding?.bottom, hpU),
+    '--padding-left-h-IP': withUnit(hoverPadding?.left, hpU),
+    // Hover Margin (use hmU)
+    '--margin-top-h-IP': withUnit(hoverMargin?.top, hmU),
+    '--margin-right-h-IP': withUnit(hoverMargin?.right, hmU),
+    '--margin-bottom-h-IP': withUnit(hoverMargin?.bottom, hmU),
+    '--margin-left-h-IP': withUnit(hoverMargin?.left, hmU),
+    // Hover Border (use hbU)
+    '--border-top-h-IP': withUnit(hoverBorder?.top, hbU),
+    '--border-right-h-IP': withUnit(hoverBorder?.right, hbU),
+    '--border-bottom-h-IP': withUnit(hoverBorder?.bottom, hbU),
+    '--border-left-h-IP': withUnit(hoverBorder?.left, hbU),
+    //Child hover border
 
-/***/ "./node_modules/lucide-react/dist/esm/icons/settings.js"
-/*!**************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/settings.js ***!
-  \**************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Settings)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  [
-    "path",
-    {
-      d: "M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915",
-      key: "1i5ecw"
-    }
-  ],
-  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-];
-const Settings = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("settings", __iconNode);
-
-
-//# sourceMappingURL=settings.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/strikethrough.js"
-/*!*******************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/strikethrough.js ***!
-  \*******************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Strikethrough)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  ["path", { d: "M16 4H9a3 3 0 0 0-2.83 4", key: "43sutm" }],
-  ["path", { d: "M14 12a4 4 0 0 1 0 8H6", key: "nlfj13" }],
-  ["line", { x1: "4", x2: "20", y1: "12", y2: "12", key: "1e0a9i" }]
-];
-const Strikethrough = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("strikethrough", __iconNode);
-
-
-//# sourceMappingURL=strikethrough.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/underline.js"
-/*!***************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/underline.js ***!
-  \***************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Underline)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  ["path", { d: "M6 4v6a6 6 0 0 0 12 0V4", key: "9kb039" }],
-  ["line", { x1: "4", x2: "20", y1: "20", y2: "20", key: "nun2al" }]
-];
-const Underline = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("underline", __iconNode);
-
-
-//# sourceMappingURL=underline.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.js"
-/*!****************************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.js ***!
-  \****************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   hasA11yProp: () => (/* binding */ hasA11yProp)
-/* harmony export */ });
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-const hasA11yProp = (props) => {
-  for (const prop in props) {
-    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
-      return true;
-    }
-  }
-  return false;
+    // Hover Radius (use hrU)
+    '--radius-top-h-IP': withUnit(hoverRadius?.top, hrU),
+    '--radius-right-h-IP': withUnit(hoverRadius?.right, hrU),
+    '--radius-bottom-h-IP': withUnit(hoverRadius?.bottom, hrU),
+    '--radius-left-h-IP': withUnit(hoverRadius?.left, hrU)
+  });
 };
-
-
-//# sourceMappingURL=hasA11yProp.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js"
-/*!*****************************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js ***!
-  \*****************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   mergeClasses: () => (/* binding */ mergeClasses)
-/* harmony export */ });
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-const mergeClasses = (...classes) => classes.filter((className, index, array) => {
-  return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
-}).join(" ").trim();
-
-
-//# sourceMappingURL=mergeClasses.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.js"
-/*!****************************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.js ***!
-  \****************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   toCamelCase: () => (/* binding */ toCamelCase)
-/* harmony export */ });
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-const toCamelCase = (string) => string.replace(
-  /^([A-Z])|[\s-_]+(\w)/g,
-  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
-);
-
-
-//# sourceMappingURL=toCamelCase.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.js"
-/*!****************************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.js ***!
-  \****************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   toKebabCase: () => (/* binding */ toKebabCase)
-/* harmony export */ });
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-
-
-//# sourceMappingURL=toKebabCase.js.map
-
-
-/***/ },
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.js"
-/*!*****************************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.js ***!
-  \*****************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   toPascalCase: () => (/* binding */ toPascalCase)
-/* harmony export */ });
-/* harmony import */ var _toCamelCase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toCamelCase.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.js");
-/**
- * @license lucide-react v0.574.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const toPascalCase = (string) => {
-  const camelCase = (0,_toCamelCase_js__WEBPACK_IMPORTED_MODULE_0__.toCamelCase)(string);
-  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-};
-
-
-//# sourceMappingURL=toPascalCase.js.map
-
 
 /***/ },
 
@@ -2386,6 +2484,16 @@ module.exports = window["wp"]["components"];
 
 /***/ },
 
+/***/ "@wordpress/data"
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+(module) {
+
+module.exports = window["wp"]["data"];
+
+/***/ },
+
 /***/ "@wordpress/element"
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -2412,7 +2520,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list-item","version":"0.1.0","title":"Icon List Item","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"textContent":{"type":"string"},"selectedIcon":{"type":"string"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string"},"backgroundGradient":{"type":"string"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"margin":{"type":"number"},"marginTop":{"type":"number"},"marginRight":{"type":"number"},"marginBottom":{"type":"number"},"marginLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hadBoxShadow":{"type":"boolean"},"hoverBackgroundType":{"type":"string"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean"},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"}},"textdomain":"icon-list-item","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list-item","version":"0.1.0","title":"Icon List Item","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string"},"backgroundGradient":{"type":"string"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"margin":{"type":"number"},"marginTop":{"type":"number"},"marginRight":{"type":"number"},"marginBottom":{"type":"number"},"marginLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hadBoxShadow":{"type":"boolean"},"hoverBackgroundType":{"type":"string"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean"},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"}},"textdomain":"icon-list-item","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

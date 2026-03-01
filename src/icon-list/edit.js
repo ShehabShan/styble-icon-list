@@ -14,6 +14,7 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 import './editor.scss';
 
@@ -34,11 +35,11 @@ import Typography from './side-control-style-bar/Typography.js';
 import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
 import { getBlockStyles } from '../utils/style.js';
 import { presetData } from '../utils/dataCenter.js';
-
 import RangeControls from './side-control-style-bar/RangeControls.js';
 import ItemStyle from './side-control-style-bar/ItemStyle.js';
-import { useState } from '@wordpress/element';
-import { Palette, Settings } from 'lucide-react';
+
+import settingsIcon from '../assests/setting.svg';
+import paletteIcon from '../assests/palette.svg';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -53,19 +54,31 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const parentStyle = getBlockStyles( attributes );
 
-	//Opening modal for icon choose
-
-	// Initial state: null means no modal is open
 	const [ openModalId, setOpenModalId ] = useState( null );
+	const sidebarRef = useRef( null );
 
 	const toggleModal = ( id ) => {
 		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
 	};
-
-	// Helper to check if a specific modal is open
 	const isModalOpen = ( id ) => openModalId === id;
-
 	const closeAllModals = () => setOpenModalId( null );
+
+	useEffect( () => {
+		const handleClick = ( e ) => {
+			if ( ! openModalId ) {
+				return;
+			}
+
+			if ( sidebarRef.current?.contains( e.target ) ) {
+				closeAllModals();
+			}
+		};
+
+		document.addEventListener( 'mousedown', handleClick );
+		return () => {
+			document.removeEventListener( 'mousedown', handleClick );
+		};
+	}, [ openModalId ] );
 
 	const blockProps = useBlockProps( {
 		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType } is-preset-${ preset }`,
@@ -88,16 +101,17 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const insertPreset = ( value ) => {
 		const selectedStyles = presetData[ value ] || {};
 
-		const items = [
-			createBlock( 'create-block/icon-list-item' ),
-			createBlock( 'create-block/icon-list-item' ),
-			createBlock( 'create-block/icon-list-item' ),
-		];
+		const numberOfItems = value === 'scratch' ? 1 : 3;
+
+		const items = Array.from( { length: numberOfItems } ).map( () =>
+			createBlock( 'create-block/icon-list-item' )
+		);
 
 		setAttributes( {
 			preset: value,
-			...selectedStyles, // This pushes backgroundColor, borderTop, etc.
+			...selectedStyles,
 		} );
+
 		replaceInnerBlocks( clientId, items );
 	};
 
@@ -155,7 +169,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								label={ __( 'Icon Size', 'icon-list' ) }
 								value={ iconSize }
 								onChange={ ( value ) =>
-									setAttributes( { iconSize: value } )
+									setAttributes( {
+										iconSize: value,
+										iconUpdateId: Date.now(),
+									} )
 								}
 								min={ 20 }
 								max={ 400 }
@@ -193,11 +210,28 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					/>
 
 					<CustomHelperComponent
-						label={ __( 'Icon Colour', 'icon-list' ) }
+						label={ __( 'Icon Color', 'icon-list' ) }
 						hasColor={ true }
+						hasReset={ true }
+						icon={ resetIcon }
+						resetAttributes="iconColor"
+						setAttributes={ setAttributes }
 						color={ iconColor }
 						onColorChange={ ( color ) =>
 							setAttributes( { iconColor: color } )
+						}
+					/>
+
+					<CustomHelperComponent
+						label={ __( 'Background Color', 'icon-list' ) }
+						hasColor={ true }
+						hasReset={ true }
+						icon={ resetIcon }
+						resetAttributes="containerColor"
+						setAttributes={ setAttributes }
+						color={ attributes?.containerColor }
+						onColorChange={ ( color ) =>
+							setAttributes( { containerColor: color } )
 						}
 					/>
 
@@ -250,7 +284,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								name: 'settings',
 								title: (
 									<>
-										<Settings size={ 16 } />
+										<img
+											src={ settingsIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Settings"
+										/>
 										{ __( 'Settings', 'icon-list' ) }
 									</>
 								),
@@ -260,7 +299,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								name: 'styles',
 								title: (
 									<>
-										<Palette size={ 16 } />
+										<img
+											src={ paletteIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Palette"
+										/>
 										{ __( 'Style', 'icon-list' ) }
 									</>
 								),

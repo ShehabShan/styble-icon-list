@@ -26,15 +26,6 @@ export const getBlockStyles = ( attributes ) => {
 		);
 	};
 
-	// const cleanStyles = ( obj ) => {
-	// 	return Object.fromEntries(
-	// 		Object.entries( obj ).filter(
-	// 			( [ _, value ] ) =>
-	// 				value !== undefined && value !== null && value !== ''
-	// 		)
-	// 	);
-	// };
-
 	const withUnit = ( value, unit = 'px' ) => {
 		if ( ! value || value === 0 || value === '0' ) {
 			return null;
@@ -47,116 +38,57 @@ export const getBlockStyles = ( attributes ) => {
 		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
 
 	// Units Logic
-	const fzU = attributes?.fontSizeUnits || 'px';
-	const fhU = attributes?.fontHeightUnits || 'px';
-	const lsU = attributes?.letterSpacingUnits || 'px';
-	const wsU = attributes?.wordSpacingUnits || 'px';
 
-	const pU = attributes?.paddingUnits || 'px';
-	const mU = attributes?.marginUnits || 'px';
-	const bU = attributes?.borderUnits || 'px';
-	const rU = attributes?.borderRadiusUnits || 'px';
+	const getUnit = ( key ) => attributes?.[ key ] || 'px';
 
-	const hpU = attributes?.hoverPaddingUnits || 'px';
-	const hmU = attributes?.hoverMarginUnits || 'px';
-	const hbU = attributes?.hoverBorderUnits || 'px';
-	const hrU = attributes?.hoverBorderRadiusUnits || 'px';
+	const fzU = getUnit( 'fontSizeUnits' );
+	const fhU = getUnit( 'fontHeightUnits' );
+	const lsU = getUnit( 'letterSpacingUnits' );
+	const wsU = getUnit( 'wordSpacingUnits' );
+
+	const pU = getUnit( 'paddingUnits' );
+	const mU = getUnit( 'marginUnits' );
+	const bU = getUnit( 'borderUnits' );
+	const rU = getUnit( 'borderRadiusUnits' );
+
+	const hpU = getUnit( 'hoverPaddingUnits' );
+	const hmU = getUnit( 'hoverMarginUnits' );
+	const hbU = getUnit( 'hoverBorderUnits' );
+	const hrU = getUnit( 'hoverBorderRadiusUnits' );
 
 	// -------------------------------
 	// Resolve Parent Box Sides
 	// -------------------------------
-	const allPadding = getResolvedSides(
-		attributes?.allPadding,
-		attributes?.allPaddingTop,
-		attributes?.allPaddingRight,
-		attributes?.allPaddingBottom,
-		attributes?.allPaddingLeft
-	);
 
-	const margin = getResolvedSides(
-		attributes?.margin,
-		attributes?.marginTop,
-		attributes?.marginRight,
-		attributes?.marginBottom,
-		attributes?.marginLeft
-	);
+	const getBox = ( attrs, prefix ) =>
+		getResolvedSides(
+			attrs?.[ prefix ],
+			attrs?.[ `${ prefix }Top` ],
+			attrs?.[ `${ prefix }Right` ],
+			attrs?.[ `${ prefix }Bottom` ],
+			attrs?.[ `${ prefix }Left` ]
+		);
 
-	const padding = getResolvedSides(
-		attributes?.padding,
-		attributes?.paddingTop,
-		attributes?.paddingRight,
-		attributes?.paddingBottom,
-		attributes?.paddingLeft
-	);
+	const allPadding = getBox( attributes, 'allPadding' );
 
-	const border = getResolvedSides(
-		attributes?.border,
-		attributes?.borderTop,
-		attributes?.borderRight,
-		attributes?.borderBottom,
-		attributes?.borderLeft
-	);
+	const margin = getBox( attributes, 'margin' );
 
-	const childBorder = getResolvedSides(
-		attributes?.childBorder,
-		attributes?.childBorderTop,
-		attributes?.childBorderRight,
-		attributes?.childBorderBottom,
-		attributes?.childBorderLeft
-	);
+	const padding = getBox( attributes, 'padding' );
 
-	const borderRadius = getResolvedSides(
-		attributes?.borderRadius,
-		attributes?.borderRadiusTop,
-		attributes?.borderRadiusRight,
-		attributes?.borderRadiusBottom,
-		attributes?.borderRadiusLeft
-	);
+	const border = getBox( attributes, 'border' );
 
-	const hoverPadding = getResolvedSides(
-		attributes?.hoverPadding,
-		attributes?.hoverPaddingTop,
-		attributes?.hoverPaddingRight,
-		attributes?.hoverPaddingBottom,
-		attributes?.hoverPaddingLeft
-	);
+	const borderRadius = getBox( attributes, 'borderRadius' );
 
-	const hoverBorder = getResolvedSides(
-		attributes?.hoverBorder,
-		attributes?.hoverBorderTop,
-		attributes?.hoverBorderRight,
-		attributes?.hoverBorderBottom,
-		attributes?.hoverBorderLeft
-	);
+	const hoverPadding = getBox( attributes, 'hoverPadding' );
 
-	const childHoverBorder = getResolvedSides(
-		attributes?.childHoverBorder,
-		attributes?.childHoverBorderTop,
-		attributes?.childHoverBorderRigchildHt,
-		attributes?.childHoverBorderBottom,
-		attributes?.childHoverBorderLeft
-	);
+	const hoverBorder = getBox( attributes, 'hoverBorder' );
 
-	const hoverMargin = getResolvedSides(
-		attributes?.hoverMargin,
-		attributes?.hoverMarginTop,
-		attributes?.hoverMarginRight,
-		attributes?.hoverMarginBottom,
-		attributes?.hoverMarginLeft
-	);
-
-	const hoverRadius = getResolvedSides(
-		attributes?.hoverBorderRadius,
-		attributes?.hoverBorderRadiusTop,
-		attributes?.hoverBorderRadiusRight,
-		attributes?.hoverBorderRadiusBottom,
-		attributes?.hoverBorderRadiusLeft
-	);
+	const hoverMargin = getBox( attributes, 'hoverMargin' );
 
 	let itemsWidthValue = null;
 
 	if ( attributes?.itemWidthType === 'auto' ) {
-		itemsWidthValue = 'auto';
+		itemsWidthValue = 'fit-content';
 	} else if ( attributes?.itemWidthType === 'custom' ) {
 		itemsWidthValue = `${ attributes.itemsWidth }px`;
 	}
@@ -179,9 +111,10 @@ export const getBlockStyles = ( attributes ) => {
 		),
 		'--separator-color': attributes?.separatorColor,
 		'--separator-style': attributes?.separatorType,
-		'--icon-size': withUnit( attributes?.iconSize, 'px' ),
+		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
 		'--icon-color': attributes?.iconColor,
 		'--hover-icon-color': attributes?.hoverIconColor,
+		'--container-bg-color': attributes?.containerColor,
 
 		// ===============================
 		// TYPOGRAPHY DEFAULTS
@@ -230,14 +163,6 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-right-width': withUnit( border?.right, bU ),
 		'--border-bottom-width': withUnit( border?.bottom, bU ),
 		'--border-left-width': withUnit( border?.left, bU ),
-
-		//Child Border
-		'--child-border-color': attributes?.childBorderColor,
-		'--child-border-style': attributes?.childBorderType,
-		'--child-border-top-width': withUnit( childBorder?.top, bU ),
-		'--child-border-right-width': withUnit( childBorder?.right, bU ),
-		'--child-border-bottom-width': withUnit( childBorder?.bottom, bU ),
-		'--child-border-left-width': withUnit( childBorder?.left, bU ),
 
 		// Margin (use mU)
 		'--margin-top': withUnit( margin?.top, mU ),
@@ -288,18 +213,154 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-right-h': withUnit( hoverBorder?.right, hbU ),
 		'--border-bottom-h': withUnit( hoverBorder?.bottom, hbU ),
 		'--border-left-h': withUnit( hoverBorder?.left, hbU ),
+	} );
+};
+
+export const getIconPickerBlockStyles = ( attributes ) => {
+	const cleanStyles = ( obj ) => {
+		return Object.fromEntries(
+			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+		);
+	};
+
+	const withUnit = ( value, unit = 'px' ) => {
+		if ( ! value || value === 0 || value === '0' ) {
+			return null;
+		}
+
+		return `${ value }${ unit }`;
+	};
+
+	const SHADOW_VAL =
+		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+
+	// Units Logic
+
+	const getUnit = ( key ) => attributes?.[ key ] || 'px';
+
+	const pU = getUnit( 'paddingUnits' );
+	const mU = getUnit( 'marginUnits' );
+	const bU = getUnit( 'borderUnits' );
+	const rU = getUnit( 'borderRadiusUnits' );
+
+	const hpU = getUnit( 'hoverPaddingUnits' );
+	const hmU = getUnit( 'hoverMarginUnits' );
+	const hbU = getUnit( 'hoverBorderUnits' );
+	const hrU = getUnit( 'hoverBorderRadiusUnits' );
+
+	// -------------------------------
+	// Resolve Parent Box Sides
+	// -------------------------------
+
+	const getBox = ( attrs, prefix ) =>
+		getResolvedSides(
+			attrs?.[ prefix ],
+			attrs?.[ `${ prefix }Top` ],
+			attrs?.[ `${ prefix }Right` ],
+			attrs?.[ `${ prefix }Bottom` ],
+			attrs?.[ `${ prefix }Left` ]
+		);
+
+	const margin = getBox( attributes, 'childMargin' );
+
+	const padding = getBox( attributes, 'childPadding' );
+
+	const border = getBox( attributes, 'childBorder' );
+
+	const borderRadius = getBox( attributes, 'childBorderRadius' );
+
+	const hoverPadding = getBox( attributes, 'childHoverPadding' );
+
+	const hoverBorder = getBox( attributes, 'childHoverBorder' );
+
+	const hoverMargin = getBox( attributes, 'childHoverMargin' );
+
+	const hoverRadius = getBox( attributes, 'childHoverborderRadius' );
+
+	const background =
+		attributes?.backgroundColor ?? attributes?.backgroundGradient;
+
+	const hoverBackground =
+		attributes?.hoverBackgroundColor ?? attributes?.hoverBackgroundGradient;
+
+	return cleanStyles( {
+		// ===============================
+		// GENERAL
+		// ===============================
+		'--icon-size': withUnit( attributes?.iconSize, 'px' ),
+		'--icon-color': attributes?.iconColor,
+		'--hover-icon-color': attributes?.hoverIconColor,
+
+		// ===============================
+		// CHILD DEFAULTS
+		// ===============================
+		'--background-color-IP':
+			( attributes?.backgroundColor || attributes?.backgroundGradient ) &&
+			`${ background }`,
+
+		'--box-shadow-IP': attributes?.hasBoxShadow && SHADOW_VAL,
+
+		'--padding-top-IP': withUnit( padding?.top, pU ),
+		'--padding-right-IP': withUnit( padding?.right, pU ),
+		'--padding-bottom-IP': withUnit( padding?.bottom, pU ),
+		'--padding-left-IP': withUnit( padding?.left, pU ),
+
+		'--border-color-IP': attributes?.childBorderColor,
+		'--border-style-IP': attributes?.childBorderType,
+		'--border-top-width-IP': withUnit( border?.top, bU ),
+		'--border-right-width-IP': withUnit( border?.right, bU ),
+		'--border-bottom-width-IP': withUnit( border?.bottom, bU ),
+		'--border-left-width-IP': withUnit( border?.left, bU ),
+
+		// Margin (use mU)
+		'--margin-top-IP': withUnit( margin?.top, mU ),
+		'--margin-right-IP': withUnit( margin?.right, mU ),
+		'--margin-bottom-IP': withUnit( margin?.bottom, mU ),
+		'--margin-left-IP': withUnit( margin?.left, mU ),
+
+		// Border Radius (use rU)
+		'--border-radius-top-IP': withUnit( borderRadius?.top, rU ),
+		'--border-radius-right-IP': withUnit( borderRadius?.right, rU ),
+		'--border-radius-bottom-IP': withUnit( borderRadius?.bottom, rU ),
+		'--border-radius-left-IP': withUnit( borderRadius?.left, rU ),
+
+		// ===============================
+		// HOVER DEFAULTS
+		// ===============================
+		'--bg-h-IP':
+			( attributes?.hoverBackgroundColor ||
+				attributes?.hoverBackgroundGradient ) &&
+			`${ hoverBackground }`,
+
+		'--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+
+		'--border-color-h-IP': attributes?.hoverBorderColor,
+		'--border-style-h-IP': attributes?.hoverBorderType,
+
+		// Hover Padding (use hpU)
+		'--padding-top-h-IP': withUnit( hoverPadding?.top, hpU ),
+		'--padding-right-h-IP': withUnit( hoverPadding?.right, hpU ),
+		'--padding-bottom-h-IP': withUnit( hoverPadding?.bottom, hpU ),
+		'--padding-left-h-IP': withUnit( hoverPadding?.left, hpU ),
+
+		// Hover Margin (use hmU)
+		'--margin-top-h-IP': withUnit( hoverMargin?.top, hmU ),
+		'--margin-right-h-IP': withUnit( hoverMargin?.right, hmU ),
+		'--margin-bottom-h-IP': withUnit( hoverMargin?.bottom, hmU ),
+		'--margin-left-h-IP': withUnit( hoverMargin?.left, hmU ),
+
+		// Hover Border (use hbU)
+		'--border-top-h-IP': withUnit( hoverBorder?.top, hbU ),
+		'--border-right-h-IP': withUnit( hoverBorder?.right, hbU ),
+		'--border-bottom-h-IP': withUnit( hoverBorder?.bottom, hbU ),
+		'--border-left-h-IP': withUnit( hoverBorder?.left, hbU ),
 
 		//Child hover border
 
-		'--child-border-top-h': withUnit( childHoverBorder?.top, hbU ),
-		'--child-border-right-h': withUnit( childHoverBorder?.right, hbU ),
-		'--child-border-bottom-h': withUnit( childHoverBorder?.bottom, hbU ),
-		'--child-border-left-h': withUnit( childHoverBorder?.left, hbU ),
-
 		// Hover Radius (use hrU)
-		'--radius-top-h': withUnit( hoverRadius?.top, hrU ),
-		'--radius-right-h': withUnit( hoverRadius?.right, hrU ),
-		'--radius-bottom-h': withUnit( hoverRadius?.bottom, hrU ),
-		'--radius-left-h': withUnit( hoverRadius?.left, hrU ),
+		'--radius-top-h-IP': withUnit( hoverRadius?.top, hrU ),
+		'--radius-right-h-IP': withUnit( hoverRadius?.right, hrU ),
+		'--radius-bottom-h-IP': withUnit( hoverRadius?.bottom, hrU ),
+		'--radius-left-h-IP': withUnit( hoverRadius?.left, hrU ),
 	} );
 };

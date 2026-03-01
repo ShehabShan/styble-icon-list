@@ -44,12 +44,6 @@
       "type": "string",
       "default": "px"
     },
-    "textContent": {
-      "type": "string"
-    },
-    "selectedIcon": {
-      "type": "string"
-    },
     "itemStyleType": {
       "type": "string",
       "default": "normal"

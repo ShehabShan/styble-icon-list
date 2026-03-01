@@ -34,6 +34,15 @@ const ChildItemStyle = ( props ) => {
 	const borderKey = isChild ? 'childBorder' : 'border';
 	const typeKey = isChild ? 'childBorderType' : 'borderType';
 	const colorKey = isChild ? 'childBorderColor' : 'borderColor';
+	const marginKey = isChild ? 'childMargin' : 'margin';
+	const paddingKey = isChild ? 'childPadding' : 'padding';
+	const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
+
+	const hoverMarginKey = isChild ? 'childHoverMargin' : 'hoverMargin';
+	const hoverPaddingKey = isChild ? 'childHoverPadding' : 'hoverPadding';
+	const hoverBorderRadiusKey = isChild
+		? 'childHoverborderRadius'
+		: 'hoverborderRadius';
 	const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
 	const hoverTypeKey = isChild ? 'childBorderType' : 'borderType';
 	const hoverColorKey = isChild ? 'childBorderColor' : 'borderColor';
@@ -299,7 +308,7 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'border Radius' }
-							type="borderRadius"
+							type={ borderRadiusKey }
 						/>
 					</div>
 					<div className="control-section control-section--box-shadow">
@@ -319,7 +328,7 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'Padding' }
-							type="padding"
+							type={ paddingKey }
 						/>
 					</div>
 					<div className="control-section control-section--margin">
@@ -327,7 +336,7 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'Margin' }
-							type="margin"
+							type={ marginKey }
 						/>
 					</div>
 				</div>
@@ -539,7 +548,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'border Radius' }
-								type="hoverBorderRadius"
+								type={ hoverBorderRadiusKey }
 							/>
 						</div>
 
@@ -563,7 +572,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'Padding' }
-								type="hoverPadding"
+								type={ hoverPaddingKey }
 							/>
 						</div>
 
@@ -574,7 +583,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'Margin' }
-								type="hoverMargin"
+								type={ hoverMarginKey }
 							/>
 						</div>
 					</div>

@@ -343,6 +343,16 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
+			'mediaId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'mediaUrl' => array(
+				'type' => 'string'
+			),
+			'iconUpdateId' => array(
+				'type' => 'number'
+			),
 			'preset' => array(
 				'type' => 'string',
 				'default' => 'preset-1'
@@ -357,6 +367,10 @@ return array(
 			),
 			'selectedIcon' => array(
 				'type' => 'string'
+			),
+			'iconType' => array(
+				'type' => 'string',
+				'default' => 'library'
 			),
 			'hasIcon' => array(
 				'type' => 'boolean',
@@ -423,7 +437,8 @@ return array(
 				'type' => 'string'
 			),
 			'iconColor' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => '#FFFFFF'
 			),
 			'itemStyleType' => array(
 				'type' => 'string',
@@ -432,6 +447,9 @@ return array(
 			'backgroundType' => array(
 				'type' => 'string',
 				'default' => 'solid'
+			),
+			'containerColor' => array(
+				'type' => 'string'
 			),
 			'backgroundColor' => array(
 				'type' => 'string',
@@ -580,7 +598,9 @@ return array(
 			)
 		),
 		'providesContext' => array(
-			'my-plugin/selectedIcon' => 'selectedIcon'
+			'icon-list/iconColor' => 'iconColor',
+			'icon-list/iconSize' => 'iconSize',
+			'icon-list/iconType' => 'iconType'
 		),
 		'textdomain' => 'icon-list',
 		'editorScript' => 'file:./index.js',
@@ -635,12 +655,6 @@ return array(
 			'hoverBorderRadiusUnits' => array(
 				'type' => 'string',
 				'default' => 'px'
-			),
-			'textContent' => array(
-				'type' => 'string'
-			),
-			'selectedIcon' => array(
-				'type' => 'string'
 			),
 			'itemStyleType' => array(
 				'type' => 'string',
@@ -843,7 +857,19 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
+			'newTab' => array(
+				'type' => 'boolean'
+			),
+			'url' => array(
+				'type' => 'string'
+			),
 			'globalIcon' => array(
+				'type' => 'string'
+			),
+			'mediaId' => array(
+				'type' => 'number'
+			),
+			'mediaUrl' => array(
 				'type' => 'string'
 			),
 			'iconType' => array(
@@ -851,11 +877,8 @@ return array(
 				'default' => 'library'
 			),
 			'selectedIcon' => array(
-				'type' => 'string'
-			),
-			'iconUrl' => array(
 				'type' => 'string',
-				'default' => ''
+				'default' => 'menu'
 			),
 			'iconSize' => array(
 				'type' => 'number'
@@ -888,35 +911,41 @@ return array(
 			'backgroundGradient' => array(
 				'type' => 'string'
 			),
-			'padding' => array(
+			'childPadding' => array(
 				'type' => 'number'
 			),
-			'paddingTop' => array(
+			'childPaddingTop' => array(
 				'type' => 'number'
 			),
-			'paddingRight' => array(
+			'childPaddingRight' => array(
 				'type' => 'number'
 			),
-			'paddingLeft' => array(
+			'childPaddingLeft' => array(
 				'type' => 'number'
 			),
-			'paddingBottom' => array(
+			'childPaddingBottom' => array(
 				'type' => 'number'
 			),
-			'margin' => array(
+			'childMargin' => array(
 				'type' => 'number'
 			),
-			'marginTop' => array(
+			'childMarginTop' => array(
 				'type' => 'number'
 			),
-			'marginRight' => array(
+			'childMarginRight' => array(
 				'type' => 'number'
 			),
-			'marginBottom' => array(
+			'childMarginBottom' => array(
 				'type' => 'number'
 			),
-			'marginLeft' => array(
+			'childMarginLeft' => array(
 				'type' => 'number'
+			),
+			'childBorderType' => array(
+				'type' => 'string'
+			),
+			'childBorderColor' => array(
+				'type' => 'string'
 			),
 			'childBorder' => array(
 				'type' => 'number'
@@ -933,28 +962,26 @@ return array(
 			'childBorderLeft' => array(
 				'type' => 'number'
 			),
-			'childBorderType' => array(
-				'type' => 'string'
+			'childBorderRadius' => array(
+				'type' => 'number',
+				'default' => 100
 			),
-			'ChildBorderColor' => array(
-				'type' => 'string'
-			),
-			'borderRadius' => array(
+			'childBorderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'borderRadiusTop' => array(
+			'childBorderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'borderRadiusRight' => array(
+			'childBorderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'borderRadiusBottom' => array(
-				'type' => 'number'
-			),
-			'borderRadiusLeft' => array(
+			'childBorderRadiusLeft' => array(
 				'type' => 'number'
 			),
 			'hadBoxShadow' => array(
+				'type' => 'boolean'
+			),
+			'hoverHasBoxShadow' => array(
 				'type' => 'boolean'
 			),
 			'hoverBackgroundColor' => array(
@@ -962,6 +989,36 @@ return array(
 			),
 			'hoverBackgroundGradient' => array(
 				'type' => 'string'
+			),
+			'childHoverMargin' => array(
+				'type' => 'number'
+			),
+			'childHoverMarginTop' => array(
+				'type' => 'number'
+			),
+			'childHoverMarginRight' => array(
+				'type' => 'number'
+			),
+			'childHoverMarginBottom' => array(
+				'type' => 'number'
+			),
+			'childHoverMarginLeft' => array(
+				'type' => 'number'
+			),
+			'childHoverPadding' => array(
+				'type' => 'number'
+			),
+			'childHoverPaddingTop' => array(
+				'type' => 'number'
+			),
+			'childHoverPaddingRight' => array(
+				'type' => 'number'
+			),
+			'childHoverPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'childHoverPaddingLeft' => array(
+				'type' => 'number'
 			),
 			'childHoverBorderType' => array(
 				'type' => 'string'
@@ -984,39 +1041,26 @@ return array(
 			'childHoverBorderLeft' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRadius' => array(
+			'childHoverborderRadius' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRadiusTop' => array(
+			'childHoverBorderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRadiusRight' => array(
+			'childHoverBorderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRadiusBottom' => array(
+			'childHoverBorderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'hoverBorderRadiusLeft' => array(
-				'type' => 'number'
-			),
-			'hoverHasBoxShadow' => array(
-				'type' => 'boolean'
-			),
-			'hoverPadding' => array(
-				'type' => 'number'
-			),
-			'hoverPaddingTop' => array(
-				'type' => 'number'
-			),
-			'hoverPaddingRight' => array(
-				'type' => 'number'
-			),
-			'hoverPaddingBottom' => array(
-				'type' => 'number'
-			),
-			'hoverPaddingLeft' => array(
+			'childHoverBorderRadiusLeft' => array(
 				'type' => 'number'
 			)
+		),
+		'usesContext' => array(
+			'icon-list/iconColor',
+			'icon-list/iconSize',
+			'icon-list/iconType'
 		),
 		'textdomain' => 'icon-picker',
 		'editorScript' => 'file:./index.js',

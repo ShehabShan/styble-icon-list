@@ -26,10 +26,17 @@
 		"hoverBorderUnits": { "type": "string", "default": "px" },
 		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
 
+		"mediaId": { "type": "number", "default": 0 },
+		"mediaUrl": { "type": "string" },
+		"iconUpdateId": {
+			"type": "number"
+		},
+
 		"preset": { "type": "string", "default": "preset-1" },
 		"listOrientation": { "type": "string", "default": "vertical" },
 		"itemsGap": { "type": "number", "default": 10 },
 		"selectedIcon": { "type": "string" },
+		"iconType": { "type": "string", "default": "library" },
 		"hasIcon": { "type": "boolean", "default": false },
 		"iconSize": { "type": "number", "default": 20 },
 		"separatorType": { "type": "string", "default": "none" },
@@ -51,9 +58,10 @@
 		"isUnderline": { "type": "boolean", "default": false },
 		"isStrikethrough": { "type": "boolean", "default": false },
 		"textTransform": { "type": "string" },
-		"iconColor": { "type": "string" },
+		"iconColor": { "type": "string", "default": "#FFFFFF" },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
+		"containerColor": { "type": "string" },
 		"backgroundColor": { "type": "string", "default": "#fff" },
 		"backgroundGradient": { "type": "string" },
 		"allPadding": { "type": "number", "default": 0 },
@@ -111,7 +119,9 @@
 		"hoverPaddingLeft": { "type": "number" }
 	},
 	"providesContext": {
-		"my-plugin/selectedIcon": "selectedIcon"
+		"icon-list/iconColor": "iconColor",
+		"icon-list/iconSize": "iconSize",
+		"icon-list/iconType": "iconType"
 	},
 	"textdomain": "icon-list",
 	"editorScript": "file:./index.js",

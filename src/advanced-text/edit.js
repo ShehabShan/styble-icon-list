@@ -3,16 +3,21 @@ import {
 	useBlockProps,
 	RichText,
 	InspectorControls,
+	BlockControls,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
 	RangeControl,
 	TabPanel,
+	ToolbarGroup,
+	ToolbarDropdownMenu,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
-import { Palette, Settings } from 'lucide-react';
+import settingsIcon from '../assests/setting.svg';
+import paletteIcon from '../assests/palette.svg';
 import { getBlockStyles } from '../utils/style.js';
+import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 import './editor.scss';
 
 import '../icon-list/side-control-bar/side-bar-scss/listPreset.scss';
@@ -26,9 +31,44 @@ import alignmentHorizontal from '../assests/text-orientation-horizontal.svg';
 import alignmentVertical from '../assests/text-orientation-vertical.svg';
 import alignmentVerticalRotated from '../assests/text-orientation-vertical-rotated.svg';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle';
+import { useEffect, useRef } from '@wordpress/element';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const advanceTextStyle = getBlockStyles( attributes );
+
+	const gAttrs = useGrandparentAttributes( clientId );
+
+	const prevGrand = useRef( {} );
+
+	useEffect( () => {
+		const current = gAttrs || {};
+		const previous = prevGrand.current || {};
+
+		// Find which grandparent keys actually changed
+		const changedKeys = Object.keys( current ).filter(
+			( key ) => current[ key ] !== previous[ key ]
+		);
+
+		if ( changedKeys.length === 0 ) {
+			return;
+		}
+
+		const updates = {};
+
+		changedKeys.forEach( ( key ) => {
+			// Only update child if value truly differs
+			if ( attributes[ key ] !== current[ key ] ) {
+				updates[ key ] = current[ key ];
+			}
+		} );
+
+		if ( Object.keys( updates ).length > 0 ) {
+			setAttributes( updates );
+		}
+
+		// Update snapshot memory
+		prevGrand.current = { ...current };
+	}, [ gAttrs, attributes, setAttributes ] );
 
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-advanced-text',
@@ -36,14 +76,25 @@ export default function Edit( { attributes, setAttributes } ) {
 	} );
 
 	const TEXT_HIERARCHY = {
-		h1: { size: 44, weight: 700, height: 1.3 },
-		h2: { size: 36, weight: 700, height: 1.3 },
-		h3: { size: 28, weight: 700, height: 1.3 },
-		h4: { size: 24, weight: 700, height: 1.3 },
-		h5: { size: 20, weight: 700, height: 1.3 },
-		h6: { size: 16, weight: 700, height: 1.3 },
-		p: { size: 16, weight: 400, height: 1.6 },
+		h1: { label: 'Heading 1', size: 44, weight: 700, height: 1.3 },
+		h2: { label: 'Heading 2', size: 36, weight: 700, height: 1.3 },
+		h3: { label: 'Heading 3', size: 28, weight: 700, height: 1.3 },
+		h4: { label: 'Heading 4', size: 24, weight: 700, height: 1.3 },
+		h5: { label: 'Heading 5', size: 20, weight: 700, height: 1.3 },
+		h6: { label: 'Heading 6', size: 16, weight: 700, height: 1.3 },
+		p: { label: 'paragraph', size: 16, weight: 400, height: 1.6 },
 	};
+
+	useEffect( () => {
+		if ( attributes?.textType ) {
+			const preset = TEXT_HIERARCHY[ attributes?.textType ];
+			setAttributes( {
+				fontSize: preset.size,
+				fontWeight: preset.weight,
+				fontHeight: preset.height,
+			} );
+		}
+	}, [] );
 
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {
@@ -288,6 +339,34 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
+			<BlockControls>
+				<ToolbarGroup>
+					<ToolbarDropdownMenu
+						label={ __( 'Change HTML Tag', 'advanced-text' ) }
+						controls={ Object.keys( TEXT_HIERARCHY ).map(
+							( tag ) => ( {
+								title: TEXT_HIERARCHY[ tag ].label,
+								// Add the shortcode like "H1" or "P" to the left of the title
+								icon: () => (
+									<span className="custom-toolbar-tag-icon">
+										{ tag.toUpperCase() }
+									</span>
+								),
+								isActive: attributes?.textType === tag,
+								onClick: () => {
+									const preset = TEXT_HIERARCHY[ tag ];
+									setAttributes( {
+										textType: tag,
+										fontSize: preset.size,
+										fontWeight: preset.weight,
+										fontHeight: preset.height,
+									} );
+								},
+							} )
+						) }
+					/>
+				</ToolbarGroup>
+			</BlockControls>
 			<InspectorControls>
 				<PanelBody
 					title={ __( 'Icon Settings', 'advanced-text' ) }
@@ -301,7 +380,12 @@ export default function Edit( { attributes, setAttributes } ) {
 								name: 'settings',
 								title: (
 									<>
-										<Settings size={ 16 } />
+										<img
+											src={ settingsIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Settings"
+										/>
 										{ __( 'Settings', 'advanced-text' ) }
 									</>
 								),
@@ -311,7 +395,12 @@ export default function Edit( { attributes, setAttributes } ) {
 								name: 'styles',
 								title: (
 									<>
-										<Palette size={ 16 } />
+										<img
+											src={ paletteIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Palette"
+										/>
 										{ __( 'Style', 'advanced-text' ) }
 									</>
 								),

@@ -23,7 +23,7 @@
   border-bottom-left-radius: var(--border-radius-bottom, initial);
   border-bottom-right-radius: var(--border-radius-left, initial);
   /* 5. Individual Padding */
-  margin-top: var(--margin-top, initial);
+  margin-block-start: var(--margin-top, initial) !important;
   margin-left: var(--margin-right, initial);
   margin-bottom: var(--margin-bottom, initial);
   margin-right: var(--margin-left, initial);
@@ -63,33 +63,4 @@
   margin-left: var(--margin-right-h, var(--margin-right, initial));
   margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
   margin-right: var(--margin-left-h, var(--margin-left, initial));
-}
-.wp-block-create-block-icon-list-item .wp-block-create-block-icon-picker,
-.wp-block-create-block-icon-list-item .wp-block-create-block-advanced-text {
-  background: transparent !important;
-  box-shadow: none !important;
-  /* 4. Individual Border Radii */
-  border-top-right-radius: var(--border-radius-top, initial);
-  border-top-left-radius: var(--border-radius-right, initial);
-  border-bottom-left-radius: var(--border-radius-bottom, initial);
-  border-bottom-right-radius: var(--border-radius-left, initial);
-  border-color: var(--child-border-color, transparent);
-  border-style: var(--child-border-style, none);
-  border-top-width: var(--child-border-top-width, 0);
-  border-left-width: var(--child-border-right-width, 0);
-  border-bottom-width: var(--child-border-bottom-width, 0);
-  border-right-width: var(--child-border-left-width, 0);
-  padding-top: var(--padding-top-h, var(--padding-top, initial));
-  padding-left: var(--padding-right-h, var(--padding-right, initial));
-  padding-bottom: var(--padding-bottom-h, var(--padding-bottom, initial));
-  padding-right: var(--padding-left-h, var(--padding-left, initial));
-  /* 6. Margin on Hover */
-  margin-top: var(--margin-top-h, var(--margin-top, initial));
-  margin-left: var(--margin-right-h, var(--margin-right, initial));
-  margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
-  margin-right: var(--margin-left-h, var(--margin-left, initial));
-}
-.wp-block-create-block-icon-list-item .wp-block-create-block-icon-picker:hover,
-.wp-block-create-block-icon-list-item .wp-block-create-block-advanced-text:hover {
-  background: var(--bg-h, var(--background-color, transparent)) !important;
 }

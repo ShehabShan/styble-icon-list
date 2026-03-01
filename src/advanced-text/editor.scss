@@ -12,6 +12,21 @@
 	// }
 }
 
+.custom-toolbar-tag-icon {
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+	color: #1e1e1e;
+}
+
+// When active, match WordPress blue
+.is-active .custom-toolbar-tag-icon {
+	color: var(--wp-admin-theme-color);
+}
+
 .components-base-control__label {
 	text-transform: none !important;
 }

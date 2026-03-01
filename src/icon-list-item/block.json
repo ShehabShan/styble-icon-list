@@ -21,8 +21,6 @@
 		"hoverBorderUnits": { "type": "string", "default": "px" },
 		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
 
-		"textContent": { "type": "string" },
-		"selectedIcon": { "type": "string" },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
 		"backgroundColor": { "type": "string" },
@@ -39,6 +37,7 @@
 		"borderRight": { "type": "number" },
 		"borderBottom": { "type": "number" },
 		"borderLeft": { "type": "number" },
+
 		"margin": { "type": "number" },
 		"marginTop": { "type": "number" },
 		"marginRight": { "type": "number" },

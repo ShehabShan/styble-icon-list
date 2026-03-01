@@ -1,28 +1,179 @@
 .wp-block-create-block-icon-picker {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	cursor: pointer;
 
-	background: transparent !important; // Safety reset
+	a {
+		outline: none;
+	}
+
+	a:focus-visible {
+		outline: 2px solid var(--icon-color, currentColor);
+		outline-offset: 3px;
+	}
+
+	/* =========================
+	   Layout
+	========================= */
+
+	padding-top: var(--padding-top-IP, 0);
+	padding-right: var(--padding-right-IP, 0);
+	padding-bottom: var(--padding-bottom-IP, 0);
+	padding-left: var(--padding-left-IP, 0);
+
+	margin-block-start: var(--margin-top-IP, 0) !important;
+	// margin-top: var(--margin-top-IP, 0);
+	margin-right: var(--margin-right-IP, 0);
+	margin-bottom: var(--margin-bottom-IP, 0);
+	margin-left: var(--margin-left-IP, 0);
+
+	/* =========================
+	   Background
+	========================= */
+
+	background: var(--background-color-IP, transparent);
+
+	/* =========================
+	   Border
+	========================= */
+
+	border-style: var(--border-style-IP, solid);
+
+	border-top-width: var(--border-top-width-IP, 0);
+	border-right-width: var(--border-right-width-IP, 0);
+	border-bottom-width: var(--border-bottom-width-IP, 0);
+	border-left-width: var(--border-left-width-IP, 0);
+
+	border-color: var(--border-color-IP, transparent);
+
+	/* =========================
+	   Border Radius
+	========================= */
+
+	border-top-left-radius: var(--border-radius-top-IP, 0);
+	border-top-right-radius: var(--border-radius-right-IP, 0);
+	border-bottom-right-radius: var(--border-radius-bottom-IP, 0);
+	border-bottom-left-radius: var(--border-radius-left-IP, 0);
+
+	/* =========================
+	   Icon Styling
+	========================= */
 
 	img {
 		object-fit: cover;
 		width: var(--icon-size, 40px);
 		height: var(--icon-size, 40px);
+		border-top-left-radius: var(--border-radius-top-IP, 0);
+		border-top-right-radius: var(--border-radius-right-IP, 0);
+		border-bottom-right-radius: var(--border-radius-bottom-IP, 0);
+		border-bottom-left-radius: var(--border-radius-left-IP, 0);
 	}
 
-	svg {
-		max-width: 100%;
+	.dashicons {
+		// Use the variables from your getIconPickerBlockStyles utility
+		color: var(--icon-color, currentColor) !important;
+		font-size: var(--icon-size, 40px);
 		width: var(--icon-size, 40px);
 		height: var(--icon-size, 40px);
+		color: var(--icon-color, currentColor);
+		border-top-left-radius: var(--border-radius-top-IP, 0);
+		border-top-right-radius: var(--border-radius-right-IP, 0);
+		border-bottom-right-radius: var(--border-radius-bottom-IP, 0);
+		border-bottom-left-radius: var(--border-radius-left-IP, 0);
 
-		/* This is the key part */
-		stroke: var(--icon-color, currentColor) !important;
-		fill: none; // Most outline icons need this to stay transparent
+		// Standard Dashicon alignment fixes
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
 
-		&:hover {
-			color: var(--hover-icon-color);
+		transition: color 0.2s ease;
+
+		&:before {
+			line-height: 1;
+		}
+	}
+
+	&:hover {
+		/* =========================
+	   Background
+	========================= */
+
+		background: var(--bg-h-IP, var(--background-color-IP, transparent));
+
+		/* =========================
+	   Box Shadow
+	========================= */
+
+		box-shadow: var(--box-shadow-h-IP, none);
+
+		/* =========================
+	   Border
+	========================= */
+
+		border-color: var(
+			--border-color-h-IP,
+			var(--border-color-IP, transparent)
+		);
+		border-style: var(--border-style-h-IP, var(--border-style-IP, solid));
+
+		border-top-width: var(--border-top-h-IP, var(--border-top-width-IP, 0));
+		border-right-width: var(
+			--border-right-h-IP,
+			var(--border-right-width-IP, 0)
+		);
+		border-bottom-width: var(
+			--border-bottom-h-IP,
+			var(--border-bottom-width-IP, 0)
+		);
+		border-left-width: var(
+			--border-left-h-IP,
+			var(--border-left-width-IP, 0)
+		);
+
+		/* =========================
+	   Padding
+	========================= */
+
+		padding-top: var(--padding-top-h-IP, var(--padding-top-IP, 0));
+		padding-right: var(--padding-right-h-IP, var(--padding-right-IP, 0));
+		padding-bottom: var(--padding-bottom-h-IP, var(--padding-bottom-IP, 0));
+		padding-left: var(--padding-left-h-IP, var(--padding-left-IP, 0));
+
+		/* =========================
+	   Margin
+	========================= */
+
+		margin-top: var(--margin-top-h-IP, var(--margin-top-IP, 0));
+		margin-right: var(--margin-right-h-IP, var(--margin-right-IP, 0));
+		margin-bottom: var(--margin-bottom-h-IP, var(--margin-bottom-IP, 0));
+		margin-left: var(--margin-left-h-IP, var(--margin-left-IP, 0));
+
+		/* =========================
+	   Border Radius
+	========================= */
+
+		border-top-left-radius: var(
+			--radius-top-h-IP,
+			var(--border-radius-top-IP, 0)
+		);
+		border-top-right-radius: var(
+			--radius-right-h-IP,
+			var(--border-radius-right-IP, 0)
+		);
+		border-bottom-right-radius: var(
+			--radius-bottom-h-IP,
+			var(--border-radius-bottom-IP, 0)
+		);
+		border-bottom-left-radius: var(
+			--radius-left-h-IP,
+			var(--border-radius-left-IP, 0)
+		);
+
+		.dashicons {
+			color: var(--hover-icon-color, var(--icon-color)) !important;
 		}
 	}
 }

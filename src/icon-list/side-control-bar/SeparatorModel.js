@@ -28,11 +28,14 @@ const SeparatorModel = ( {
 			{ isModalOpen( 'Separator' ) && (
 				// ... imports
 				<Popover
-					onClose={ () => closeAllModals }
+					onClose={ closeAllModals }
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div className="custom-popover-container">
+					<div
+						className="custom-popover-container"
+						onMouseLeave={ closeAllModals }
+					>
 						{ /* Style Section */ }
 						<ToggleGroupControl
 							className="list-separator-style-toggle-group"

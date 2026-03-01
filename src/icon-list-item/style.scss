@@ -26,7 +26,7 @@
 	border-bottom-left-radius: var(--border-radius-left, initial);
 
 	/* 5. Individual Padding */
-	margin-top: var(--margin-top, initial);
+	margin-block-start: var(--margin-top, initial) !important;
 	margin-right: var(--margin-right, initial);
 	margin-bottom: var(--margin-bottom, initial);
 	margin-left: var(--margin-left, initial);
@@ -103,42 +103,41 @@
 
 	// --- CENTRALIZED GRANDCHILD LOGIC ---
 	// This removes the need for hover/border logic in the other two files
-	.wp-block-create-block-icon-picker,
-	.wp-block-create-block-advanced-text {
-		background: transparent !important; // Force transparency
-		box-shadow: none !important;
+	// .wp-block-create-block-icon-picker,
+	// .wp-block-create-block-advanced-text {
+	// 	box-shadow: none !important;
 
-		/* 4. Individual Border Radii */
-		border-top-left-radius: var(--border-radius-top, initial);
-		border-top-right-radius: var(--border-radius-right, initial);
-		border-bottom-right-radius: var(--border-radius-bottom, initial);
-		border-bottom-left-radius: var(--border-radius-left, initial);
+	// 	/* 4. Individual Border Radii */
+	// 	border-top-left-radius: var(--border-radius-top, initial);
+	// 	border-top-right-radius: var(--border-radius-right, initial);
+	// 	border-bottom-right-radius: var(--border-radius-bottom, initial);
+	// 	border-bottom-left-radius: var(--border-radius-left, initial);
 
-		border-color: var(--child-border-color, transparent);
-		border-style: var(--child-border-style, none);
-		border-top-width: var(--child-border-top-width, 0);
-		border-right-width: var(--child-border-right-width, 0);
-		border-bottom-width: var(--child-border-bottom-width, 0);
-		border-left-width: var(--child-border-left-width, 0);
+	// 	border-color: var(--child-border-color, transparent);
+	// 	border-style: var(--child-border-style, none);
+	// 	border-top-width: var(--child-border-top-width, 0);
+	// 	border-right-width: var(--child-border-right-width, 0);
+	// 	border-bottom-width: var(--child-border-bottom-width, 0);
+	// 	border-left-width: var(--child-border-left-width, 0);
 
-		padding-top: var(--padding-top-h, var(--padding-top, initial));
-		padding-right: var(--padding-right-h, var(--padding-right, initial));
-		padding-bottom: var(--padding-bottom-h, var(--padding-bottom, initial));
-		padding-left: var(--padding-left-h, var(--padding-left, initial));
+	// 	padding-top: var(--padding-top-h, var(--padding-top, initial));
+	// 	padding-right: var(--padding-right-h, var(--padding-right, initial));
+	// 	padding-bottom: var(--padding-bottom-h, var(--padding-bottom, initial));
+	// 	padding-left: var(--padding-left-h, var(--padding-left, initial));
 
-		/* 6. Margin on Hover */
-		margin-top: var(--margin-top-h, var(--margin-top, initial));
-		margin-right: var(--margin-right-h, var(--margin-right, initial));
-		margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
-		margin-left: var(--margin-left-h, var(--margin-left, initial));
+	// 	/* 6. Margin on Hover */
+	// 	margin-top: var(--margin-top-h, var(--margin-top, initial));
+	// 	margin-right: var(--margin-right-h, var(--margin-right, initial));
+	// 	margin-bottom: var(--margin-bottom-h, var(--margin-bottom, initial));
+	// 	margin-left: var(--margin-left-h, var(--margin-left, initial));
 
-		&:hover {
-			background: var(
-				--bg-h,
-				var(--background-color, transparent)
-			) !important;
-		}
+	// 	&:hover {
+	// 		background: var(
+	// 			--bg-h,
+	// 			var(--background-color, transparent)
+	// 		) !important;
+	// 	}
 
-		// Add radius and hover for children here if desired
-	}
+	// 	// Add radius and hover for children here if desired
+	// }
 }

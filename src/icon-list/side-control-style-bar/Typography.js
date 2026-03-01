@@ -8,7 +8,10 @@ import {
 	__experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 
-import { Italic, Underline, Strikethrough } from 'lucide-react';
+import italic from '../../assests/italic.svg';
+import underline from '../../assests/underline.svg';
+import strikethrough from '../../assests/strikethrough.svg';
+
 import { __ } from '@wordpress/i18n';
 
 import './typography.scss';
@@ -51,11 +54,14 @@ const Typography = ( { attributes, setAttributes } ) => {
 
 			{ isModalOpen( 'Typography' ) && (
 				<Popover
-					onClose={ () => closeAllModals }
+					onClose={ closeAllModals }
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div className="typography-popover-container">
+					<div
+						className="typography-popover-container"
+						onMouseLeave={ closeAllModals }
+					>
 						<div className="typography-popover-selected-options">
 							<SelectControl
 								label={ __( 'Font Family', 'icon-list' ) }
@@ -183,7 +189,6 @@ const Typography = ( { attributes, setAttributes } ) => {
 								/>
 							</div>
 						</div>
-
 						<HStack
 							className="segmented-control-container"
 							spacing={ 0 } // Ensures buttons touch each other
@@ -199,7 +204,12 @@ const Typography = ( { attributes, setAttributes } ) => {
 								}
 								className="segment-button"
 							>
-								<Italic size={ 16 } strokeWidth={ 2.5 } />
+								<img
+									src={ italic }
+									alt="Italic"
+									width={ 16 }
+									height={ 16 }
+								/>
 							</Button>
 
 							{ /* 2. Underline Toggle */ }
@@ -212,7 +222,12 @@ const Typography = ( { attributes, setAttributes } ) => {
 								}
 								className="segment-button"
 							>
-								<Underline size={ 16 } strokeWidth={ 2.5 } />
+								<img
+									src={ underline }
+									alt="Underline"
+									width={ 16 }
+									height={ 16 }
+								/>
 							</Button>
 
 							{ /* 3. Strikethrough Toggle */ }
@@ -225,9 +240,11 @@ const Typography = ( { attributes, setAttributes } ) => {
 								}
 								className="segment-button"
 							>
-								<Strikethrough
-									size={ 16 }
-									strokeWidth={ 2.5 }
+								<img
+									src={ strikethrough }
+									alt="Strikethrough"
+									width={ 16 }
+									height={ 16 }
 								/>
 							</Button>
 
@@ -249,7 +266,7 @@ const Typography = ( { attributes, setAttributes } ) => {
 								AB
 							</Button>
 
-							{ /* ... Add lowercase (ab) and capitalize (Ab) buttons similarly */ }
+							{ /* You can add lowercase (ab) and capitalize (Ab) similarly */ }
 						</HStack>
 					</div>
 				</Popover>

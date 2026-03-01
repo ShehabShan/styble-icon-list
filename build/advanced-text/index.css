@@ -6,6 +6,18 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.custom-toolbar-tag-icon {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  color: #1e1e1e;
+}
+.is-active .custom-toolbar-tag-icon {
+  color: var(--wp-admin-theme-color);
+}
 .components-base-control__label {
   text-transform: none !important;
 }
@@ -247,7 +259,7 @@
   padding: 16px;
   width: 260px !important;
   background: #fff;
-  z-index: 999999;
+  z-index: 100 !important;
   border-radius: 8px;
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\

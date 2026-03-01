@@ -1,22 +1,46 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import * as LucideIcons from 'lucide-react';
-
-import { getBlockStyles } from '../utils/style.js';
+import { getIconPickerBlockStyles } from '../utils/style.js';
 
 export default function save( { attributes } ) {
-	const { selectedIcon, globalIcon } = attributes;
-
-	const iconPickerStyle = getBlockStyles( attributes );
-
-	// 2. Pass the styles into useBlockProps.save()
 	const blockProps = useBlockProps.save( {
 		className: 'wp-block-create-block-icon-picker',
-		style: { ...iconPickerStyle },
+		style: { ...getIconPickerBlockStyles( attributes ) },
 	} );
 
-	const iconName = attributes?.selectedIcon || globalIcon || 'ActivitySquare';
+	// Build the rel attribute dynamically
 
-	const SelectedIcon = LucideIcons[ iconName ];
+	const renderIcon = () => {
+		if ( attributes?.iconType === 'upload' && attributes?.mediaUrl ) {
+			return <img src={ attributes?.mediaUrl } alt="" />;
+		}
 
-	return <div { ...blockProps }>{ SelectedIcon && <SelectedIcon /> }</div>;
+		// Render Dashicon if iconName exists
+		if ( attributes?.iconType === 'library' ) {
+			return (
+				<span
+					className={ `dashicons dashicons-${ attributes?.selectedIcon }` }
+				/>
+			);
+		}
+
+		return null;
+	};
+
+	return (
+		<div { ...blockProps }>
+			{ attributes?.url ? (
+				<a
+					href={ attributes?.url }
+					target={ attributes?.newTab ? '_blank' : undefined }
+					rel={
+						attributes?.newTab ? 'noopener noreferrer' : undefined
+					}
+				>
+					{ renderIcon() }
+				</a>
+			) : (
+				renderIcon()
+			) }
+		</div>
+	);
 }

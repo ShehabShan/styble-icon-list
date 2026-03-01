@@ -5,7 +5,7 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 import './editor.scss';
-import * as LucideIcons from 'lucide-react';
+
 import {
 	RangeControl,
 	PanelBody,
@@ -15,29 +15,66 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
-import { getBlockStyles } from '../utils/style.js';
+import { getIconPickerBlockStyles } from '../utils/style.js';
 import editIcon from '../assests/edit-icon.svg';
 import resetIcon from '../assests/reset.svg';
-import { Palette, Settings } from 'lucide-react';
+import settingsIcon from '../assests/setting.svg';
+import paletteIcon from '../assests/palette.svg';
+
 import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { iconType, iconUrl, iconSize } = attributes;
+	const gAttrs = useGrandparentAttributes( clientId );
 
-	const { selectedIcon: globalIcon } = useGrandparentAttributes( clientId );
+	const prevGrand = useRef( {} );
 
 	useEffect( () => {
-		if ( globalIcon ) {
-			setAttributes( { globalIcon } );
+		const current = gAttrs || {};
+		const previous = prevGrand.current || {};
+
+		// Find which grandparent keys actually changed
+		const changedKeys = Object.keys( current ).filter(
+			( key ) => current[ key ] !== previous[ key ]
+		);
+
+		if ( changedKeys.length === 0 ) {
+			return;
 		}
-	}, [ globalIcon ] );
 
-	const iconName = attributes?.selectedIcon || globalIcon || 'ActivitySquare';
+		const updates = {};
 
-	const SelectedIcon = LucideIcons[ iconName ] || LucideIcons.ActivitySquare;
+		changedKeys.forEach( ( key ) => {
+			// Only update child if value truly differs
+			if ( attributes[ key ] !== current[ key ] ) {
+				updates[ key ] = current[ key ];
+			}
+		} );
+
+		if ( Object.keys( updates ).length > 0 ) {
+			setAttributes( updates );
+		}
+
+		// Update snapshot memory
+		prevGrand.current = { ...current };
+	}, [ gAttrs, attributes, setAttributes ] );
+
+	useEffect( () => {
+		if ( attributes.iconType === 'library' ) {
+			if ( attributes.backgroundColor !== '#000000' ) {
+				setAttributes( {
+					backgroundColor: '#000000',
+					childPadding: 10,
+				} );
+			}
+		} else if ( attributes.iconType === 'upload' ) {
+			if ( attributes.backgroundColor ) {
+				setAttributes( { backgroundColor: '', childPadding: 0 } );
+			}
+		}
+	}, [ attributes.iconType ] ); // Only runs when the user switches between library and upload
 
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const toggleModal = ( id ) => {
@@ -46,7 +83,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const isModalOpen = ( id ) => openModalId === id;
 	const closeAllModals = () => setOpenModalId( null );
 
-	const iconPickerStyle = getBlockStyles( attributes );
+	const iconPickerStyle = getIconPickerBlockStyles( attributes );
 
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-icon-picker',
@@ -144,7 +181,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<RangeControl
 						__next40pxDefaultSize
 						label={ __( 'Icon Size', 'icon-list' ) }
-						value={ iconSize }
+						value={ attributes?.iconSize }
 						onChange={ ( value ) =>
 							setAttributes( { iconSize: value } )
 						}
@@ -186,7 +223,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								name: 'settings',
 								title: (
 									<>
-										<Settings size={ 16 } />
+										<img
+											src={ settingsIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Settings"
+										/>
 										{ __( 'Settings', 'icon-list' ) }
 									</>
 								),
@@ -196,7 +238,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								name: 'styles',
 								title: (
 									<>
-										<Palette size={ 16 } />
+										<img
+											src={ paletteIcon }
+											width={ 16 }
+											height={ 16 }
+											alt="Palette"
+										/>
 										{ __( 'Style', 'icon-list' ) }
 									</>
 								),
@@ -210,18 +257,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				{ iconType === 'upload' && iconUrl ? (
-					<img
-						src={ iconUrl }
-						alt="Custom Icon"
-						style={ {
-							width: '100%',
-							height: '100%',
-							objectFit: 'cover',
-						} }
-					/>
+				{ attributes.iconType === 'upload' ? (
+					<img src={ attributes.mediaUrl } alt="Icon" />
 				) : (
-					SelectedIcon && <SelectedIcon />
+					<span
+						className={ `dashicons dashicons-${ attributes.selectedIcon }` }
+					/>
 				) }
 			</div>
 		</>

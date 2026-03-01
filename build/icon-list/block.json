@@ -60,6 +60,16 @@
       "type": "string",
       "default": "px"
     },
+    "mediaId": {
+      "type": "number",
+      "default": 0
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "iconUpdateId": {
+      "type": "number"
+    },
     "preset": {
       "type": "string",
       "default": "preset-1"
@@ -74,6 +84,10 @@
     },
     "selectedIcon": {
       "type": "string"
+    },
+    "iconType": {
+      "type": "string",
+      "default": "library"
     },
     "hasIcon": {
       "type": "boolean",
@@ -140,7 +154,8 @@
       "type": "string"
     },
     "iconColor": {
-      "type": "string"
+      "type": "string",
+      "default": "#FFFFFF"
     },
     "itemStyleType": {
       "type": "string",
@@ -149,6 +164,9 @@
     "backgroundType": {
       "type": "string",
       "default": "solid"
+    },
+    "containerColor": {
+      "type": "string"
     },
     "backgroundColor": {
       "type": "string",
@@ -297,7 +315,9 @@
     }
   },
   "providesContext": {
-    "my-plugin/selectedIcon": "selectedIcon"
+    "icon-list/iconColor": "iconColor",
+    "icon-list/iconSize": "iconSize",
+    "icon-list/iconType": "iconType"
   },
   "textdomain": "icon-list",
   "editorScript": "file:./index.js",

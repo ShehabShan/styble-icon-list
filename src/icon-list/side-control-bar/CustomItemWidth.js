@@ -5,7 +5,6 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
-import CustomHelperComponent from './CustomHelperComponent';
 import './side-bar-scss/customItemWidth.scss';
 import './side-bar-scss/customPopoverContainer.scss';
 import './side-bar-scss/customOrientation.scss';
@@ -17,10 +16,22 @@ const CustomItemWidth = ( {
 	attributes,
 	setAttributes,
 } ) => {
+	// 1. Define base class names to avoid repetition
+	const baseToggleClass = 'custom-orientation';
+	const baseOptionClass = 'custom-orientation-option';
+
+	// 2. Determine active states once
+	const isAuto = attributes?.itemWidthType === 'auto';
+	const isCustom = attributes?.itemWidthType === 'custom';
+
+	// 3. Helper for generating the class string
+	const getOptionClass = ( isActive ) =>
+		`${ baseOptionClass } ${ isActive ? 'is-active' : '' }`;
+
 	return (
 		<div style={ { position: 'relative' } }>
 			<ToggleGroupControl
-				className="custom-orientation"
+				className={ baseToggleClass }
 				__next40pxDefaultSize
 				isBlock
 				label={ __( 'Item Width type', 'icon-list' ) }
@@ -30,21 +41,13 @@ const CustomItemWidth = ( {
 				}
 			>
 				<ToggleGroupControlOption
-					className={ `custom-orientation-option ${
-						attributes?.itemWidthType === 'auto' ? 'is-active' : ''
-					}` }
-					aria-label="auto"
+					className={ getOptionClass( isAuto ) }
 					label={ __( 'Auto', 'icon-list' ) }
 					value="auto"
 					onClick={ () => toggleModal( 'auto' ) }
 				/>
 				<ToggleGroupControlOption
-					className={ `custom-orientation-option ${
-						attributes?.itemWidthType === 'custom'
-							? 'is-active'
-							: ''
-					}` }
-					aria-label="custom"
+					className={ getOptionClass( isCustom ) }
 					label={ __( 'Custom', 'icon-list' ) }
 					value="custom"
 					onClick={ () => toggleModal( 'custom' ) }
@@ -53,59 +56,44 @@ const CustomItemWidth = ( {
 
 			{ isModalOpen( 'custom' ) && (
 				<Popover
-					onClose={ () => closeAllModals() }
+					onClose={ closeAllModals }
 					placement="bottom"
 					offset={ 15 }
 				>
 					<div className="custom-popover-container">
-						{ /* Style Section */ }
 						<ToggleGroupControl
-							className="custom-orientation"
+							className={ baseToggleClass }
 							__next40pxDefaultSize
 							isBlock
 							label={ __( 'Item Width Type', 'icon-list' ) }
+							value={ attributes?.itemWidthType }
 							onChange={ ( value ) =>
-								setAttributes( {
-									itemWidthType: value,
-								} )
+								setAttributes( { itemWidthType: value } )
 							}
 						>
 							<ToggleGroupControlOption
-								className={ `custom-orientation-option ${
-									attributes?.itemWidthType === 'auto'
-										? 'is-active'
-										: ''
-								}` }
-								aria-label="auto"
+								className={ getOptionClass( isAuto ) }
 								label={ __( 'Auto', 'icon-list' ) }
 								value="auto"
-								onClick={ () => closeAllModals }
+								// Note: Fixed potential bug here - should be a function call
+								onClick={ closeAllModals }
 							/>
 							<ToggleGroupControlOption
-								className={ `custom-orientation-option ${
-									attributes?.itemWidthType === 'custom'
-										? 'is-active'
-										: ''
-								}` }
-								aria-label="custom"
+								className={ getOptionClass( isCustom ) }
 								label={ __( 'Custom', 'icon-list' ) }
 								value="custom"
 							/>
 						</ToggleGroupControl>
 
-						{ /* Thickness Section */ }
 						<RangeControl
 							__next40pxDefaultSize
 							value={ attributes?.itemsWidth }
 							onChange={ ( value ) =>
-								setAttributes( {
-									itemsWidth: value,
-								} )
+								setAttributes( { itemsWidth: value } )
 							}
 							min={ 50 }
 							max={ 600 }
 						/>
-						{ /* Color Section */ }
 					</div>
 				</Popover>
 			) }

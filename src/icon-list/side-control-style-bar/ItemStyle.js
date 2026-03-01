@@ -43,13 +43,15 @@ const ItemStyle = ( {
 			/>
 
 			{ isModalOpen( 'ItemStyle' ) && (
-				// ... imports
 				<Popover
-					onClose={ () => closeAllModals }
+					onClose={ closeAllModals }
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div className="custom-popover-container">
+					<div
+						className="custom-popover-container"
+						onMouseLeave={ closeAllModals }
+					>
 						<ToggleGroupControl
 							className="custom-orientation"
 							__next40pxDefaultSize
@@ -143,7 +145,6 @@ const ItemStyle = ( {
 											resetAttributes="backgroundColor"
 											hasColor={ true }
 											icon={ resetIcon }
-											toggleModal={ toggleModal }
 											label={ __(
 												'Background Color',
 												'icon-list'
