@@ -13,6 +13,10 @@ import './RangeControls.scss';
 import BorderIcon from '../../assests/border.svg';
 import UnionIcon from '../../assests/Union.svg';
 import ResetIcon from '../../assests/reset.svg';
+import topIcon from '../../assests/sides-top.svg';
+import rightIcon from '../../assests/sides-right.svg';
+import bottomIcon from '../../assests/sides-bottom.svg';
+import leftIcon from '../../assests/sides-left.svg';
 
 const RangeControls = ( props ) => {
 	const { setAttributes, attributes, title, type } = props;
@@ -53,9 +57,12 @@ const RangeControls = ( props ) => {
 			step: 1,
 			marks: [
 				{ value: 0, label: '0' },
-				{ value: 25, label: '' },
-				{ value: 50, label: '50' },
+				{ value: 15, label: '' },
+				{ value: 30, label: '30' },
+				{ value: 45, label: '' },
+				{ value: 60, label: '60' },
 				{ value: 75, label: '' },
+				{ value: 90, label: '' },
 				{ value: 100, label: '100' },
 			],
 		},
@@ -180,11 +187,11 @@ const RangeControls = ( props ) => {
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
 							<img
-								src={ BorderIcon }
+								src={ topIcon }
 								alt="Border"
 								style={ {
-									width: '16px',
-									height: '16px',
+									width: '24px',
+									height: '24px',
 								} }
 							/>
 						</FlexItem>
@@ -222,11 +229,11 @@ const RangeControls = ( props ) => {
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
 							<img
-								src={ BorderIcon }
+								src={ rightIcon }
 								alt="Border"
 								style={ {
-									width: '16px',
-									height: '16px',
+									width: '24px',
+									height: '24px',
 								} }
 							/>
 						</FlexItem>
@@ -264,11 +271,11 @@ const RangeControls = ( props ) => {
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
 							<img
-								src={ BorderIcon }
+								src={ bottomIcon }
 								alt="Border"
 								style={ {
-									width: '16px',
-									height: '16px',
+									width: '24px',
+									height: '24px',
 								} }
 							/>
 						</FlexItem>
@@ -306,11 +313,11 @@ const RangeControls = ( props ) => {
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
 							<img
-								src={ BorderIcon }
+								src={ rightIcon }
 								alt="Border"
 								style={ {
-									width: '16px',
-									height: '16px',
+									width: '24px',
+									height: '24px',
 								} }
 							/>
 						</FlexItem>

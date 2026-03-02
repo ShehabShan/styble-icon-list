@@ -77,7 +77,8 @@ return array(
 				'default' => 'h3'
 			),
 			'alignment' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'left'
 			),
 			'textOrientation' => array(
 				'type' => 'string'
@@ -136,36 +137,36 @@ return array(
 			'textTransform' => array(
 				'type' => 'string'
 			),
-			'childPadding' => array(
+			'allPadding' => array(
 				'type' => 'number',
 				'default' => 0
 			),
-			'childPaddingTop' => array(
+			'allPaddingTop' => array(
 				'type' => 'number'
 			),
-			'childPaddingRight' => array(
+			'allPaddingRight' => array(
 				'type' => 'number'
 			),
-			'childPaddingBottom' => array(
+			'allPaddingLeft' => array(
 				'type' => 'number'
 			),
-			'childPaddingLeft' => array(
+			'allPaddingBottom' => array(
 				'type' => 'number'
 			),
-			'childMargin' => array(
+			'padding' => array(
 				'type' => 'number',
 				'default' => 0
 			),
-			'childMarginTop' => array(
+			'paddingTop' => array(
 				'type' => 'number'
 			),
-			'childMarginRight' => array(
+			'paddingRight' => array(
 				'type' => 'number'
 			),
-			'childMarginBottom' => array(
+			'paddingBottom' => array(
 				'type' => 'number'
 			),
-			'childMarginLeft' => array(
+			'paddingLeft' => array(
 				'type' => 'number'
 			),
 			'childBorder' => array(
@@ -186,23 +187,23 @@ return array(
 			'childBorderType' => array(
 				'type' => 'string'
 			),
-			'childBorderColor' => array(
+			'ChildBorderColor' => array(
 				'type' => 'string'
 			),
-			'childBorderRadius' => array(
+			'borderRadius' => array(
 				'type' => 'number',
 				'default' => 0
 			),
-			'childBorderRadiusTop' => array(
+			'borderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'childBorderRadiusRight' => array(
+			'borderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'childBorderRadiusBottom' => array(
+			'borderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'childBorderRadiusLeft' => array(
+			'borderRadiusLeft' => array(
 				'type' => 'number'
 			),
 			'hadBoxShadow' => array(
@@ -230,37 +231,37 @@ return array(
 			'childHoverBorderLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadius' => array(
+			'hoverBorderRadius' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusTop' => array(
+			'hoverBorderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusRight' => array(
+			'hoverBorderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusBottom' => array(
+			'hoverBorderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusLeft' => array(
+			'hoverBorderRadiusLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverPadding' => array(
+			'hoverPadding' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingTop' => array(
+			'hoverPaddingTop' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingRight' => array(
+			'hoverPaddingRight' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingBottom' => array(
+			'hoverPaddingBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingLeft' => array(
+			'hoverPaddingLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverBackgroundType' => array(
+			'hoverBackgroundType' => array(
 				'type' => 'string'
 			),
 			'hoverBackgroundColor' => array(
@@ -366,7 +367,8 @@ return array(
 				'default' => 10
 			),
 			'selectedIcon' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'dashboard'
 			),
 			'iconType' => array(
 				'type' => 'string',
@@ -510,7 +512,8 @@ return array(
 				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => '#0C0A0A'
 			),
 			'borderRadius' => array(
 				'type' => 'number',

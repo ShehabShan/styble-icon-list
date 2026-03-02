@@ -47,14 +47,9 @@ const ChildItemStyle = ( props ) => {
 	const hoverTypeKey = isChild ? 'childBorderType' : 'borderType';
 	const hoverColorKey = isChild ? 'childBorderColor' : 'borderColor';
 
-	const getOptionClass = ( value, targetKey ) => {
-		const isActive = attributes[ targetKey ] === value;
-		return `custom-border-option ${ isActive ? 'is-active' : '' }`;
-	};
-
 	return (
 		<div>
-			{ props?.type === 'iconPicker' && (
+			{ /* { props?.type === 'iconPicker' && (
 				<div className="control-section control-section--view-type">
 					<SelectControl
 						label="View"
@@ -69,7 +64,7 @@ const ChildItemStyle = ( props ) => {
 						}
 					/>
 				</div>
-			) }
+			) } */ }
 
 			{ props?.type === 'advanceText' && (
 				<Typography
@@ -239,38 +234,41 @@ const ChildItemStyle = ( props ) => {
 								}
 							>
 								<ToggleGroupControlOption
-									className={ getOptionClass(
-										'none',
-										borderKey
-									) }
+									className={ `custom-border-option ${
+										attributes?.borderType === 'none'
+											? 'is-active'
+											: ''
+									}` }
 									value="none"
 									label={ IconNone }
 									aria-label={ __( 'None', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ getOptionClass(
-										'solid',
-										borderKey
-									) }
+									className={ `custom-border-option ${
+										attributes?.borderType === 'solid'
+											? 'is-active'
+											: ''
+									}` }
 									value="solid"
 									label={ IconSolid }
 									aria-label={ __( 'Solid', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ getOptionClass(
-										'dashed',
-										borderKey
-									) }
-									s
+									className={ `custom-border-option ${
+										attributes?.borderType === 'dashed'
+											? 'is-active'
+											: ''
+									}` }
 									value="dashed"
 									label={ IconDashed }
 									aria-label={ __( 'Dashed', 'icon-list' ) }
 								/>
 								<ToggleGroupControlOption
-									className={ getOptionClass(
-										'dotted',
-										borderKey
-									) }
+									className={ `custom-border-option ${
+										attributes?.borderType === 'dotted'
+											? 'is-active'
+											: ''
+									}` }
 									value="dotted"
 									label={ IconDotted }
 									aria-label={ __( 'Dotted', 'icon-list' ) }
@@ -465,19 +463,21 @@ const ChildItemStyle = ( props ) => {
 									}
 								>
 									<ToggleGroupControlOption
-										className={ getOptionClass(
-											'none',
-											hoverBorderkey
-										) }
+										className={ `custom-border-option ${
+											attributes?.borderType === 'none'
+												? 'is-active'
+												: ''
+										}` }
 										value="none"
 										label={ IconNone }
 										aria-label={ __( 'None', 'icon-list' ) }
 									/>
 									<ToggleGroupControlOption
-										className={ getOptionClass(
-											'solid',
-											hoverBorderkey
-										) }
+										className={ `custom-border-option ${
+											attributes?.borderType === 'solid'
+												? 'is-active'
+												: ''
+										}` }
 										value="solid"
 										label={ IconSolid }
 										aria-label={ __(
@@ -486,10 +486,11 @@ const ChildItemStyle = ( props ) => {
 										) }
 									/>
 									<ToggleGroupControlOption
-										className={ getOptionClass(
-											'dashed',
-											hoverBorderkey
-										) }
+										className={ `custom-border-option ${
+											attributes?.borderType === 'dashed'
+												? 'is-active'
+												: ''
+										}` }
 										value="dashed"
 										label={ IconDashed }
 										aria-label={ __(
@@ -498,10 +499,11 @@ const ChildItemStyle = ( props ) => {
 										) }
 									/>
 									<ToggleGroupControlOption
-										className={ getOptionClass(
-											'dotted',
-											hoverBorderkey
-										) }
+										className={ `custom-border-option ${
+											attributes?.borderType === 'dotted'
+												? 'is-active'
+												: ''
+										}` }
 										value="dotted"
 										label={ IconDotted }
 										aria-label={ __(

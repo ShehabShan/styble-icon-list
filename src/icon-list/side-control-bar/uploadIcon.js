@@ -67,10 +67,7 @@ const UploadIcon = ( {
 					placement="bottom-start"
 					offset={ 10 }
 				>
-					<div
-						className="icon-library-grid"
-						onMouseLeave={ closeAllModals }
-					>
+					<div className="icon-library-grid">
 						{ extractedIcons.map( ( item ) => {
 							const isActive =
 								attributes.selectedIcon === item.keyName;
@@ -109,10 +106,7 @@ const UploadIcon = ( {
 					focusOnMount={ false }
 					__unstableGUI={ true }
 				>
-					<div
-						style={ { padding: '16px', minWidth: '240px' } }
-						onMouseLeave={ closeAllModals }
-					>
+					<div style={ { padding: '16px', minWidth: '240px' } }>
 						{ /* Changed p tag to Button */ }
 						<Button
 							variant="primary"

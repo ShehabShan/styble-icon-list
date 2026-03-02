@@ -5,6 +5,24 @@
 	align-items: center;
 	width: auto;
 
+	// &.is-orientation-horizontal {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	writing-mode: horizontal-tb;
+	// }
+
+	// &.is-orientation-upright {
+	// 	display: inline-block;
+	// 	writing-mode: vertical-rl;
+	// 	text-orientation: upright;
+	// }
+
+	// &.is-orientation-sideways {
+	// 	display: inline-block;
+	// 	writing-mode: vertical-rl;
+	// 	text-orientation: sideways;
+	// }
+
 	background: var(--background-color-IP, transparent);
 
 	padding-top: var(--padding-top-IP, 0);

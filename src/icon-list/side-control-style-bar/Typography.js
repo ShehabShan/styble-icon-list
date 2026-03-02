@@ -58,10 +58,7 @@ const Typography = ( { attributes, setAttributes } ) => {
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div
-						className="typography-popover-container"
-						onMouseLeave={ closeAllModals }
-					>
+					<div className="typography-popover-container">
 						<div className="typography-popover-selected-options">
 							<SelectControl
 								label={ __( 'Font Family', 'icon-list' ) }

@@ -83,7 +83,8 @@
       "default": 10
     },
     "selectedIcon": {
-      "type": "string"
+      "type": "string",
+      "default": "dashboard"
     },
     "iconType": {
       "type": "string",
@@ -227,7 +228,8 @@
       "type": "string"
     },
     "borderColor": {
-      "type": "string"
+      "type": "string",
+      "default": "#0C0A0A"
     },
     "borderRadius": {
       "type": "number",

@@ -32,10 +32,7 @@ const SeparatorModel = ( {
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div
-						className="custom-popover-container"
-						onMouseLeave={ closeAllModals }
-					>
+					<div className="custom-popover-container">
 						{ /* Style Section */ }
 						<ToggleGroupControl
 							className="list-separator-style-toggle-group"

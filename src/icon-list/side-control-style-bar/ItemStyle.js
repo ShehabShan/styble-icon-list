@@ -48,10 +48,7 @@ const ItemStyle = ( {
 					placement="bottom"
 					offset={ 15 }
 				>
-					<div
-						className="custom-popover-container"
-						onMouseLeave={ closeAllModals }
-					>
+					<div className="custom-popover-container">
 						<ToggleGroupControl
 							className="custom-orientation"
 							__next40pxDefaultSize

@@ -35,7 +35,7 @@
 		"preset": { "type": "string", "default": "preset-1" },
 		"listOrientation": { "type": "string", "default": "vertical" },
 		"itemsGap": { "type": "number", "default": 10 },
-		"selectedIcon": { "type": "string" },
+		"selectedIcon": { "type": "string", "default": "dashboard" },
 		"iconType": { "type": "string", "default": "library" },
 		"hasIcon": { "type": "boolean", "default": false },
 		"iconSize": { "type": "number", "default": 20 },
@@ -84,7 +84,7 @@
 
 		"borderType": { "type": "string" },
 
-		"borderColor": { "type": "string" },
+		"borderColor": { "type": "string", "default": "#0C0A0A" },
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },

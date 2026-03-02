@@ -128,16 +128,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									} }
 								/>
 							}
-							onClick={ () =>
-								setAttributes( {
-									hasLink: ! attributes?.hasLink,
-								} )
-							}
+							onClick={ () => toggleModal( 'link' ) }
 						/>
 
-						{ attributes?.hasLink && (
+						{ isModalOpen( 'link' ) && (
 							<Popover
-								onClose={ () => closeAllModals }
+								onClose={ closeAllModals }
 								placement="bottom"
 								offset={ 10 }
 							>
@@ -246,8 +242,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									<>
 										<img
 											src={ settingsIcon }
-											width={ 16 }
-											height={ 16 }
+											width={ 24 }
+											height={ 24 }
 											alt="Settings"
 										/>
 										{ __( 'Settings', 'icon-list' ) }

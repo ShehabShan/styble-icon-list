@@ -3,18 +3,26 @@ import {
 	useBlockProps,
 	InspectorControls,
 	InnerBlocks,
+	URLInput,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
 
-import { PanelBody, RangeControl, TabPanel } from '@wordpress/components';
+import {
+	PanelBody,
+	Popover,
+	Button,
+	TabPanel,
+	ToggleControl,
+} from '@wordpress/components';
 import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
 import ChildItemStyle from './ChildItemStyle.js';
 import resetIcon from '../assests/reset.svg';
+import editIcon from '../assests/edit-icon.svg';
 import { getBlockStyles } from '../utils/style.js';
 import { useParentAttributes } from '../hooks/useParentAttributes.js';
-import { useEffect, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 // This is the checkmark icon from your image
 
@@ -61,15 +69,88 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		},
 	} );
 
+	const [ openModalId, setOpenModalId ] = useState( null );
+	const toggleModal = ( id ) => {
+		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
+	};
+	const isModalOpen = ( id ) => openModalId === id;
+	const closeAllModals = () => setOpenModalId( null );
+
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {
 			return (
 				<>
-					<ChildItemStyle
-						attributes={ attributes }
-						setAttributes={ setAttributes }
-						resetIcon={ resetIcon }
-					/>
+					<div className="url-link-container">
+						<URLInput
+							className="url-container"
+							label="Add Link"
+							value={ attributes?.url }
+							onChange={ ( nextUrl ) =>
+								setAttributes( { url: nextUrl } )
+							}
+							placeholder="Type or paste your URL"
+						/>
+						<Button
+							className="pencil-edit-button"
+							icon={
+								<img
+									src={ editIcon }
+									alt={ __( 'Edit', 'icon-picker' ) }
+									style={ {
+										width: '36px',
+										height: '36px',
+									} }
+								/>
+							}
+							onClick={ () => toggleModal( 'link' ) }
+						/>
+
+						{ isModalOpen( 'link' ) && (
+							<Popover
+								onClose={ closeAllModals }
+								placement="bottom"
+								offset={ 10 }
+							>
+								<div className="link-popover-container">
+									<ToggleControl
+										className="my-custom-troggle"
+										label={ __(
+											'open in new tab',
+											'icon-picker'
+										) }
+										checked={ attributes?.newTab }
+										onChange={ ( value ) =>
+											setAttributes( { newTab: value } )
+										}
+									/>
+									<ToggleControl
+										className="my-custom-troggle"
+										label={ __(
+											'Mark As No Follow',
+											'icon-picker'
+										) }
+										checked={ attributes?.noFollow }
+										onChange={ ( value ) =>
+											setAttributes( { noFollow: value } )
+										}
+									/>
+									<URLInput
+										className="custom-link-relation"
+										label="Custom Link Relation"
+										value={ attributes?.url }
+										onChange={ ( nextUrl ) =>
+											setAttributes( { url: nextUrl } )
+										}
+									/>
+									<p className="extra-text">
+										Enter one or more link Relations (e.g.,
+										nofollow noopener sponsored), separated
+										by spaces.
+									</p>
+								</div>
+							</Popover>
+						) }
+					</div>
 				</>
 			);
 		}
@@ -77,12 +158,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		if ( tab.name === 'styles' ) {
 			return (
 				<>
-					<RangeControl
-						__next40pxDefaultSize
-						label={ __( 'Space Between', 'icon-list' ) }
-						min={ 0 }
-						max={ 50 }
-						step={ 5 }
+					<ChildItemStyle
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+						resetIcon={ resetIcon }
 					/>
 				</>
 			);
@@ -111,8 +190,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									<>
 										<img
 											src={ settingsIcon }
-											width={ 16 }
-											height={ 16 }
+											width={ 24 }
+											height={ 24 }
 											alt="Settings"
 										/>
 										{ __( 'Settings', 'icon-list' ) }

@@ -27,9 +27,9 @@ import resetIcon from '../assests/reset.svg';
 import alignmentRight from '../assests/alignment-right.svg';
 import alignmentCenter from '../assests/alignment-center.svg';
 import alignmentLeft from '../assests/alignment-left.svg';
-import alignmentHorizontal from '../assests/text-orientation-horizontal.svg';
-import alignmentVertical from '../assests/text-orientation-vertical.svg';
-import alignmentVerticalRotated from '../assests/text-orientation-vertical-rotated.svg';
+// import alignmentHorizontal from '../assests/text-orientation-horizontal.svg';
+// import alignmentVertical from '../assests/text-orientation-vertical.svg';
+// import alignmentVerticalRotated from '../assests/text-orientation-vertical-rotated.svg';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle';
 import { useEffect, useRef } from '@wordpress/element';
 
@@ -70,8 +70,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			}
 		} );
 
-		console.log( updates );
-
 		if ( Object.keys( updates ).length > 0 ) {
 			setAttributes( updates );
 		}
@@ -81,7 +79,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	}, [ typography, attributes, setAttributes ] );
 
 	const blockProps = useBlockProps( {
-		className: 'wp-block-create-block-advanced-text',
+		className: `wp-block-create-block-advanced-text`,
 		style: { ...advanceTextStyle },
 	} );
 
@@ -230,7 +228,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					  //css is writen in advance text editor.scss
 					*/ }
 
-					<ToggleGroupControl
+					{ /* <ToggleGroupControl
 						className="orientation-type"
 						label={ __( 'Text Orientation', 'advanced-text' ) }
 						value={ attributes?.textOrientation }
@@ -285,7 +283,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 							}
 							aria-label="sideways"
 						/>
-					</ToggleGroupControl>
+					</ToggleGroupControl> */ }
 					<RangeControl
 						__next40pxDefaultSize
 						label={ __( 'Max Content Width', 'advanced-text' ) }
@@ -296,7 +294,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						min={ 50 }
 						max={ 800 }
 					/>
-					<RangeControl
+					{ /* <RangeControl
 						__next40pxDefaultSize
 						label={ __( 'Text Limit', 'advanced-text' ) }
 						value={ attributes?.textLimit }
@@ -315,7 +313,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						}
 						min={ 1 }
 						max={ 4 }
-					/>
+					/> */ }
 				</>
 			);
 		}
@@ -381,8 +379,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									<>
 										<img
 											src={ settingsIcon }
-											width={ 16 }
-											height={ 16 }
+											width={ 24 }
+											height={ 24 }
 											alt="Settings"
 										/>
 										{ __( 'Settings', 'advanced-text' ) }

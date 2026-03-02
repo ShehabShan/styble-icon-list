@@ -286,8 +286,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									<>
 										<img
 											src={ settingsIcon }
-											width={ 16 }
-											height={ 16 }
+											width={ 24 }
+											height={ 24 }
 											alt="Settings"
 										/>
 										{ __( 'Settings', 'icon-list' ) }

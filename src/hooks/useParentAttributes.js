@@ -1,4 +1,5 @@
 import { useSelect } from '@wordpress/data';
+import { background } from '@wordpress/icons';
 
 export const useParentAttributes = ( clientId ) =>
 	useSelect(
@@ -21,6 +22,8 @@ export const useParentAttributes = ( clientId ) =>
 			// Return only what the child needs from the parent
 			return {
 				// Standard Layout
+				backgroundColor: parentAttrs.backgroundColor,
+				hoverBackgroundColor: parentAttrs.hoverBackgroundColor,
 				padding: parentAttrs.padding,
 				paddingTop: parentAttrs.paddingTop,
 				paddingRight: parentAttrs.paddingRight,
