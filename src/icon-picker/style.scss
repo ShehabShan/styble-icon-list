@@ -2,7 +2,6 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
 	cursor: pointer;
 
 	a {
@@ -73,11 +72,10 @@
 
 	.dashicons {
 		// Use the variables from your getIconPickerBlockStyles utility
-		color: var(--icon-color, currentColor) !important;
+		color: var(--icon-color, "f8f8f8");
 		font-size: var(--icon-size, 40px);
 		width: var(--icon-size, 40px);
 		height: var(--icon-size, 40px);
-		color: var(--icon-color, currentColor);
 		border-top-left-radius: var(--border-radius-top-IP, 0);
 		border-top-right-radius: var(--border-radius-right-IP, 0);
 		border-bottom-right-radius: var(--border-radius-bottom-IP, 0);
@@ -91,16 +89,12 @@
 
 		transition: color 0.2s ease;
 
-		&:before {
+		&::before {
 			line-height: 1;
 		}
 	}
 
 	&:hover {
-		/* =========================
-	   Background
-	========================= */
-
 		background: var(--bg-h-IP, var(--background-color-IP, transparent));
 
 		/* =========================

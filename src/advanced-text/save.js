@@ -1,9 +1,9 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-import { getBlockStyles } from '../utils/style.js'; // Ensure this path is correct
+import { getChildBlockStyles } from '../utils/style.js'; // Ensure this path is correct
 
 export default function save( { attributes } ) {
 	// 1. Generate the same style object used in the editor
-	const advanceTextStyle = getBlockStyles( attributes );
+	const advanceTextStyle = getChildBlockStyles( attributes );
 
 	// 2. Pass those styles into the save-version of blockProps
 	const blockProps = useBlockProps.save( {
@@ -13,9 +13,6 @@ export default function save( { attributes } ) {
 
 	return (
 		<div { ...blockProps }>
-			{ /* RichText.Content handles the actual HTML tag 
-			   (h1, h2, p, etc.) and the text content inside.
-			*/ }
 			<RichText.Content
 				tagName={ attributes?.textType || 'p' }
 				value={ attributes?.textContent }

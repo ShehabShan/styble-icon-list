@@ -4,17 +4,102 @@
 	display: flex !important;
 	align-items: center;
 	width: auto;
-	background: transparent !important; // Safety reset
+
+	background: var(--background-color-IP, transparent);
+
+	padding-top: var(--padding-top-IP, 0);
+	padding-right: var(--padding-right-IP, 0);
+	padding-bottom: var(--padding-bottom-IP, 0);
+	padding-left: var(--padding-left-IP, 0);
+
+	margin-block-start: var(--margin-top-IP, 0) !important;
+	// margin-top: var(--margin-top-IP, 0);
+	margin-right: var(--margin-right-IP, 0);
+	margin-bottom: var(--margin-bottom-IP, 0);
+	margin-left: var(--margin-left-IP, 0);
+
+	border-style: var(--border-style-IP, solid);
+
+	border-top-width: var(--border-top-width-IP, 0);
+	border-right-width: var(--border-right-width-IP, 0);
+	border-bottom-width: var(--border-bottom-width-IP, 0);
+	border-left-width: var(--border-left-width-IP, 0);
+
+	border-color: var(--border-color-IP, transparent);
+
+	border-top-left-radius: var(--border-radius-top-IP, 0);
+	border-top-right-radius: var(--border-radius-right-IP, 0);
+	border-bottom-right-radius: var(--border-radius-bottom-IP, 0);
+	border-bottom-left-radius: var(--border-radius-left-IP, 0);
+
+	&:hover {
+		background: var(--bg-h-IP, var(--background-color-IP, transparent));
+
+		box-shadow: var(--box-shadow-h-IP, none);
+
+		border-color: var(
+			--border-color-h-IP,
+			var(--border-color-IP, transparent)
+		);
+		border-style: var(--border-style-h-IP, var(--border-style-IP, solid));
+
+		border-top-width: var(--border-top-h-IP, var(--border-top-width-IP, 0));
+		border-right-width: var(
+			--border-right-h-IP,
+			var(--border-right-width-IP, 0)
+		);
+		border-bottom-width: var(
+			--border-bottom-h-IP,
+			var(--border-bottom-width-IP, 0)
+		);
+		border-left-width: var(
+			--border-left-h-IP,
+			var(--border-left-width-IP, 0)
+		);
+
+		padding-top: var(--padding-top-h-IP, var(--padding-top-IP, 0));
+		padding-right: var(--padding-right-h-IP, var(--padding-right-IP, 0));
+		padding-bottom: var(--padding-bottom-h-IP, var(--padding-bottom-IP, 0));
+		padding-left: var(--padding-left-h-IP, var(--padding-left-IP, 0));
+
+		margin-top: var(--margin-top-h-IP, var(--margin-top-IP, 0));
+		margin-right: var(--margin-right-h-IP, var(--margin-right-IP, 0));
+		margin-bottom: var(--margin-bottom-h-IP, var(--margin-bottom-IP, 0));
+		margin-left: var(--margin-left-h-IP, var(--margin-left-IP, 0));
+
+		border-top-left-radius: var(
+			--radius-top-h-IP,
+			var(--border-radius-top-IP, 0)
+		);
+		border-top-right-radius: var(
+			--radius-right-h-IP,
+			var(--border-radius-right-IP, 0)
+		);
+		border-bottom-right-radius: var(
+			--radius-bottom-h-IP,
+			var(--border-radius-bottom-IP, 0)
+		);
+		border-bottom-left-radius: var(
+			--radius-left-h-IP,
+			var(--border-radius-left-IP, 0)
+		);
+
+		.dashicons {
+			color: var(--hover-icon-color, var(--icon-color)) !important;
+		}
+	}
 
 	& > * {
 		margin: 0;
 
 		/* Core Font Settings */
+		width: var(--max-content-width, auto);
 		font-family: var(--font-family, inherit);
 		font-size: var(--font-size, inherit);
 		font-weight: var(--font-weight, inherit);
 		line-height: var(--font-height, inherit);
 		color: var(--text-color, inherit);
+		text-align: var(--text-alignment, left);
 
 		/* 1. Italic Style */
 		font-style: var(--font-style-italic, normal);

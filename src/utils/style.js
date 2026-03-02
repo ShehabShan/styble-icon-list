@@ -41,6 +41,8 @@ export const getBlockStyles = ( attributes ) => {
 
 	const getUnit = ( key ) => attributes?.[ key ] || 'px';
 
+	const apU = getUnit( 'allPaddingUnits' );
+
 	const fzU = getUnit( 'fontSizeUnits' );
 	const fhU = getUnit( 'fontHeightUnits' );
 	const lsU = getUnit( 'letterSpacingUnits' );
@@ -85,6 +87,8 @@ export const getBlockStyles = ( attributes ) => {
 
 	const hoverMargin = getBox( attributes, 'hoverMargin' );
 
+	const hoverRadius = getBox( attributes, 'hoverBorderRadius' );
+
 	let itemsWidthValue = null;
 
 	if ( attributes?.itemWidthType === 'auto' ) {
@@ -93,11 +97,11 @@ export const getBlockStyles = ( attributes ) => {
 		itemsWidthValue = `${ attributes.itemsWidth }px`;
 	}
 
-	const background =
-		attributes?.backgroundColor ?? attributes?.backgroundGradient;
+	const backgroundValue =
+		attributes?.backgroundGradient || attributes?.backgroundColor;
 
 	const hoverBackground =
-		attributes?.hoverBackgroundColor ?? attributes?.hoverBackgroundGradient;
+		attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
 
 	return cleanStyles( {
 		// ===============================
@@ -137,17 +141,16 @@ export const getBlockStyles = ( attributes ) => {
 		// ===============================
 		// PARENT CONTAINER STYLES (Padding use pU)
 		// ===============================
-		'--all-padding-top': withUnit( allPadding?.top, pU ),
-		'--all-padding-right': withUnit( allPadding?.right, pU ),
-		'--all-padding-bottom': withUnit( allPadding?.bottom, pU ),
-		'--all-padding-left': withUnit( allPadding?.left, pU ),
+		'--all-padding-top': withUnit( allPadding?.top, apU ),
+		'--all-padding-right': withUnit( allPadding?.right, apU ),
+		'--all-padding-bottom': withUnit( allPadding?.bottom, apU ),
+		'--all-padding-left': withUnit( allPadding?.left, apU ),
 
 		// ===============================
 		// CHILD DEFAULTS
 		// ===============================
-		'--background-color':
-			( attributes?.backgroundColor || attributes?.backgroundGradient ) &&
-			`${ background }`,
+
+		'--background-color': backgroundValue || null,
 		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
 
 		// Padding (use pU)
@@ -181,10 +184,7 @@ export const getBlockStyles = ( attributes ) => {
 		// ===============================
 		// HOVER DEFAULTS
 		// ===============================
-		'--bg-h':
-			( attributes?.hoverBackgroundColor ||
-				attributes?.hoverBackgroundGradient ) &&
-			`${ hoverBackground }`,
+		'--bg-h': hoverBackground || null,
 
 		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
 
@@ -193,8 +193,8 @@ export const getBlockStyles = ( attributes ) => {
 
 		//child border-color-h and border-style-h
 
-		'--child-border-color-h': attributes?.childHoverBorderColor,
-		'--child-border-style-h': attributes?.childHoverBorderType,
+		// '--child-border-color-h': attributes?.childHoverBorderColor,
+		// '--child-border-style-h': attributes?.childHoverBorderType,
 
 		// Hover Padding (use hpU)
 		'--padding-top-h': withUnit( hoverPadding?.top, hpU ),
@@ -213,10 +213,16 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-right-h': withUnit( hoverBorder?.right, hbU ),
 		'--border-bottom-h': withUnit( hoverBorder?.bottom, hbU ),
 		'--border-left-h': withUnit( hoverBorder?.left, hbU ),
+
+		// Hover Radius (use hrU)
+		'--radius-top-h': withUnit( hoverRadius?.top, hrU ),
+		'--radius-right-h': withUnit( hoverRadius?.right, hrU ),
+		'--radius-bottom-h': withUnit( hoverRadius?.bottom, hrU ),
+		'--radius-left-h': withUnit( hoverRadius?.left, hrU ),
 	} );
 };
 
-export const getIconPickerBlockStyles = ( attributes ) => {
+export const getChildBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
 		return Object.fromEntries(
 			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
@@ -224,7 +230,7 @@ export const getIconPickerBlockStyles = ( attributes ) => {
 	};
 
 	const withUnit = ( value, unit = 'px' ) => {
-		if ( ! value || value === 0 || value === '0' ) {
+		if ( ! value ) {
 			return null;
 		}
 
@@ -277,11 +283,11 @@ export const getIconPickerBlockStyles = ( attributes ) => {
 
 	const hoverRadius = getBox( attributes, 'childHoverborderRadius' );
 
-	const background =
-		attributes?.backgroundColor ?? attributes?.backgroundGradient;
+	const backgroundValue =
+		attributes?.backgroundGradient || attributes?.backgroundColor;
 
 	const hoverBackground =
-		attributes?.hoverBackgroundColor ?? attributes?.hoverBackgroundGradient;
+		attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
 
 	return cleanStyles( {
 		// ===============================
@@ -294,11 +300,27 @@ export const getIconPickerBlockStyles = ( attributes ) => {
 		// ===============================
 		// CHILD DEFAULTS
 		// ===============================
-		'--background-color-IP':
-			( attributes?.backgroundColor || attributes?.backgroundGradient ) &&
-			`${ background }`,
+		'--background-color-IP': backgroundValue || null,
 
 		'--box-shadow-IP': attributes?.hasBoxShadow && SHADOW_VAL,
+
+		// ===============================
+		'--font-family': attributes?.fontFamily,
+		'--font-size': withUnit( attributes?.fontSize, 'px' ),
+		'--text-color': attributes?.textColor,
+		'--font-weight': attributes?.fontWeight,
+		'--font-height': withUnit( attributes?.fontHeight, 'em' ),
+		'--letter-spacing': withUnit( attributes?.letterSpacing, 'px' ),
+		'--word-spacing': withUnit( attributes?.wordSpacing, 'px' ),
+		'--font-style-italic': attributes?.isItalic && 'italic',
+		'--text-decoration':
+			( attributes?.isUnderline || attributes?.isStrikethrough ) &&
+			`${ attributes?.isUnderline ? 'underline' : '' } ${
+				attributes?.isStrikethrough ? 'line-through' : ''
+			}`,
+		'--text-transform': attributes?.textTransform,
+		'--max-content-width': withUnit( attributes?.maxContentWidth, 'px' ),
+		'--text-alignment': attributes?.alignment,
 
 		'--padding-top-IP': withUnit( padding?.top, pU ),
 		'--padding-right-IP': withUnit( padding?.right, pU ),
@@ -327,10 +349,7 @@ export const getIconPickerBlockStyles = ( attributes ) => {
 		// ===============================
 		// HOVER DEFAULTS
 		// ===============================
-		'--bg-h-IP':
-			( attributes?.hoverBackgroundColor ||
-				attributes?.hoverBackgroundGradient ) &&
-			`${ hoverBackground }`,
+		'--bg-h-IP': hoverBackground || null,
 
 		'--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
 

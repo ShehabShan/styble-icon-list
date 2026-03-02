@@ -50,8 +50,8 @@
     "url": {
       "type": "string"
     },
-    "globalIcon": {
-      "type": "string"
+    "noFollow": {
+      "type": "boolean"
     },
     "mediaId": {
       "type": "number"
@@ -71,7 +71,8 @@
       "type": "number"
     },
     "iconColor": {
-      "type": "string"
+      "type": "string",
+      "default": "f8f8f8"
     },
     "hoverIconColor": {
       "type": "string"
@@ -228,7 +229,7 @@
     "childHoverBorderLeft": {
       "type": "number"
     },
-    "childHoverborderRadius": {
+    "childHoverBorderRadius": {
       "type": "number"
     },
     "childHoverBorderRadiusTop": {

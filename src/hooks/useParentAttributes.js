@@ -47,6 +47,11 @@ export const useParentAttributes = ( clientId ) =>
 				borderRadiusBottom: parentAttrs.borderRadiusBottom,
 				borderRadiusLeft: parentAttrs.borderRadiusLeft,
 
+				paddingUnits: parentAttrs.paddingUnits,
+				marginUnits: parentAttrs.marginUnits,
+				borderUnits: parentAttrs.borderUnits,
+				borderRadiusUnits: parentAttrs.borderRadiusUnits,
+
 				// Hover Layout
 				hoverPadding: parentAttrs.hoverPadding,
 				hoverPaddingTop: parentAttrs.hoverPaddingTop,
@@ -67,6 +72,11 @@ export const useParentAttributes = ( clientId ) =>
 				hoverBorderRadiusRight: parentAttrs.hoverBorderRadiusRight,
 				hoverBorderRadiusBottom: parentAttrs.hoverBorderRadiusBottom,
 				hoverBorderRadiusLeft: parentAttrs.hoverBorderRadiusLeft,
+
+				hoverPaddingUnits: parentAttrs.hoverPaddingUnits,
+				hoverMarginUnits: parentAttrs.hoverMarginUnits, // Added this from your list
+				hoverBorderUnits: parentAttrs.hoverBorderUnits,
+				hoverBorderRadiusUnits: parentAttrs.hoverBorderRadiusUnits,
 			};
 		},
 		[ clientId ]

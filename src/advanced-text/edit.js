@@ -16,7 +16,7 @@ import {
 } from '@wordpress/components';
 import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
-import { getBlockStyles } from '../utils/style.js';
+import { getChildBlockStyles } from '../utils/style.js';
 import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 import './editor.scss';
 
@@ -34,14 +34,22 @@ import ChildItemStyle from '../icon-list-item/ChildItemStyle';
 import { useEffect, useRef } from '@wordpress/element';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const advanceTextStyle = getBlockStyles( attributes );
+	const advanceTextStyle = getChildBlockStyles( attributes );
 
 	const gAttrs = useGrandparentAttributes( clientId );
 
-	const prevGrand = useRef( {} );
+	const { typography } = gAttrs;
+
+	const prevGrand = useRef( null );
 
 	useEffect( () => {
-		const current = gAttrs || {};
+		const current = typography || {};
+
+		if ( prevGrand.current === null ) {
+			prevGrand.current = { ...current };
+			return;
+		}
+
 		const previous = prevGrand.current || {};
 
 		// Find which grandparent keys actually changed
@@ -62,13 +70,15 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			}
 		} );
 
+		console.log( updates );
+
 		if ( Object.keys( updates ).length > 0 ) {
 			setAttributes( updates );
 		}
 
 		// Update snapshot memory
 		prevGrand.current = { ...current };
-	}, [ gAttrs, attributes, setAttributes ] );
+	}, [ typography, attributes, setAttributes ] );
 
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-advanced-text',
@@ -84,17 +94,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		h6: { label: 'Heading 6', size: 16, weight: 700, height: 1.3 },
 		p: { label: 'paragraph', size: 16, weight: 400, height: 1.6 },
 	};
-
-	useEffect( () => {
-		if ( attributes?.textType ) {
-			const preset = TEXT_HIERARCHY[ attributes?.textType ];
-			setAttributes( {
-				fontSize: preset.size,
-				fontWeight: preset.weight,
-				fontHeight: preset.height,
-			} );
-		}
-	}, [] );
 
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {

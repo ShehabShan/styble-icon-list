@@ -63,11 +63,14 @@ const UploadIcon = ( {
 
 			{ isModalOpen( 'libary' ) && (
 				<Popover
-					onClose={ () => closeAllModals() }
+					onClose={ closeAllModals }
 					placement="bottom-start"
 					offset={ 10 }
 				>
-					<div className="icon-library-grid">
+					<div
+						className="icon-library-grid"
+						onMouseLeave={ closeAllModals }
+					>
 						{ extractedIcons.map( ( item ) => {
 							const isActive =
 								attributes.selectedIcon === item.keyName;
@@ -106,7 +109,10 @@ const UploadIcon = ( {
 					focusOnMount={ false }
 					__unstableGUI={ true }
 				>
-					<div style={ { padding: '16px', minWidth: '240px' } }>
+					<div
+						style={ { padding: '16px', minWidth: '240px' } }
+						onMouseLeave={ closeAllModals }
+					>
 						{ /* Changed p tag to Button */ }
 						<Button
 							variant="primary"

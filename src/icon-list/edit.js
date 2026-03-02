@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					/>
 
 					<CustomHelperComponent
-						label={ __( 'Background Color', 'icon-list' ) }
+						label={ __( 'Container Color', 'icon-list' ) }
 						hasColor={ true }
 						hasReset={ true }
 						icon={ resetIcon }

@@ -42,7 +42,7 @@ const ChildItemStyle = ( props ) => {
 	const hoverPaddingKey = isChild ? 'childHoverPadding' : 'hoverPadding';
 	const hoverBorderRadiusKey = isChild
 		? 'childHoverborderRadius'
-		: 'hoverborderRadius';
+		: 'hoverBorderRadius';
 	const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
 	const hoverTypeKey = isChild ? 'childBorderType' : 'borderType';
 	const hoverColorKey = isChild ? 'childBorderColor' : 'borderColor';

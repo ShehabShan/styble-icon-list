@@ -23,17 +23,17 @@
 
 		"newTab": { "type": "boolean" },
 		"url": { "type": "string" },
-		"globalIcon": {
-			"type": "string"
-		},
+		"noFollow": { "type": "boolean" },
 
 		"mediaId": { "type": "number" },
-		"mediaUrl": { "type": "string" },
+		"mediaUrl": {
+			"type": "string"
+		},
 
 		"iconType": { "type": "string", "default": "library" },
 		"selectedIcon": { "type": "string", "default": "menu" },
 		"iconSize": { "type": "number" },
-		"iconColor": { "type": "string" },
+		"iconColor": { "type": "string", "default": "f8f8f8" },
 		"hoverIconColor": { "type": "string" },
 		"hasLink": { "type": "boolean", "default": false },
 		"itemStyleType": { "type": "string", "default": "normal" },
@@ -94,7 +94,7 @@
 		"childHoverBorderBottom": { "type": "number" },
 		"childHoverBorderLeft": { "type": "number" },
 
-		"childHoverborderRadius": { "type": "number" },
+		"childHoverBorderRadius": { "type": "number" },
 		"childHoverBorderRadiusTop": { "type": "number" },
 		"childHoverBorderRadiusRight": { "type": "number" },
 		"childHoverBorderRadiusBottom": { "type": "number" },

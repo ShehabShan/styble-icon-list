@@ -20,15 +20,16 @@ import { useEffect, useRef } from '@wordpress/element';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const childStyle = getBlockStyles( attributes );
+
 	const parentLayout = useParentAttributes( clientId );
 
-	const prevLayout = useRef( {} );
+	const prevGrand = useRef( {} );
 
 	useEffect( () => {
 		const current = parentLayout || {};
-		const previous = prevLayout.current || {};
+		const previous = prevGrand.current || {};
 
-		// Find only keys that changed on parent
+		// Find which grandparent keys actually changed
 		const changedKeys = Object.keys( current ).filter(
 			( key ) => current[ key ] !== previous[ key ]
 		);
@@ -40,7 +41,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		const updates = {};
 
 		changedKeys.forEach( ( key ) => {
-			// Only update child if value actually differs
+			// Only update child if value truly differs
 			if ( attributes[ key ] !== current[ key ] ) {
 				updates[ key ] = current[ key ];
 			}
@@ -50,10 +51,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 			setAttributes( updates );
 		}
 
-		prevLayout.current = { ...current };
+		// Update snapshot memory
+		prevGrand.current = { ...current };
 	}, [ parentLayout, attributes, setAttributes ] );
-
-	// Helper to check if a specific modal is open
 
 	const blockProps = useBlockProps( {
 		style: {

@@ -131,36 +131,36 @@
     "textTransform": {
       "type": "string"
     },
-    "allPadding": {
+    "childPadding": {
       "type": "number",
       "default": 0
     },
-    "allPaddingTop": {
+    "childPaddingTop": {
       "type": "number"
     },
-    "allPaddingRight": {
+    "childPaddingRight": {
       "type": "number"
     },
-    "allPaddingLeft": {
+    "childPaddingBottom": {
       "type": "number"
     },
-    "allPaddingBottom": {
+    "childPaddingLeft": {
       "type": "number"
     },
-    "padding": {
+    "childMargin": {
       "type": "number",
       "default": 0
     },
-    "paddingTop": {
+    "childMarginTop": {
       "type": "number"
     },
-    "paddingRight": {
+    "childMarginRight": {
       "type": "number"
     },
-    "paddingBottom": {
+    "childMarginBottom": {
       "type": "number"
     },
-    "paddingLeft": {
+    "childMarginLeft": {
       "type": "number"
     },
     "childBorder": {
@@ -181,23 +181,23 @@
     "childBorderType": {
       "type": "string"
     },
-    "ChildBorderColor": {
+    "childBorderColor": {
       "type": "string"
     },
-    "borderRadius": {
+    "childBorderRadius": {
       "type": "number",
       "default": 0
     },
-    "borderRadiusTop": {
+    "childBorderRadiusTop": {
       "type": "number"
     },
-    "borderRadiusRight": {
+    "childBorderRadiusRight": {
       "type": "number"
     },
-    "borderRadiusBottom": {
+    "childBorderRadiusBottom": {
       "type": "number"
     },
-    "borderRadiusLeft": {
+    "childBorderRadiusLeft": {
       "type": "number"
     },
     "hadBoxShadow": {
@@ -225,37 +225,37 @@
     "childHoverBorderLeft": {
       "type": "number"
     },
-    "hoverBorderRadius": {
+    "childHoverBorderRadius": {
       "type": "number"
     },
-    "hoverBorderRadiusTop": {
+    "childHoverBorderRadiusTop": {
       "type": "number"
     },
-    "hoverBorderRadiusRight": {
+    "childHoverBorderRadiusRight": {
       "type": "number"
     },
-    "hoverBorderRadiusBottom": {
+    "childHoverBorderRadiusBottom": {
       "type": "number"
     },
-    "hoverBorderRadiusLeft": {
+    "childHoverBorderRadiusLeft": {
       "type": "number"
     },
-    "hoverPadding": {
+    "childHoverPadding": {
       "type": "number"
     },
-    "hoverPaddingTop": {
+    "childHoverPaddingTop": {
       "type": "number"
     },
-    "hoverPaddingRight": {
+    "childHoverPaddingRight": {
       "type": "number"
     },
-    "hoverPaddingBottom": {
+    "childHoverPaddingBottom": {
       "type": "number"
     },
-    "hoverPaddingLeft": {
+    "childHoverPaddingLeft": {
       "type": "number"
     },
-    "hoverBackgroundType": {
+    "childHoverBackgroundType": {
       "type": "string"
     },
     "hoverBackgroundColor": {

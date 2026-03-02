@@ -1,3 +1,4 @@
+// src/hooks/useGrandparentAttributes.js
 import { useSelect } from '@wordpress/data';
 
 export const useGrandparentAttributes = ( clientId ) =>
@@ -14,35 +15,37 @@ export const useGrandparentAttributes = ( clientId ) =>
 			const allAttrs = grandparentId
 				? getBlockAttributes( grandparentId )
 				: null;
-
 			if ( ! allAttrs ) {
 				return {};
 			}
 
-			// --- LIMIT THE FETCH HERE ---
-			// Only extract exactly what the Icon Picker needs to function
+			// Return *only* the design tokens and an optional mediaUrl for reading.
 			return {
-				selectedIcon: allAttrs.selectedIcon,
-				mediaUrl: allAttrs.mediaUrl,
-				iconType: allAttrs.iconType,
-				iconSize: allAttrs.iconSize,
-				iconColor: allAttrs.iconColor,
-				backgroundColor: allAttrs.backgroundColor,
-
-				fontFamily: allAttrs.fontFamily,
-				fontSize: allAttrs.fontSize,
-				fontSizeUnits: allAttrs.fontSizeUnits,
-				fontWeight: allAttrs.fontWeight,
-				fontHeight: allAttrs.fontHeight,
-				fontHeightUnits: allAttrs.fontHeightUnits,
-				letterSpacing: allAttrs.letterSpacing,
-				letterSpacingUnits: allAttrs.letterSpacingUnits,
-				wordSpacing: allAttrs.wordSpacing,
-				wordSpacingUnits: allAttrs.wordSpacingUnits,
-				textTransform: allAttrs.textTransform,
-				isItalic: allAttrs.isItalic,
-				isUnderline: allAttrs.isUnderline,
-				isStrikethrough: allAttrs.isStrikethrough,
+				typography: {
+					fontFamily: allAttrs.fontFamily,
+					fontSize: allAttrs.fontSize,
+					fontSizeUnits: allAttrs.fontSizeUnits,
+					fontWeight: allAttrs.fontWeight,
+					fontHeight: allAttrs.fontHeight,
+					fontHeightUnits: allAttrs.fontHeightUnits,
+					letterSpacing: allAttrs.letterSpacing,
+					letterSpacingUnits: allAttrs.letterSpacingUnits,
+					wordSpacing: allAttrs.wordSpacing,
+					wordSpacingUnits: allAttrs.wordSpacingUnits,
+					textTransform: allAttrs.textTransform,
+					isItalic: allAttrs.isItalic,
+					isUnderline: allAttrs.isUnderline,
+					isStrikethrough: allAttrs.isStrikethrough,
+					alignment: allAttrs.alignment,
+					textColor: allAttrs.textColor,
+				},
+				iconStyle: {
+					iconType: allAttrs.iconType,
+					iconSize: allAttrs.iconSize,
+					iconColor: allAttrs.iconColor,
+					mediaUrl: allAttrs.mediaUrl || null,
+					selectedIcon: allAttrs.selectedIcon || null,
+				},
 			};
 		},
 		[ clientId ]

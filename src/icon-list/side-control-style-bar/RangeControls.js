@@ -44,18 +44,37 @@ const RangeControls = ( props ) => {
 	const bottomValue = attributes[ bottomKey ] ?? baseValue;
 	const leftValue = attributes[ leftKey ] ?? baseValue;
 
-	const marks = [
-		{ value: 5, label: '' },
-		{ value: 10, label: '' },
-		{ value: 15, label: '' },
-		{ value: 20, label: '' },
-		{ value: 25, label: '' },
-		{ value: 30, label: '' },
-		{ value: 35, label: '' },
-		{ value: 40, label: '' },
-		{ value: 45, label: '' },
-		{ value: 50, label: '' },
-	];
+	const activeUnit = attributes[ unitKey ]?.replace( /[0-9.]/g, '' ) || 'px';
+
+	const unitSettings = {
+		px: {
+			min: 0,
+			max: props?.isBorder ? 10 : 100,
+			step: 1,
+			marks: [
+				{ value: 0, label: '0' },
+				{ value: 25, label: '' },
+				{ value: 50, label: '50' },
+				{ value: 75, label: '' },
+				{ value: 100, label: '100' },
+			],
+		},
+		em: {
+			min: 0,
+			max: 5,
+			step: 0.1, // em needs decimal steps to be useful
+			marks: [
+				{ value: 0, label: '0' },
+				{ value: 1, label: '1' },
+				{ value: 2, label: '2' },
+				{ value: 3, label: '3' },
+				{ value: 4, label: '4' },
+				{ value: 5, label: '5' },
+			],
+		},
+	};
+
+	const currentConfig = unitSettings[ activeUnit ] || unitSettings.px;
 
 	const resetAllValue = () => {
 		setAttributes( {
@@ -131,11 +150,12 @@ const RangeControls = ( props ) => {
 								} )
 							}
 							withInputField={ isToggled }
-							min={ 0 }
-							max={ props?.isBorder ? 7 : 50 }
-							step={ props?.isBorder ? 1 : 5 }
-							marks={ marks }
-							hideLabelFromVision // Keeps label for accessibility but hides it visually
+							// Use the dynamic config here:
+							min={ currentConfig.min }
+							max={ currentConfig.max }
+							step={ currentConfig.step }
+							marks={ currentConfig.marks }
+							hideLabelFromVision
 						/>
 					</FlexItem>
 
@@ -176,11 +196,12 @@ const RangeControls = ( props ) => {
 									setAttributes( { [ topKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 0 }
-								max={ props?.isBorder ? 7 : 50 }
-								step={ props?.isBorder ? 1 : 5 }
-								marks={ marks }
-								hideLabelFromVision // Keeps label for accessibility but hides it visually
+								// Use the dynamic config here:
+								min={ currentConfig.min }
+								max={ currentConfig.max }
+								step={ currentConfig.step }
+								marks={ currentConfig.marks }
+								hideLabelFromVision
 							/>
 						</FlexItem>
 
@@ -217,11 +238,12 @@ const RangeControls = ( props ) => {
 									setAttributes( { [ rightKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 0 }
-								max={ props?.isBorder ? 7 : 50 }
-								step={ props?.isBorder ? 1 : 5 }
-								marks={ marks }
-								hideLabelFromVision // Keeps label for accessibility but hides it visually
+								// Use the dynamic config here:
+								min={ currentConfig.min }
+								max={ currentConfig.max }
+								step={ currentConfig.step }
+								marks={ currentConfig.marks }
+								hideLabelFromVision
 							/>
 						</FlexItem>
 
@@ -258,11 +280,12 @@ const RangeControls = ( props ) => {
 									setAttributes( { [ bottomKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 0 }
-								max={ props?.isBorder ? 7 : 50 }
-								step={ props?.isBorder ? 1 : 5 }
-								marks={ marks }
-								hideLabelFromVision // Keeps label for accessibility but hides it visually
+								// Use the dynamic config here:
+								min={ currentConfig.min }
+								max={ currentConfig.max }
+								step={ currentConfig.step }
+								marks={ currentConfig.marks }
+								hideLabelFromVision
 							/>
 						</FlexItem>
 
@@ -299,11 +322,12 @@ const RangeControls = ( props ) => {
 									setAttributes( { [ leftKey ]: value } )
 								}
 								withInputField={ isToggled }
-								min={ 0 }
-								max={ props?.isBorder ? 7 : 50 }
-								step={ props?.isBorder ? 1 : 5 }
-								marks={ marks }
-								hideLabelFromVision // Keeps label for accessibility but hides it visually
+								// Use the dynamic config here:
+								min={ currentConfig.min }
+								max={ currentConfig.max }
+								step={ currentConfig.step }
+								marks={ currentConfig.marks }
+								hideLabelFromVision
 							/>
 						</FlexItem>
 

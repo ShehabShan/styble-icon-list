@@ -1,10 +1,10 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import { getIconPickerBlockStyles } from '../utils/style.js';
+import { getChildBlockStyles } from '../utils/style.js';
 
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save( {
 		className: 'wp-block-create-block-icon-picker',
-		style: { ...getIconPickerBlockStyles( attributes ) },
+		style: { ...getChildBlockStyles( attributes ) },
 	} );
 
 	// Build the rel attribute dynamically

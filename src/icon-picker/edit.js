@@ -17,7 +17,7 @@ import {
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
 import { useEffect, useRef, useState } from '@wordpress/element';
 
-import { getIconPickerBlockStyles } from '../utils/style.js';
+import { getChildBlockStyles } from '../utils/style.js';
 import editIcon from '../assests/edit-icon.svg';
 import resetIcon from '../assests/reset.svg';
 import settingsIcon from '../assests/setting.svg';
@@ -29,10 +29,12 @@ import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const gAttrs = useGrandparentAttributes( clientId );
 
+	const { iconStyle } = gAttrs;
+
 	const prevGrand = useRef( {} );
 
 	useEffect( () => {
-		const current = gAttrs || {};
+		const current = iconStyle || {};
 		const previous = prevGrand.current || {};
 
 		// Find which grandparent keys actually changed
@@ -59,17 +61,19 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 		// Update snapshot memory
 		prevGrand.current = { ...current };
-	}, [ gAttrs, attributes, setAttributes ] );
+	}, [ iconStyle, attributes, setAttributes ] );
 
 	useEffect( () => {
 		if ( attributes.iconType === 'library' ) {
-			if ( attributes.backgroundColor !== '#000000' ) {
+			// Only set to black if there is currently NO background color set
+			if ( ! attributes.backgroundColor ) {
 				setAttributes( {
 					backgroundColor: '#000000',
 					childPadding: 10,
 				} );
 			}
 		} else if ( attributes.iconType === 'upload' ) {
+			// Your logic to clear background for uploaded images
 			if ( attributes.backgroundColor ) {
 				setAttributes( { backgroundColor: '', childPadding: 0 } );
 			}
@@ -83,7 +87,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const isModalOpen = ( id ) => openModalId === id;
 	const closeAllModals = () => setOpenModalId( null );
 
-	const iconPickerStyle = getIconPickerBlockStyles( attributes );
+	const iconPickerStyle = getChildBlockStyles( attributes );
 
 	const blockProps = useBlockProps( {
 		className: 'wp-block-create-block-icon-picker',
@@ -208,6 +212,23 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		return null;
 	};
 
+	const renderIcon = () => {
+		if ( attributes?.iconType === 'upload' && attributes?.mediaUrl ) {
+			return <img src={ attributes?.mediaUrl } alt="" />;
+		}
+
+		// Render Dashicon if iconName exists
+		if ( attributes?.iconType === 'library' ) {
+			return (
+				<span
+					className={ `dashicons dashicons-${ attributes?.selectedIcon }` }
+				/>
+			);
+		}
+
+		return null;
+	};
+
 	return (
 		<>
 			<InspectorControls>
@@ -256,13 +277,31 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</InspectorControls>
 
-			<div { ...blockProps }>
+			{ /* <div { ...blockProps }>
 				{ attributes.iconType === 'upload' ? (
-					<img src={ attributes.mediaUrl } alt="Icon" />
+					<img src={ attributes?.mediaUrl } alt="Icon" />
 				) : (
 					<span
-						className={ `dashicons dashicons-${ attributes.selectedIcon }` }
+						className={ `dashicons dashicons-${ attributes?.selectedIcon }` }
 					/>
+				) }
+			</div> */ }
+
+			<div { ...blockProps }>
+				{ attributes?.url ? (
+					<a
+						href={ attributes?.url }
+						target={ attributes?.newTab ? '_blank' : undefined }
+						rel={
+							attributes?.newTab
+								? 'noopener noreferrer'
+								: undefined
+						}
+					>
+						{ renderIcon() }
+					</a>
+				) : (
+					renderIcon()
 				) }
 			</div>
 		</>
