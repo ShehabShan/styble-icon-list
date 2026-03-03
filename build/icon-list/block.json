@@ -136,8 +136,7 @@
       "type": "string"
     },
     "iconColor": {
-      "type": "string",
-      "default": "#FFFFFF"
+      "type": "string"
     },
     "itemStyleType": {
       "type": "string",
@@ -209,8 +208,7 @@
       "type": "string"
     },
     "borderColor": {
-      "type": "string",
-      "default": "#000000"
+      "type": "string"
     },
     "borderRadius": {
       "type": "number",
@@ -228,9 +226,8 @@
     "borderRadiusLeft": {
       "type": "number"
     },
-    "hadBoxShadow": {
-      "type": "boolean",
-      "default": "false"
+    "hasBoxShadow": {
+      "type": "boolean"
     },
     "hoverBackgroundType": {
       "type": "string"
@@ -278,8 +275,7 @@
       "type": "number"
     },
     "hoverHasBoxShadow": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "hoverPadding": {
       "type": "number"

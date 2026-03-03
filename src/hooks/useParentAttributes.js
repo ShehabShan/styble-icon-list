@@ -22,6 +22,8 @@ export const useParentAttributes = ( clientId ) =>
 			// Return only what the child needs from the parent
 			return {
 				// Standard Layout
+				hasBoxShadow: parentAttrs.hasBoxShadow,
+				hoverHasBoxShadow: parentAttrs.hoverHasBoxShadow,
 				backgroundColor: parentAttrs.backgroundColor,
 				hoverBackgroundColor: parentAttrs.hoverBackgroundColor,
 				padding: parentAttrs.padding,

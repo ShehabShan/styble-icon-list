@@ -51,7 +51,7 @@
 		"isUnderline": { "type": "boolean", "default": false },
 		"isStrikethrough": { "type": "boolean", "default": false },
 		"textTransform": { "type": "string" },
-		"iconColor": { "type": "string", "default": "#FFFFFF" },
+		"iconColor": { "type": "string" },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
 		"containerColor": { "type": "string" },
@@ -77,13 +77,13 @@
 
 		"borderType": { "type": "string" },
 
-		"borderColor": { "type": "string", "default": "#000000" },
+		"borderColor": { "type": "string" },
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
 		"borderRadiusBottom": { "type": "number" },
 		"borderRadiusLeft": { "type": "number" },
-		"hadBoxShadow": { "type": "boolean", "default": "false" },
+		"hasBoxShadow": { "type": "boolean" },
 		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
@@ -103,7 +103,7 @@
 		"hoverBorderRadiusBottom": { "type": "number" },
 		"hoverBorderRadiusLeft": { "type": "number" },
 
-		"hoverHasBoxShadow": { "type": "boolean", "default": false },
+		"hoverHasBoxShadow": { "type": "boolean" },
 
 		"hoverPadding": { "type": "number" },
 		"hoverPaddingTop": { "type": "number" },

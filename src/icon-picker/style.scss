@@ -33,6 +33,7 @@
 	========================= */
 
 	background: var(--background-color-IP, transparent);
+	box-shadow: var(--box-shadow-IP);
 
 	/* =========================
 	   Border
@@ -101,7 +102,7 @@
 	   Box Shadow
 	========================= */
 
-		box-shadow: var(--box-shadow-h-IP, none);
+		box-shadow: var(--box-shadow-h-IP, var(--box-shadow-IP, none));
 
 		/* =========================
 	   Border

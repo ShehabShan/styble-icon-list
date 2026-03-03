@@ -33,7 +33,7 @@ import ListPreset from './side-control-bar/ListPreset.js';
 import ListOrientation from './side-control-bar/ListOrientation.js';
 import Typography from './side-control-style-bar/Typography.js';
 import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
-import { getBlockStyles } from '../utils/style.js';
+import { getIconListStyle } from '../utils/style.js';
 import { presetData } from '../utils/dataCenter.js';
 import RangeControls from './side-control-style-bar/RangeControls.js';
 import ItemStyle from './side-control-style-bar/ItemStyle.js';
@@ -52,7 +52,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		iconColor,
 	} = attributes;
 
-	const parentStyle = getBlockStyles( attributes );
+	const parentStyle = getIconListStyle( attributes );
 
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const sidebarRef = useRef( null );

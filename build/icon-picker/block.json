@@ -72,7 +72,7 @@
     },
     "iconColor": {
       "type": "string",
-      "default": "f8f8f8"
+      "default": "#FFFFFF"
     },
     "hoverIconColor": {
       "type": "string"
@@ -167,10 +167,12 @@
       "type": "number"
     },
     "hadBoxShadow": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "hoverHasBoxShadow": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "hoverBackgroundColor": {
       "type": "string"

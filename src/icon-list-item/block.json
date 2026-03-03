@@ -46,13 +46,13 @@
 
 		"borderType": { "type": "string" },
 
-		"borderColor": { "type": "string" },
+		"borderColor": { "type": "string", "default": "#FFFFFF" },
 		"borderRadius": { "type": "number" },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
 		"borderRadiusBottom": { "type": "number" },
 		"borderRadiusLeft": { "type": "number" },
-		"hadBoxShadow": { "type": "boolean" },
+		"hasBoxShadow": { "type": "boolean", "default": false },
 		"hoverBackgroundType": { "type": "string" },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
@@ -72,7 +72,7 @@
 		"hoverBorderRadiusBottom": { "type": "number" },
 		"hoverBorderRadiusLeft": { "type": "number" },
 
-		"hoverHasBoxShadow": { "type": "boolean" },
+		"hoverHasBoxShadow": { "type": "boolean", "default": false },
 
 		"hoverPadding": { "type": "number" },
 		"hoverPaddingTop": { "type": "number" },

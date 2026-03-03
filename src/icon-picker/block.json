@@ -33,7 +33,7 @@
 		"iconType": { "type": "string", "default": "library" },
 		"selectedIcon": { "type": "string", "default": "menu" },
 		"iconSize": { "type": "number" },
-		"iconColor": { "type": "string", "default": "f8f8f8" },
+		"iconColor": { "type": "string", "default": "#FFFFFF" },
 		"hoverIconColor": { "type": "string" },
 		"hasLink": { "type": "boolean", "default": false },
 		"itemStyleType": { "type": "string", "default": "normal" },
@@ -69,8 +69,8 @@
 		"childBorderRadiusBottom": { "type": "number" },
 		"childBorderRadiusLeft": { "type": "number" },
 
-		"hadBoxShadow": { "type": "boolean" },
-		"hoverHasBoxShadow": { "type": "boolean" },
+		"hadBoxShadow": { "type": "boolean", "default": false },
+		"hoverHasBoxShadow": { "type": "boolean", "default": false },
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
 

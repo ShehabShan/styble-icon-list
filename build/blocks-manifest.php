@@ -420,8 +420,7 @@ return array(
 				'type' => 'string'
 			),
 			'iconColor' => array(
-				'type' => 'string',
-				'default' => '#FFFFFF'
+				'type' => 'string'
 			),
 			'itemStyleType' => array(
 				'type' => 'string',
@@ -493,8 +492,7 @@ return array(
 				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string',
-				'default' => '#000000'
+				'type' => 'string'
 			),
 			'borderRadius' => array(
 				'type' => 'number',
@@ -512,9 +510,8 @@ return array(
 			'borderRadiusLeft' => array(
 				'type' => 'number'
 			),
-			'hadBoxShadow' => array(
-				'type' => 'boolean',
-				'default' => 'false'
+			'hasBoxShadow' => array(
+				'type' => 'boolean'
 			),
 			'hoverBackgroundType' => array(
 				'type' => 'string'
@@ -562,8 +559,7 @@ return array(
 				'type' => 'number'
 			),
 			'hoverHasBoxShadow' => array(
-				'type' => 'boolean',
-				'default' => false
+				'type' => 'boolean'
 			),
 			'hoverPadding' => array(
 				'type' => 'number'
@@ -703,7 +699,8 @@ return array(
 				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => '#FFFFFF'
 			),
 			'borderRadius' => array(
 				'type' => 'number'
@@ -720,8 +717,9 @@ return array(
 			'borderRadiusLeft' => array(
 				'type' => 'number'
 			),
-			'hadBoxShadow' => array(
-				'type' => 'boolean'
+			'hasBoxShadow' => array(
+				'type' => 'boolean',
+				'default' => false
 			),
 			'hoverBackgroundType' => array(
 				'type' => 'string'
@@ -769,7 +767,8 @@ return array(
 				'type' => 'number'
 			),
 			'hoverHasBoxShadow' => array(
-				'type' => 'boolean'
+				'type' => 'boolean',
+				'default' => false
 			),
 			'hoverPadding' => array(
 				'type' => 'number'
@@ -869,7 +868,7 @@ return array(
 			),
 			'iconColor' => array(
 				'type' => 'string',
-				'default' => 'f8f8f8'
+				'default' => '#FFFFFF'
 			),
 			'hoverIconColor' => array(
 				'type' => 'string'
@@ -964,10 +963,12 @@ return array(
 				'type' => 'number'
 			),
 			'hadBoxShadow' => array(
-				'type' => 'boolean'
+				'type' => 'boolean',
+				'default' => false
 			),
 			'hoverHasBoxShadow' => array(
-				'type' => 'boolean'
+				'type' => 'boolean',
+				'default' => false
 			),
 			'hoverBackgroundColor' => array(
 				'type' => 'string'

@@ -24,6 +24,7 @@
 	// }
 
 	background: var(--background-color-IP, transparent);
+	box-shadow: var(--box-shadow-IP, none);
 
 	padding-top: var(--padding-top-IP, 0);
 	padding-right: var(--padding-right-IP, 0);
@@ -53,7 +54,7 @@
 	&:hover {
 		background: var(--bg-h-IP, var(--background-color-IP, transparent));
 
-		box-shadow: var(--box-shadow-h-IP, none);
+		box-shadow: var(--box-shadow-h-IP, var(--box-shadow-IP, none));
 
 		border-color: var(
 			--border-color-h-IP,

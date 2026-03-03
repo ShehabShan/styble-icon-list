@@ -18,6 +18,69 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 		left: resolve( left ),
 	};
 };
+export const getIconListStyle = ( attributes ) => {
+	const cleanStyles = ( obj ) => {
+		return Object.fromEntries(
+			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+		);
+	};
+
+	const withUnit = ( value, unit = 'px' ) => {
+		if ( ! value || value === 0 || value === '0' ) {
+			return null;
+		}
+
+		return `${ value }${ unit }`;
+	};
+
+	// Units Logic
+
+	const getUnit = ( key ) => attributes?.[ key ] || 'px';
+
+	const apU = getUnit( 'allPaddingUnits' );
+
+	const getBox = ( attrs, prefix ) =>
+		getResolvedSides(
+			attrs?.[ prefix ],
+			attrs?.[ `${ prefix }Top` ],
+			attrs?.[ `${ prefix }Right` ],
+			attrs?.[ `${ prefix }Bottom` ],
+			attrs?.[ `${ prefix }Left` ]
+		);
+
+	const allPadding = getBox( attributes, 'allPadding' );
+
+	let itemsWidthValue = null;
+
+	if ( attributes?.itemWidthType === 'auto' ) {
+		itemsWidthValue = 'fit-content';
+	} else if ( attributes?.itemWidthType === 'custom' ) {
+		itemsWidthValue = `${ attributes.itemsWidth }px`;
+	}
+
+	return cleanStyles( {
+		// ===============================
+		// GENERAL
+		// ===============================
+		'--items-width': itemsWidthValue,
+		'--separator-thickness': withUnit(
+			attributes?.separatorThickness,
+			'px'
+		),
+		'--separator-color': attributes?.separatorColor,
+		'--separator-style': attributes?.separatorType,
+		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
+		'--container-bg-color': attributes?.containerColor,
+
+		// ===============================
+		// PARENT CONTAINER STYLES (Padding use pU)
+		// ===============================
+		'--all-padding-top': withUnit( allPadding?.top, apU ),
+		'--all-padding-right': withUnit( allPadding?.right, apU ),
+		'--all-padding-bottom': withUnit( allPadding?.bottom, apU ),
+		'--all-padding-left': withUnit( allPadding?.left, apU ),
+	} );
+};
 
 export const getBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
@@ -34,8 +97,7 @@ export const getBlockStyles = ( attributes ) => {
 		return `${ value }${ unit }`;
 	};
 
-	const SHADOW_VAL =
-		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
 
 	// Units Logic
 
@@ -226,9 +288,7 @@ export const getChildBlockStyles = ( attributes ) => {
 
 		return `${ value }${ unit }`;
 	};
-
-	const SHADOW_VAL =
-		'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
 
 	// Units Logic
 

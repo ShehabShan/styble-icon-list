@@ -1,8 +1,8 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { getBlockStyles } from '../utils/style.js';
+import { getIconListStyle } from '../utils/style.js';
 
 export default function save( { attributes } ) {
-	const parentStyle = getBlockStyles( attributes );
+	const parentStyle = getIconListStyle( attributes );
 
 	const blockProps = useBlockProps.save( {
 		className: `is-items-space-between-${ attributes?.itemsGap } is-list-orientation-${ attributes?.listOrientation } is-separator-type-${ attributes?.separatorType }`,
