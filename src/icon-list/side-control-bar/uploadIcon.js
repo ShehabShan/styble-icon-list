@@ -67,7 +67,10 @@ const UploadIcon = ( {
 					placement="bottom-start"
 					offset={ 10 }
 				>
-					<div className="icon-library-grid">
+					<div
+						className="icon-library-grid"
+						onMouseLeave={ closeAllModals }
+					>
 						{ extractedIcons.map( ( item ) => {
 							const isActive =
 								attributes.selectedIcon === item.keyName;
@@ -84,7 +87,6 @@ const UploadIcon = ( {
 											mediaUrl: '', // Use empty string instead of undefined for better persistence
 											mediaId: 0, // Always reset the ID too
 											iconType: 'library',
-											iconUpdateId: Date.now(),
 										} );
 									} }
 								>
@@ -106,7 +108,10 @@ const UploadIcon = ( {
 					focusOnMount={ false }
 					__unstableGUI={ true }
 				>
-					<div style={ { padding: '16px', minWidth: '240px' } }>
+					<div
+						style={ { padding: '16px', minWidth: '240px' } }
+						onMouseLeave={ closeAllModals }
+					>
 						{ /* Changed p tag to Button */ }
 						<Button
 							variant="primary"
@@ -139,7 +144,6 @@ const UploadIcon = ( {
 									mediaUrl: media.url,
 									selectedIcon: '', // Explicitly clear the library icon
 									iconType: 'upload',
-									iconUpdateId: Date.now(),
 								} )
 							}
 							allowedTypes={ ALLOWED_MEDIA_TYPES }

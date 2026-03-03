@@ -296,22 +296,6 @@ return array(
 			'html' => false
 		),
 		'attributes' => array(
-			'fontSizeUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'fontHeightUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'letterSpacingUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'wordSpacingUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
 			'paddingUnits' => array(
 				'type' => 'string',
 				'default' => 'px'
@@ -350,9 +334,6 @@ return array(
 			),
 			'mediaUrl' => array(
 				'type' => 'string'
-			),
-			'iconUpdateId' => array(
-				'type' => 'number'
 			),
 			'preset' => array(
 				'type' => 'string',
@@ -513,7 +494,7 @@ return array(
 			),
 			'borderColor' => array(
 				'type' => 'string',
-				'default' => '#0C0A0A'
+				'default' => '#000000'
 			),
 			'borderRadius' => array(
 				'type' => 'number',

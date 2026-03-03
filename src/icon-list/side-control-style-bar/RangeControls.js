@@ -313,7 +313,7 @@ const RangeControls = ( props ) => {
 					<Flex align="center" gap={ 3 }>
 						<FlexItem>
 							<img
-								src={ rightIcon }
+								src={ leftIcon }
 								alt="Border"
 								style={ {
 									width: '24px',

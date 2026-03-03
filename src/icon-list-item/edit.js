@@ -9,9 +9,9 @@ import {
 import './editor.scss';
 
 import {
+	Button,
 	PanelBody,
 	Popover,
-	Button,
 	TabPanel,
 	ToggleControl,
 } from '@wordpress/components';
@@ -19,22 +19,35 @@ import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
 import ChildItemStyle from './ChildItemStyle.js';
 import resetIcon from '../assests/reset.svg';
-import editIcon from '../assests/edit-icon.svg';
 import { getBlockStyles } from '../utils/style.js';
 import { useParentAttributes } from '../hooks/useParentAttributes.js';
 import { useEffect, useRef, useState } from '@wordpress/element';
+import editIcon from '../assests/edit-icon.svg';
 
 // This is the checkmark icon from your image
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
+	const [ openModalId, setOpenModalId ] = useState( null );
+	const toggleModal = ( id ) => {
+		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
+	};
+	const isModalOpen = ( id ) => openModalId === id;
+	const closeAllModals = () => setOpenModalId( null );
+
 	const childStyle = getBlockStyles( attributes );
 
 	const parentLayout = useParentAttributes( clientId );
 
-	const prevGrand = useRef( {} );
+	const prevGrand = useRef( null );
 
 	useEffect( () => {
 		const current = parentLayout || {};
+
+		if ( prevGrand.current === null ) {
+			prevGrand.current = { ...current };
+			return;
+		}
+
 		const previous = prevGrand.current || {};
 
 		// Find which grandparent keys actually changed
@@ -61,20 +74,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 		// Update snapshot memory
 		prevGrand.current = { ...current };
-	}, [ parentLayout, attributes, setAttributes ] );
+	}, [ parentLayout ] );
 
 	const blockProps = useBlockProps( {
 		style: {
 			...childStyle, // This spreads all properties from getChildBlockStyles
 		},
 	} );
-
-	const [ openModalId, setOpenModalId ] = useState( null );
-	const toggleModal = ( id ) => {
-		setOpenModalId( ( prev ) => ( prev === id ? null : id ) );
-	};
-	const isModalOpen = ( id ) => openModalId === id;
-	const closeAllModals = () => setOpenModalId( null );
 
 	const renderTabContent = ( tab ) => {
 		if ( tab.name === 'settings' ) {
@@ -190,8 +196,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									<>
 										<img
 											src={ settingsIcon }
-											width={ 24 }
-											height={ 24 }
+											width={ 16 }
+											height={ 16 }
 											alt="Settings"
 										/>
 										{ __( 'Settings', 'icon-list' ) }

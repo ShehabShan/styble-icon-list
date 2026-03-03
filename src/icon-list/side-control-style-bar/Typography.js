@@ -90,101 +90,55 @@ const Typography = ( { attributes, setAttributes } ) => {
 							/>
 						</div>
 
-						<div className="unit-control-container">
-							<UnitControl
-								value={ attributes.fontSizeUnits }
-								onChange={ ( nextValue ) =>
-									setAttributes( {
-										fontSizeUnits: nextValue,
-									} )
-								}
-								units={ [ { value: 'px', label: 'px' } ] }
-							/>
-							<RangeControl
-								label={ __( 'Font Size', 'icon-list' ) }
-								value={ fontSize }
-								onChange={ ( value ) =>
-									setAttributes( {
-										fontSize: value,
-									} )
-								}
-								min={ 10 }
-								max={ 60 }
-							/>
-						</div>
+						<RangeControl
+							label={ __( 'Font Size', 'icon-list' ) }
+							value={ fontSize }
+							onChange={ ( value ) =>
+								setAttributes( {
+									fontSize: value,
+								} )
+							}
+							min={ 10 }
+							max={ 60 }
+						/>
 
-						<div className="unit-control-container">
-							<UnitControl
-								value={ attributes.fontHeightUnits }
-								onChange={ ( nextValue ) =>
-									setAttributes( {
-										fontHeightUnits: nextValue,
-									} )
-								}
-								units={ [ { value: 'em', label: 'em' } ] }
-							/>
-							<RangeControl
-								label={ __( 'Font Height', 'icon-list' ) }
-								value={ fontHeight }
-								onChange={ ( value ) =>
-									setAttributes( { fontHeight: value } )
-								}
-								min={ 0.5 }
-								max={ 3 }
-								step={ 0.1 }
-							/>
-						</div>
+						<RangeControl
+							label={ __( 'Font Height', 'icon-list' ) }
+							value={ fontHeight }
+							onChange={ ( value ) =>
+								setAttributes( { fontHeight: value } )
+							}
+							min={ 0.5 }
+							max={ 3 }
+							step={ 0.1 }
+						/>
 
 						<div className="typography-spacing-controls">
-							<div className="unit-control-container">
-								<UnitControl
-									value={ attributes.letterSpacingUnits }
-									onChange={ ( nextValue ) =>
-										setAttributes( {
-											letterSpacingUnits: nextValue,
-										} )
-									}
-									units={ [ { value: 'em', label: 'em' } ] }
-								/>
-								<TextControl
-									type="number"
-									value={ letterSpacing }
-									onChange={ ( value ) =>
-										setAttributes( {
-											letterSpacing: value,
-										} )
-									}
-									autoComplete="off"
-									step="0.5"
-									max={ 10 }
-								/>
-							</div>
-							<div className="unit-control-container">
-								<UnitControl
-									value={ attributes.wordSpacingUnits }
-									onChange={ ( nextValue ) =>
-										setAttributes( {
-											wordSpacingUnits: nextValue,
-										} )
-									}
-									units={ [
-										{ value: 'px', label: 'px' },
-										{ value: 'em', label: 'em' },
-									] }
-								/>
-								<TextControl
-									type="number"
-									value={ wordSpacing }
-									onChange={ ( value ) =>
-										setAttributes( {
-											wordSpacing: value,
-										} )
-									}
-									autoComplete="off"
-									step="0.2"
-									max={ 3 }
-								/>
-							</div>
+							<TextControl
+								type="number"
+								value={ letterSpacing }
+								onChange={ ( value ) =>
+									setAttributes( {
+										letterSpacing: value,
+									} )
+								}
+								autoComplete="off"
+								step="0.5"
+								max={ 10 }
+							/>
+
+							<TextControl
+								type="number"
+								value={ wordSpacing }
+								onChange={ ( value ) =>
+									setAttributes( {
+										wordSpacing: value,
+									} )
+								}
+								autoComplete="off"
+								step="0.2"
+								max={ 3 }
+							/>
 						</div>
 						<HStack
 							className="segmented-control-container"

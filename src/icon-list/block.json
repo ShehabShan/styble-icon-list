@@ -13,10 +13,6 @@
 	},
 
 	"attributes": {
-		"fontSizeUnits": { "type": "string", "default": "px" },
-		"fontHeightUnits": { "type": "string", "default": "px" },
-		"letterSpacingUnits": { "type": "string", "default": "px" },
-		"wordSpacingUnits": { "type": "string", "default": "px" },
 		"paddingUnits": { "type": "string", "default": "px" },
 		"marginUnits": { "type": "string", "default": "px" },
 		"borderUnits": { "type": "string", "default": "px" },
@@ -28,9 +24,6 @@
 
 		"mediaId": { "type": "number", "default": 0 },
 		"mediaUrl": { "type": "string" },
-		"iconUpdateId": {
-			"type": "number"
-		},
 
 		"preset": { "type": "string", "default": "preset-1" },
 		"listOrientation": { "type": "string", "default": "vertical" },
@@ -84,7 +77,7 @@
 
 		"borderType": { "type": "string" },
 
-		"borderColor": { "type": "string", "default": "#0C0A0A" },
+		"borderColor": { "type": "string", "default": "#000000" },
 		"borderRadius": { "type": "number", "default": 0 },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },

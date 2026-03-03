@@ -43,11 +43,6 @@ export const getBlockStyles = ( attributes ) => {
 
 	const apU = getUnit( 'allPaddingUnits' );
 
-	const fzU = getUnit( 'fontSizeUnits' );
-	const fhU = getUnit( 'fontHeightUnits' );
-	const lsU = getUnit( 'letterSpacingUnits' );
-	const wsU = getUnit( 'wordSpacingUnits' );
-
 	const pU = getUnit( 'paddingUnits' );
 	const mU = getUnit( 'marginUnits' );
 	const bU = getUnit( 'borderUnits' );
@@ -124,12 +119,12 @@ export const getBlockStyles = ( attributes ) => {
 		// TYPOGRAPHY DEFAULTS
 		// ===============================
 		'--font-family': attributes?.fontFamily,
-		'--font-size': withUnit( attributes?.fontSize, fzU ),
+		'--font-size': withUnit( attributes?.fontSize, 'px' ),
 		'--text-color': attributes?.textColor,
 		'--font-weight': attributes?.fontWeight,
 		'--font-height': withUnit( attributes?.fontHeight, 'em' ),
-		'--letter-spacing': withUnit( attributes?.letterSpacing, lsU ),
-		'--word-spacing': withUnit( attributes?.wordSpacing, wsU ),
+		'--letter-spacing': withUnit( attributes?.letterSpacing, 'px' ),
+		'--word-spacing': withUnit( attributes?.wordSpacing, 'px' ),
 		'--font-style-italic': attributes?.isItalic && 'italic',
 		'--text-decoration':
 			( attributes?.isUnderline || attributes?.isStrikethrough ) &&
@@ -190,11 +185,6 @@ export const getBlockStyles = ( attributes ) => {
 
 		'--border-color-h': attributes?.hoverBorderColor,
 		'--border-style-h': attributes?.hoverBorderType,
-
-		//child border-color-h and border-style-h
-
-		// '--child-border-color-h': attributes?.childHoverBorderColor,
-		// '--child-border-style-h': attributes?.childHoverBorderType,
 
 		// Hover Padding (use hpU)
 		'--padding-top-h': withUnit( hoverPadding?.top, hpU ),

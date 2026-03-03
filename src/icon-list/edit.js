@@ -171,11 +171,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								onChange={ ( value ) =>
 									setAttributes( {
 										iconSize: value,
-										iconUpdateId: Date.now(),
 									} )
 								}
 								min={ 20 }
-								max={ 400 }
+								max={ 200 }
 							/>
 						</>
 					) }

@@ -31,10 +31,16 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const { iconStyle } = gAttrs;
 
-	const prevGrand = useRef( {} );
+	const prevGrand = useRef( null );
 
 	useEffect( () => {
 		const current = iconStyle || {};
+
+		if ( prevGrand.current === null ) {
+			prevGrand.current = { ...current };
+			return;
+		}
+
 		const previous = prevGrand.current || {};
 
 		// Find which grandparent keys actually changed
@@ -61,7 +67,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 		// Update snapshot memory
 		prevGrand.current = { ...current };
-	}, [ iconStyle, attributes, setAttributes ] );
+	}, [ iconStyle ] );
 
 	useEffect( () => {
 		if ( attributes.iconType === 'library' ) {
@@ -186,7 +192,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 							setAttributes( { iconSize: value } )
 						}
 						min={ 20 }
-						max={ 400 }
+						max={ 200 }
 					/>
 				</>
 			);

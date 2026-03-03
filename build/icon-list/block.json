@@ -12,22 +12,6 @@
     "html": false
   },
   "attributes": {
-    "fontSizeUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "fontHeightUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "letterSpacingUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "wordSpacingUnits": {
-      "type": "string",
-      "default": "px"
-    },
     "paddingUnits": {
       "type": "string",
       "default": "px"
@@ -66,9 +50,6 @@
     },
     "mediaUrl": {
       "type": "string"
-    },
-    "iconUpdateId": {
-      "type": "number"
     },
     "preset": {
       "type": "string",
@@ -229,7 +210,7 @@
     },
     "borderColor": {
       "type": "string",
-      "default": "#0C0A0A"
+      "default": "#000000"
     },
     "borderRadius": {
       "type": "number",
