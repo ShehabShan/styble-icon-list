@@ -5,7 +5,7 @@ export default function save( { attributes } ) {
 	const parentStyle = getIconListStyle( attributes );
 
 	const blockProps = useBlockProps.save( {
-		className: `is-items-space-between-${ attributes?.itemsGap } is-list-orientation-${ attributes?.listOrientation } is-separator-type-${ attributes?.separatorType }`,
+		className: `advanced-style is-items-space-between-${ attributes?.itemsGap } is-list-orientation-${ attributes?.listOrientation } is-separator-type-${ attributes?.separatorType }`,
 		style: { ...parentStyle },
 	} );
 

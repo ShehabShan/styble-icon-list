@@ -13,6 +13,7 @@ import {
 	ToggleControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
+	Button,
 } from '@wordpress/components';
 import { useEffect, useRef, useState } from '@wordpress/element';
 
@@ -40,6 +41,8 @@ import ItemStyle from './side-control-style-bar/ItemStyle.js';
 
 import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
+import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
+import AdvancedStyle from './side-control-style-bar/AdvancedStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
@@ -53,7 +56,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	} = attributes;
 
 	const parentStyle = getIconListStyle( attributes );
-
+	const [ activeTab, setActiveTab ] = useState( 'general' );
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const sidebarRef = useRef( null );
 
@@ -81,10 +84,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	}, [ openModalId ] );
 
 	const blockProps = useBlockProps( {
-		className: `parent-contaner is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType } is-preset-${ preset }`,
+		className: `parent-contaner advanced-style is-list-orientation-${ listOrientation } is-items-space-between-${ itemsGap } is-separator-type-${ separatorType } is-preset-${ preset }`,
 
 		style: { ...parentStyle },
 	} );
+
+	//console text area
 
 	// Preset Handling checking if there are inner blocks to show placeholder or not
 
@@ -274,46 +279,93 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Icon List', 'icon-list' ) }>
-					<TabPanel
-						className="my-custom-tabs"
-						activeClass="is-active"
-						tabs={ [
-							{
-								name: 'settings',
-								title: (
-									<>
-										<img
-											src={ settingsIcon }
-											width={ 24 }
-											height={ 24 }
-											alt="Settings"
-										/>
-										{ __( 'Settings', 'icon-list' ) }
-									</>
-								),
-								className: 'tab-settings',
-							},
-							{
-								name: 'styles',
-								title: (
-									<>
-										<img
-											src={ paletteIcon }
-											width={ 16 }
-											height={ 16 }
-											alt="Palette"
-										/>
-										{ __( 'Style', 'icon-list' ) }
-									</>
-								),
-								className: 'tab-styles',
-							},
-						] }
+				{ /* 1. Top Level Tabs (Custom styled to look like your image) */ }
+				<div className="styble-inspector-tabs">
+					<Button
+						isPressed={ activeTab === 'general' }
+						onClick={ () => setActiveTab( 'general' ) }
 					>
-						{ renderTabContent }
-					</TabPanel>
-				</PanelBody>
+						{ __( 'General' ) }
+					</Button>
+					<Button
+						isPressed={ activeTab === 'advanced' }
+						onClick={ () => setActiveTab( 'advanced' ) }
+					>
+						{ __( 'Advanced' ) }
+					</Button>
+				</div>
+
+				{ /* 2. Conditional Rendering of PanelBodies */ }
+				{ activeTab === 'general' && (
+					<>
+						<PanelBody title={ __( 'Icon list' ) }>
+							<TabPanel
+								className="my-custom-tabs"
+								activeClass="is-active"
+								tabs={ [
+									{
+										name: 'settings',
+										title: (
+											<>
+												<img
+													src={ settingsIcon }
+													width={ 24 }
+													height={ 24 }
+													alt="Settings"
+												/>
+												{ __(
+													'Settings',
+													'icon-list'
+												) }
+											</>
+										),
+										className: 'tab-settings',
+									},
+									{
+										name: 'styles',
+										title: (
+											<>
+												<img
+													src={ paletteIcon }
+													width={ 16 }
+													height={ 16 }
+													alt="Palette"
+												/>
+												{ __( 'Style', 'icon-list' ) }
+											</>
+										),
+										className: 'tab-styles',
+									},
+								] }
+							>
+								{ renderTabContent }
+							</TabPanel>
+						</PanelBody>
+						<PanelBody
+							title={ __( 'Badge' ) }
+							initialOpen={ false }
+						>
+							{ /* Icon specific stuff */ }
+						</PanelBody>
+					</>
+				) }
+
+				{ activeTab === 'advanced' && (
+					<>
+						<PanelBody
+							title={ __( 'Section Preference', 'icon-list' ) }
+						>
+							<AdvancedStyle
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+								resetIcon={ resetIcon }
+							/>
+						</PanelBody>
+						<PanelBody title={ __( 'Spacing', 'icon-list' ) }>
+							{ /* Margin/Padding controls */ }
+						</PanelBody>
+					</>
+				) }
 			</InspectorControls>
 			<div { ...blockProps }>
 				<InnerBlocks

@@ -26,11 +26,6 @@
 		align-items: flex-start;
 		gap: 6px;
 		color: #2f2f2f;
-		padding-top: var(--all-padding-top);
-		padding-right: var(--all-padding-top);
-		padding-bottom: var(--all-padding-top);
-		padding-left: var(--all-padding-top);
-		background: var(--container-bg-color);
 	}
 
 	/* gap control */
@@ -69,4 +64,62 @@
 	.components-input-control {
 		display: none;
 	}
+}
+
+$tab-accent: #5163ff;
+$panel-border: #e6e7ee;
+$tab-border-width: 2px;
+
+.styble-inspector-tabs {
+	display: flex;
+	gap: 8px;
+	align-items: flex-end;
+	justify-content: space-evenly;
+	padding: 0 12px;
+	position: relative;
+	z-index: 5; // higher than panel
+
+	.components-button {
+		background: transparent;
+		border: none;
+		padding: 10px 18px;
+		font-size: 13px;
+		font-weight: 500;
+		border-radius: 8px 8px 0 0;
+		position: relative;
+		box-shadow: none;
+
+		&:hover:not(:disabled, [aria-disabled="true"]),
+		&:not(:disabled, [aria-disabled="true"]) {
+			background: #fff;
+		}
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+
+		&.is-pressed {
+			background: #fff;
+			color: $tab-accent;
+			border: $tab-border-width solid $tab-accent;
+			border-bottom: none;
+
+			/* THIS IS IMPORTANT */
+			margin-bottom: -1px; // pull into panel border
+			z-index: 10; // sit above panel
+		}
+	}
+}
+
+/* Panel top border */
+.styble-inspector-tabs + .components-panel,
+.styble-inspector-tabs + .components-panel__body,
+.styble-inspector-tabs ~ .components-panel,
+.styble-inspector-tabs ~ .components-panel__body {
+	border-top: 1px solid $panel-border;
+	margin-top: 0;
+	position: relative;
+	z-index: 1;
+	background: #fff;
 }

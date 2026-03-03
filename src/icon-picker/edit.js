@@ -23,8 +23,8 @@ import resetIcon from '../assests/reset.svg';
 import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
 
-import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
+import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const gAttrs = useGrandparentAttributes( clientId );

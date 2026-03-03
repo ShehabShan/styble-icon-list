@@ -328,6 +328,38 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
+			'sectionPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionHoverPaddingUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionHoverMarginUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionHoverBorderUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
+			'sectionHoverBorderRadiusUnits' => array(
+				'type' => 'string',
+				'default' => 'px'
+			),
 			'mediaId' => array(
 				'type' => 'number',
 				'default' => 0
@@ -574,6 +606,178 @@ return array(
 				'type' => 'number'
 			),
 			'hoverPaddingLeft' => array(
+				'type' => 'number'
+			),
+			'sectionItemStyleType' => array(
+				'type' => 'string',
+				'default' => 'normal'
+			),
+			'sectionBackgroundType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'sectionBackgroundColor' => array(
+				'type' => 'string'
+			),
+			'sectionBackgroundGradient' => array(
+				'type' => 'string'
+			),
+			'sectionBorderType' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
+			'sectionBorderColor' => array(
+				'type' => 'string'
+			),
+			'hasSectionBoxShadow' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'sectionBorder' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionBorderTop' => array(
+				'type' => 'number'
+			),
+			'sectionBorderRight' => array(
+				'type' => 'number'
+			),
+			'sectionBorderBottom' => array(
+				'type' => 'number'
+			),
+			'sectionBorderLeft' => array(
+				'type' => 'number'
+			),
+			'sectionBorderRadius' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionBorderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'sectionBorderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'sectionBorderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'sectionBorderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'sectionPadding' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionPaddingTop' => array(
+				'type' => 'number'
+			),
+			'sectionPaddingRight' => array(
+				'type' => 'number'
+			),
+			'sectionPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'sectionPaddingLeft' => array(
+				'type' => 'number'
+			),
+			'sectionMargin' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionMarginTop' => array(
+				'type' => 'number'
+			),
+			'sectionMarginRight' => array(
+				'type' => 'number'
+			),
+			'sectionMarginBottom' => array(
+				'type' => 'number'
+			),
+			'sectionMarginLeft' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBackgroundType' => array(
+				'type' => 'string'
+			),
+			'sectionHoverBackgroundColor' => array(
+				'type' => 'string'
+			),
+			'sectionHoverBackgroundGradient' => array(
+				'type' => 'string'
+			),
+			'sectionHoverBorderType' => array(
+				'type' => 'string'
+			),
+			'sectionHoverBorderColor' => array(
+				'type' => 'string'
+			),
+			'sectionHoverHasBoxShadow' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'sectionHoverBorder' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionHoverBorderTop' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderRight' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderBottom' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderLeft' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderRadius' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionHoverBorderRadiusTop' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderRadiusRight' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderRadiusBottom' => array(
+				'type' => 'number'
+			),
+			'sectionHoverBorderRadiusLeft' => array(
+				'type' => 'number'
+			),
+			'sectionHoverPadding' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionHoverPaddingTop' => array(
+				'type' => 'number'
+			),
+			'sectionHoverPaddingRight' => array(
+				'type' => 'number'
+			),
+			'sectionHoverPaddingBottom' => array(
+				'type' => 'number'
+			),
+			'sectionHoverPaddingLeft' => array(
+				'type' => 'number'
+			),
+			'sectionHoverMargin' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'sectionHoverMarginTop' => array(
+				'type' => 'number'
+			),
+			'sectionHoverMarginRight' => array(
+				'type' => 'number'
+			),
+			'sectionHoverMarginBottom' => array(
+				'type' => 'number'
+			),
+			'sectionHoverMarginLeft' => array(
 				'type' => 'number'
 			)
 		),

@@ -8,15 +8,14 @@ import {
 } from '@wordpress/components';
 
 import { __ } from '@wordpress/i18n';
-import '../icon-list/side-control-style-bar/customItemstyle.scss';
-import '../icon-list/side-control-bar/side-bar-scss/customOrientation.scss';
-import '../icon-list/side-control-bar/side-bar-scss/customPopoverContainer.scss';
-import '../icon-list/side-control-bar/side-bar-scss/customItemWidth.scss';
-import CustomHelperComponent from '../icon-list/side-control-bar/CustomHelperComponent.js';
-import RangeControls from '../icon-list/side-control-style-bar/RangeControls.js';
-import Typography from '../icon-list/side-control-style-bar/Typography.js';
+import './customItemstyle.scss';
+import '../side-control-bar/side-bar-scss/customOrientation.scss';
+import '../side-control-bar/side-bar-scss/customPopoverContainer.scss';
+import '../side-control-bar/side-bar-scss/customItemWidth.scss';
+import CustomHelperComponent from '../side-control-bar/CustomHelperComponent.js';
+import RangeControls from './RangeControls.js';
 
-const ChildItemStyle = ( props ) => {
+const AdvancedStyle = ( props ) => {
 	const { attributes, setAttributes, resetIcon } = props;
 
 	const IconNone = (
@@ -28,65 +27,20 @@ const ChildItemStyle = ( props ) => {
 	const IconDashed = <span className="border-icon border-dashed"></span>;
 	const IconDotted = <span className="border-icon border-dotted"></span>;
 
-	// 1. Define logic at the root level
-	const isChild = [ 'advanceText', 'iconPicker' ].includes( props?.type );
-
-	const borderKey = isChild ? 'childBorder' : 'border';
-	const typeKey = isChild ? 'childBorderType' : 'borderType';
-	const colorKey = isChild ? 'childBorderColor' : 'borderColor';
-	const marginKey = isChild ? 'childMargin' : 'margin';
-	const paddingKey = isChild ? 'childPadding' : 'padding';
-	const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
-
-	const hoverMarginKey = isChild ? 'childHoverMargin' : 'hoverMargin';
-	const hoverPaddingKey = isChild ? 'childHoverPadding' : 'hoverPadding';
-	const hoverBorderRadiusKey = isChild
-		? 'childHoverBorderRadius'
-		: 'hoverBorderRadius';
-	const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
-	const hoverTypeKey = isChild ? 'childHoverBorderType' : 'hoverBorderType';
-	const hoverColorKey = isChild
-		? 'childHoverBorderColor'
-		: 'hoverBorderColor';
-
 	return (
 		<div>
-			{ /* { props?.type === 'iconPicker' && (
-				<div className="control-section control-section--view-type">
-					<SelectControl
-						label="View"
-						value={ attributes?.viewType }
-						options={ [
-							{ label: 'Default', value: 'default' },
-							{ label: 'Framed', value: 'framed' },
-							{ label: 'Stacked', value: 'Stacked' },
-						] }
-						onChange={ ( newView ) =>
-							setAttributes( { viewType: newView } )
-						}
-					/>
-				</div>
-			) } */ }
-
-			{ props?.type === 'advanceText' && (
-				<Typography
-					attributes={ attributes }
-					setAttributes={ setAttributes }
-				/>
-			) }
-
 			<ToggleGroupControl
 				className="custom-orientation"
 				__next40pxDefaultSize
 				isBlock
-				value={ attributes?.itemStyleType }
+				value={ attributes?.sectionItemStyleType }
 				onChange={ ( value ) =>
-					setAttributes( { itemStyleType: value } )
+					setAttributes( { sectionItemStyleType: value } )
 				}
 			>
 				<ToggleGroupControlOption
 					className={ `custom-orientation-option ${
-						attributes?.itemStyleType === 'normal'
+						attributes?.sectionItemStyleType === 'normal'
 							? 'is-active'
 							: ''
 					}` }
@@ -96,7 +50,9 @@ const ChildItemStyle = ( props ) => {
 				/>
 				<ToggleGroupControlOption
 					className={ `custom-orientation-option ${
-						attributes?.itemStyleType === 'hover' ? 'is-active' : ''
+						attributes?.sectionItemStyleType === 'hover'
+							? 'is-active'
+							: ''
 					}` }
 					aria-label="hover"
 					label={ __( 'Hover', 'icon-list' ) }
@@ -104,66 +60,29 @@ const ChildItemStyle = ( props ) => {
 				/>
 			</ToggleGroupControl>
 
-			{ attributes?.itemStyleType === 'normal' && (
+			{ attributes?.sectionItemStyleType === 'normal' && (
 				<div className="background-control-container">
 					{ /* 1. The Toggle Switch (Your Image UI) */ }
 
-					{ props?.type === 'iconPicker' && (
-						<div className="control-section control-section--icon-color">
-							<CustomHelperComponent
-								label={ __( 'Icon Colour', 'icon-list' ) }
-								hasColor={ true }
-								hasReset={ true }
-								icon={ resetIcon }
-								resetAttributes="iconColor"
-								color={ attributes?.iconColor }
-								setAttributes={ setAttributes }
-								onColorChange={ ( color ) =>
-									setAttributes( {
-										iconColor: color,
-									} )
-								}
-							/>
-						</div>
-					) }
-
-					{ props?.type === 'advanceText' && (
-						<div className="control-section control-section--icon-color">
-							<CustomHelperComponent
-								label={ __( 'Text Color', 'icon-list' ) }
-								hasColor={ true }
-								hasReset={ true }
-								icon={ resetIcon }
-								resetAttributes="textColor"
-								color={ attributes?.textColor }
-								setAttributes={ setAttributes }
-								onColorChange={ ( color ) =>
-									setAttributes( {
-										textColor: color,
-									} )
-								}
-							/>
-						</div>
-					) }
-
 					<div className="control-section control-section--background-type">
 						<BaseControl
-							id={ 'lksa' }
+							id={ 'hover-bg-type' }
 							label={ __( 'Background Color', 'icon-list' ) }
 						>
 							<ToggleGroupControl
 								className="background-type-toggel-group"
-								value={ attributes?.backgroundType }
+								value={ attributes?.sectionBackgroundType }
 								onChange={ ( value ) =>
 									setAttributes( {
-										backgroundType: value,
+										sectionBackgroundType: value,
 									} )
 								}
 								isBlock
 							>
 								<ToggleGroupControlOption
 									className={ `${
-										attributes?.backgroundType === 'solid'
+										attributes?.sectionBackgroundType ===
+										'solid'
 											? 'is-active'
 											: ''
 									}` }
@@ -173,7 +92,7 @@ const ChildItemStyle = ( props ) => {
 								/>
 								<ToggleGroupControlOption
 									className={ `${
-										attributes?.backgroundType ===
+										attributes?.sectionBackgroundType ===
 										'gradient'
 											? 'is-active'
 											: ''
@@ -188,32 +107,31 @@ const ChildItemStyle = ( props ) => {
 							</ToggleGroupControl>
 						</BaseControl>
 					</div>
-					{ /* 2. Conditional Rendering */ }
-					{ /*Inconsidaration */ }
+
 					<div className="control-section control-section--background-value">
-						{ attributes?.backgroundType === 'solid' ? (
+						{ attributes?.sectionBackgroundType === 'solid' ? (
 							<CustomHelperComponent
 								hasReset={ true }
 								icon={ resetIcon }
-								resetAttributes="backgroundColor"
+								resetAttributes="sectionBackgroundColor"
 								hasColor={ true }
 								label={ __( 'Background Color', 'icon-list' ) }
-								color={ attributes?.backgroundColor }
+								color={ attributes?.sectionBackgroundColor }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
 									setAttributes( {
-										backgroundColor: color,
-										backgroundGradient: undefined,
+										sectionBackgroundColor: color,
+										sectionBackgroundGradient: undefined,
 									} )
 								}
 							/>
 						) : (
 							<GradientPicker
-								value={ attributes?.backgroundGradient }
+								value={ attributes?.sectionBackgroundGradient }
 								onChange={ ( gradient ) =>
 									setAttributes( {
-										backgroundGradient: gradient,
-										backgroundColor: undefined,
+										sectionBackgroundGradient: gradient,
+										sectionBackgroundColor: undefined,
 									} )
 								}
 							/>
@@ -228,16 +146,16 @@ const ChildItemStyle = ( props ) => {
 								className="custom-border-toggle-group"
 								__next40pxDefaultSize
 								isBlock={ false }
-								value={ attributes[ typeKey ] }
+								value={ attributes?.sectionBorderType }
 								onChange={ ( value ) =>
 									setAttributes( {
-										[ typeKey ]: value,
+										sectionBorderType: value,
 									} )
 								}
 							>
 								<ToggleGroupControlOption
 									className={ `custom-border-option ${
-										attributes[ typeKey ] === 'none'
+										attributes?.sectionBorderType === 'none'
 											? 'is-active'
 											: ''
 									}` }
@@ -247,7 +165,8 @@ const ChildItemStyle = ( props ) => {
 								/>
 								<ToggleGroupControlOption
 									className={ `custom-border-option ${
-										attributes[ typeKey ] === 'solid'
+										attributes?.sectionBorderType ===
+										'solid'
 											? 'is-active'
 											: ''
 									}` }
@@ -257,7 +176,8 @@ const ChildItemStyle = ( props ) => {
 								/>
 								<ToggleGroupControlOption
 									className={ `custom-border-option ${
-										attributes[ typeKey ] === 'dashed'
+										attributes?.sectionBorderType ===
+										'dashed'
 											? 'is-active'
 											: ''
 									}` }
@@ -267,7 +187,8 @@ const ChildItemStyle = ( props ) => {
 								/>
 								<ToggleGroupControlOption
 									className={ `custom-border-option ${
-										attributes[ typeKey ] === 'dotted'
+										attributes?.sectionBorderType ===
+										'dotted'
 											? 'is-active'
 											: ''
 									}` }
@@ -284,21 +205,21 @@ const ChildItemStyle = ( props ) => {
 							attributes={ attributes }
 							isBorder={ true }
 							title={ 'border Width' }
-							type={ borderKey }
+							type="sectionBorder"
 						/>
 					</div>
 					<div className="control-section control-section--border-color">
 						<CustomHelperComponent
 							hasReset={ true }
-							resetAttributes="borderColor"
+							resetAttributes="sectionBorderColor"
 							hasColor={ true }
 							icon={ resetIcon }
 							label={ __( 'Border Color', 'icon-list' ) }
-							color={ attributes[ colorKey ] }
+							color={ attributes?.sectionBorderColor }
 							setAttributes={ setAttributes }
 							onColorChange={ ( color ) =>
 								setAttributes( {
-									[ colorKey ]: color,
+									sectionBorderColor: color,
 								} )
 							}
 						/>
@@ -308,17 +229,17 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'border Radius' }
-							type={ borderRadiusKey }
+							type="sectionBorderRadius"
 						/>
 					</div>
 					<div className="control-section control-section--box-shadow">
 						<ToggleControl
 							label={ __( 'Box Shadow', 'icon-list' ) }
 							className="my-custom-troggle"
-							checked={ attributes?.hasBoxShadow }
+							checked={ attributes?.sectionHasBoxShadow }
 							onChange={ ( value ) =>
 								setAttributes( {
-									hasBoxShadow: value,
+									sectionHasBoxShadow: value,
 								} )
 							}
 						/>
@@ -328,7 +249,7 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'Padding' }
-							type={ paddingKey }
+							type="sectionPadding"
 						/>
 					</div>
 					<div className="control-section control-section--margin">
@@ -336,33 +257,15 @@ const ChildItemStyle = ( props ) => {
 							setAttributes={ setAttributes }
 							attributes={ attributes }
 							title={ 'Margin' }
-							type={ marginKey }
+							type="sectionMargin"
 						/>
 					</div>
 				</div>
 			) }
 
-			{ attributes?.itemStyleType === 'hover' && (
+			{ attributes?.sectionItemStyleType === 'hover' && (
 				<>
 					<div className="background-control-container">
-						{ props?.type === 'iconPicker' && (
-							<div className="control-section control-section--icon-color">
-								<CustomHelperComponent
-									label={ __( 'Icon Colour', 'icon-list' ) }
-									hasColor={ true }
-									hasReset={ true }
-									icon={ resetIcon }
-									resetAttributes="iconColor"
-									color={ attributes?.hoverIconColor }
-									setAttributes={ setAttributes }
-									onColorChange={ ( color ) =>
-										setAttributes( {
-											hoverIconColor: color,
-										} )
-									}
-								/>
-							</div>
-						) }
 						{ /* 1. Background Section */ }
 						<div className="control-section control-section--background-type">
 							<BaseControl
@@ -371,17 +274,19 @@ const ChildItemStyle = ( props ) => {
 							>
 								<ToggleGroupControl
 									className="background-type-toggel-group"
-									value={ attributes?.hoverBackgroundType }
+									value={
+										attributes?.sectionHoverBackgroundType
+									}
 									onChange={ ( value ) =>
 										setAttributes( {
-											hoverBackgroundType: value,
+											sectionHoverBackgroundType: value,
 										} )
 									}
 									isBlock
 								>
 									<ToggleGroupControlOption
 										className={ `${
-											attributes?.hoverBackgroundType ===
+											attributes?.sectionHoverBackgroundType ===
 											'solid'
 												? 'is-active'
 												: ''
@@ -395,7 +300,7 @@ const ChildItemStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `${
-											attributes?.hoverBackgroundType ===
+											attributes?.sectionHoverBackgroundType ===
 											'gradient'
 												? 'is-active'
 												: ''
@@ -413,34 +318,40 @@ const ChildItemStyle = ( props ) => {
 
 						{ /* 2. Conditional Background Value */ }
 						<div className="control-section control-section--background-value">
-							{ attributes?.hoverBackgroundType === 'solid' ? (
+							{ attributes?.sectionHoverBackgroundType ===
+							'solid' ? (
 								<CustomHelperComponent
 									hasReset={ true }
-									resetAttributes="hoverBackgroundColor"
+									resetAttributes="sectionHoverBackgroundColor"
 									hasColor={ true }
 									icon={ resetIcon }
 									label={ __(
 										'Background Color',
 										'icon-list'
 									) }
-									color={ attributes?.hoverBackgroundColor }
+									color={
+										attributes?.sectionHoverBackgroundColor
+									}
 									setAttributes={ setAttributes }
 									onColorChange={ ( color ) =>
 										setAttributes( {
-											hoverBackgroundColor: color,
-											hoverBackgroundGradient: undefined,
+											sectionHoverBackgroundColor: color,
+											sectionHoverBackgroundGradient:
+												undefined,
 										} )
 									}
 								/>
 							) : (
 								<GradientPicker
 									value={
-										attributes?.hoverBackgroundGradient
+										attributes?.sectionHoverBackgroundGradient
 									}
 									onChange={ ( gradient ) =>
 										setAttributes( {
-											hoverBackgroundGradient: gradient,
-											hoverBackgroundColor: undefined,
+											sectionHoverBackgroundGradient:
+												gradient,
+											sectionHoverBackgroundColor:
+												undefined,
 										} )
 									}
 								/>
@@ -457,16 +368,16 @@ const ChildItemStyle = ( props ) => {
 									className="custom-border-toggle-group"
 									__next40pxDefaultSize
 									isBlock={ false }
-									value={ attributes[ hoverTypeKey ] }
+									value={ attributes?.sectionHoverBorderType }
 									onChange={ ( value ) =>
 										setAttributes( {
-											[ hoverTypeKey ]: value,
+											sectionHoverBorderType: value,
 										} )
 									}
 								>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes[ hoverTypeKey ] ===
+											attributes?.sectionHoverBorderType ===
 											'none'
 												? 'is-active'
 												: ''
@@ -477,7 +388,7 @@ const ChildItemStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes[ hoverTypeKey ] ===
+											attributes?.sectionHoverBorderType ===
 											'solid'
 												? 'is-active'
 												: ''
@@ -491,7 +402,7 @@ const ChildItemStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes[ hoverTypeKey ] ===
+											attributes?.sectionHoverBorderType ===
 											'dashed'
 												? 'is-active'
 												: ''
@@ -505,7 +416,7 @@ const ChildItemStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes[ hoverTypeKey ] ===
+											attributes?.sectionHoverBorderType ===
 											'dotted'
 												? 'is-active'
 												: ''
@@ -528,7 +439,7 @@ const ChildItemStyle = ( props ) => {
 								attributes={ attributes }
 								isBorder={ true }
 								title={ 'border Width' }
-								type={ hoverBorderkey }
+								type="sectionHoverBorder"
 							/>
 						</div>
 
@@ -536,15 +447,15 @@ const ChildItemStyle = ( props ) => {
 						<div className="control-section control-section--border-color">
 							<CustomHelperComponent
 								hasReset={ true }
-								resetAttributes="hoverBorderColor"
+								resetAttributes="sectionHoverBorderColor"
 								hasColor={ true }
 								icon={ resetIcon }
 								label={ __( 'Border Color', 'icon-list' ) }
-								color={ attributes[ hoverColorKey ] }
+								color={ attributes?.sectionHoverBorderColor }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
 									setAttributes( {
-										[ hoverColorKey ]: color,
+										sectionHoverBorderColor: color,
 									} )
 								}
 							/>
@@ -556,7 +467,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'border Radius' }
-								type={ hoverBorderRadiusKey }
+								type="sectionHoverBorderRadius"
 							/>
 						</div>
 
@@ -565,10 +476,10 @@ const ChildItemStyle = ( props ) => {
 							<ToggleControl
 								label={ __( 'Box Shadow', 'icon-list' ) }
 								className="my-custom-troggle"
-								checked={ attributes?.hoverHasBoxShadow }
+								checked={ attributes?.sectionHoverHasBoxShadow }
 								onChange={ ( value ) =>
 									setAttributes( {
-										hoverHasBoxShadow: value,
+										sectionHoverHasBoxShadow: value,
 									} )
 								}
 							/>
@@ -580,7 +491,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'Padding' }
-								type={ hoverPaddingKey }
+								type="sectionHoverPadding"
 							/>
 						</div>
 
@@ -591,7 +502,7 @@ const ChildItemStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'Margin' }
-								type={ hoverMarginKey }
+								type="sectionHoverMargin"
 							/>
 						</div>
 					</div>
@@ -601,4 +512,4 @@ const ChildItemStyle = ( props ) => {
 	);
 };
 
-export default ChildItemStyle;
+export default AdvancedStyle;
