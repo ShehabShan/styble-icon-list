@@ -36,47 +36,47 @@ import { useEffect, useRef } from '@wordpress/element';
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const advanceTextStyle = getChildBlockStyles( attributes );
 
-	const gAttrs = useGrandparentAttributes( clientId );
+	// const gAttrs = useGrandparentAttributes( clientId );
 
-	const { typography } = gAttrs;
+	// const { typography } = gAttrs;
 
-	const prevGrand = useRef( null );
+	// const prevGrand = useRef( null );
 
-	useEffect( () => {
-		const current = typography || {};
+	// useEffect( () => {
+	// 	const current = typography || {};
 
-		if ( prevGrand.current === null ) {
-			prevGrand.current = { ...current };
-			return;
-		}
+	// 	if ( prevGrand.current === null ) {
+	// 		prevGrand.current = { ...current };
+	// 		return;
+	// 	}
 
-		const previous = prevGrand.current || {};
+	// 	const previous = prevGrand.current || {};
 
-		// Find which grandparent keys actually changed
-		const changedKeys = Object.keys( current ).filter(
-			( key ) => current[ key ] !== previous[ key ]
-		);
+	// 	// Find which grandparent keys actually changed
+	// 	const changedKeys = Object.keys( current ).filter(
+	// 		( key ) => current[ key ] !== previous[ key ]
+	// 	);
 
-		if ( changedKeys.length === 0 ) {
-			return;
-		}
+	// 	if ( changedKeys.length === 0 ) {
+	// 		return;
+	// 	}
 
-		const updates = {};
+	// 	const updates = {};
 
-		changedKeys.forEach( ( key ) => {
-			// Only update child if value truly differs
-			if ( attributes[ key ] !== current[ key ] ) {
-				updates[ key ] = current[ key ];
-			}
-		} );
+	// 	changedKeys.forEach( ( key ) => {
+	// 		// Only update child if value truly differs
+	// 		if ( attributes[ key ] !== current[ key ] ) {
+	// 			updates[ key ] = current[ key ];
+	// 		}
+	// 	} );
 
-		if ( Object.keys( updates ).length > 0 ) {
-			setAttributes( updates );
-		}
+	// 	if ( Object.keys( updates ).length > 0 ) {
+	// 		setAttributes( updates );
+	// 	}
 
-		// Update snapshot memory
-		prevGrand.current = { ...current };
-	}, [ typography, attributes, setAttributes ] );
+	// 	// Update snapshot memory
+	// 	prevGrand.current = { ...current };
+	// }, [ typography, attributes, setAttributes ] );
 
 	const blockProps = useBlockProps( {
 		className: `wp-block-create-block-advanced-text`,

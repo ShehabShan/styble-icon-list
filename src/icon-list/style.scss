@@ -1,96 +1,198 @@
-@use "advancestyle";
-
 .wp-block-create-block-icon-list {
-	display: flex;
-	flex-direction: column;
+	max-width: none !important;
 	box-sizing: border-box;
-	max-width: 900px !important;
+	width: var(--section-width, 650px);
 
-	border: none !important;
-	border-width: 0 !important;
+	background: transparent !important;
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
 
-	/* gap util (keep your for-loop if you have many values) */
+	/* ----------------------------------
+	   OUTER WRAPPER (Block Spacing)
+	---------------------------------- */
+
+	/* ----------------------------------
+	   INNER LAYOUT WRAPPER
+	---------------------------------- */
+
+	display: flex;
+	justify-content: var(--section-alignment);
+
+	.icon-list-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		box-sizing: border-box;
+
+		width: var(--section-width, 650px);
+		max-width: 1200px;
+
+		gap: 6px;
+
+		background: var(--section-background-color);
+		box-shadow: var(--section-box-shadow, none);
+
+		border-color: var(--section-border-color, transparent);
+		border-style: var(--section-border-style, none);
+
+		border-top-width: var(--section-border-top-width, 0);
+		border-right-width: var(--section-border-right-width, 0);
+		border-bottom-width: var(--section-border-bottom-width, 0);
+		border-left-width: var(--section-border-left-width, 0);
+
+		border-top-left-radius: var(--section-border-radius-top, 0);
+		border-top-right-radius: var(--section-border-radius-right, 0);
+		border-bottom-right-radius: var(--section-border-radius-bottom, 0);
+		border-bottom-left-radius: var(--section-border-radius-left, 0);
+
+		padding-top: var(--section-padding-top, 0);
+		padding-right: var(--section-padding-right, 0);
+		padding-bottom: var(--section-padding-bottom, 0);
+		padding-left: var(--section-padding-left, 0);
+
+		margin-top: var(--section-margin-top, 0);
+		margin-right: var(--section-margin-right, 0);
+		margin-bottom: var(--section-margin-bottom, 0);
+		margin-left: var(--section-margin-left, 0);
+
+		&:hover {
+			//line break
+
+			/* 1. Background & Shadow */
+			background: var(--section-background-color-h);
+			box-shadow: var(--section-box-shadow-h);
+
+			/* 2. Border Style & Color */
+			border-color: var(--section-border-color-h);
+			border-style: var(--section-border-style-h);
+
+			/* 3. Border Widths on Hover */
+			border-top-width: var(--section-border-top-width-h);
+			border-right-width: var(--section-border-right-width-h);
+			border-bottom-width: var(--section-border-bottom-width-h);
+			border-left-width: var(--section-border-left-width-h);
+
+			/* 4. Border Radius on Hover */
+			border-top-left-radius: var(--section-border-radius-top-h);
+			border-top-right-radius: var(--section-border-radius-right-h);
+			border-bottom-right-radius: var(--section-border-radius-bottom-h);
+			border-bottom-left-radius: var(--section-border-radius-left-h);
+
+			/* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
+			padding-top: var(--section-padding-top-h);
+			padding-right: var(--section-padding-right-h);
+			padding-bottom: var(--section-padding-bottom-h);
+			padding-left: var(--section-padding-left-h);
+
+			/* 6. Margin on Hover */
+			margin-top: var(--section-margin-top-h);
+			margin-right: var(--section-margin-right-h);
+			margin-bottom: var(--section-margin-bottom-h);
+			margin-left: var(--section-margin-left-h);
+		}
+	}
+
+	/* ----------------------------------
+	   GAP CONTROL (10px → 50px)
+	---------------------------------- */
+
 	@for $i from 10 through 50 {
-		&.is-items-space-between-#{$i} {
+		&.is-items-space-between-#{$i} .icon-list-inner {
 			gap: #{$i}px;
 		}
 	}
 
-	&.is-list-orientation-horizontal {
-		display: flex; // Ensure display flex is active
+	/* ----------------------------------
+	   HORIZONTAL ORIENTATION
+	---------------------------------- */
+
+	&.is-list-orientation-horizontal .icon-list-inner {
 		flex-direction: row;
-		flex-wrap: wrap; // This is the "magic" line
+		flex-wrap: wrap;
 		align-items: stretch;
 	}
 
-	/* item layout */
-	> .wp-block-create-block-icon-list-item {
-		position: relative; /* required for pseudo-element separators */
+	/* ----------------------------------
+	   ITEM BASE LAYOUT
+	---------------------------------- */
+
+	.icon-list-inner > .wp-block-create-block-icon-list-item {
+		position: relative;
 		display: flex;
 		align-items: center;
 		margin: 0;
 		box-sizing: border-box;
 	}
 
-	/* reset default heading margins so alignment is stable */
-	.wp-block-create-block-icon-list-item h3,
-	.wp-block-create-block-icon-list-item h2,
-	.wp-block-create-block-icon-list-item p {
+	/* Reset heading margins inside items */
+	.icon-list-inner .wp-block-create-block-icon-list-item h1,
+	.icon-list-inner .wp-block-create-block-icon-list-item h2,
+	.icon-list-inner .wp-block-create-block-icon-list-item h3,
+	.icon-list-inner .wp-block-create-block-icon-list-item p {
 		margin: 0;
 	}
 
-	/* -------- Separator via pseudo-element (no collision with item border) -------- */
-	&:not(.is-separator-type-none) > .wp-block-create-block-icon-list-item {
-		//line break
+	/* ==========================================================
+	   SEPARATOR SYSTEM (Pseudo-element based)
+	========================================================== */
+
+	/* Activate separator unless type is none */
+	&:not(.is-separator-type-none)
+		.icon-list-inner
+		> .wp-block-create-block-icon-list-item {
 		&::after {
 			content: "";
 			position: absolute;
 			pointer-events: none;
 			z-index: 1;
 
-			/* local aliases */
 			--sep-th: var(--separator-thickness, 1px);
 			--sep-col: var(--separator-color, #ccc);
 			--sep-style: var(--separator-style, solid);
 		}
 	}
 
-	/* vertical (default) - horizontal line centered on boundary */
-	&:not(.is-list-orientation-horizontal):not(.is-separator-type-none) {
-		//line break
+	/* ----------------------------------
+	   VERTICAL (default)
+	   Horizontal line between items
+	---------------------------------- */
+
+	&:not(.is-list-orientation-horizontal):not(.is-separator-type-none)
+		.icon-list-inner
 		> .wp-block-create-block-icon-list-item {
-			//line break
-			&::after {
-				left: 16px; /* inset to avoid icon area */
-				right: 16px;
-				height: 0;
-				bottom: calc((-1 * var(--sep-th) / 2) - 10px);
-				border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
-				transform: translateY(50%);
-			}
+		&::after {
+			left: 16px;
+			right: 16px;
+			height: 0;
+			bottom: calc((-1 * var(--sep-th) / 2) - 10px);
+			border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+			transform: translateY(50%);
 		}
 
-		> .wp-block-create-block-icon-list-item:last-child::after {
+		&:last-child::after {
 			display: none;
 		}
 	}
 
-	/* horizontal layout — vertical separator to the right of each item */
-	&.is-list-orientation-horizontal:not(.is-separator-type-none) {
-		//line break
+	/* ----------------------------------
+	   HORIZONTAL MODE
+	   Vertical line between items
+	---------------------------------- */
+
+	&.is-list-orientation-horizontal:not(.is-separator-type-none)
+		.icon-list-inner
 		> .wp-block-create-block-icon-list-item {
-			//line break
-			&::after {
-				top: 12px;
-				bottom: 12px;
-				right: calc((-1 * var(--sep-th) / 2) - 10px);
-				width: 0;
-				border-right: var(--sep-th) var(--sep-style) var(--sep-col);
-				transform: translateX(50%);
-			}
+		&::after {
+			top: 12px;
+			bottom: 12px;
+			right: calc((-1 * var(--sep-th) / 2) - 10px);
+			width: 0;
+			border-right: var(--sep-th) var(--sep-style) var(--sep-col);
+			transform: translateX(50%);
 		}
 
-		> .wp-block-create-block-icon-list-item:last-child::after {
+		&:last-child::after {
 			display: none;
 		}
 	}

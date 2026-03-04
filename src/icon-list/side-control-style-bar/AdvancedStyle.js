@@ -1,7 +1,7 @@
 import {
 	BaseControl,
 	GradientPicker,
-	SelectControl,
+	RangeControl,
 	ToggleControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
@@ -14,6 +14,10 @@ import '../side-control-bar/side-bar-scss/customPopoverContainer.scss';
 import '../side-control-bar/side-bar-scss/customItemWidth.scss';
 import CustomHelperComponent from '../side-control-bar/CustomHelperComponent.js';
 import RangeControls from './RangeControls.js';
+
+import alignmentLeft from '../../assests/section-alignment-left.svg';
+import alignmentCenter from '../../assests/section-alignment-center.svg';
+import alignmentRight from '../../assests/section-alignment-right.svg';
 
 const AdvancedStyle = ( props ) => {
 	const { attributes, setAttributes, resetIcon } = props;
@@ -29,6 +33,73 @@ const AdvancedStyle = ( props ) => {
 
 	return (
 		<div>
+			<RangeControl
+				__next40pxDefaultSize
+				label={ __( 'Width', 'icon-list' ) }
+				value={ attributes?.sectionWidth }
+				onChange={ ( value ) =>
+					setAttributes( { sectionWidth: value } )
+				}
+				min={ 300 }
+				max={ 1200 }
+			/>
+			<ToggleGroupControl
+				className="list-preset"
+				label={ __( 'Alignment', 'advanced-text' ) }
+				value={ attributes?.sectionAlignment }
+				onChange={ ( value ) =>
+					setAttributes( { sectionAlignment: value } )
+				} // Use the new handler
+				isBlock
+				__next40pxDefaultSize
+			>
+				<ToggleGroupControlOption
+					className={ `list-preset-option alignment-set ${
+						attributes?.sectionAlignment === 'left'
+							? 'is-active'
+							: ''
+					}` }
+					value="left"
+					label={
+						<img
+							src={ alignmentLeft }
+							alt={ __( 'left', 'advanced-text' ) }
+						/>
+					}
+					aria-label="left"
+				/>
+				<ToggleGroupControlOption
+					className={ `list-preset-option alignment-set ${
+						attributes?.sectionAlignment === 'center'
+							? 'is-active'
+							: ''
+					}` }
+					value="center"
+					label={
+						<img
+							src={ alignmentCenter }
+							alt={ __( 'Center', 'advanced-text' ) }
+						/>
+					}
+					aria-label="center"
+				/>
+				<ToggleGroupControlOption
+					className={ `list-preset-option alignment-set ${
+						attributes?.sectionAlignment === 'right'
+							? 'is-active'
+							: ''
+					}` }
+					value="right"
+					label={
+						<img
+							src={ alignmentRight }
+							alt={ __( 'Right', 'advanced-text' ) }
+						/>
+					}
+					aria-label="right"
+				/>
+			</ToggleGroupControl>
+
 			<ToggleGroupControl
 				className="custom-orientation"
 				__next40pxDefaultSize

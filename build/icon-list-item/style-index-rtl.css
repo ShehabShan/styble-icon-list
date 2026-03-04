@@ -1,1 +1,66 @@
-.wp-block-create-block-icon-list-item{align-items:center;background:var(--background-color,transparent);border-bottom-right-radius:var(--border-radius-left,0);border-bottom-left-radius:var(--border-radius-bottom,0);border-color:var(--border-color,transparent);border-style:var(--border-style,none);border-top-right-radius:var(--border-radius-top,0);border-top-left-radius:var(--border-radius-right,0);border-width:var(--border-top-width,0) var(--border-left-width,0) var(--border-bottom-width,0) var(--border-right-width,0);box-shadow:var(--box-shadow,none);display:flex;height:auto!important;margin-block-start:var(--margin-top,0)!important;margin-bottom:var(--margin-bottom,0);margin-right:var(--margin-left,0);margin-left:var(--margin-right,0);min-height:40px;padding:var(--padding-top,0) var(--padding-left,0) var(--padding-bottom,0) var(--padding-right,0);position:relative;transition:all .2s ease-in-out;width:var(--items-width)}.wp-block-create-block-icon-list-item:hover{background:var(--bg-h,var(--background-color,transparent));border-bottom-right-radius:var(--radius-left-h,var(--border-radius-left,0));border-bottom-left-radius:var(--radius-bottom-h,var(--border-radius-bottom,0));border-color:var(--border-color-h,var(--border-color,transparent));border-style:var(--border-style-h,var(--border-style,none));border-top-right-radius:var(--radius-top-h,var(--border-radius-top,0));border-top-left-radius:var(--radius-right-h,var(--border-radius-right,0));border-width:var(--border-top-h,var(--border-top-width,0)) var(--border-left-h,var(--border-left-width,0)) var(--border-bottom-h,var(--border-bottom-width,0)) var(--border-right-h,var(--border-right-width,0));box-shadow:var(--box-shadow-h,var(--box-shadow,none));margin:var(--margin-top-h,var(--margin-top,0)) var(--margin-left-h,var(--margin-left,0)) var(--margin-bottom-h,var(--margin-bottom,0)) var(--margin-right-h,var(--margin-right,0));padding:var(--padding-top-h,var(--padding-top,0)) var(--padding-left-h,var(--padding-left,0)) var(--padding-bottom-h,var(--padding-bottom,0)) var(--padding-right-h,var(--padding-right,0))}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list-item/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-create-block-icon-list-item {
+  height: auto !important;
+  position: relative;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  width: var(--items-width);
+  background: var(--background-color, transparent);
+  border-color: var(--border-color, transparent);
+  /* 2. Individual Border Styles */
+  border-style: var(--border-style, none);
+  /* 3. Individual Border Widths */
+  border-top-width: var(--border-top-width, 0);
+  border-left-width: var(--border-right-width, 0);
+  border-bottom-width: var(--border-bottom-width, 0);
+  border-right-width: var(--border-left-width, 0);
+  /* 4. Individual Border Radii */
+  border-top-right-radius: var(--border-radius-top, 0);
+  border-top-left-radius: var(--border-radius-right, 0);
+  border-bottom-left-radius: var(--border-radius-bottom, 0);
+  border-bottom-right-radius: var(--border-radius-left, 0);
+  /* 5. Individual Padding */
+  margin-top: var(--margin-top, 0) !important;
+  margin-left: var(--margin-right, 0) !important;
+  margin-bottom: var(--margin-bottom, 0) !important;
+  margin-right: var(--margin-left, 0) !important;
+  /* Padding */
+  padding-top: var(--padding-top, 0);
+  padding-left: var(--padding-right, 0);
+  padding-bottom: var(--padding-bottom, 0);
+  padding-right: var(--padding-left, 0);
+  /* 7. Box Shadow */
+  box-shadow: var(--box-shadow, none);
+  transition: all 0.2s ease-in-out;
+}
+.wp-block-create-block-icon-list-item:hover {
+  /* 1. Background & Shadow */
+  background: var(--bg-h);
+  box-shadow: var(--box-shadow-h);
+  /* 2. Border Style & Color */
+  border-color: var(--border-color-h);
+  border-style: var(--border-style-h);
+  /* 3. Border Widths on Hover */
+  border-top-width: var(--border-top-h);
+  border-left-width: var(--border-right-h);
+  border-bottom-width: var(--border-bottom-h);
+  border-right-width: var(--border-left-h);
+  /* 4. Border Radius on Hover */
+  border-top-right-radius: var(--radius-top-h);
+  border-top-left-radius: var(--radius-right-h);
+  border-bottom-left-radius: var(--radius-bottom-h);
+  border-bottom-right-radius: var(--radius-left-h);
+  /* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
+  padding-top: var(--padding-top-h);
+  padding-left: var(--padding-right-h);
+  padding-bottom: var(--padding-bottom-h);
+  padding-right: var(--padding-left-h);
+  /* 6. Margin on Hover */
+  margin-top: var(--margin-top-h) !important;
+  margin-left: var(--margin-right-h) !important;
+  margin-bottom: var(--margin-bottom-h) !important;
+  margin-right: var(--margin-left-h) !important;
+}

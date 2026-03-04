@@ -1,7 +1,38 @@
 .advanced-style {
-	padding-top: var(--all-padding-top);
-	padding-right: var(--all-padding-right);
-	padding-bottom: var(--all-padding-bottom);
-	padding-left: var(--all-padding-left);
-	background: var(--container-bg-color);
+	background: var(--section-background-color);
+
+	border-color: var(--section-border-color, transparent);
+
+	/* 2. Individual Border Styles */
+	border-style: var(--section-border-style, none);
+
+	/* 3. Individual Border Widths */
+	border-top-width: var(--section-border-top-width, 0);
+	border-right-width: var(--section-border-right-width, 0);
+	border-bottom-width: var(--section-border-bottom-width, 0);
+	border-left-width: var(--section-border-left-width, 0);
+
+	/* 4. Individual Border Radii */
+	border-top-left-radius: var(--section-border-radius-top, 0);
+	border-top-right-radius: var(--section-border-radius-right, 0);
+	border-bottom-right-radius: var(--section-border-radius-bottom, 0);
+	border-bottom-left-radius: var(--section-border-radius-left, 0);
+
+	/* 5. Individual Padding */
+	margin-block-start: var(--section-margin-top, 0) !important;
+	margin-right: var(--section-margin-right, 0) !important;
+	margin-bottom: var(--section-margin-bottom, 0) !important;
+	margin-left: var(--section-margin-left, 0) !important;
+
+	/* Padding */
+
+	padding-top: var(--section-padding-top, 0);
+	padding-right: var(--section-padding-right, 0);
+	padding-bottom: var(--section-padding-bottom, 0);
+	padding-left: var(--section-padding-left, 0);
+
+	/* 7. Box Shadow */
+	box-shadow: var(--section-box-shadow, none);
+
+	transition: all 0.2s ease-in-out;
 }

@@ -462,9 +462,6 @@ return array(
 				'type' => 'string',
 				'default' => 'solid'
 			),
-			'containerColor' => array(
-				'type' => 'string'
-			),
 			'backgroundColor' => array(
 				'type' => 'string',
 				'default' => '#fff'
@@ -473,8 +470,7 @@ return array(
 				'type' => 'string'
 			),
 			'allPadding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'allPaddingTop' => array(
 				'type' => 'number'
@@ -489,8 +485,7 @@ return array(
 				'type' => 'number'
 			),
 			'padding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'paddingTop' => array(
 				'type' => 'number'
@@ -505,8 +500,7 @@ return array(
 				'type' => 'number'
 			),
 			'border' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'borderTop' => array(
 				'type' => 'number'
@@ -527,8 +521,7 @@ return array(
 				'type' => 'string'
 			),
 			'borderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'borderRadiusTop' => array(
 				'type' => 'number'
@@ -608,6 +601,14 @@ return array(
 			'hoverPaddingLeft' => array(
 				'type' => 'number'
 			),
+			'sectionWidth' => array(
+				'type' => 'number',
+				'default' => 650
+			),
+			'sectionAlignment' => array(
+				'type' => 'string',
+				'default' => 'center'
+			),
 			'sectionItemStyleType' => array(
 				'type' => 'string',
 				'default' => 'normal'
@@ -629,13 +630,12 @@ return array(
 			'sectionBorderColor' => array(
 				'type' => 'string'
 			),
-			'hasSectionBoxShadow' => array(
+			'sectionHasBoxShadow' => array(
 				'type' => 'boolean',
 				'default' => false
 			),
 			'sectionBorder' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionBorderTop' => array(
 				'type' => 'number'
@@ -650,8 +650,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionBorderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionBorderRadiusTop' => array(
 				'type' => 'number'
@@ -666,8 +665,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionPadding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionPaddingTop' => array(
 				'type' => 'number'
@@ -682,8 +680,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionMargin' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionMarginTop' => array(
 				'type' => 'number'
@@ -717,8 +714,7 @@ return array(
 				'default' => false
 			),
 			'sectionHoverBorder' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionHoverBorderTop' => array(
 				'type' => 'number'
@@ -733,8 +729,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionHoverBorderRadius' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionHoverBorderRadiusTop' => array(
 				'type' => 'number'
@@ -749,8 +744,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionHoverPadding' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionHoverPaddingTop' => array(
 				'type' => 'number'
@@ -765,8 +759,7 @@ return array(
 				'type' => 'number'
 			),
 			'sectionHoverMargin' => array(
-				'type' => 'number',
-				'default' => 0
+				'type' => 'number'
 			),
 			'sectionHoverMarginTop' => array(
 				'type' => 'number'
@@ -903,8 +896,7 @@ return array(
 				'type' => 'string'
 			),
 			'borderColor' => array(
-				'type' => 'string',
-				'default' => '#FFFFFF'
+				'type' => 'string'
 			),
 			'borderRadius' => array(
 				'type' => 'number'

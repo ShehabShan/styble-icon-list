@@ -96,76 +96,30 @@
 	}
 
 	&:hover {
-		background: var(--bg-h-IP, var(--background-color-IP, transparent));
+		background: var(--bg-h-IP);
+		box-shadow: var(--box-shadow-h-IP);
+		border-color: var(--border-color-h-IP);
+		border-style: var(--border-style-h-IP);
 
-		/* =========================
-	   Box Shadow
-	========================= */
+		border-top-width: var(--border-top-h-IP);
+		border-right-width: var(--border-right-h-IP);
+		border-bottom-width: var(--border-bottom-h-IP);
+		border-left-width: var(--border-left-h-IP);
 
-		box-shadow: var(--box-shadow-h-IP, var(--box-shadow-IP, none));
+		padding-top: var(--padding-top-h-IP);
+		padding-right: var(--padding-right-h-IP);
+		padding-bottom: var(--padding-bottom-h-IP);
+		padding-left: var(--padding-left-h-IP);
 
-		/* =========================
-	   Border
-	========================= */
+		margin-top: var(--margin-top-h-IP);
+		margin-right: var(--margin-right-h-IP);
+		margin-bottom: var(--margin-bottom-h-IP);
+		margin-left: var(--margin-left-h-IP);
 
-		border-color: var(
-			--border-color-h-IP,
-			var(--border-color-IP, transparent)
-		);
-		border-style: var(--border-style-h-IP, var(--border-style-IP, solid));
-
-		border-top-width: var(--border-top-h-IP, var(--border-top-width-IP, 0));
-		border-right-width: var(
-			--border-right-h-IP,
-			var(--border-right-width-IP, 0)
-		);
-		border-bottom-width: var(
-			--border-bottom-h-IP,
-			var(--border-bottom-width-IP, 0)
-		);
-		border-left-width: var(
-			--border-left-h-IP,
-			var(--border-left-width-IP, 0)
-		);
-
-		/* =========================
-	   Padding
-	========================= */
-
-		padding-top: var(--padding-top-h-IP, var(--padding-top-IP, 0));
-		padding-right: var(--padding-right-h-IP, var(--padding-right-IP, 0));
-		padding-bottom: var(--padding-bottom-h-IP, var(--padding-bottom-IP, 0));
-		padding-left: var(--padding-left-h-IP, var(--padding-left-IP, 0));
-
-		/* =========================
-	   Margin
-	========================= */
-
-		margin-top: var(--margin-top-h-IP, var(--margin-top-IP, 0));
-		margin-right: var(--margin-right-h-IP, var(--margin-right-IP, 0));
-		margin-bottom: var(--margin-bottom-h-IP, var(--margin-bottom-IP, 0));
-		margin-left: var(--margin-left-h-IP, var(--margin-left-IP, 0));
-
-		/* =========================
-	   Border Radius
-	========================= */
-
-		border-top-left-radius: var(
-			--radius-top-h-IP,
-			var(--border-radius-top-IP, 0)
-		);
-		border-top-right-radius: var(
-			--radius-right-h-IP,
-			var(--border-radius-right-IP, 0)
-		);
-		border-bottom-right-radius: var(
-			--radius-bottom-h-IP,
-			var(--border-radius-bottom-IP, 0)
-		);
-		border-bottom-left-radius: var(
-			--radius-left-h-IP,
-			var(--border-radius-left-IP, 0)
-		);
+		border-top-left-radius: var(--radius-top-h-IP);
+		border-top-right-radius: var(--radius-right-h-IP);
+		border-bottom-right-radius: var(--radius-bottom-h-IP);
+		border-bottom-left-radius: var(--radius-left-h-IP);
 
 		.dashicons {
 			color: var(--hover-icon-color, var(--icon-color)) !important;

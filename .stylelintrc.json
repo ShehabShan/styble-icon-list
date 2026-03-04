@@ -1,10 +1,12 @@
 {
 	"extends": "@wordpress/stylelint-config/scss",
-	"rule-empty-line-before": "always",
-	"selector-class-pattern": [
-		"^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
-		{
-			"message": "Selector should use lowercase and separate words with hyphens"
-		}
-	]
+	"rules": {
+		"rule-empty-line-before": null,
+		"selector-class-pattern": [
+			"^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+			{
+				"message": "Selector should use lowercase and separate words with hyphens"
+			}
+		]
+	}
 }

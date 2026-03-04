@@ -8,7 +8,7 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 		if ( isValid( base ) ) {
 			return Number( base );
 		}
-		return 0;
+		return undefined;
 	};
 
 	return {
@@ -18,92 +18,42 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 		left: resolve( left ),
 	};
 };
-export const getIconListStyle = ( attributes ) => {
-	const cleanStyles = ( obj ) => {
-		return Object.fromEntries(
-			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
-		);
-	};
-
-	const withUnit = ( value, unit = 'px' ) => {
-		if ( ! value || value === 0 || value === '0' ) {
-			return null;
-		}
-
-		return `${ value }${ unit }`;
-	};
-
-	// Units Logic
-
-	const getUnit = ( key ) => attributes?.[ key ] || 'px';
-
-	const apU = getUnit( 'allPaddingUnits' );
-
-	const getBox = ( attrs, prefix ) =>
-		getResolvedSides(
-			attrs?.[ prefix ],
-			attrs?.[ `${ prefix }Top` ],
-			attrs?.[ `${ prefix }Right` ],
-			attrs?.[ `${ prefix }Bottom` ],
-			attrs?.[ `${ prefix }Left` ]
-		);
-
-	const allPadding = getBox( attributes, 'allPadding' );
-
-	let itemsWidthValue = null;
-
-	if ( attributes?.itemWidthType === 'auto' ) {
-		itemsWidthValue = 'fit-content';
-	} else if ( attributes?.itemWidthType === 'custom' ) {
-		itemsWidthValue = `${ attributes.itemsWidth }px`;
-	}
-
-	return cleanStyles( {
-		// ===============================
-		// GENERAL
-		// ===============================
-		'--items-width': itemsWidthValue,
-		'--separator-thickness': withUnit(
-			attributes?.separatorThickness,
-			'px'
-		),
-		'--separator-color': attributes?.separatorColor,
-		'--separator-style': attributes?.separatorType,
-		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
-		'--container-bg-color': attributes?.containerColor,
-
-		// ===============================
-		// PARENT CONTAINER STYLES (Padding use pU)
-		// ===============================
-		'--all-padding-top': withUnit( allPadding?.top, apU ),
-		'--all-padding-right': withUnit( allPadding?.right, apU ),
-		'--all-padding-bottom': withUnit( allPadding?.bottom, apU ),
-		'--all-padding-left': withUnit( allPadding?.left, apU ),
-	} );
-};
 
 export const getBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
 		return Object.fromEntries(
-			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+			Object.entries( obj ).filter(
+				( [ _, value ] ) =>
+					value !== undefined && value !== null && value !== ''
+			)
 		);
 	};
 
 	const withUnit = ( value, unit = 'px' ) => {
-		if ( ! value || value === 0 || value === '0' ) {
+		if ( value === undefined || value === null || value === '' ) {
 			return null;
 		}
-
 		return `${ value }${ unit }`;
 	};
 
+	const getFallbackValue = ( hoverVal, normalVal ) => {
+		const isValid = ( v ) => v !== undefined && v !== null && v !== '';
+
+		return isValid( hoverVal ) ? hoverVal : normalVal;
+	};
+
 	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
+	const S_SHADOW_VAL =
+		'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px';
 
 	// Units Logic
 
 	const getUnit = ( key ) => attributes?.[ key ] || 'px';
 
-	const apU = getUnit( 'allPaddingUnits' );
+	const spU = getUnit( 'sectionPaddingUnits' );
+	const smU = getUnit( 'sectionMarginUnits' );
+	const sbU = getUnit( 'sectionBorderUnits' );
+	const srU = getUnit( 'sectionBorderRadiusUnits' );
 
 	const pU = getUnit( 'paddingUnits' );
 	const mU = getUnit( 'marginUnits' );
@@ -128,7 +78,21 @@ export const getBlockStyles = ( attributes ) => {
 			attrs?.[ `${ prefix }Left` ]
 		);
 
-	const allPadding = getBox( attributes, 'allPadding' );
+	const sMargin = getBox( attributes, 'sectionMargin' );
+
+	const sPadding = getBox( attributes, 'sectionPadding' );
+
+	const sBorder = getBox( attributes, 'sectionBorder' );
+
+	const sBorderRadius = getBox( attributes, 'sectionBorderRadius' );
+
+	const sHoverMargin = getBox( attributes, 'sectionHoverMargin' );
+
+	const sHoverPadding = getBox( attributes, 'sectionHoverPadding' );
+
+	const sHoverBorder = getBox( attributes, 'sectionHoverBorder' );
+
+	const sHoverBorderRadius = getBox( attributes, 'sectionHoverBorderRadius' );
 
 	const margin = getBox( attributes, 'margin' );
 
@@ -160,18 +124,168 @@ export const getBlockStyles = ( attributes ) => {
 	const hoverBackground =
 		attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
 
+	const sBackgroundValue =
+		attributes?.sectionBackgroundGradient ||
+		attributes?.sectionBackgroundColor;
+
+	const sHoverBackgroundValue =
+		attributes?.sectionHoverBackgroundGradient ||
+		attributes?.sectionHoverBackgroundColor;
+
 	return cleanStyles( {
 		// ===============================
-		// GENERAL
+		//Advance Section
 		// ===============================
-		'--items-width': itemsWidthValue,
-		'--selectedIcon': attributes?.selectedIcon,
+		'--section-width':
+			attributes?.sectionWidth && `${ attributes?.sectionWidth }px`,
+		'--section-alignment': attributes?.sectionAlignment,
+		'--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
+
 		'--separator-thickness': withUnit(
 			attributes?.separatorThickness,
 			'px'
 		),
 		'--separator-color': attributes?.separatorColor,
 		'--separator-style': attributes?.separatorType,
+		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
+
+		// ===============================
+		// PARENT CONTAINER STYLES (Padding use pU)
+		// ===============================
+
+		'--section-background-color': sBackgroundValue || null,
+
+		// Padding (use pU)
+		'--section-padding-top': withUnit( sPadding?.top, spU ),
+		'--section-padding-right': withUnit( sPadding?.right, spU ),
+		'--section-padding-bottom': withUnit( sPadding?.bottom, spU ),
+		'--section-padding-left': withUnit( sPadding?.left, spU ),
+
+		//parent border
+		'--section-border-color': attributes?.sectionBorderColor,
+		'--section-border-style': attributes?.sectionBorderType,
+		'--section-border-top-width': withUnit( sBorder?.top, sbU ),
+		'--section-border-right-width': withUnit( sBorder?.right, sbU ),
+		'--section-border-bottom-width': withUnit( sBorder?.bottom, sbU ),
+		'--section-border-left-width': withUnit( sBorder?.left, sbU ),
+
+		// Margin (use mU)
+		'--section-margin-top': withUnit( sMargin?.top, smU ),
+		'--section-margin-right': withUnit( sMargin?.right, smU ),
+		'--section-margin-bottom': withUnit( sMargin?.bottom, smU ),
+		'--section-margin-left': withUnit( sMargin?.left, smU ),
+
+		// Border Radius (use rU)
+		'--section-border-radius-top': withUnit( sBorderRadius?.top, srU ),
+		'--section-border-radius-right': withUnit( sBorderRadius?.right, srU ),
+		'--section-border-radius-bottom': withUnit(
+			sBorderRadius?.bottom,
+			srU
+		),
+		'--section-border-radius-left': withUnit( sBorderRadius?.left, srU ),
+
+		//Hover section style
+
+		'--section-background-color-h':
+			sHoverBackgroundValue || sBackgroundValue || null,
+
+		'--section-box-shadow-h':
+			attributes?.sectionHoverHasBoxShadow ||
+			attributes?.sectionHasBoxShadow
+				? S_SHADOW_VAL
+				: null,
+
+		// Padding Hover (Falls back to normal padding)
+		'--section-padding-top-h': withUnit(
+			getFallbackValue( sHoverPadding?.top, sPadding?.top ),
+			pU
+		),
+		'--section-padding-right-h': withUnit(
+			getFallbackValue( sHoverPadding?.right, sPadding?.right ),
+			pU
+		),
+		'--section-padding-bottom-h': withUnit(
+			getFallbackValue( sHoverPadding?.bottom, sPadding?.bottom ),
+			pU
+		),
+		'--section-padding-left-h': withUnit(
+			getFallbackValue( sHoverPadding?.left, sPadding?.left ),
+			pU
+		),
+
+		// Border Hover
+		'--section-border-color-h':
+			attributes?.sectionHoverBorderColor ||
+			attributes?.sectionBorderColor,
+		'--section-border-style-h':
+			attributes?.sectionHoverBorderType || attributes?.sectionBorderType,
+
+		'--section-border-top-width-h': withUnit(
+			getFallbackValue( sHoverBorder?.top, sBorder?.top ),
+			bU
+		),
+		'--section-border-right-width-h': withUnit(
+			getFallbackValue( sHoverBorder?.right, sBorder?.right ),
+			bU
+		),
+		'--section-border-bottom-width-h': withUnit(
+			getFallbackValue( sHoverBorder?.bottom, sBorder?.bottom ),
+			bU
+		),
+		'--section-border-left-width-h': withUnit(
+			getFallbackValue( sHoverBorder?.left, sBorder?.left ),
+			bU
+		),
+
+		// Margin Hover
+		'--section-margin-top-h': withUnit(
+			getFallbackValue( sHoverMargin?.top, sMargin?.top ),
+			mU
+		),
+		'--section-margin-right-h': withUnit(
+			getFallbackValue( sHoverMargin?.right, sMargin?.right ),
+			mU
+		),
+		'--section-margin-bottom-h': withUnit(
+			getFallbackValue( sHoverMargin?.bottom, sMargin?.bottom ),
+			mU
+		),
+		'--section-margin-left-h': withUnit(
+			getFallbackValue( sHoverMargin?.left, sMargin?.left ),
+			mU
+		),
+
+		// Border Width (use bU)
+
+		// Border Radius (use rU)
+
+		// Border Radius Hover Fallback
+		'--section-border-radius-top-h': withUnit(
+			getFallbackValue( sHoverBorderRadius?.top, sBorderRadius?.top ),
+			rU
+		),
+		'--section-border-radius-right-h': withUnit(
+			getFallbackValue( sHoverBorderRadius?.right, sBorderRadius?.right ),
+			rU
+		),
+		'--section-border-radius-bottom-h': withUnit(
+			getFallbackValue(
+				sHoverBorderRadius?.bottom,
+				sBorderRadius?.bottom
+			),
+			rU
+		),
+		'--section-border-radius-left-h': withUnit(
+			getFallbackValue( sHoverBorderRadius?.left, sBorderRadius?.left ),
+			rU
+		),
+
+		// ===============================
+		// GENERAL
+		// ===============================
+		'--items-width': itemsWidthValue,
+		'--selectedIcon': attributes?.selectedIcon,
+
 		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
 		'--icon-color': attributes?.iconColor,
 		'--hover-icon-color': attributes?.hoverIconColor,
@@ -194,14 +308,6 @@ export const getBlockStyles = ( attributes ) => {
 				attributes?.isStrikethrough ? 'line-through' : ''
 			}`.trim(),
 		'--text-transform': attributes?.textTransform,
-
-		// ===============================
-		// PARENT CONTAINER STYLES (Padding use pU)
-		// ===============================
-		'--all-padding-top': withUnit( allPadding?.top, apU ),
-		'--all-padding-right': withUnit( allPadding?.right, apU ),
-		'--all-padding-bottom': withUnit( allPadding?.bottom, apU ),
-		'--all-padding-left': withUnit( allPadding?.left, apU ),
 
 		// ===============================
 		// CHILD DEFAULTS
@@ -241,53 +347,115 @@ export const getBlockStyles = ( attributes ) => {
 		// ===============================
 		// HOVER DEFAULTS
 		// ===============================
-		'--bg-h': hoverBackground || null,
+		'--bg-h': hoverBackground || backgroundValue || null,
+		'--box-shadow-h':
+			attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow
+				? SHADOW_VAL
+				: null,
 
-		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+		// Border Color & Style Fallbacks
+		'--border-color-h':
+			attributes?.hoverBorderColor || attributes?.borderColor,
+		'--border-style-h':
+			attributes?.hoverBorderType || attributes?.borderType,
 
-		'--border-color-h': attributes?.hoverBorderColor,
-		'--border-style-h': attributes?.hoverBorderType,
+		// Hover Padding (Falls back to normal padding, uses hpU)
+		'--padding-top-h': withUnit(
+			getFallbackValue( hoverPadding?.top, padding?.top ),
+			hpU
+		),
+		'--padding-right-h': withUnit(
+			getFallbackValue( hoverPadding?.right, padding?.right ),
+			hpU
+		),
+		'--padding-bottom-h': withUnit(
+			getFallbackValue( hoverPadding?.bottom, padding?.bottom ),
+			hpU
+		),
+		'--padding-left-h': withUnit(
+			getFallbackValue( hoverPadding?.left, padding?.left ),
+			hpU
+		),
 
-		// Hover Padding (use hpU)
-		'--padding-top-h': withUnit( hoverPadding?.top, hpU ),
-		'--padding-right-h': withUnit( hoverPadding?.right, hpU ),
-		'--padding-bottom-h': withUnit( hoverPadding?.bottom, hpU ),
-		'--padding-left-h': withUnit( hoverPadding?.left, hpU ),
+		// Hover Margin (Falls back to normal margin, uses hmU)
+		'--margin-top-h': withUnit(
+			getFallbackValue( hoverMargin?.top, margin?.top ),
+			hmU
+		),
+		'--margin-right-h': withUnit(
+			getFallbackValue( hoverMargin?.right, margin?.right ),
+			hmU
+		),
+		'--margin-bottom-h': withUnit(
+			getFallbackValue( hoverMargin?.bottom, margin?.bottom ),
+			hmU
+		),
+		'--margin-left-h': withUnit(
+			getFallbackValue( hoverMargin?.left, margin?.left ),
+			hmU
+		),
 
-		// Hover Margin (use hmU)
-		'--margin-top-h': withUnit( hoverMargin?.top, hmU ),
-		'--margin-right-h': withUnit( hoverMargin?.right, hmU ),
-		'--margin-bottom-h': withUnit( hoverMargin?.bottom, hmU ),
-		'--margin-left-h': withUnit( hoverMargin?.left, hmU ),
+		// Hover Border Width (Falls back to normal border width, uses hbU)
+		'--border-top-h': withUnit(
+			getFallbackValue( hoverBorder?.top, border?.top ),
+			hbU
+		),
+		'--border-right-h': withUnit(
+			getFallbackValue( hoverBorder?.right, border?.right ),
+			hbU
+		),
+		'--border-bottom-h': withUnit(
+			getFallbackValue( hoverBorder?.bottom, border?.bottom ),
+			hbU
+		),
+		'--border-left-h': withUnit(
+			getFallbackValue( hoverBorder?.left, border?.left ),
+			hbU
+		),
 
-		// Hover Border (use hbU)
-		'--border-top-h': withUnit( hoverBorder?.top, hbU ),
-		'--border-right-h': withUnit( hoverBorder?.right, hbU ),
-		'--border-bottom-h': withUnit( hoverBorder?.bottom, hbU ),
-		'--border-left-h': withUnit( hoverBorder?.left, hbU ),
-
-		// Hover Radius (use hrU)
-		'--radius-top-h': withUnit( hoverRadius?.top, hrU ),
-		'--radius-right-h': withUnit( hoverRadius?.right, hrU ),
-		'--radius-bottom-h': withUnit( hoverRadius?.bottom, hrU ),
-		'--radius-left-h': withUnit( hoverRadius?.left, hrU ),
+		// Hover Radius (Falls back to normal radius, uses hrU)
+		'--radius-top-h': withUnit(
+			getFallbackValue( hoverRadius?.top, borderRadius?.top ),
+			hrU
+		),
+		'--radius-right-h': withUnit(
+			getFallbackValue( hoverRadius?.right, borderRadius?.right ),
+			hrU
+		),
+		'--radius-bottom-h': withUnit(
+			getFallbackValue( hoverRadius?.bottom, borderRadius?.bottom ),
+			hrU
+		),
+		'--radius-left-h': withUnit(
+			getFallbackValue( hoverRadius?.left, borderRadius?.left ),
+			hrU
+		),
 	} );
 };
 
 export const getChildBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
 		return Object.fromEntries(
-			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
+			Object.entries( obj ).filter(
+				( [ _, value ] ) =>
+					value !== undefined && value !== null && value !== ''
+			)
 		);
 	};
 
 	const withUnit = ( value, unit = 'px' ) => {
-		if ( ! value ) {
+		if ( value === undefined || value === null || value === '' ) {
 			return null;
 		}
-
 		return `${ value }${ unit }`;
 	};
+
+	const getFallbackValue = ( hoverVal, normalVal ) => {
+		const isValid = ( v ) => v !== undefined && v !== null && v !== '';
+
+		return isValid( hoverVal ) ? hoverVal : normalVal;
+	};
+
 	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
 
 	// Units Logic
@@ -397,39 +565,88 @@ export const getChildBlockStyles = ( attributes ) => {
 		'--border-radius-left-IP': withUnit( borderRadius?.left, rU ),
 
 		// ===============================
-		// HOVER DEFAULTS
+		// HOVER DEFAULTS (With Fallbacks)
 		// ===============================
-		'--bg-h-IP': hoverBackground || null,
+		'--bg-h-IP': hoverBackground || backgroundValue || null,
+		'--box-shadow-h-IP':
+			attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow
+				? SHADOW_VAL
+				: null,
+		'--border-color-h-IP':
+			attributes?.hoverBorderColor || attributes?.childBorderColor,
+		'--border-style-h-IP':
+			attributes?.hoverBorderType || attributes?.childBorderType,
 
-		'--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+		// Hover Padding (Falls back to normal padding, uses hpU)
+		'--padding-top-h-IP': withUnit(
+			getFallbackValue( hoverPadding?.top, padding?.top ),
+			hpU
+		),
+		'--padding-right-h-IP': withUnit(
+			getFallbackValue( hoverPadding?.right, padding?.right ),
+			hpU
+		),
+		'--padding-bottom-h-IP': withUnit(
+			getFallbackValue( hoverPadding?.bottom, padding?.bottom ),
+			hpU
+		),
+		'--padding-left-h-IP': withUnit(
+			getFallbackValue( hoverPadding?.left, padding?.left ),
+			hpU
+		),
 
-		'--border-color-h-IP': attributes?.hoverBorderColor,
-		'--border-style-h-IP': attributes?.hoverBorderType,
+		// Hover Margin (Falls back to normal margin, uses hmU)
+		'--margin-top-h-IP': withUnit(
+			getFallbackValue( hoverMargin?.top, margin?.top ),
+			hmU
+		),
+		'--margin-right-h-IP': withUnit(
+			getFallbackValue( hoverMargin?.right, margin?.right ),
+			hmU
+		),
+		'--margin-bottom-h-IP': withUnit(
+			getFallbackValue( hoverMargin?.bottom, margin?.bottom ),
+			hmU
+		),
+		'--margin-left-h-IP': withUnit(
+			getFallbackValue( hoverMargin?.left, margin?.left ),
+			hmU
+		),
 
-		// Hover Padding (use hpU)
-		'--padding-top-h-IP': withUnit( hoverPadding?.top, hpU ),
-		'--padding-right-h-IP': withUnit( hoverPadding?.right, hpU ),
-		'--padding-bottom-h-IP': withUnit( hoverPadding?.bottom, hpU ),
-		'--padding-left-h-IP': withUnit( hoverPadding?.left, hpU ),
+		// Hover Border Width (Falls back to normal border width, uses hbU)
+		'--border-top-h-IP': withUnit(
+			getFallbackValue( hoverBorder?.top, border?.top ),
+			hbU
+		),
+		'--border-right-h-IP': withUnit(
+			getFallbackValue( hoverBorder?.right, border?.right ),
+			hbU
+		),
+		'--border-bottom-h-IP': withUnit(
+			getFallbackValue( hoverBorder?.bottom, border?.bottom ),
+			hbU
+		),
+		'--border-left-h-IP': withUnit(
+			getFallbackValue( hoverBorder?.left, border?.left ),
+			hbU
+		),
 
-		// Hover Margin (use hmU)
-		'--margin-top-h-IP': withUnit( hoverMargin?.top, hmU ),
-		'--margin-right-h-IP': withUnit( hoverMargin?.right, hmU ),
-		'--margin-bottom-h-IP': withUnit( hoverMargin?.bottom, hmU ),
-		'--margin-left-h-IP': withUnit( hoverMargin?.left, hmU ),
-
-		// Hover Border (use hbU)
-		'--border-top-h-IP': withUnit( hoverBorder?.top, hbU ),
-		'--border-right-h-IP': withUnit( hoverBorder?.right, hbU ),
-		'--border-bottom-h-IP': withUnit( hoverBorder?.bottom, hbU ),
-		'--border-left-h-IP': withUnit( hoverBorder?.left, hbU ),
-
-		//Child hover border
-
-		// Hover Radius (use hrU)
-		'--radius-top-h-IP': withUnit( hoverRadius?.top, hrU ),
-		'--radius-right-h-IP': withUnit( hoverRadius?.right, hrU ),
-		'--radius-bottom-h-IP': withUnit( hoverRadius?.bottom, hrU ),
-		'--radius-left-h-IP': withUnit( hoverRadius?.left, hrU ),
+		// Hover Radius (Falls back to normal radius, uses hrU)
+		'--radius-top-h-IP': withUnit(
+			getFallbackValue( hoverRadius?.top, borderRadius?.top ),
+			hrU
+		),
+		'--radius-right-h-IP': withUnit(
+			getFallbackValue( hoverRadius?.right, borderRadius?.right ),
+			hrU
+		),
+		'--radius-bottom-h-IP': withUnit(
+			getFallbackValue( hoverRadius?.bottom, borderRadius?.bottom ),
+			hrU
+		),
+		'--radius-left-h-IP': withUnit(
+			getFallbackValue( hoverRadius?.left, borderRadius?.left ),
+			hrU
+		),
 	} );
 };

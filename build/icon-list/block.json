@@ -178,9 +178,6 @@
       "type": "string",
       "default": "solid"
     },
-    "containerColor": {
-      "type": "string"
-    },
     "backgroundColor": {
       "type": "string",
       "default": "#fff"
@@ -189,8 +186,7 @@
       "type": "string"
     },
     "allPadding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "allPaddingTop": {
       "type": "number"
@@ -205,8 +201,7 @@
       "type": "number"
     },
     "padding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "paddingTop": {
       "type": "number"
@@ -221,8 +216,7 @@
       "type": "number"
     },
     "border": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "borderTop": {
       "type": "number"
@@ -243,8 +237,7 @@
       "type": "string"
     },
     "borderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "borderRadiusTop": {
       "type": "number"
@@ -324,6 +317,14 @@
     "hoverPaddingLeft": {
       "type": "number"
     },
+    "sectionWidth": {
+      "type": "number",
+      "default": 650
+    },
+    "sectionAlignment": {
+      "type": "string",
+      "default": "center"
+    },
     "sectionItemStyleType": {
       "type": "string",
       "default": "normal"
@@ -345,13 +346,12 @@
     "sectionBorderColor": {
       "type": "string"
     },
-    "hasSectionBoxShadow": {
+    "sectionHasBoxShadow": {
       "type": "boolean",
       "default": false
     },
     "sectionBorder": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionBorderTop": {
       "type": "number"
@@ -366,8 +366,7 @@
       "type": "number"
     },
     "sectionBorderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionBorderRadiusTop": {
       "type": "number"
@@ -382,8 +381,7 @@
       "type": "number"
     },
     "sectionPadding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionPaddingTop": {
       "type": "number"
@@ -398,8 +396,7 @@
       "type": "number"
     },
     "sectionMargin": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionMarginTop": {
       "type": "number"
@@ -433,8 +430,7 @@
       "default": false
     },
     "sectionHoverBorder": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionHoverBorderTop": {
       "type": "number"
@@ -449,8 +445,7 @@
       "type": "number"
     },
     "sectionHoverBorderRadius": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionHoverBorderRadiusTop": {
       "type": "number"
@@ -465,8 +460,7 @@
       "type": "number"
     },
     "sectionHoverPadding": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionHoverPaddingTop": {
       "type": "number"
@@ -481,8 +475,7 @@
       "type": "number"
     },
     "sectionHoverMargin": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "sectionHoverMarginTop": {
       "type": "number"

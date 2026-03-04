@@ -2,6 +2,7 @@ import {
 	useBlockProps,
 	InnerBlocks,
 	InspectorControls,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { useSelect, useDispatch } from '@wordpress/data';
@@ -34,14 +35,13 @@ import ListPreset from './side-control-bar/ListPreset.js';
 import ListOrientation from './side-control-bar/ListOrientation.js';
 import Typography from './side-control-style-bar/Typography.js';
 import CustomHelperComponent from './side-control-bar/CustomHelperComponent.js';
-import { getIconListStyle } from '../utils/style.js';
+import { getBlockStyles } from '../utils/style.js';
 import { presetData } from '../utils/dataCenter.js';
 import RangeControls from './side-control-style-bar/RangeControls.js';
 import ItemStyle from './side-control-style-bar/ItemStyle.js';
 
 import settingsIcon from '../assests/setting.svg';
 import paletteIcon from '../assests/palette.svg';
-import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 import AdvancedStyle from './side-control-style-bar/AdvancedStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		iconColor,
 	} = attributes;
 
-	const parentStyle = getIconListStyle( attributes );
+	const parentStyle = getBlockStyles( attributes );
 	const [ activeTab, setActiveTab ] = useState( 'general' );
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const sidebarRef = useRef( null );
@@ -88,6 +88,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 		style: { ...parentStyle },
 	} );
+
+	const innerBlocksProps = useInnerBlocksProps(
+		{ className: 'icon-list-inner' },
+		{
+			allowedBlocks: [ 'create-block/icon-list-item' ],
+		}
+	);
 
 	//console text area
 
@@ -226,26 +233,6 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						}
 					/>
 
-					<CustomHelperComponent
-						label={ __( 'Container Color', 'icon-list' ) }
-						hasColor={ true }
-						hasReset={ true }
-						icon={ resetIcon }
-						resetAttributes="containerColor"
-						setAttributes={ setAttributes }
-						color={ attributes?.containerColor }
-						onColorChange={ ( color ) =>
-							setAttributes( { containerColor: color } )
-						}
-					/>
-
-					<RangeControls
-						setAttributes={ setAttributes }
-						attributes={ attributes }
-						title={ 'Padding' }
-						type="allPadding"
-					/>
-
 					<ItemStyle
 						attributes={ attributes }
 						setAttributes={ setAttributes }
@@ -368,9 +355,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				) }
 			</InspectorControls>
 			<div { ...blockProps }>
-				<InnerBlocks
-					allowedBlocks={ [ 'create-block/icon-list-item' ] }
-				/>
+				<div { ...innerBlocksProps } />
 			</div>
 		</>
 	);

@@ -107,8 +107,7 @@
       "type": "string"
     },
     "borderColor": {
-      "type": "string",
-      "default": "#FFFFFF"
+      "type": "string"
     },
     "borderRadius": {
       "type": "number"

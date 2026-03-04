@@ -1,1 +1,288 @@
-.advanced-style{background:var(--container-bg-color);padding:var(--all-padding-top) var(--all-padding-right) var(--all-padding-bottom) var(--all-padding-left)}.wp-block-create-block-icon-list{border:0!important;box-sizing:border-box;display:flex;flex-direction:column;max-width:900px!important}.wp-block-create-block-icon-list.is-items-space-between-10{gap:10px}.wp-block-create-block-icon-list.is-items-space-between-11{gap:11px}.wp-block-create-block-icon-list.is-items-space-between-12{gap:12px}.wp-block-create-block-icon-list.is-items-space-between-13{gap:13px}.wp-block-create-block-icon-list.is-items-space-between-14{gap:14px}.wp-block-create-block-icon-list.is-items-space-between-15{gap:15px}.wp-block-create-block-icon-list.is-items-space-between-16{gap:16px}.wp-block-create-block-icon-list.is-items-space-between-17{gap:17px}.wp-block-create-block-icon-list.is-items-space-between-18{gap:18px}.wp-block-create-block-icon-list.is-items-space-between-19{gap:19px}.wp-block-create-block-icon-list.is-items-space-between-20{gap:20px}.wp-block-create-block-icon-list.is-items-space-between-21{gap:21px}.wp-block-create-block-icon-list.is-items-space-between-22{gap:22px}.wp-block-create-block-icon-list.is-items-space-between-23{gap:23px}.wp-block-create-block-icon-list.is-items-space-between-24{gap:24px}.wp-block-create-block-icon-list.is-items-space-between-25{gap:25px}.wp-block-create-block-icon-list.is-items-space-between-26{gap:26px}.wp-block-create-block-icon-list.is-items-space-between-27{gap:27px}.wp-block-create-block-icon-list.is-items-space-between-28{gap:28px}.wp-block-create-block-icon-list.is-items-space-between-29{gap:29px}.wp-block-create-block-icon-list.is-items-space-between-30{gap:30px}.wp-block-create-block-icon-list.is-items-space-between-31{gap:31px}.wp-block-create-block-icon-list.is-items-space-between-32{gap:32px}.wp-block-create-block-icon-list.is-items-space-between-33{gap:33px}.wp-block-create-block-icon-list.is-items-space-between-34{gap:34px}.wp-block-create-block-icon-list.is-items-space-between-35{gap:35px}.wp-block-create-block-icon-list.is-items-space-between-36{gap:36px}.wp-block-create-block-icon-list.is-items-space-between-37{gap:37px}.wp-block-create-block-icon-list.is-items-space-between-38{gap:38px}.wp-block-create-block-icon-list.is-items-space-between-39{gap:39px}.wp-block-create-block-icon-list.is-items-space-between-40{gap:40px}.wp-block-create-block-icon-list.is-items-space-between-41{gap:41px}.wp-block-create-block-icon-list.is-items-space-between-42{gap:42px}.wp-block-create-block-icon-list.is-items-space-between-43{gap:43px}.wp-block-create-block-icon-list.is-items-space-between-44{gap:44px}.wp-block-create-block-icon-list.is-items-space-between-45{gap:45px}.wp-block-create-block-icon-list.is-items-space-between-46{gap:46px}.wp-block-create-block-icon-list.is-items-space-between-47{gap:47px}.wp-block-create-block-icon-list.is-items-space-between-48{gap:48px}.wp-block-create-block-icon-list.is-items-space-between-49{gap:49px}.wp-block-create-block-icon-list.is-items-space-between-50{gap:50px}.wp-block-create-block-icon-list.is-list-orientation-horizontal{align-items:stretch;display:flex;flex-direction:row;flex-wrap:wrap}.wp-block-create-block-icon-list>.wp-block-create-block-icon-list-item{align-items:center;box-sizing:border-box;display:flex;margin:0;position:relative}.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item h2,.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item h3,.wp-block-create-block-icon-list .wp-block-create-block-icon-list-item p{margin:0}.wp-block-create-block-icon-list:not(.is-separator-type-none)>.wp-block-create-block-icon-list-item:after{content:"";pointer-events:none;position:absolute;z-index:1;--sep-th:var(--separator-thickness,1px);--sep-col:var(--separator-color,#ccc);--sep-style:var(--separator-style,solid)}.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none)>.wp-block-create-block-icon-list-item:after{border-bottom:var(--sep-th) var(--sep-style) var(--sep-col);bottom:calc(var(--sep-th)*-1/2 - 10px);height:0;left:16px;right:16px;transform:translateY(50%)}.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none)>.wp-block-create-block-icon-list-item:last-child:after{display:none}.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none)>.wp-block-create-block-icon-list-item:after{border-right:var(--sep-th) var(--sep-style) var(--sep-col);bottom:12px;right:calc(var(--sep-th)*-1/2 - 10px);top:12px;transform:translateX(50%);width:0}.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none)>.wp-block-create-block-icon-list-item:last-child:after{display:none}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/icon-list/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wp-block-create-block-icon-list {
+  max-width: none !important;
+  box-sizing: border-box;
+  width: var(--section-width, 650px);
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* ----------------------------------
+     OUTER WRAPPER (Block Spacing)
+  ---------------------------------- */
+  /* ----------------------------------
+     INNER LAYOUT WRAPPER
+  ---------------------------------- */
+  display: flex;
+  justify-content: var(--section-alignment);
+}
+.wp-block-create-block-icon-list .icon-list-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: var(--section-width, 650px);
+  max-width: 1200px;
+  gap: 6px;
+  background: var(--section-background-color);
+  box-shadow: var(--section-box-shadow, none);
+  border-color: var(--section-border-color, transparent);
+  border-style: var(--section-border-style, none);
+  border-top-width: var(--section-border-top-width, 0);
+  border-right-width: var(--section-border-right-width, 0);
+  border-bottom-width: var(--section-border-bottom-width, 0);
+  border-left-width: var(--section-border-left-width, 0);
+  border-top-left-radius: var(--section-border-radius-top, 0);
+  border-top-right-radius: var(--section-border-radius-right, 0);
+  border-bottom-right-radius: var(--section-border-radius-bottom, 0);
+  border-bottom-left-radius: var(--section-border-radius-left, 0);
+  padding-top: var(--section-padding-top, 0);
+  padding-right: var(--section-padding-right, 0);
+  padding-bottom: var(--section-padding-bottom, 0);
+  padding-left: var(--section-padding-left, 0);
+  margin-top: var(--section-margin-top, 0);
+  margin-right: var(--section-margin-right, 0);
+  margin-bottom: var(--section-margin-bottom, 0);
+  margin-left: var(--section-margin-left, 0);
+}
+.wp-block-create-block-icon-list .icon-list-inner:hover {
+  /* 1. Background & Shadow */
+  background: var(--section-background-color-h);
+  box-shadow: var(--section-box-shadow-h);
+  /* 2. Border Style & Color */
+  border-color: var(--section-border-color-h);
+  border-style: var(--section-border-style-h);
+  /* 3. Border Widths on Hover */
+  border-top-width: var(--section-border-top-width-h);
+  border-right-width: var(--section-border-right-width-h);
+  border-bottom-width: var(--section-border-bottom-width-h);
+  border-left-width: var(--section-border-left-width-h);
+  /* 4. Border Radius on Hover */
+  border-top-left-radius: var(--section-border-radius-top-h);
+  border-top-right-radius: var(--section-border-radius-right-h);
+  border-bottom-right-radius: var(--section-border-radius-bottom-h);
+  border-bottom-left-radius: var(--section-border-radius-left-h);
+  /* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
+  padding-top: var(--section-padding-top-h);
+  padding-right: var(--section-padding-right-h);
+  padding-bottom: var(--section-padding-bottom-h);
+  padding-left: var(--section-padding-left-h);
+  /* 6. Margin on Hover */
+  margin-top: var(--section-margin-top-h);
+  margin-right: var(--section-margin-right-h);
+  margin-bottom: var(--section-margin-bottom-h);
+  margin-left: var(--section-margin-left-h);
+}
+.wp-block-create-block-icon-list {
+  /* ----------------------------------
+     GAP CONTROL (10px → 50px)
+  ---------------------------------- */
+}
+.wp-block-create-block-icon-list.is-items-space-between-10 .icon-list-inner {
+  gap: 10px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-11 .icon-list-inner {
+  gap: 11px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-12 .icon-list-inner {
+  gap: 12px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-13 .icon-list-inner {
+  gap: 13px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-14 .icon-list-inner {
+  gap: 14px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-15 .icon-list-inner {
+  gap: 15px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-16 .icon-list-inner {
+  gap: 16px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-17 .icon-list-inner {
+  gap: 17px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-18 .icon-list-inner {
+  gap: 18px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-19 .icon-list-inner {
+  gap: 19px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-20 .icon-list-inner {
+  gap: 20px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-21 .icon-list-inner {
+  gap: 21px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-22 .icon-list-inner {
+  gap: 22px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-23 .icon-list-inner {
+  gap: 23px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-24 .icon-list-inner {
+  gap: 24px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-25 .icon-list-inner {
+  gap: 25px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-26 .icon-list-inner {
+  gap: 26px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-27 .icon-list-inner {
+  gap: 27px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-28 .icon-list-inner {
+  gap: 28px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-29 .icon-list-inner {
+  gap: 29px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-30 .icon-list-inner {
+  gap: 30px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-31 .icon-list-inner {
+  gap: 31px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-32 .icon-list-inner {
+  gap: 32px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-33 .icon-list-inner {
+  gap: 33px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-34 .icon-list-inner {
+  gap: 34px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-35 .icon-list-inner {
+  gap: 35px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-36 .icon-list-inner {
+  gap: 36px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-37 .icon-list-inner {
+  gap: 37px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-38 .icon-list-inner {
+  gap: 38px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-39 .icon-list-inner {
+  gap: 39px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-40 .icon-list-inner {
+  gap: 40px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-41 .icon-list-inner {
+  gap: 41px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-42 .icon-list-inner {
+  gap: 42px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-43 .icon-list-inner {
+  gap: 43px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-44 .icon-list-inner {
+  gap: 44px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-45 .icon-list-inner {
+  gap: 45px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-46 .icon-list-inner {
+  gap: 46px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-47 .icon-list-inner {
+  gap: 47px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-48 .icon-list-inner {
+  gap: 48px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-49 .icon-list-inner {
+  gap: 49px;
+}
+.wp-block-create-block-icon-list.is-items-space-between-50 .icon-list-inner {
+  gap: 50px;
+}
+.wp-block-create-block-icon-list {
+  /* ----------------------------------
+     HORIZONTAL ORIENTATION
+  ---------------------------------- */
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal .icon-list-inner {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.wp-block-create-block-icon-list {
+  /* ----------------------------------
+     ITEM BASE LAYOUT
+  ---------------------------------- */
+}
+.wp-block-create-block-icon-list .icon-list-inner > .wp-block-create-block-icon-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wp-block-create-block-icon-list {
+  /* Reset heading margins inside items */
+}
+.wp-block-create-block-icon-list .icon-list-inner .wp-block-create-block-icon-list-item h1,
+.wp-block-create-block-icon-list .icon-list-inner .wp-block-create-block-icon-list-item h2,
+.wp-block-create-block-icon-list .icon-list-inner .wp-block-create-block-icon-list-item h3,
+.wp-block-create-block-icon-list .icon-list-inner .wp-block-create-block-icon-list-item p {
+  margin: 0;
+}
+.wp-block-create-block-icon-list {
+  /* ==========================================================
+     SEPARATOR SYSTEM (Pseudo-element based)
+  ========================================================== */
+  /* Activate separator unless type is none */
+}
+.wp-block-create-block-icon-list:not(.is-separator-type-none) .icon-list-inner > .wp-block-create-block-icon-list-item::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  --sep-th: var(--separator-thickness, 1px);
+  --sep-col: var(--separator-color, #ccc);
+  --sep-style: var(--separator-style, solid);
+}
+.wp-block-create-block-icon-list {
+  /* ----------------------------------
+     VERTICAL (default)
+     Horizontal line between items
+  ---------------------------------- */
+}
+.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none) .icon-list-inner > .wp-block-create-block-icon-list-item::after {
+  left: 16px;
+  right: 16px;
+  height: 0;
+  bottom: calc(-1 * var(--sep-th) / 2 - 10px);
+  border-bottom: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateY(50%);
+}
+.wp-block-create-block-icon-list:not(.is-list-orientation-horizontal):not(.is-separator-type-none) .icon-list-inner > .wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+.wp-block-create-block-icon-list {
+  /* ----------------------------------
+     HORIZONTAL MODE
+     Vertical line between items
+  ---------------------------------- */
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none) .icon-list-inner > .wp-block-create-block-icon-list-item::after {
+  top: 12px;
+  bottom: 12px;
+  right: calc(-1 * var(--sep-th) / 2 - 10px);
+  width: 0;
+  border-right: var(--sep-th) var(--sep-style) var(--sep-col);
+  transform: translateX(50%);
+}
+.wp-block-create-block-icon-list.is-list-orientation-horizontal:not(.is-separator-type-none) .icon-list-inner > .wp-block-create-block-icon-list-item:last-child::after {
+  display: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -38,43 +38,43 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const parentLayout = useParentAttributes( clientId );
 
-	const prevGrand = useRef( null );
+	// const prevGrand = useRef( null );
 
-	useEffect( () => {
-		const current = parentLayout || {};
+	// useEffect( () => {
+	// 	const current = parentLayout || {};
 
-		if ( prevGrand.current === null ) {
-			prevGrand.current = { ...current };
-			return;
-		}
+	// 	if ( prevGrand.current === null ) {
+	// 		prevGrand.current = { ...current };
+	// 		return;
+	// 	}
 
-		const previous = prevGrand.current || {};
+	// 	const previous = prevGrand.current || {};
 
-		// Find which grandparent keys actually changed
-		const changedKeys = Object.keys( current ).filter(
-			( key ) => current[ key ] !== previous[ key ]
-		);
+	// 	// Find which grandparent keys actually changed
+	// 	const changedKeys = Object.keys( current ).filter(
+	// 		( key ) => current[ key ] !== previous[ key ]
+	// 	);
 
-		if ( changedKeys.length === 0 ) {
-			return;
-		}
+	// 	if ( changedKeys.length === 0 ) {
+	// 		return;
+	// 	}
 
-		const updates = {};
+	// 	const updates = {};
 
-		changedKeys.forEach( ( key ) => {
-			// Only update child if value truly differs
-			if ( attributes[ key ] !== current[ key ] ) {
-				updates[ key ] = current[ key ];
-			}
-		} );
+	// 	changedKeys.forEach( ( key ) => {
+	// 		// Only update child if value truly differs
+	// 		if ( attributes[ key ] !== current[ key ] ) {
+	// 			updates[ key ] = current[ key ];
+	// 		}
+	// 	} );
 
-		if ( Object.keys( updates ).length > 0 ) {
-			setAttributes( updates );
-		}
+	// 	if ( Object.keys( updates ).length > 0 ) {
+	// 		setAttributes( updates );
+	// 	}
 
-		// Update snapshot memory
-		prevGrand.current = { ...current };
-	}, [ parentLayout ] );
+	// 	// Update snapshot memory
+	// 	prevGrand.current = { ...current };
+	// }, [ parentLayout ] );
 
 	const blockProps = useBlockProps( {
 		style: {

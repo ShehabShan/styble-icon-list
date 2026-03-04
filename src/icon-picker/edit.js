@@ -15,7 +15,7 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 import UploadIcon from '../icon-list/side-control-bar/uploadIcon.js';
-import { useEffect, useRef, useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 
 import { getChildBlockStyles } from '../utils/style.js';
 import editIcon from '../assests/edit-icon.svg';
@@ -27,47 +27,7 @@ import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const gAttrs = useGrandparentAttributes( clientId );
-
-	const { iconStyle } = gAttrs;
-
-	const prevGrand = useRef( null );
-
-	useEffect( () => {
-		const current = iconStyle || {};
-
-		if ( prevGrand.current === null ) {
-			prevGrand.current = { ...current };
-			return;
-		}
-
-		const previous = prevGrand.current || {};
-
-		// Find which grandparent keys actually changed
-		const changedKeys = Object.keys( current ).filter(
-			( key ) => current[ key ] !== previous[ key ]
-		);
-
-		if ( changedKeys.length === 0 ) {
-			return;
-		}
-
-		const updates = {};
-
-		changedKeys.forEach( ( key ) => {
-			// Only update child if value truly differs
-			if ( attributes[ key ] !== current[ key ] ) {
-				updates[ key ] = current[ key ];
-			}
-		} );
-
-		if ( Object.keys( updates ).length > 0 ) {
-			setAttributes( updates );
-		}
-
-		// Update snapshot memory
-		prevGrand.current = { ...current };
-	}, [ iconStyle ] );
+	const { iconStyle } = useGrandparentAttributes( clientId );
 
 	useEffect( () => {
 		if ( attributes.iconType === 'library' ) {

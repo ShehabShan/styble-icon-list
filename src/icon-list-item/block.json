@@ -46,7 +46,7 @@
 
 		"borderType": { "type": "string" },
 
-		"borderColor": { "type": "string", "default": "#FFFFFF" },
+		"borderColor": { "type": "string" },
 		"borderRadius": { "type": "number" },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
