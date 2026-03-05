@@ -1,5 +1,7 @@
 export const getResolvedSides = ( base, top, right, bottom, left ) => {
-	const isValid = ( v ) => v !== undefined && v !== null && v !== '';
+	// Treat 0 as invalid by adding (v !== 0)
+	const isValid = ( v ) =>
+		v !== undefined && v !== null && v !== '' && v !== 0;
 
 	const resolve = ( val ) => {
 		if ( isValid( val ) ) {
@@ -22,24 +24,20 @@ export const getResolvedSides = ( base, top, right, bottom, left ) => {
 export const getBlockStyles = ( attributes ) => {
 	const cleanStyles = ( obj ) => {
 		return Object.fromEntries(
-			Object.entries( obj ).filter(
-				( [ _, value ] ) =>
-					value !== undefined && value !== null && value !== ''
-			)
+			Object.entries( obj ).filter( ( [ _, value ] ) => !! value )
 		);
 	};
 
 	const withUnit = ( value, unit = 'px' ) => {
-		if ( value === undefined || value === null || value === '' ) {
+		if (
+			value === undefined ||
+			value === null ||
+			value === '' ||
+			value === 0
+		) {
 			return null;
 		}
 		return `${ value }${ unit }`;
-	};
-
-	const getFallbackValue = ( hoverVal, normalVal ) => {
-		const isValid = ( v ) => v !== undefined && v !== null && v !== '';
-
-		return isValid( hoverVal ) ? hoverVal : normalVal;
 	};
 
 	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
@@ -59,11 +57,6 @@ export const getBlockStyles = ( attributes ) => {
 	const mU = getUnit( 'marginUnits' );
 	const bU = getUnit( 'borderUnits' );
 	const rU = getUnit( 'borderRadiusUnits' );
-
-	const hpU = getUnit( 'hoverPaddingUnits' );
-	const hmU = getUnit( 'hoverMarginUnits' );
-	const hbU = getUnit( 'hoverBorderUnits' );
-	const hrU = getUnit( 'hoverBorderRadiusUnits' );
 
 	// -------------------------------
 	// Resolve Parent Box Sides
@@ -86,13 +79,9 @@ export const getBlockStyles = ( attributes ) => {
 
 	const sBorderRadius = getBox( attributes, 'sectionBorderRadius' );
 
-	const sHoverMargin = getBox( attributes, 'sectionHoverMargin' );
+	const sHoverBorder = getBox( attributes, 'hoverSectionBorder' );
 
-	const sHoverPadding = getBox( attributes, 'sectionHoverPadding' );
-
-	const sHoverBorder = getBox( attributes, 'sectionHoverBorder' );
-
-	const sHoverBorderRadius = getBox( attributes, 'sectionHoverBorderRadius' );
+	const sHoverBorderRadius = getBox( attributes, 'hoverSectionBorderRadius' );
 
 	const margin = getBox( attributes, 'margin' );
 
@@ -102,11 +91,7 @@ export const getBlockStyles = ( attributes ) => {
 
 	const borderRadius = getBox( attributes, 'borderRadius' );
 
-	const hoverPadding = getBox( attributes, 'hoverPadding' );
-
 	const hoverBorder = getBox( attributes, 'hoverBorder' );
-
-	const hoverMargin = getBox( attributes, 'hoverMargin' );
 
 	const hoverRadius = getBox( attributes, 'hoverBorderRadius' );
 
@@ -141,17 +126,16 @@ export const getBlockStyles = ( attributes ) => {
 		'--section-alignment': attributes?.sectionAlignment,
 		'--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
 
+		'--section-box-shadow-h':
+			attributes?.sectionHoverHasBoxShadow && S_SHADOW_VAL,
+
 		'--separator-thickness': withUnit(
 			attributes?.separatorThickness,
 			'px'
 		),
 		'--separator-color': attributes?.separatorColor,
 		'--separator-style': attributes?.separatorType,
-		// '--icon-size': withUnit( attributes?.iconSize, 'px' ),
-
-		// ===============================
-		// PARENT CONTAINER STYLES (Padding use pU)
-		// ===============================
+		'--icon-size': withUnit( attributes?.iconSize, 'px' ),
 
 		'--section-background-color': sBackgroundValue || null,
 
@@ -163,6 +147,8 @@ export const getBlockStyles = ( attributes ) => {
 
 		//parent border
 		'--section-border-color': attributes?.sectionBorderColor,
+		'--section-border-color-h': attributes?.sectionHoverBorderColor,
+
 		'--section-border-style': attributes?.sectionBorderType,
 		'--section-border-top-width': withUnit( sBorder?.top, sbU ),
 		'--section-border-right-width': withUnit( sBorder?.right, sbU ),
@@ -186,97 +172,32 @@ export const getBlockStyles = ( attributes ) => {
 
 		//Hover section style
 
-		'--section-background-color-h':
-			sHoverBackgroundValue || sBackgroundValue || null,
-
-		'--section-box-shadow-h':
-			attributes?.sectionHoverHasBoxShadow ||
-			attributes?.sectionHasBoxShadow
-				? S_SHADOW_VAL
-				: null,
-
-		// Padding Hover (Falls back to normal padding)
-		'--section-padding-top-h': withUnit(
-			getFallbackValue( sHoverPadding?.top, sPadding?.top ),
-			pU
-		),
-		'--section-padding-right-h': withUnit(
-			getFallbackValue( sHoverPadding?.right, sPadding?.right ),
-			pU
-		),
-		'--section-padding-bottom-h': withUnit(
-			getFallbackValue( sHoverPadding?.bottom, sPadding?.bottom ),
-			pU
-		),
-		'--section-padding-left-h': withUnit(
-			getFallbackValue( sHoverPadding?.left, sPadding?.left ),
-			pU
-		),
+		'--section-background-color-h': sHoverBackgroundValue || null,
 
 		// Border Hover
-		'--section-border-color-h':
-			attributes?.sectionHoverBorderColor ||
-			attributes?.sectionBorderColor,
-		'--section-border-style-h':
-			attributes?.sectionHoverBorderType || attributes?.sectionBorderType,
 
-		'--section-border-top-width-h': withUnit(
-			getFallbackValue( sHoverBorder?.top, sBorder?.top ),
-			bU
-		),
-		'--section-border-right-width-h': withUnit(
-			getFallbackValue( sHoverBorder?.right, sBorder?.right ),
-			bU
-		),
-		'--section-border-bottom-width-h': withUnit(
-			getFallbackValue( sHoverBorder?.bottom, sBorder?.bottom ),
-			bU
-		),
-		'--section-border-left-width-h': withUnit(
-			getFallbackValue( sHoverBorder?.left, sBorder?.left ),
-			bU
-		),
+		'--section-border-style-h': attributes?.sectionHoverBorderType,
 
-		// Margin Hover
-		'--section-margin-top-h': withUnit(
-			getFallbackValue( sHoverMargin?.top, sMargin?.top ),
-			mU
-		),
-		'--section-margin-right-h': withUnit(
-			getFallbackValue( sHoverMargin?.right, sMargin?.right ),
-			mU
-		),
-		'--section-margin-bottom-h': withUnit(
-			getFallbackValue( sHoverMargin?.bottom, sMargin?.bottom ),
-			mU
-		),
-		'--section-margin-left-h': withUnit(
-			getFallbackValue( sHoverMargin?.left, sMargin?.left ),
-			mU
-		),
-
-		// Border Width (use bU)
-
-		// Border Radius (use rU)
+		'--section-border-top-width-h': withUnit( sHoverBorder?.top, bU ),
+		'--section-border-right-width-h': withUnit( sHoverBorder?.right, bU ),
+		'--section-border-bottom-width-h': withUnit( sHoverBorder?.bottom, bU ),
+		'--section-border-left-width-h': withUnit( sHoverBorder?.left, bU ),
 
 		// Border Radius Hover Fallback
 		'--section-border-radius-top-h': withUnit(
-			getFallbackValue( sHoverBorderRadius?.top, sBorderRadius?.top ),
+			sHoverBorderRadius?.top,
 			rU
 		),
 		'--section-border-radius-right-h': withUnit(
-			getFallbackValue( sHoverBorderRadius?.right, sBorderRadius?.right ),
+			sHoverBorderRadius?.right,
 			rU
 		),
 		'--section-border-radius-bottom-h': withUnit(
-			getFallbackValue(
-				sHoverBorderRadius?.bottom,
-				sBorderRadius?.bottom
-			),
+			sHoverBorderRadius?.bottom,
 			rU
 		),
 		'--section-border-radius-left-h': withUnit(
-			getFallbackValue( sHoverBorderRadius?.left, sBorderRadius?.left ),
+			sHoverBorderRadius?.left,
 			rU
 		),
 
@@ -315,7 +236,7 @@ export const getBlockStyles = ( attributes ) => {
 
 		'--background-color': backgroundValue || null,
 		'--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
-
+		'--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
 		// Padding (use pU)
 		'--padding-top': withUnit( padding?.top, pU ),
 		'--padding-right': withUnit( padding?.right, pU ),
@@ -348,10 +269,6 @@ export const getBlockStyles = ( attributes ) => {
 		// HOVER DEFAULTS
 		// ===============================
 		'--bg-h': hoverBackground || backgroundValue || null,
-		'--box-shadow-h':
-			attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow
-				? SHADOW_VAL
-				: null,
 
 		// Border Color & Style Fallbacks
 		'--border-color-h':
@@ -359,77 +276,17 @@ export const getBlockStyles = ( attributes ) => {
 		'--border-style-h':
 			attributes?.hoverBorderType || attributes?.borderType,
 
-		// Hover Padding (Falls back to normal padding, uses hpU)
-		'--padding-top-h': withUnit(
-			getFallbackValue( hoverPadding?.top, padding?.top ),
-			hpU
-		),
-		'--padding-right-h': withUnit(
-			getFallbackValue( hoverPadding?.right, padding?.right ),
-			hpU
-		),
-		'--padding-bottom-h': withUnit(
-			getFallbackValue( hoverPadding?.bottom, padding?.bottom ),
-			hpU
-		),
-		'--padding-left-h': withUnit(
-			getFallbackValue( hoverPadding?.left, padding?.left ),
-			hpU
-		),
-
-		// Hover Margin (Falls back to normal margin, uses hmU)
-		'--margin-top-h': withUnit(
-			getFallbackValue( hoverMargin?.top, margin?.top ),
-			hmU
-		),
-		'--margin-right-h': withUnit(
-			getFallbackValue( hoverMargin?.right, margin?.right ),
-			hmU
-		),
-		'--margin-bottom-h': withUnit(
-			getFallbackValue( hoverMargin?.bottom, margin?.bottom ),
-			hmU
-		),
-		'--margin-left-h': withUnit(
-			getFallbackValue( hoverMargin?.left, margin?.left ),
-			hmU
-		),
-
 		// Hover Border Width (Falls back to normal border width, uses hbU)
-		'--border-top-h': withUnit(
-			getFallbackValue( hoverBorder?.top, border?.top ),
-			hbU
-		),
-		'--border-right-h': withUnit(
-			getFallbackValue( hoverBorder?.right, border?.right ),
-			hbU
-		),
-		'--border-bottom-h': withUnit(
-			getFallbackValue( hoverBorder?.bottom, border?.bottom ),
-			hbU
-		),
-		'--border-left-h': withUnit(
-			getFallbackValue( hoverBorder?.left, border?.left ),
-			hbU
-		),
+		'--border-top-h': withUnit( hoverBorder?.top, bU ),
+		'--border-right-h': withUnit( hoverBorder?.right, bU ),
+		'--border-bottom-h': withUnit( hoverBorder?.bottom, bU ),
+		'--border-left-h': withUnit( hoverBorder?.left, bU ),
 
 		// Hover Radius (Falls back to normal radius, uses hrU)
-		'--radius-top-h': withUnit(
-			getFallbackValue( hoverRadius?.top, borderRadius?.top ),
-			hrU
-		),
-		'--radius-right-h': withUnit(
-			getFallbackValue( hoverRadius?.right, borderRadius?.right ),
-			hrU
-		),
-		'--radius-bottom-h': withUnit(
-			getFallbackValue( hoverRadius?.bottom, borderRadius?.bottom ),
-			hrU
-		),
-		'--radius-left-h': withUnit(
-			getFallbackValue( hoverRadius?.left, borderRadius?.left ),
-			hrU
-		),
+		'--radius-top-h': withUnit( hoverRadius?.top, rU ),
+		'--radius-right-h': withUnit( hoverRadius?.right, rU ),
+		'--radius-bottom-h': withUnit( hoverRadius?.bottom, rU ),
+		'--radius-left-h': withUnit( hoverRadius?.left, rU ),
 	} );
 };
 
@@ -450,12 +307,6 @@ export const getChildBlockStyles = ( attributes ) => {
 		return `${ value }${ unit }`;
 	};
 
-	const getFallbackValue = ( hoverVal, normalVal ) => {
-		const isValid = ( v ) => v !== undefined && v !== null && v !== '';
-
-		return isValid( hoverVal ) ? hoverVal : normalVal;
-	};
-
 	const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
 
 	// Units Logic
@@ -466,11 +317,6 @@ export const getChildBlockStyles = ( attributes ) => {
 	const mU = getUnit( 'marginUnits' );
 	const bU = getUnit( 'borderUnits' );
 	const rU = getUnit( 'borderRadiusUnits' );
-
-	const hpU = getUnit( 'hoverPaddingUnits' );
-	const hmU = getUnit( 'hoverMarginUnits' );
-	const hbU = getUnit( 'hoverBorderUnits' );
-	const hrU = getUnit( 'hoverBorderRadiusUnits' );
 
 	// -------------------------------
 	// Resolve Parent Box Sides
@@ -493,13 +339,9 @@ export const getChildBlockStyles = ( attributes ) => {
 
 	const borderRadius = getBox( attributes, 'childBorderRadius' );
 
-	const hoverPadding = getBox( attributes, 'childHoverPadding' );
+	const hoverBorder = getBox( attributes, 'hoverChildBorder' );
 
-	const hoverBorder = getBox( attributes, 'childHoverBorder' );
-
-	const hoverMargin = getBox( attributes, 'childHoverMargin' );
-
-	const hoverRadius = getBox( attributes, 'childHoverborderRadius' );
+	const hoverRadius = getBox( attributes, 'hoverChildborderRadius' );
 
 	const backgroundValue =
 		attributes?.backgroundGradient || attributes?.backgroundColor;
@@ -567,86 +409,21 @@ export const getChildBlockStyles = ( attributes ) => {
 		// ===============================
 		// HOVER DEFAULTS (With Fallbacks)
 		// ===============================
-		'--bg-h-IP': hoverBackground || backgroundValue || null,
-		'--box-shadow-h-IP':
-			attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow
-				? SHADOW_VAL
-				: null,
-		'--border-color-h-IP':
-			attributes?.hoverBorderColor || attributes?.childBorderColor,
-		'--border-style-h-IP':
-			attributes?.hoverBorderType || attributes?.childBorderType,
-
-		// Hover Padding (Falls back to normal padding, uses hpU)
-		'--padding-top-h-IP': withUnit(
-			getFallbackValue( hoverPadding?.top, padding?.top ),
-			hpU
-		),
-		'--padding-right-h-IP': withUnit(
-			getFallbackValue( hoverPadding?.right, padding?.right ),
-			hpU
-		),
-		'--padding-bottom-h-IP': withUnit(
-			getFallbackValue( hoverPadding?.bottom, padding?.bottom ),
-			hpU
-		),
-		'--padding-left-h-IP': withUnit(
-			getFallbackValue( hoverPadding?.left, padding?.left ),
-			hpU
-		),
-
-		// Hover Margin (Falls back to normal margin, uses hmU)
-		'--margin-top-h-IP': withUnit(
-			getFallbackValue( hoverMargin?.top, margin?.top ),
-			hmU
-		),
-		'--margin-right-h-IP': withUnit(
-			getFallbackValue( hoverMargin?.right, margin?.right ),
-			hmU
-		),
-		'--margin-bottom-h-IP': withUnit(
-			getFallbackValue( hoverMargin?.bottom, margin?.bottom ),
-			hmU
-		),
-		'--margin-left-h-IP': withUnit(
-			getFallbackValue( hoverMargin?.left, margin?.left ),
-			hmU
-		),
+		'--bg-h-IP': hoverBackground || null,
+		'--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+		'--border-color-h-IP': attributes?.hoverBorderColor,
+		'--border-style-h-IP': attributes?.hoverBorderType,
 
 		// Hover Border Width (Falls back to normal border width, uses hbU)
-		'--border-top-h-IP': withUnit(
-			getFallbackValue( hoverBorder?.top, border?.top ),
-			hbU
-		),
-		'--border-right-h-IP': withUnit(
-			getFallbackValue( hoverBorder?.right, border?.right ),
-			hbU
-		),
-		'--border-bottom-h-IP': withUnit(
-			getFallbackValue( hoverBorder?.bottom, border?.bottom ),
-			hbU
-		),
-		'--border-left-h-IP': withUnit(
-			getFallbackValue( hoverBorder?.left, border?.left ),
-			hbU
-		),
+		'--border-top-h-IP': withUnit( hoverBorder?.top, bU ),
+		'--border-right-h-IP': withUnit( hoverBorder?.right, bU ),
+		'--border-bottom-h-IP': withUnit( hoverBorder?.bottom, bU ),
+		'--border-left-h-IP': withUnit( hoverBorder?.left, bU ),
 
 		// Hover Radius (Falls back to normal radius, uses hrU)
-		'--radius-top-h-IP': withUnit(
-			getFallbackValue( hoverRadius?.top, borderRadius?.top ),
-			hrU
-		),
-		'--radius-right-h-IP': withUnit(
-			getFallbackValue( hoverRadius?.right, borderRadius?.right ),
-			hrU
-		),
-		'--radius-bottom-h-IP': withUnit(
-			getFallbackValue( hoverRadius?.bottom, borderRadius?.bottom ),
-			hrU
-		),
-		'--radius-left-h-IP': withUnit(
-			getFallbackValue( hoverRadius?.left, borderRadius?.left ),
-			hrU
-		),
+		'--radius-top-h-IP': withUnit( hoverRadius?.top, rU ),
+		'--radius-right-h-IP': withUnit( hoverRadius?.right, rU ),
+		'--radius-bottom-h-IP': withUnit( hoverRadius?.bottom, rU ),
+		'--radius-left-h-IP': withUnit( hoverRadius?.left, rU ),
 	} );
 };

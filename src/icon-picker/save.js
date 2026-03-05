@@ -2,6 +2,13 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { getChildBlockStyles } from '../utils/style.js';
 
 export default function save( { attributes } ) {
+	const selectedIcon =
+		attributes?.selectedIcon || attributes?.globalSelectedIcon;
+
+	const mediaUrl = attributes?.mediaUrl || attributes?.globalMediaUrl;
+
+	const iconType = attributes?.iconType || attributes?.globalIconType;
+
 	const blockProps = useBlockProps.save( {
 		className: 'wp-block-create-block-icon-picker',
 		style: { ...getChildBlockStyles( attributes ) },
@@ -10,16 +17,14 @@ export default function save( { attributes } ) {
 	// Build the rel attribute dynamically
 
 	const renderIcon = () => {
-		if ( attributes?.iconType === 'upload' && attributes?.mediaUrl ) {
-			return <img src={ attributes?.mediaUrl } alt="" />;
+		if ( iconType === 'upload' && mediaUrl ) {
+			return <img src={ mediaUrl } alt="" />;
 		}
 
 		// Render Dashicon if iconName exists
-		if ( attributes?.iconType === 'library' ) {
+		if ( iconType === 'library' ) {
 			return (
-				<span
-					className={ `dashicons dashicons-${ attributes?.selectedIcon }` }
-				/>
+				<span className={ `dashicons dashicons-${ selectedIcon }` } />
 			);
 		}
 

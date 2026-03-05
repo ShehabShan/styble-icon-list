@@ -55,11 +55,11 @@ const AdvancedStyle = ( props ) => {
 			>
 				<ToggleGroupControlOption
 					className={ `list-preset-option alignment-set ${
-						attributes?.sectionAlignment === 'left'
+						attributes?.sectionAlignment === 'flex-start'
 							? 'is-active'
 							: ''
 					}` }
-					value="left"
+					value="flex-start"
 					label={
 						<img
 							src={ alignmentLeft }
@@ -85,11 +85,11 @@ const AdvancedStyle = ( props ) => {
 				/>
 				<ToggleGroupControlOption
 					className={ `list-preset-option alignment-set ${
-						attributes?.sectionAlignment === 'right'
+						attributes?.sectionAlignment === 'flex-end'
 							? 'is-active'
 							: ''
 					}` }
-					value="right"
+					value="flex-end"
 					label={
 						<img
 							src={ alignmentRight }
@@ -146,6 +146,7 @@ const AdvancedStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										sectionBackgroundType: value,
+										sectionHoverBackgroundType: value,
 									} )
 								}
 								isBlock
@@ -184,7 +185,10 @@ const AdvancedStyle = ( props ) => {
 							<CustomHelperComponent
 								hasReset={ true }
 								icon={ resetIcon }
-								resetAttributes="sectionBackgroundColor"
+								resetAttributes={ [
+									'sectionBackgroundColor',
+									'sectionHoverBackgroundColor',
+								] }
 								hasColor={ true }
 								label={ __( 'Background Color', 'icon-list' ) }
 								color={ attributes?.sectionBackgroundColor }
@@ -193,6 +197,9 @@ const AdvancedStyle = ( props ) => {
 									setAttributes( {
 										sectionBackgroundColor: color,
 										sectionBackgroundGradient: undefined,
+										sectionHoverBackgroundColor: color,
+										sectionHoverBackgroundGradient:
+											undefined,
 									} )
 								}
 							/>
@@ -203,6 +210,9 @@ const AdvancedStyle = ( props ) => {
 									setAttributes( {
 										sectionBackgroundGradient: gradient,
 										sectionBackgroundColor: undefined,
+										sectionHoverBackgroundGradient:
+											gradient,
+										sectionHoverBackgroundColor: undefined,
 									} )
 								}
 							/>
@@ -221,6 +231,7 @@ const AdvancedStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										sectionBorderType: value,
+										sectionHoverBorderType: value,
 									} )
 								}
 							>
@@ -282,7 +293,10 @@ const AdvancedStyle = ( props ) => {
 					<div className="control-section control-section--border-color">
 						<CustomHelperComponent
 							hasReset={ true }
-							resetAttributes="sectionBorderColor"
+							resetAttributes={ [
+								'sectionBorderColor',
+								'sectionHoverBorderColor',
+							] }
 							hasColor={ true }
 							icon={ resetIcon }
 							label={ __( 'Border Color', 'icon-list' ) }
@@ -291,6 +305,7 @@ const AdvancedStyle = ( props ) => {
 							onColorChange={ ( color ) =>
 								setAttributes( {
 									sectionBorderColor: color,
+									sectionHoverBorderColor: color,
 								} )
 							}
 						/>
@@ -510,7 +525,7 @@ const AdvancedStyle = ( props ) => {
 								attributes={ attributes }
 								isBorder={ true }
 								title={ 'border Width' }
-								type="sectionHoverBorder"
+								type="hoverSectionBorder"
 							/>
 						</div>
 
@@ -518,7 +533,9 @@ const AdvancedStyle = ( props ) => {
 						<div className="control-section control-section--border-color">
 							<CustomHelperComponent
 								hasReset={ true }
-								resetAttributes="sectionHoverBorderColor"
+								resetAttributes={ [
+									'sectionHoverBorderColor',
+								] }
 								hasColor={ true }
 								icon={ resetIcon }
 								label={ __( 'Border Color', 'icon-list' ) }
@@ -538,7 +555,7 @@ const AdvancedStyle = ( props ) => {
 								setAttributes={ setAttributes }
 								attributes={ attributes }
 								title={ 'border Radius' }
-								type="sectionHoverBorderRadius"
+								type="hoverSectionBorderRadius"
 							/>
 						</div>
 
@@ -553,27 +570,6 @@ const AdvancedStyle = ( props ) => {
 										sectionHoverHasBoxShadow: value,
 									} )
 								}
-							/>
-						</div>
-
-						{ /* 8. Item Padding */ }
-						<div className="control-section control-section--padding">
-							<RangeControls
-								setAttributes={ setAttributes }
-								attributes={ attributes }
-								title={ 'Padding' }
-								type="sectionHoverPadding"
-							/>
-						</div>
-
-						{ /*9.individual Margin */ }
-
-						<div className="control-section control-section--margin">
-							<RangeControls
-								setAttributes={ setAttributes }
-								attributes={ attributes }
-								title={ 'Margin' }
-								type="sectionHoverMargin"
 							/>
 						</div>
 					</div>

@@ -22,7 +22,8 @@
 	.icon-list-inner {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: var(--section-alignment);
+		justify-content: var(--section-alignment);
 		box-sizing: border-box;
 
 		width: var(--section-width, 650px);
@@ -31,30 +32,30 @@
 		gap: 6px;
 
 		background: var(--section-background-color);
-		box-shadow: var(--section-box-shadow, none);
+		box-shadow: var(--section-box-shadow);
 
-		border-color: var(--section-border-color, transparent);
-		border-style: var(--section-border-style, none);
+		border-color: var(--section-border-color);
+		border-style: var(--section-border-style);
 
-		border-top-width: var(--section-border-top-width, 0);
-		border-right-width: var(--section-border-right-width, 0);
-		border-bottom-width: var(--section-border-bottom-width, 0);
-		border-left-width: var(--section-border-left-width, 0);
+		border-top-width: var(--section-border-top-width);
+		border-right-width: var(--section-border-right-width);
+		border-bottom-width: var(--section-border-bottom-width);
+		border-left-width: var(--section-border-left-width);
 
-		border-top-left-radius: var(--section-border-radius-top, 0);
-		border-top-right-radius: var(--section-border-radius-right, 0);
-		border-bottom-right-radius: var(--section-border-radius-bottom, 0);
-		border-bottom-left-radius: var(--section-border-radius-left, 0);
+		border-top-left-radius: var(--section-border-radius-top);
+		border-top-right-radius: var(--section-border-radius-right);
+		border-bottom-right-radius: var(--section-border-radius-bottom);
+		border-bottom-left-radius: var(--section-border-radius-left);
 
-		padding-top: var(--section-padding-top, 0);
-		padding-right: var(--section-padding-right, 0);
-		padding-bottom: var(--section-padding-bottom, 0);
-		padding-left: var(--section-padding-left, 0);
+		padding-top: var(--section-padding-top);
+		padding-right: var(--section-padding-right);
+		padding-bottom: var(--section-padding-bottom);
+		padding-left: var(--section-padding-left);
 
-		margin-top: var(--section-margin-top, 0);
-		margin-right: var(--section-margin-right, 0);
-		margin-bottom: var(--section-margin-bottom, 0);
-		margin-left: var(--section-margin-left, 0);
+		margin-top: var(--section-margin-top);
+		margin-right: var(--section-margin-right);
+		margin-bottom: var(--section-margin-bottom);
+		margin-left: var(--section-margin-left);
 
 		&:hover {
 			//line break
@@ -78,18 +79,6 @@
 			border-top-right-radius: var(--section-border-radius-right-h);
 			border-bottom-right-radius: var(--section-border-radius-bottom-h);
 			border-bottom-left-radius: var(--section-border-radius-left-h);
-
-			/* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
-			padding-top: var(--section-padding-top-h);
-			padding-right: var(--section-padding-right-h);
-			padding-bottom: var(--section-padding-bottom-h);
-			padding-left: var(--section-padding-left-h);
-
-			/* 6. Margin on Hover */
-			margin-top: var(--section-margin-top-h);
-			margin-right: var(--section-margin-right-h);
-			margin-bottom: var(--section-margin-bottom-h);
-			margin-left: var(--section-margin-left-h);
 		}
 	}
 

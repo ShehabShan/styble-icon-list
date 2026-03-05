@@ -255,7 +255,8 @@
       "type": "boolean"
     },
     "hoverBackgroundType": {
-      "type": "string"
+      "type": "string",
+      "default": "solid"
     },
     "hoverBackgroundColor": {
       "type": "string"
@@ -410,83 +411,84 @@
     "sectionMarginLeft": {
       "type": "number"
     },
-    "sectionHoverBackgroundType": {
+    "hoverSectionBackgroundType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "hoverSectionBackgroundColor": {
       "type": "string"
     },
-    "sectionHoverBackgroundColor": {
+    "hoverSectionBackgroundGradient": {
       "type": "string"
     },
-    "sectionHoverBackgroundGradient": {
+    "hoverSectionBorderType": {
       "type": "string"
     },
-    "sectionHoverBorderType": {
+    "hoverSectionBorderColor": {
       "type": "string"
     },
-    "sectionHoverBorderColor": {
-      "type": "string"
-    },
-    "sectionHoverHasBoxShadow": {
+    "hoverSectionHasBoxShadow": {
       "type": "boolean",
       "default": false
     },
-    "sectionHoverBorder": {
+    "hoverSectionBorder": {
       "type": "number"
     },
-    "sectionHoverBorderTop": {
+    "hoverSectionBorderTop": {
       "type": "number"
     },
-    "sectionHoverBorderRight": {
+    "hoverSectionBorderRight": {
       "type": "number"
     },
-    "sectionHoverBorderBottom": {
+    "hoverSectionBorderBottom": {
       "type": "number"
     },
-    "sectionHoverBorderLeft": {
+    "hoverSectionBorderLeft": {
       "type": "number"
     },
-    "sectionHoverBorderRadius": {
+    "hoverSectionBorderRadius": {
       "type": "number"
     },
-    "sectionHoverBorderRadiusTop": {
+    "hoverSectionBorderRadiusTop": {
       "type": "number"
     },
-    "sectionHoverBorderRadiusRight": {
+    "hoverSectionBorderRadiusRight": {
       "type": "number"
     },
-    "sectionHoverBorderRadiusBottom": {
+    "hoverSectionBorderRadiusBottom": {
       "type": "number"
     },
-    "sectionHoverBorderRadiusLeft": {
+    "hoverSectionBorderRadiusLeft": {
       "type": "number"
     },
-    "sectionHoverPadding": {
+    "hoverSectionPadding": {
       "type": "number"
     },
-    "sectionHoverPaddingTop": {
+    "hoverSectionPaddingTop": {
       "type": "number"
     },
-    "sectionHoverPaddingRight": {
+    "hoverSectionPaddingRight": {
       "type": "number"
     },
-    "sectionHoverPaddingBottom": {
+    "hoverSectionPaddingBottom": {
       "type": "number"
     },
-    "sectionHoverPaddingLeft": {
+    "hoverSectionPaddingLeft": {
       "type": "number"
     },
-    "sectionHoverMargin": {
+    "hoverSectionMargin": {
       "type": "number"
     },
-    "sectionHoverMarginTop": {
+    "hoverSectionMarginTop": {
       "type": "number"
     },
-    "sectionHoverMarginRight": {
+    "hoverSectionMarginRight": {
       "type": "number"
     },
-    "sectionHoverMarginBottom": {
+    "hoverSectionMarginBottom": {
       "type": "number"
     },
-    "sectionHoverMarginLeft": {
+    "hoverSectionMarginLeft": {
       "type": "number"
     }
   },

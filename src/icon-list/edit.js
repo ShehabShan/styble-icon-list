@@ -225,7 +225,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						hasColor={ true }
 						hasReset={ true }
 						icon={ resetIcon }
-						resetAttributes="iconColor"
+						resetAttributes={ [ 'iconColor' ] }
 						setAttributes={ setAttributes }
 						color={ iconColor }
 						onColorChange={ ( color ) =>

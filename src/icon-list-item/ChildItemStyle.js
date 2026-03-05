@@ -38,13 +38,13 @@ const ChildItemStyle = ( props ) => {
 	const paddingKey = isChild ? 'childPadding' : 'padding';
 	const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
 
-	const hoverMarginKey = isChild ? 'childHoverMargin' : 'hoverMargin';
-	const hoverPaddingKey = isChild ? 'childHoverPadding' : 'hoverPadding';
-	const hoverBorderRadiusKey = isChild
-		? 'childHoverBorderRadius'
-		: 'hoverBorderRadius';
-	const hoverBorderkey = isChild ? 'childHoverBorder' : 'hoverBorder';
 	const hoverTypeKey = isChild ? 'childHoverBorderType' : 'hoverBorderType';
+
+	const hoverBorderRadiusKey = isChild
+		? 'hoverChildBorderRadius'
+		: 'hoverBorderRadius';
+	const hoverBorderkey = isChild ? 'hoverChildBorder' : 'hoverBorder';
+
 	const hoverColorKey = isChild
 		? 'childHoverBorderColor'
 		: 'hoverBorderColor';
@@ -115,12 +115,13 @@ const ChildItemStyle = ( props ) => {
 								hasColor={ true }
 								hasReset={ true }
 								icon={ resetIcon }
-								resetAttributes="iconColor"
+								resetAttributes={ [ 'iconColor' ] }
 								color={ attributes?.iconColor }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
 									setAttributes( {
 										iconColor: color,
+										hoverIconColor: color,
 									} )
 								}
 							/>
@@ -134,7 +135,7 @@ const ChildItemStyle = ( props ) => {
 								hasColor={ true }
 								hasReset={ true }
 								icon={ resetIcon }
-								resetAttributes="textColor"
+								resetAttributes={ [ 'textColor' ] }
 								color={ attributes?.textColor }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
@@ -157,6 +158,7 @@ const ChildItemStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										backgroundType: value,
+										hoverBackgroundType: value,
 									} )
 								}
 								isBlock
@@ -195,7 +197,10 @@ const ChildItemStyle = ( props ) => {
 							<CustomHelperComponent
 								hasReset={ true }
 								icon={ resetIcon }
-								resetAttributes="backgroundColor"
+								resetAttributes={ [
+									'backgroundColor',
+									'hoverBackgroundColor',
+								] }
 								hasColor={ true }
 								label={ __( 'Background Color', 'icon-list' ) }
 								color={ attributes?.backgroundColor }
@@ -204,6 +209,8 @@ const ChildItemStyle = ( props ) => {
 									setAttributes( {
 										backgroundColor: color,
 										backgroundGradient: undefined,
+										hoverBackgroundColor: color,
+										hoverBackgroundGradient: undefined,
 									} )
 								}
 							/>
@@ -214,6 +221,8 @@ const ChildItemStyle = ( props ) => {
 									setAttributes( {
 										backgroundGradient: gradient,
 										backgroundColor: undefined,
+										hoverBackgroundGradient: gradient,
+										hoverBackgroundColor: undefined,
 									} )
 								}
 							/>
@@ -232,6 +241,7 @@ const ChildItemStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										[ typeKey ]: value,
+										[ hoverTypeKey ]: value,
 									} )
 								}
 							>
@@ -290,7 +300,10 @@ const ChildItemStyle = ( props ) => {
 					<div className="control-section control-section--border-color">
 						<CustomHelperComponent
 							hasReset={ true }
-							resetAttributes="borderColor"
+							resetAttributes={ [
+								'borderColor',
+								'hoverBorderColor',
+							] }
 							hasColor={ true }
 							icon={ resetIcon }
 							label={ __( 'Border Color', 'icon-list' ) }
@@ -299,6 +312,7 @@ const ChildItemStyle = ( props ) => {
 							onColorChange={ ( color ) =>
 								setAttributes( {
 									[ colorKey ]: color,
+									[ hoverColorKey ]: color,
 								} )
 							}
 						/>
@@ -319,6 +333,7 @@ const ChildItemStyle = ( props ) => {
 							onChange={ ( value ) =>
 								setAttributes( {
 									hasBoxShadow: value,
+									hoverHasBoxShadow: value,
 								} )
 							}
 						/>
@@ -366,7 +381,7 @@ const ChildItemStyle = ( props ) => {
 						{ /* 1. Background Section */ }
 						<div className="control-section control-section--background-type">
 							<BaseControl
-								id={ 'lksa' }
+								id={ 'control-section--background-type' }
 								label={ __( 'Background Color', 'icon-list' ) }
 							>
 								<ToggleGroupControl
@@ -416,7 +431,9 @@ const ChildItemStyle = ( props ) => {
 							{ attributes?.hoverBackgroundType === 'solid' ? (
 								<CustomHelperComponent
 									hasReset={ true }
-									resetAttributes="hoverBackgroundColor"
+									resetAttributes={ [
+										'hoverBackgroundColor',
+									] }
 									hasColor={ true }
 									icon={ resetIcon }
 									label={ __(
@@ -571,27 +588,6 @@ const ChildItemStyle = ( props ) => {
 										hoverHasBoxShadow: value,
 									} )
 								}
-							/>
-						</div>
-
-						{ /* 8. Item Padding */ }
-						<div className="control-section control-section--padding">
-							<RangeControls
-								setAttributes={ setAttributes }
-								attributes={ attributes }
-								title={ 'Padding' }
-								type={ hoverPaddingKey }
-							/>
-						</div>
-
-						{ /*9.individual Margin */ }
-
-						<div className="control-section control-section--margin">
-							<RangeControls
-								setAttributes={ setAttributes }
-								attributes={ attributes }
-								title={ 'Margin' }
-								type={ hoverMarginKey }
 							/>
 						</div>
 					</div>

@@ -14,12 +14,8 @@
 	"attributes": {
 		"paddingUnits": { "type": "string", "default": "px" },
 		"marginUnits": { "type": "string", "default": "px" },
-		"childBorderUnits": { "type": "number", "default": "px" },
+		"borderUnits": { "type": "number", "default": "px" },
 		"borderRadiusUnits": { "type": "string", "default": "px" },
-		"hoverPaddingUnits": { "type": "string", "default": "px" },
-		"hoverMarginUnits": { "type": "string", "default": "px" },
-		"hoverBorderUnits": { "type": "string", "default": "px" },
-		"hoverBorderRadiusUnits": { "type": "string", "default": "px" },
 
 		"newTab": { "type": "boolean" },
 		"url": { "type": "string" },
@@ -30,10 +26,22 @@
 			"type": "string"
 		},
 
-		"iconType": { "type": "string", "default": "library" },
-		"selectedIcon": { "type": "string", "default": "menu" },
+		"globalSelectedIcon": {
+			"type": "string",
+			"default": "admin-site"
+		},
+		"globalMediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"globalIconType": {
+			"type": "string",
+			"default": "library"
+		},
+		"iconType": { "type": "string" },
+		"selectedIcon": { "type": "string" },
 		"iconSize": { "type": "number" },
-		"iconColor": { "type": "string", "default": "#FFFFFF" },
+		"iconColor": { "type": "string" },
 		"hoverIconColor": { "type": "string" },
 		"hasLink": { "type": "boolean", "default": false },
 		"itemStyleType": { "type": "string", "default": "normal" },
@@ -63,7 +71,7 @@
 		"childBorderBottom": { "type": "number" },
 		"childBorderLeft": { "type": "number" },
 
-		"childBorderRadius": { "type": "number", "default": 100 },
+		"childBorderRadius": { "type": "number" },
 		"childBorderRadiusTop": { "type": "number" },
 		"childBorderRadiusRight": { "type": "number" },
 		"childBorderRadiusBottom": { "type": "number" },
@@ -74,31 +82,31 @@
 		"hoverBackgroundColor": { "type": "string" },
 		"hoverBackgroundGradient": { "type": "string" },
 
-		"childHoverMargin": { "type": "number" },
-		"childHoverMarginTop": { "type": "number" },
-		"childHoverMarginRight": { "type": "number" },
-		"childHoverMarginBottom": { "type": "number" },
-		"childHoverMarginLeft": { "type": "number" },
+		"hoverChildMargin": { "type": "number" },
+		"hoverChildMarginTop": { "type": "number" },
+		"hoverChildMarginRight": { "type": "number" },
+		"hoverChildMarginBottom": { "type": "number" },
+		"hoverChildMarginLeft": { "type": "number" },
 
-		"childHoverPadding": { "type": "number" },
-		"childHoverPaddingTop": { "type": "number" },
-		"childHoverPaddingRight": { "type": "number" },
-		"childHoverPaddingBottom": { "type": "number" },
-		"childHoverPaddingLeft": { "type": "number" },
+		"hoverChildPadding": { "type": "number" },
+		"hoverChildPaddingTop": { "type": "number" },
+		"hoverChildPaddingRight": { "type": "number" },
+		"hoverChildPaddingBottom": { "type": "number" },
+		"hoverChildPaddingLeft": { "type": "number" },
 
-		"childHoverBorderType": { "type": "string" },
-		"childHoverBorderColor": { "type": "string" },
-		"childHoverBorder": { "type": "number" },
-		"childHoverBorderTop": { "type": "number" },
-		"childHoverBorderRight": { "type": "number" },
-		"childHoverBorderBottom": { "type": "number" },
-		"childHoverBorderLeft": { "type": "number" },
+		"hoverChildBorderType": { "type": "string" },
+		"hoverChildBorderColor": { "type": "string" },
+		"hoverChildBorder": { "type": "number" },
+		"hoverChildBorderTop": { "type": "number" },
+		"hoverChildBorderRight": { "type": "number" },
+		"hoverChildBorderBottom": { "type": "number" },
+		"hoverChildBorderLeft": { "type": "number" },
 
-		"childHoverBorderRadius": { "type": "number" },
-		"childHoverBorderRadiusTop": { "type": "number" },
-		"childHoverBorderRadiusRight": { "type": "number" },
-		"childHoverBorderRadiusBottom": { "type": "number" },
-		"childHoverBorderRadiusLeft": { "type": "number" }
+		"hoverChildBorderRadius": { "type": "number" },
+		"hoverChildBorderRadiusTop": { "type": "number" },
+		"hoverChildBorderRadiusRight": { "type": "number" },
+		"hoverChildBorderRadiusBottom": { "type": "number" },
+		"hoverChildBorderRadiusLeft": { "type": "number" }
 	},
 	"usesContext": [
 		"icon-list/iconColor",

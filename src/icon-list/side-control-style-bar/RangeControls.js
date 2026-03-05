@@ -33,8 +33,9 @@ const RangeControls = ( props ) => {
 	};
 
 	const unitKey = `${ type }Units`;
-	const baseKey = type; // "borderRadius"
-	const topKey = `${ type }Top`; // "borderRadiusTop"
+
+	const baseKey = type;
+	const topKey = `${ type }Top`;
 	const rightKey = `${ type }Right`;
 	const bottomKey = `${ type }Bottom`;
 	const leftKey = `${ type }Left`;
@@ -49,6 +50,33 @@ const RangeControls = ( props ) => {
 	const leftValue = attributes[ leftKey ] ?? baseValue;
 
 	const activeUnit = attributes[ unitKey ]?.replace( /[0-9.]/g, '' ) || 'px';
+
+	const cap = ( str ) => str.charAt( 0 ).toUpperCase() + str.slice( 1 );
+
+	const updateValue = ( key, val ) => {
+		setAttributes( {
+			[ key ]: val,
+			[ `hover${ cap( key ) }` ]: val,
+		} );
+	};
+
+	const resetAllValue = () => {
+		const sides = [ 'Top', 'Right', 'Bottom', 'Left' ];
+
+		const resetObj = {
+			[ type ]: 0,
+			[ `hover${ cap( type ) }` ]: 0,
+		};
+
+		sides.forEach( ( side ) => {
+			const key = `${ type }${ side }`;
+
+			resetObj[ key ] = null;
+			resetObj[ `hover${ cap( key ) }` ] = null;
+		} );
+
+		setAttributes( resetObj );
+	};
 
 	const unitSettings = {
 		px: {
@@ -82,16 +110,6 @@ const RangeControls = ( props ) => {
 	};
 
 	const currentConfig = unitSettings[ activeUnit ] || unitSettings.px;
-
-	const resetAllValue = () => {
-		setAttributes( {
-			[ baseKey ]: 0,
-			[ topKey ]: undefined,
-			[ rightKey ]: undefined,
-			[ bottomKey ]: undefined,
-			[ leftKey ]: undefined,
-		} );
-	};
 
 	return (
 		<div className="range-row">
@@ -147,15 +165,24 @@ const RangeControls = ( props ) => {
 					<FlexItem isBlock>
 						<RangeControl
 							value={ baseValue }
-							onChange={ ( value ) =>
-								setAttributes( {
+							onChange={ ( value ) => {
+								const updateObj = {
 									[ baseKey ]: value,
-									[ topKey ]: undefined,
-									[ rightKey ]: undefined,
-									[ bottomKey ]: undefined,
-									[ leftKey ]: undefined,
-								} )
-							}
+									[ `hover${ cap( baseKey ) }` ]: value,
+								};
+
+								[ 'Top', 'Right', 'Bottom', 'Left' ].forEach(
+									( side ) => {
+										const sideKey = `${ type }${ side }`;
+										updateObj[ sideKey ] = undefined;
+										updateObj[
+											`hover${ cap( sideKey ) }`
+										] = undefined;
+									}
+								);
+
+								setAttributes( updateObj );
+							} }
 							withInputField={ isToggled }
 							// Use the dynamic config here:
 							min={ currentConfig.min }
@@ -200,7 +227,7 @@ const RangeControls = ( props ) => {
 							<RangeControl
 								value={ topValue }
 								onChange={ ( value ) =>
-									setAttributes( { [ topKey ]: value } )
+									updateValue( topKey, value )
 								}
 								withInputField={ isToggled }
 								// Use the dynamic config here:
@@ -242,7 +269,7 @@ const RangeControls = ( props ) => {
 							<RangeControl
 								value={ rightValue }
 								onChange={ ( value ) =>
-									setAttributes( { [ rightKey ]: value } )
+									updateValue( rightKey, value )
 								}
 								withInputField={ isToggled }
 								// Use the dynamic config here:
@@ -284,7 +311,7 @@ const RangeControls = ( props ) => {
 							<RangeControl
 								value={ bottomValue }
 								onChange={ ( value ) =>
-									setAttributes( { [ bottomKey ]: value } )
+									updateValue( bottomKey, value )
 								}
 								withInputField={ isToggled }
 								// Use the dynamic config here:
@@ -326,7 +353,7 @@ const RangeControls = ( props ) => {
 							<RangeControl
 								value={ leftValue }
 								onChange={ ( value ) =>
-									setAttributes( { [ leftKey ]: value } )
+									updateValue( leftKey, value )
 								}
 								withInputField={ isToggled }
 								// Use the dynamic config here:

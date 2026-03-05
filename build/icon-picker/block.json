@@ -20,27 +20,11 @@
       "type": "string",
       "default": "px"
     },
-    "childBorderUnits": {
+    "borderUnits": {
       "type": "number",
       "default": "px"
     },
     "borderRadiusUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverPaddingUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverMarginUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverBorderUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverBorderRadiusUnits": {
       "type": "string",
       "default": "px"
     },
@@ -59,20 +43,29 @@
     "mediaUrl": {
       "type": "string"
     },
-    "iconType": {
+    "globalSelectedIcon": {
+      "type": "string",
+      "default": "admin-site"
+    },
+    "globalMediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "globalIconType": {
       "type": "string",
       "default": "library"
     },
+    "iconType": {
+      "type": "string"
+    },
     "selectedIcon": {
-      "type": "string",
-      "default": "menu"
+      "type": "string"
     },
     "iconSize": {
       "type": "number"
     },
     "iconColor": {
-      "type": "string",
-      "default": "#FFFFFF"
+      "type": "string"
     },
     "hoverIconColor": {
       "type": "string"
@@ -151,8 +144,7 @@
       "type": "number"
     },
     "childBorderRadius": {
-      "type": "number",
-      "default": 100
+      "type": "number"
     },
     "childBorderRadiusTop": {
       "type": "number"
@@ -180,70 +172,70 @@
     "hoverBackgroundGradient": {
       "type": "string"
     },
-    "childHoverMargin": {
+    "hoverChildMargin": {
       "type": "number"
     },
-    "childHoverMarginTop": {
+    "hoverChildMarginTop": {
       "type": "number"
     },
-    "childHoverMarginRight": {
+    "hoverChildMarginRight": {
       "type": "number"
     },
-    "childHoverMarginBottom": {
+    "hoverChildMarginBottom": {
       "type": "number"
     },
-    "childHoverMarginLeft": {
+    "hoverChildMarginLeft": {
       "type": "number"
     },
-    "childHoverPadding": {
+    "hoverChildPadding": {
       "type": "number"
     },
-    "childHoverPaddingTop": {
+    "hoverChildPaddingTop": {
       "type": "number"
     },
-    "childHoverPaddingRight": {
+    "hoverChildPaddingRight": {
       "type": "number"
     },
-    "childHoverPaddingBottom": {
+    "hoverChildPaddingBottom": {
       "type": "number"
     },
-    "childHoverPaddingLeft": {
+    "hoverChildPaddingLeft": {
       "type": "number"
     },
-    "childHoverBorderType": {
+    "hoverChildBorderType": {
       "type": "string"
     },
-    "childHoverBorderColor": {
+    "hoverChildBorderColor": {
       "type": "string"
     },
-    "childHoverBorder": {
+    "hoverChildBorder": {
       "type": "number"
     },
-    "childHoverBorderTop": {
+    "hoverChildBorderTop": {
       "type": "number"
     },
-    "childHoverBorderRight": {
+    "hoverChildBorderRight": {
       "type": "number"
     },
-    "childHoverBorderBottom": {
+    "hoverChildBorderBottom": {
       "type": "number"
     },
-    "childHoverBorderLeft": {
+    "hoverChildBorderLeft": {
       "type": "number"
     },
-    "childHoverBorderRadius": {
+    "hoverChildBorderRadius": {
       "type": "number"
     },
-    "childHoverBorderRadiusTop": {
+    "hoverChildBorderRadiusTop": {
       "type": "number"
     },
-    "childHoverBorderRadiusRight": {
+    "hoverChildBorderRadiusRight": {
       "type": "number"
     },
-    "childHoverBorderRadiusBottom": {
+    "hoverChildBorderRadiusBottom": {
       "type": "number"
     },
-    "childHoverBorderRadiusLeft": {
+    "hoverChildBorderRadiusLeft": {
       "type": "number"
     }
   },

@@ -539,7 +539,8 @@ return array(
 				'type' => 'boolean'
 			),
 			'hoverBackgroundType' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'solid'
 			),
 			'hoverBackgroundColor' => array(
 				'type' => 'string'
@@ -694,83 +695,84 @@ return array(
 			'sectionMarginLeft' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBackgroundType' => array(
+			'hoverSectionBackgroundType' => array(
+				'type' => 'string',
+				'default' => 'solid'
+			),
+			'hoverSectionBackgroundColor' => array(
 				'type' => 'string'
 			),
-			'sectionHoverBackgroundColor' => array(
+			'hoverSectionBackgroundGradient' => array(
 				'type' => 'string'
 			),
-			'sectionHoverBackgroundGradient' => array(
+			'hoverSectionBorderType' => array(
 				'type' => 'string'
 			),
-			'sectionHoverBorderType' => array(
+			'hoverSectionBorderColor' => array(
 				'type' => 'string'
 			),
-			'sectionHoverBorderColor' => array(
-				'type' => 'string'
-			),
-			'sectionHoverHasBoxShadow' => array(
+			'hoverSectionHasBoxShadow' => array(
 				'type' => 'boolean',
 				'default' => false
 			),
-			'sectionHoverBorder' => array(
+			'hoverSectionBorder' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderTop' => array(
+			'hoverSectionBorderTop' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRight' => array(
+			'hoverSectionBorderRight' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderBottom' => array(
+			'hoverSectionBorderBottom' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderLeft' => array(
+			'hoverSectionBorderLeft' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRadius' => array(
+			'hoverSectionBorderRadius' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRadiusTop' => array(
+			'hoverSectionBorderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRadiusRight' => array(
+			'hoverSectionBorderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRadiusBottom' => array(
+			'hoverSectionBorderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'sectionHoverBorderRadiusLeft' => array(
+			'hoverSectionBorderRadiusLeft' => array(
 				'type' => 'number'
 			),
-			'sectionHoverPadding' => array(
+			'hoverSectionPadding' => array(
 				'type' => 'number'
 			),
-			'sectionHoverPaddingTop' => array(
+			'hoverSectionPaddingTop' => array(
 				'type' => 'number'
 			),
-			'sectionHoverPaddingRight' => array(
+			'hoverSectionPaddingRight' => array(
 				'type' => 'number'
 			),
-			'sectionHoverPaddingBottom' => array(
+			'hoverSectionPaddingBottom' => array(
 				'type' => 'number'
 			),
-			'sectionHoverPaddingLeft' => array(
+			'hoverSectionPaddingLeft' => array(
 				'type' => 'number'
 			),
-			'sectionHoverMargin' => array(
+			'hoverSectionMargin' => array(
 				'type' => 'number'
 			),
-			'sectionHoverMarginTop' => array(
+			'hoverSectionMarginTop' => array(
 				'type' => 'number'
 			),
-			'sectionHoverMarginRight' => array(
+			'hoverSectionMarginRight' => array(
 				'type' => 'number'
 			),
-			'sectionHoverMarginBottom' => array(
+			'hoverSectionMarginBottom' => array(
 				'type' => 'number'
 			),
-			'sectionHoverMarginLeft' => array(
+			'hoverSectionMarginLeft' => array(
 				'type' => 'number'
 			)
 		),
@@ -1012,27 +1014,11 @@ return array(
 				'type' => 'string',
 				'default' => 'px'
 			),
-			'childBorderUnits' => array(
+			'borderUnits' => array(
 				'type' => 'number',
 				'default' => 'px'
 			),
 			'borderRadiusUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'hoverPaddingUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'hoverMarginUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'hoverBorderUnits' => array(
-				'type' => 'string',
-				'default' => 'px'
-			),
-			'hoverBorderRadiusUnits' => array(
 				'type' => 'string',
 				'default' => 'px'
 			),
@@ -1051,20 +1037,29 @@ return array(
 			'mediaUrl' => array(
 				'type' => 'string'
 			),
-			'iconType' => array(
+			'globalSelectedIcon' => array(
+				'type' => 'string',
+				'default' => 'admin-site'
+			),
+			'globalMediaUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'globalIconType' => array(
 				'type' => 'string',
 				'default' => 'library'
 			),
+			'iconType' => array(
+				'type' => 'string'
+			),
 			'selectedIcon' => array(
-				'type' => 'string',
-				'default' => 'menu'
+				'type' => 'string'
 			),
 			'iconSize' => array(
 				'type' => 'number'
 			),
 			'iconColor' => array(
-				'type' => 'string',
-				'default' => '#FFFFFF'
+				'type' => 'string'
 			),
 			'hoverIconColor' => array(
 				'type' => 'string'
@@ -1143,8 +1138,7 @@ return array(
 				'type' => 'number'
 			),
 			'childBorderRadius' => array(
-				'type' => 'number',
-				'default' => 100
+				'type' => 'number'
 			),
 			'childBorderRadiusTop' => array(
 				'type' => 'number'
@@ -1172,70 +1166,70 @@ return array(
 			'hoverBackgroundGradient' => array(
 				'type' => 'string'
 			),
-			'childHoverMargin' => array(
+			'hoverChildMargin' => array(
 				'type' => 'number'
 			),
-			'childHoverMarginTop' => array(
+			'hoverChildMarginTop' => array(
 				'type' => 'number'
 			),
-			'childHoverMarginRight' => array(
+			'hoverChildMarginRight' => array(
 				'type' => 'number'
 			),
-			'childHoverMarginBottom' => array(
+			'hoverChildMarginBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverMarginLeft' => array(
+			'hoverChildMarginLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverPadding' => array(
+			'hoverChildPadding' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingTop' => array(
+			'hoverChildPaddingTop' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingRight' => array(
+			'hoverChildPaddingRight' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingBottom' => array(
+			'hoverChildPaddingBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverPaddingLeft' => array(
+			'hoverChildPaddingLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderType' => array(
+			'hoverChildBorderType' => array(
 				'type' => 'string'
 			),
-			'childHoverBorderColor' => array(
+			'hoverChildBorderColor' => array(
 				'type' => 'string'
 			),
-			'childHoverBorder' => array(
+			'hoverChildBorder' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderTop' => array(
+			'hoverChildBorderTop' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRight' => array(
+			'hoverChildBorderRight' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderBottom' => array(
+			'hoverChildBorderBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderLeft' => array(
+			'hoverChildBorderLeft' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadius' => array(
+			'hoverChildBorderRadius' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusTop' => array(
+			'hoverChildBorderRadiusTop' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusRight' => array(
+			'hoverChildBorderRadiusRight' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusBottom' => array(
+			'hoverChildBorderRadiusBottom' => array(
 				'type' => 'number'
 			),
-			'childHoverBorderRadiusLeft' => array(
+			'hoverChildBorderRadiusLeft' => array(
 				'type' => 'number'
 			)
 		),

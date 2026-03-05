@@ -88,7 +88,7 @@ const ItemStyle = ( {
 									<BaseControl
 										id={ 'lksa' }
 										label={ __(
-											'Background Color',
+											'Background Type',
 											'icon-list'
 										) }
 									>
@@ -98,6 +98,7 @@ const ItemStyle = ( {
 											onChange={ ( value ) =>
 												setAttributes( {
 													backgroundType: value,
+													hoverBackType: value,
 												} )
 											}
 											isBlock
@@ -139,7 +140,10 @@ const ItemStyle = ( {
 									{ attributes?.backgroundType === 'solid' ? (
 										<CustomHelperComponent
 											hasReset={ true }
-											resetAttributes="backgroundColor"
+											resetAttributes={ [
+												'backgroundColor',
+												'hoverBackgroundColor',
+											] }
 											hasColor={ true }
 											icon={ resetIcon }
 											label={ __(
@@ -155,6 +159,9 @@ const ItemStyle = ( {
 													backgroundColor: color,
 													backgroundGradient:
 														undefined,
+													hoverBackgroundColor: color,
+													hoverBackgroundGradient:
+														undefined,
 												} )
 											}
 										/>
@@ -168,6 +175,10 @@ const ItemStyle = ( {
 													backgroundGradient:
 														gradient,
 													backgroundColor: undefined,
+													hoverBackgroundGradient:
+														gradient,
+													hoverBackgroundColor:
+														undefined,
 												} )
 											}
 										/>
@@ -187,6 +198,7 @@ const ItemStyle = ( {
 											onChange={ ( value ) =>
 												setAttributes( {
 													borderType: value,
+													hoverBorderType: value,
 												} )
 											}
 										>
@@ -267,7 +279,10 @@ const ItemStyle = ( {
 								<div className="control-section control-section--border-color">
 									<CustomHelperComponent
 										hasReset={ true }
-										resetAttributes="borderColor"
+										resetAttributes={ [
+											'borderColor',
+											'hoverBorderColor',
+										] }
 										hasColor={ true }
 										icon={ resetIcon }
 										toggleModal={ toggleModal }
@@ -280,6 +295,7 @@ const ItemStyle = ( {
 										onColorChange={ ( color ) =>
 											setAttributes( {
 												borderColor: color,
+												hoverBorderColor: color,
 											} )
 										}
 									/>
@@ -308,6 +324,7 @@ const ItemStyle = ( {
 										onChange={ ( value ) =>
 											setAttributes( {
 												hasBoxShadow: value,
+												hoverHasBoxShadow: value,
 											} )
 										}
 									/>
@@ -384,7 +401,9 @@ const ItemStyle = ( {
 									'solid' ? (
 										<CustomHelperComponent
 											hasReset={ true }
-											resetAttributes="hoverBackgroundColor"
+											resetAttributes={ [
+												'hoverBackgroundColor',
+											] }
 											hasColor={ true }
 											icon={ resetIcon }
 											toggleModal={ toggleModal }
@@ -515,7 +534,9 @@ const ItemStyle = ( {
 								<div className="control-section control-section--border-color">
 									<CustomHelperComponent
 										hasReset={ true }
-										resetAttributes="hoverBorderColor"
+										resetAttributes={ [
+											'hoverBorderColor',
+										] }
 										hasColor={ true }
 										icon={ resetIcon }
 										toggleModal={ toggleModal }
@@ -566,14 +587,6 @@ const ItemStyle = ( {
 								</div>
 
 								{ /* 8. Item Padding */ }
-								<div className="control-section control-section--item-padding">
-									<RangeControls
-										setAttributes={ setAttributes }
-										attributes={ attributes }
-										title={ 'Padding' }
-										type="hoverPadding"
-									/>
-								</div>
 							</div>
 						) }
 					</div>

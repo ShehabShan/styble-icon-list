@@ -27,24 +27,35 @@ import { useGrandparentAttributes } from '../hooks/useGrandparentAttributes.js';
 import ChildItemStyle from '../icon-list-item/ChildItemStyle.js';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
+	console.log(
+		'border',
+		attributes?.childBorder,
+		attributes?.childBorderTop
+	);
+
+	console.log(
+		'hoverChildBorder',
+		attributes?.hoverChildBorder,
+		attributes?.hoverChildBorderTop
+	);
+
 	const { iconStyle } = useGrandparentAttributes( clientId );
 
+	const selectedIcon = attributes?.selectedIcon || iconStyle?.selectedIcon;
+
+	const mediaUrl = attributes?.mediaUrl || iconStyle?.mediaUrl;
+
+	const iconType = attributes?.iconType || iconStyle?.iconType;
+
 	useEffect( () => {
-		if ( attributes.iconType === 'library' ) {
-			// Only set to black if there is currently NO background color set
-			if ( ! attributes.backgroundColor ) {
-				setAttributes( {
-					backgroundColor: '#000000',
-					childPadding: 10,
-				} );
-			}
-		} else if ( attributes.iconType === 'upload' ) {
-			// Your logic to clear background for uploaded images
-			if ( attributes.backgroundColor ) {
-				setAttributes( { backgroundColor: '', childPadding: 0 } );
-			}
+		if ( iconStyle ) {
+			setAttributes( {
+				globalSelectedIcon: iconStyle?.selectedIcon,
+				globalMediaUrl: iconStyle?.mediaUrl,
+				globalIconType: iconStyle?.iconType,
+			} );
 		}
-	}, [ attributes.iconType ] ); // Only runs when the user switches between library and upload
+	}, [ iconType ] );
 
 	const [ openModalId, setOpenModalId ] = useState( null );
 	const toggleModal = ( id ) => {
@@ -175,16 +186,14 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	};
 
 	const renderIcon = () => {
-		if ( attributes?.iconType === 'upload' && attributes?.mediaUrl ) {
-			return <img src={ attributes?.mediaUrl } alt="" />;
+		if ( iconType === 'upload' && mediaUrl ) {
+			return <img src={ mediaUrl } alt="" />;
 		}
 
 		// Render Dashicon if iconName exists
-		if ( attributes?.iconType === 'library' ) {
+		if ( iconType === 'library' ) {
 			return (
-				<span
-					className={ `dashicons dashicons-${ attributes?.selectedIcon }` }
-				/>
+				<span className={ `dashicons dashicons-${ selectedIcon }` } />
 			);
 		}
 

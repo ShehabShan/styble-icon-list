@@ -18,10 +18,10 @@
   /* =========================
      Layout
   ========================= */
-  padding-top: var(--padding-top-IP, 0);
-  padding-left: var(--padding-right-IP, 0);
-  padding-bottom: var(--padding-bottom-IP, 0);
-  padding-right: var(--padding-left-IP, 0);
+  padding-top: var(--padding-top-IP, 10px);
+  padding-left: var(--padding-right-IP, 10px);
+  padding-bottom: var(--padding-bottom-IP, 10px);
+  padding-right: var(--padding-left-IP, 10px);
   margin-block-start: var(--margin-top-IP, 0) !important;
   margin-left: var(--margin-right-IP, 0);
   margin-bottom: var(--margin-bottom-IP, 0);
@@ -29,7 +29,7 @@
   /* =========================
      Background
   ========================= */
-  background: var(--background-color-IP, transparent);
+  background: var(--background-color-IP, #000);
   box-shadow: var(--box-shadow-IP);
   /* =========================
      Border
@@ -62,14 +62,10 @@
   border-bottom-right-radius: var(--border-radius-left-IP, 0);
 }
 .wp-block-create-block-icon-picker .dashicons {
-  color: var(--icon-color, "f8f8f8");
+  color: var(--icon-color, #e9e9e9);
   font-size: var(--icon-size, 40px);
   width: var(--icon-size, 40px);
   height: var(--icon-size, 40px);
-  border-top-right-radius: var(--border-radius-top-IP, 0);
-  border-top-left-radius: var(--border-radius-right-IP, 0);
-  border-bottom-left-radius: var(--border-radius-bottom-IP, 0);
-  border-bottom-right-radius: var(--border-radius-left-IP, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,8 +75,12 @@
 .wp-block-create-block-icon-picker .dashicons::before {
   line-height: 1;
 }
+.wp-block-create-block-icon-picker:has(img) {
+  background-color: transparent;
+  padding: 0;
+}
 .wp-block-create-block-icon-picker:hover {
-  background: var(--bg-h-IP);
+  background: var(--bg-h-IP, #000);
   box-shadow: var(--box-shadow-h-IP);
   border-color: var(--border-color-h-IP);
   border-style: var(--border-style-h-IP);
@@ -88,19 +88,15 @@
   border-left-width: var(--border-right-h-IP);
   border-bottom-width: var(--border-bottom-h-IP);
   border-right-width: var(--border-left-h-IP);
-  padding-top: var(--padding-top-h-IP);
-  padding-left: var(--padding-right-h-IP);
-  padding-bottom: var(--padding-bottom-h-IP);
-  padding-right: var(--padding-left-h-IP);
-  margin-top: var(--margin-top-h-IP);
-  margin-left: var(--margin-right-h-IP);
-  margin-bottom: var(--margin-bottom-h-IP);
-  margin-right: var(--margin-left-h-IP);
   border-top-right-radius: var(--radius-top-h-IP);
   border-top-left-radius: var(--radius-right-h-IP);
   border-bottom-left-radius: var(--radius-bottom-h-IP);
   border-bottom-right-radius: var(--radius-left-h-IP);
 }
 .wp-block-create-block-icon-picker:hover .dashicons {
-  color: var(--hover-icon-color, var(--icon-color)) !important;
+  color: var(--hover-icon-color, var(--icon-color, #e9e9e9)) !important;
+}
+.wp-block-create-block-icon-picker:hover:has(img) {
+  background-color: transparent;
+  padding: 0;
 }

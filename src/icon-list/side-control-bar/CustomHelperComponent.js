@@ -38,11 +38,15 @@ const CustomHelperComponent = ( props ) => {
 								} }
 							/>
 						}
-						onClick={ () =>
-							props?.setAttributes( {
-								[ props?.resetAttributes ]: undefined,
-							} )
-						}
+						onClick={ () => {
+							const resetObj = {};
+
+							props?.resetAttributes?.forEach( ( attr ) => {
+								resetObj[ attr ] = undefined;
+							} );
+
+							props?.setAttributes( resetObj );
+						} }
 					/>
 				) }
 

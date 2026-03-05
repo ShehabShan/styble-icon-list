@@ -1104,7 +1104,7 @@ function Edit({
           hasColor: true,
           hasReset: true,
           icon: _assests_reset_svg__WEBPACK_IMPORTED_MODULE_14__["default"],
-          resetAttributes: "iconColor",
+          resetAttributes: ['iconColor'],
           setAttributes: setAttributes,
           color: iconColor,
           onColorChange: color => setAttributes({
@@ -1335,9 +1335,13 @@ const CustomHelperComponent = props => {
             height: '18px'
           }
         }),
-        onClick: () => props?.setAttributes({
-          [props?.resetAttributes]: undefined
-        })
+        onClick: () => {
+          const resetObj = {};
+          props?.resetAttributes?.forEach(attr => {
+            resetObj[attr] = undefined;
+          });
+          props?.setAttributes(resetObj);
+        }
       }), props?.hasColor && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dropdown, {
         renderToggle: ({
           isOpen,
@@ -2080,8 +2084,8 @@ const AdvancedStyle = props => {
       isBlock: true,
       __next40pxDefaultSize: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
-        className: `list-preset-option alignment-set ${attributes?.sectionAlignment === 'left' ? 'is-active' : ''}`,
-        value: "left",
+        className: `list-preset-option alignment-set ${attributes?.sectionAlignment === 'flex-start' ? 'is-active' : ''}`,
+        value: "flex-start",
         label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
           src: _assests_section_alignment_left_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
           alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('left', 'advanced-text')
@@ -2096,8 +2100,8 @@ const AdvancedStyle = props => {
         }),
         "aria-label": "center"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
-        className: `list-preset-option alignment-set ${attributes?.sectionAlignment === 'right' ? 'is-active' : ''}`,
-        value: "right",
+        className: `list-preset-option alignment-set ${attributes?.sectionAlignment === 'flex-end' ? 'is-active' : ''}`,
+        value: "flex-end",
         label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("img", {
           src: _assests_section_alignment_right_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
           alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Right', 'advanced-text')
@@ -2134,7 +2138,8 @@ const AdvancedStyle = props => {
             className: "background-type-toggel-group",
             value: attributes?.sectionBackgroundType,
             onChange: value => setAttributes({
-              sectionBackgroundType: value
+              sectionBackgroundType: value,
+              sectionHoverBackgroundType: value
             }),
             isBlock: true,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
@@ -2155,20 +2160,24 @@ const AdvancedStyle = props => {
         children: attributes?.sectionBackgroundType === 'solid' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
           hasReset: true,
           icon: resetIcon,
-          resetAttributes: "sectionBackgroundColor",
+          resetAttributes: ['sectionBackgroundColor', 'sectionHoverBackgroundColor'],
           hasColor: true,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background Color', 'icon-list'),
           color: attributes?.sectionBackgroundColor,
           setAttributes: setAttributes,
           onColorChange: color => setAttributes({
             sectionBackgroundColor: color,
-            sectionBackgroundGradient: undefined
+            sectionBackgroundGradient: undefined,
+            sectionHoverBackgroundColor: color,
+            sectionHoverBackgroundGradient: undefined
           })
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.GradientPicker, {
           value: attributes?.sectionBackgroundGradient,
           onChange: gradient => setAttributes({
             sectionBackgroundGradient: gradient,
-            sectionBackgroundColor: undefined
+            sectionBackgroundColor: undefined,
+            sectionHoverBackgroundGradient: gradient,
+            sectionHoverBackgroundColor: undefined
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
@@ -2184,7 +2193,8 @@ const AdvancedStyle = props => {
             isBlock: false,
             value: attributes?.sectionBorderType,
             onChange: value => setAttributes({
-              sectionBorderType: value
+              sectionBorderType: value,
+              sectionHoverBorderType: value
             }),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
               className: `custom-border-option ${attributes?.sectionBorderType === 'none' ? 'is-active' : ''}`,
@@ -2222,14 +2232,15 @@ const AdvancedStyle = props => {
         className: "control-section control-section--border-color",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
           hasReset: true,
-          resetAttributes: "sectionBorderColor",
+          resetAttributes: ['sectionBorderColor', 'sectionHoverBorderColor'],
           hasColor: true,
           icon: resetIcon,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Color', 'icon-list'),
           color: attributes?.sectionBorderColor,
           setAttributes: setAttributes,
           onColorChange: color => setAttributes({
-            sectionBorderColor: color
+            sectionBorderColor: color,
+            sectionHoverBorderColor: color
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
@@ -2361,13 +2372,13 @@ const AdvancedStyle = props => {
             attributes: attributes,
             isBorder: true,
             title: 'border Width',
-            type: "sectionHoverBorder"
+            type: "hoverSectionBorder"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "control-section control-section--border-color",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
             hasReset: true,
-            resetAttributes: "sectionHoverBorderColor",
+            resetAttributes: ['sectionHoverBorderColor'],
             hasColor: true,
             icon: resetIcon,
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Color', 'icon-list'),
@@ -2383,7 +2394,7 @@ const AdvancedStyle = props => {
             setAttributes: setAttributes,
             attributes: attributes,
             title: 'border Radius',
-            type: "sectionHoverBorderRadius"
+            type: "hoverSectionBorderRadius"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
           className: "control-section control-section--box-shadow",
@@ -2394,22 +2405,6 @@ const AdvancedStyle = props => {
             onChange: value => setAttributes({
               sectionHoverHasBoxShadow: value
             })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-          className: "control-section control-section--padding",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_RangeControls_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
-            setAttributes: setAttributes,
-            attributes: attributes,
-            title: 'Padding',
-            type: "sectionHoverPadding"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-          className: "control-section control-section--margin",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_RangeControls_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
-            setAttributes: setAttributes,
-            attributes: attributes,
-            title: 'Margin',
-            type: "sectionHoverMargin"
           })
         })]
       })
@@ -2513,12 +2508,13 @@ const ItemStyle = ({
             className: "control-section control-section--background-type",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BaseControl, {
               id: 'lksa',
-              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'icon-list'),
+              label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Type', 'icon-list'),
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControl, {
                 className: "background-type-toggel-group",
                 value: attributes?.backgroundType,
                 onChange: value => setAttributes({
-                  backgroundType: value
+                  backgroundType: value,
+                  hoverBackType: value
                 }),
                 isBlock: true,
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
@@ -2538,7 +2534,7 @@ const ItemStyle = ({
             className: "control-section control-section--background-value",
             children: attributes?.backgroundType === 'solid' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
               hasReset: true,
-              resetAttributes: "backgroundColor",
+              resetAttributes: ['backgroundColor', 'hoverBackgroundColor'],
               hasColor: true,
               icon: resetIcon,
               label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'icon-list'),
@@ -2546,13 +2542,17 @@ const ItemStyle = ({
               setAttributes: setAttributes,
               onColorChange: color => setAttributes({
                 backgroundColor: color,
-                backgroundGradient: undefined
+                backgroundGradient: undefined,
+                hoverBackgroundColor: color,
+                hoverBackgroundGradient: undefined
               })
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.GradientPicker, {
               value: attributes?.backgroundGradient,
               onChange: gradient => setAttributes({
                 backgroundGradient: gradient,
-                backgroundColor: undefined
+                backgroundColor: undefined,
+                hoverBackgroundGradient: gradient,
+                hoverBackgroundColor: undefined
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -2568,7 +2568,8 @@ const ItemStyle = ({
                 isBlock: false,
                 value: attributes?.borderType,
                 onChange: value => setAttributes({
-                  borderType: value
+                  borderType: value,
+                  hoverBorderType: value
                 }),
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
                   className: `custom-border-option ${attributes?.borderType === 'none' ? 'is-active' : ''}`,
@@ -2610,7 +2611,7 @@ const ItemStyle = ({
             className: "control-section control-section--border-color",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
               hasReset: true,
-              resetAttributes: "borderColor",
+              resetAttributes: ['borderColor', 'hoverBorderColor'],
               hasColor: true,
               icon: resetIcon,
               toggleModal: toggleModal,
@@ -2618,7 +2619,8 @@ const ItemStyle = ({
               color: attributes?.borderColor,
               setAttributes: setAttributes,
               onColorChange: color => setAttributes({
-                borderColor: color
+                borderColor: color,
+                hoverBorderColor: color
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -2639,7 +2641,8 @@ const ItemStyle = ({
               className: "my-custom-troggle",
               checked: attributes?.hasBoxShadow,
               onChange: value => setAttributes({
-                hasBoxShadow: value
+                hasBoxShadow: value,
+                hoverHasBoxShadow: value
               })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -2682,7 +2685,7 @@ const ItemStyle = ({
             className: "control-section control-section--background-value",
             children: attributes?.hoverBackgroundType === 'solid' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
               hasReset: true,
-              resetAttributes: "hoverBackgroundColor",
+              resetAttributes: ['hoverBackgroundColor'],
               hasColor: true,
               icon: resetIcon,
               toggleModal: toggleModal,
@@ -2751,7 +2754,7 @@ const ItemStyle = ({
             className: "control-section control-section--border-color",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_side_control_bar_CustomHelperComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
               hasReset: true,
-              resetAttributes: "hoverBorderColor",
+              resetAttributes: ['hoverBorderColor'],
               hasColor: true,
               icon: resetIcon,
               toggleModal: toggleModal,
@@ -2782,14 +2785,6 @@ const ItemStyle = ({
               onChange: value => setAttributes({
                 hoverHasBoxShadow: value
               })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "control-section control-section--item-padding",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_RangeControls__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              setAttributes: setAttributes,
-              attributes: attributes,
-              title: 'Padding',
-              type: "hoverPadding"
             })
           })]
         })]
@@ -2852,8 +2847,8 @@ const RangeControls = props => {
     setIsExpanded(prev => !prev);
   };
   const unitKey = `${type}Units`;
-  const baseKey = type; // "borderRadius"
-  const topKey = `${type}Top`; // "borderRadiusTop"
+  const baseKey = type;
+  const topKey = `${type}Top`;
   const rightKey = `${type}Right`;
   const bottomKey = `${type}Bottom`;
   const leftKey = `${type}Left`;
@@ -2867,6 +2862,26 @@ const RangeControls = props => {
   const bottomValue = attributes[bottomKey] ?? baseValue;
   const leftValue = attributes[leftKey] ?? baseValue;
   const activeUnit = attributes[unitKey]?.replace(/[0-9.]/g, '') || 'px';
+  const cap = str => str.charAt(0).toUpperCase() + str.slice(1);
+  const updateValue = (key, val) => {
+    setAttributes({
+      [key]: val,
+      [`hover${cap(key)}`]: val
+    });
+  };
+  const resetAllValue = () => {
+    const sides = ['Top', 'Right', 'Bottom', 'Left'];
+    const resetObj = {
+      [type]: 0,
+      [`hover${cap(type)}`]: 0
+    };
+    sides.forEach(side => {
+      const key = `${type}${side}`;
+      resetObj[key] = null;
+      resetObj[`hover${cap(key)}`] = null;
+    });
+    setAttributes(resetObj);
+  };
   const unitSettings = {
     px: {
       min: 0,
@@ -2925,15 +2940,6 @@ const RangeControls = props => {
     }
   };
   const currentConfig = unitSettings[activeUnit] || unitSettings.px;
-  const resetAllValue = () => {
-    setAttributes({
-      [baseKey]: 0,
-      [topKey]: undefined,
-      [rightKey]: undefined,
-      [bottomKey]: undefined,
-      [leftKey]: undefined
-    });
-  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     className: "range-row",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
@@ -2993,13 +2999,18 @@ const RangeControls = props => {
         isBlock: true,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
           value: baseValue,
-          onChange: value => setAttributes({
-            [baseKey]: value,
-            [topKey]: undefined,
-            [rightKey]: undefined,
-            [bottomKey]: undefined,
-            [leftKey]: undefined
-          }),
+          onChange: value => {
+            const updateObj = {
+              [baseKey]: value,
+              [`hover${cap(baseKey)}`]: value
+            };
+            ['Top', 'Right', 'Bottom', 'Left'].forEach(side => {
+              const sideKey = `${type}${side}`;
+              updateObj[sideKey] = undefined;
+              updateObj[`hover${cap(sideKey)}`] = undefined;
+            });
+            setAttributes(updateObj);
+          },
           withInputField: isToggled
           // Use the dynamic config here:
           ,
@@ -3040,9 +3051,7 @@ const RangeControls = props => {
           isBlock: true,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
             value: topValue,
-            onChange: value => setAttributes({
-              [topKey]: value
-            }),
+            onChange: value => updateValue(topKey, value),
             withInputField: isToggled
             // Use the dynamic config here:
             ,
@@ -3082,9 +3091,7 @@ const RangeControls = props => {
           isBlock: true,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
             value: rightValue,
-            onChange: value => setAttributes({
-              [rightKey]: value
-            }),
+            onChange: value => updateValue(rightKey, value),
             withInputField: isToggled
             // Use the dynamic config here:
             ,
@@ -3124,9 +3131,7 @@ const RangeControls = props => {
           isBlock: true,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
             value: bottomValue,
-            onChange: value => setAttributes({
-              [bottomKey]: value
-            }),
+            onChange: value => updateValue(bottomKey, value),
             withInputField: isToggled
             // Use the dynamic config here:
             ,
@@ -3166,9 +3171,7 @@ const RangeControls = props => {
           isBlock: true,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RangeControl, {
             value: leftValue,
-            onChange: value => setAttributes({
-              [leftKey]: value
-            }),
+            onChange: value => updateValue(leftKey, value),
             withInputField: isToggled
             // Use the dynamic config here:
             ,
@@ -3693,7 +3696,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getResolvedSides: () => (/* binding */ getResolvedSides)
 /* harmony export */ });
 const getResolvedSides = (base, top, right, bottom, left) => {
-  const isValid = v => v !== undefined && v !== null && v !== '';
+  // Treat 0 as invalid by adding (v !== 0)
+  const isValid = v => v !== undefined && v !== null && v !== '' && v !== 0;
   const resolve = val => {
     if (isValid(val)) {
       return Number(val);
@@ -3712,17 +3716,13 @@ const getResolvedSides = (base, top, right, bottom, left) => {
 };
 const getBlockStyles = attributes => {
   const cleanStyles = obj => {
-    return Object.fromEntries(Object.entries(obj).filter(([_, value]) => value !== undefined && value !== null && value !== ''));
+    return Object.fromEntries(Object.entries(obj).filter(([_, value]) => !!value));
   };
   const withUnit = (value, unit = 'px') => {
-    if (value === undefined || value === null || value === '') {
+    if (value === undefined || value === null || value === '' || value === 0) {
       return null;
     }
     return `${value}${unit}`;
-  };
-  const getFallbackValue = (hoverVal, normalVal) => {
-    const isValid = v => v !== undefined && v !== null && v !== '';
-    return isValid(hoverVal) ? hoverVal : normalVal;
   };
   const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
   const S_SHADOW_VAL = 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px';
@@ -3738,10 +3738,6 @@ const getBlockStyles = attributes => {
   const mU = getUnit('marginUnits');
   const bU = getUnit('borderUnits');
   const rU = getUnit('borderRadiusUnits');
-  const hpU = getUnit('hoverPaddingUnits');
-  const hmU = getUnit('hoverMarginUnits');
-  const hbU = getUnit('hoverBorderUnits');
-  const hrU = getUnit('hoverBorderRadiusUnits');
 
   // -------------------------------
   // Resolve Parent Box Sides
@@ -3752,17 +3748,13 @@ const getBlockStyles = attributes => {
   const sPadding = getBox(attributes, 'sectionPadding');
   const sBorder = getBox(attributes, 'sectionBorder');
   const sBorderRadius = getBox(attributes, 'sectionBorderRadius');
-  const sHoverMargin = getBox(attributes, 'sectionHoverMargin');
-  const sHoverPadding = getBox(attributes, 'sectionHoverPadding');
-  const sHoverBorder = getBox(attributes, 'sectionHoverBorder');
-  const sHoverBorderRadius = getBox(attributes, 'sectionHoverBorderRadius');
+  const sHoverBorder = getBox(attributes, 'hoverSectionBorder');
+  const sHoverBorderRadius = getBox(attributes, 'hoverSectionBorderRadius');
   const margin = getBox(attributes, 'margin');
   const padding = getBox(attributes, 'padding');
   const border = getBox(attributes, 'border');
   const borderRadius = getBox(attributes, 'borderRadius');
-  const hoverPadding = getBox(attributes, 'hoverPadding');
   const hoverBorder = getBox(attributes, 'hoverBorder');
-  const hoverMargin = getBox(attributes, 'hoverMargin');
   const hoverRadius = getBox(attributes, 'hoverBorderRadius');
   let itemsWidthValue = null;
   if (attributes?.itemWidthType === 'auto') {
@@ -3781,15 +3773,11 @@ const getBlockStyles = attributes => {
     '--section-width': attributes?.sectionWidth && `${attributes?.sectionWidth}px`,
     '--section-alignment': attributes?.sectionAlignment,
     '--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
+    '--section-box-shadow-h': attributes?.sectionHoverHasBoxShadow && S_SHADOW_VAL,
     '--separator-thickness': withUnit(attributes?.separatorThickness, 'px'),
     '--separator-color': attributes?.separatorColor,
     '--separator-style': attributes?.separatorType,
-    // '--icon-size': withUnit( attributes?.iconSize, 'px' ),
-
-    // ===============================
-    // PARENT CONTAINER STYLES (Padding use pU)
-    // ===============================
-
+    '--icon-size': withUnit(attributes?.iconSize, 'px'),
     '--section-background-color': sBackgroundValue || null,
     // Padding (use pU)
     '--section-padding-top': withUnit(sPadding?.top, spU),
@@ -3798,6 +3786,7 @@ const getBlockStyles = attributes => {
     '--section-padding-left': withUnit(sPadding?.left, spU),
     //parent border
     '--section-border-color': attributes?.sectionBorderColor,
+    '--section-border-color-h': attributes?.sectionHoverBorderColor,
     '--section-border-style': attributes?.sectionBorderType,
     '--section-border-top-width': withUnit(sBorder?.top, sbU),
     '--section-border-right-width': withUnit(sBorder?.right, sbU),
@@ -3815,34 +3804,19 @@ const getBlockStyles = attributes => {
     '--section-border-radius-left': withUnit(sBorderRadius?.left, srU),
     //Hover section style
 
-    '--section-background-color-h': sHoverBackgroundValue || sBackgroundValue || null,
-    '--section-box-shadow-h': attributes?.sectionHoverHasBoxShadow || attributes?.sectionHasBoxShadow ? S_SHADOW_VAL : null,
-    // Padding Hover (Falls back to normal padding)
-    '--section-padding-top-h': withUnit(getFallbackValue(sHoverPadding?.top, sPadding?.top), pU),
-    '--section-padding-right-h': withUnit(getFallbackValue(sHoverPadding?.right, sPadding?.right), pU),
-    '--section-padding-bottom-h': withUnit(getFallbackValue(sHoverPadding?.bottom, sPadding?.bottom), pU),
-    '--section-padding-left-h': withUnit(getFallbackValue(sHoverPadding?.left, sPadding?.left), pU),
+    '--section-background-color-h': sHoverBackgroundValue || null,
     // Border Hover
-    '--section-border-color-h': attributes?.sectionHoverBorderColor || attributes?.sectionBorderColor,
-    '--section-border-style-h': attributes?.sectionHoverBorderType || attributes?.sectionBorderType,
-    '--section-border-top-width-h': withUnit(getFallbackValue(sHoverBorder?.top, sBorder?.top), bU),
-    '--section-border-right-width-h': withUnit(getFallbackValue(sHoverBorder?.right, sBorder?.right), bU),
-    '--section-border-bottom-width-h': withUnit(getFallbackValue(sHoverBorder?.bottom, sBorder?.bottom), bU),
-    '--section-border-left-width-h': withUnit(getFallbackValue(sHoverBorder?.left, sBorder?.left), bU),
-    // Margin Hover
-    '--section-margin-top-h': withUnit(getFallbackValue(sHoverMargin?.top, sMargin?.top), mU),
-    '--section-margin-right-h': withUnit(getFallbackValue(sHoverMargin?.right, sMargin?.right), mU),
-    '--section-margin-bottom-h': withUnit(getFallbackValue(sHoverMargin?.bottom, sMargin?.bottom), mU),
-    '--section-margin-left-h': withUnit(getFallbackValue(sHoverMargin?.left, sMargin?.left), mU),
-    // Border Width (use bU)
 
-    // Border Radius (use rU)
-
+    '--section-border-style-h': attributes?.sectionHoverBorderType,
+    '--section-border-top-width-h': withUnit(sHoverBorder?.top, bU),
+    '--section-border-right-width-h': withUnit(sHoverBorder?.right, bU),
+    '--section-border-bottom-width-h': withUnit(sHoverBorder?.bottom, bU),
+    '--section-border-left-width-h': withUnit(sHoverBorder?.left, bU),
     // Border Radius Hover Fallback
-    '--section-border-radius-top-h': withUnit(getFallbackValue(sHoverBorderRadius?.top, sBorderRadius?.top), rU),
-    '--section-border-radius-right-h': withUnit(getFallbackValue(sHoverBorderRadius?.right, sBorderRadius?.right), rU),
-    '--section-border-radius-bottom-h': withUnit(getFallbackValue(sHoverBorderRadius?.bottom, sBorderRadius?.bottom), rU),
-    '--section-border-radius-left-h': withUnit(getFallbackValue(sHoverBorderRadius?.left, sBorderRadius?.left), rU),
+    '--section-border-radius-top-h': withUnit(sHoverBorderRadius?.top, rU),
+    '--section-border-radius-right-h': withUnit(sHoverBorderRadius?.right, rU),
+    '--section-border-radius-bottom-h': withUnit(sHoverBorderRadius?.bottom, rU),
+    '--section-border-radius-left-h': withUnit(sHoverBorderRadius?.left, rU),
     // ===============================
     // GENERAL
     // ===============================
@@ -3871,6 +3845,7 @@ const getBlockStyles = attributes => {
 
     '--background-color': backgroundValue || null,
     '--box-shadow': attributes?.hasBoxShadow && SHADOW_VAL,
+    '--box-shadow-h': attributes?.hoverHasBoxShadow && SHADOW_VAL,
     // Padding (use pU)
     '--padding-top': withUnit(padding?.top, pU),
     '--padding-right': withUnit(padding?.right, pU),
@@ -3899,30 +3874,19 @@ const getBlockStyles = attributes => {
     // HOVER DEFAULTS
     // ===============================
     '--bg-h': hoverBackground || backgroundValue || null,
-    '--box-shadow-h': attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow ? SHADOW_VAL : null,
     // Border Color & Style Fallbacks
     '--border-color-h': attributes?.hoverBorderColor || attributes?.borderColor,
     '--border-style-h': attributes?.hoverBorderType || attributes?.borderType,
-    // Hover Padding (Falls back to normal padding, uses hpU)
-    '--padding-top-h': withUnit(getFallbackValue(hoverPadding?.top, padding?.top), hpU),
-    '--padding-right-h': withUnit(getFallbackValue(hoverPadding?.right, padding?.right), hpU),
-    '--padding-bottom-h': withUnit(getFallbackValue(hoverPadding?.bottom, padding?.bottom), hpU),
-    '--padding-left-h': withUnit(getFallbackValue(hoverPadding?.left, padding?.left), hpU),
-    // Hover Margin (Falls back to normal margin, uses hmU)
-    '--margin-top-h': withUnit(getFallbackValue(hoverMargin?.top, margin?.top), hmU),
-    '--margin-right-h': withUnit(getFallbackValue(hoverMargin?.right, margin?.right), hmU),
-    '--margin-bottom-h': withUnit(getFallbackValue(hoverMargin?.bottom, margin?.bottom), hmU),
-    '--margin-left-h': withUnit(getFallbackValue(hoverMargin?.left, margin?.left), hmU),
     // Hover Border Width (Falls back to normal border width, uses hbU)
-    '--border-top-h': withUnit(getFallbackValue(hoverBorder?.top, border?.top), hbU),
-    '--border-right-h': withUnit(getFallbackValue(hoverBorder?.right, border?.right), hbU),
-    '--border-bottom-h': withUnit(getFallbackValue(hoverBorder?.bottom, border?.bottom), hbU),
-    '--border-left-h': withUnit(getFallbackValue(hoverBorder?.left, border?.left), hbU),
+    '--border-top-h': withUnit(hoverBorder?.top, bU),
+    '--border-right-h': withUnit(hoverBorder?.right, bU),
+    '--border-bottom-h': withUnit(hoverBorder?.bottom, bU),
+    '--border-left-h': withUnit(hoverBorder?.left, bU),
     // Hover Radius (Falls back to normal radius, uses hrU)
-    '--radius-top-h': withUnit(getFallbackValue(hoverRadius?.top, borderRadius?.top), hrU),
-    '--radius-right-h': withUnit(getFallbackValue(hoverRadius?.right, borderRadius?.right), hrU),
-    '--radius-bottom-h': withUnit(getFallbackValue(hoverRadius?.bottom, borderRadius?.bottom), hrU),
-    '--radius-left-h': withUnit(getFallbackValue(hoverRadius?.left, borderRadius?.left), hrU)
+    '--radius-top-h': withUnit(hoverRadius?.top, rU),
+    '--radius-right-h': withUnit(hoverRadius?.right, rU),
+    '--radius-bottom-h': withUnit(hoverRadius?.bottom, rU),
+    '--radius-left-h': withUnit(hoverRadius?.left, rU)
   });
 };
 const getChildBlockStyles = attributes => {
@@ -3935,10 +3899,6 @@ const getChildBlockStyles = attributes => {
     }
     return `${value}${unit}`;
   };
-  const getFallbackValue = (hoverVal, normalVal) => {
-    const isValid = v => v !== undefined && v !== null && v !== '';
-    return isValid(hoverVal) ? hoverVal : normalVal;
-  };
   const SHADOW_VAL = 'rgb(38, 57, 77) 0px 20px 30px -10px';
 
   // Units Logic
@@ -3948,10 +3908,6 @@ const getChildBlockStyles = attributes => {
   const mU = getUnit('marginUnits');
   const bU = getUnit('borderUnits');
   const rU = getUnit('borderRadiusUnits');
-  const hpU = getUnit('hoverPaddingUnits');
-  const hmU = getUnit('hoverMarginUnits');
-  const hbU = getUnit('hoverBorderUnits');
-  const hrU = getUnit('hoverBorderRadiusUnits');
 
   // -------------------------------
   // Resolve Parent Box Sides
@@ -3962,10 +3918,8 @@ const getChildBlockStyles = attributes => {
   const padding = getBox(attributes, 'childPadding');
   const border = getBox(attributes, 'childBorder');
   const borderRadius = getBox(attributes, 'childBorderRadius');
-  const hoverPadding = getBox(attributes, 'childHoverPadding');
-  const hoverBorder = getBox(attributes, 'childHoverBorder');
-  const hoverMargin = getBox(attributes, 'childHoverMargin');
-  const hoverRadius = getBox(attributes, 'childHoverborderRadius');
+  const hoverBorder = getBox(attributes, 'hoverChildBorder');
+  const hoverRadius = getBox(attributes, 'hoverChildborderRadius');
   const backgroundValue = attributes?.backgroundGradient || attributes?.backgroundColor;
   const hoverBackground = attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
   return cleanStyles({
@@ -4016,30 +3970,20 @@ const getChildBlockStyles = attributes => {
     // ===============================
     // HOVER DEFAULTS (With Fallbacks)
     // ===============================
-    '--bg-h-IP': hoverBackground || backgroundValue || null,
-    '--box-shadow-h-IP': attributes?.hoverHasBoxShadow || attributes?.hasBoxShadow ? SHADOW_VAL : null,
-    '--border-color-h-IP': attributes?.hoverBorderColor || attributes?.childBorderColor,
-    '--border-style-h-IP': attributes?.hoverBorderType || attributes?.childBorderType,
-    // Hover Padding (Falls back to normal padding, uses hpU)
-    '--padding-top-h-IP': withUnit(getFallbackValue(hoverPadding?.top, padding?.top), hpU),
-    '--padding-right-h-IP': withUnit(getFallbackValue(hoverPadding?.right, padding?.right), hpU),
-    '--padding-bottom-h-IP': withUnit(getFallbackValue(hoverPadding?.bottom, padding?.bottom), hpU),
-    '--padding-left-h-IP': withUnit(getFallbackValue(hoverPadding?.left, padding?.left), hpU),
-    // Hover Margin (Falls back to normal margin, uses hmU)
-    '--margin-top-h-IP': withUnit(getFallbackValue(hoverMargin?.top, margin?.top), hmU),
-    '--margin-right-h-IP': withUnit(getFallbackValue(hoverMargin?.right, margin?.right), hmU),
-    '--margin-bottom-h-IP': withUnit(getFallbackValue(hoverMargin?.bottom, margin?.bottom), hmU),
-    '--margin-left-h-IP': withUnit(getFallbackValue(hoverMargin?.left, margin?.left), hmU),
+    '--bg-h-IP': hoverBackground || null,
+    '--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
+    '--border-color-h-IP': attributes?.hoverBorderColor,
+    '--border-style-h-IP': attributes?.hoverBorderType,
     // Hover Border Width (Falls back to normal border width, uses hbU)
-    '--border-top-h-IP': withUnit(getFallbackValue(hoverBorder?.top, border?.top), hbU),
-    '--border-right-h-IP': withUnit(getFallbackValue(hoverBorder?.right, border?.right), hbU),
-    '--border-bottom-h-IP': withUnit(getFallbackValue(hoverBorder?.bottom, border?.bottom), hbU),
-    '--border-left-h-IP': withUnit(getFallbackValue(hoverBorder?.left, border?.left), hbU),
+    '--border-top-h-IP': withUnit(hoverBorder?.top, bU),
+    '--border-right-h-IP': withUnit(hoverBorder?.right, bU),
+    '--border-bottom-h-IP': withUnit(hoverBorder?.bottom, bU),
+    '--border-left-h-IP': withUnit(hoverBorder?.left, bU),
     // Hover Radius (Falls back to normal radius, uses hrU)
-    '--radius-top-h-IP': withUnit(getFallbackValue(hoverRadius?.top, borderRadius?.top), hrU),
-    '--radius-right-h-IP': withUnit(getFallbackValue(hoverRadius?.right, borderRadius?.right), hrU),
-    '--radius-bottom-h-IP': withUnit(getFallbackValue(hoverRadius?.bottom, borderRadius?.bottom), hrU),
-    '--radius-left-h-IP': withUnit(getFallbackValue(hoverRadius?.left, borderRadius?.left), hrU)
+    '--radius-top-h-IP': withUnit(hoverRadius?.top, rU),
+    '--radius-right-h-IP': withUnit(hoverRadius?.right, rU),
+    '--radius-bottom-h-IP': withUnit(hoverRadius?.bottom, rU),
+    '--radius-left-h-IP': withUnit(hoverRadius?.left, rU)
   });
 };
 
@@ -4275,7 +4219,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"sectionPaddingUnits":{"type":"string","default":"px"},"sectionMarginUnits":{"type":"string","default":"px"},"sectionBorderUnits":{"type":"string","default":"px"},"sectionBorderRadiusUnits":{"type":"string","default":"px"},"sectionHoverPaddingUnits":{"type":"string","default":"px"},"sectionHoverMarginUnits":{"type":"string","default":"px"},"sectionHoverBorderUnits":{"type":"string","default":"px"},"sectionHoverBorderRadiusUnits":{"type":"string","default":"px"},"mediaId":{"type":"number","default":0},"mediaUrl":{"type":"string"},"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string","default":"dashboard"},"iconType":{"type":"string","default":"library"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string"},"separatorThickness":{"type":"number","default":0},"itemWidthType":{"type":"string","default":"auto"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number"},"fontHeight":{"type":"number"},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string"},"iconColor":{"type":"string"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string","default":"#fff"},"backgroundGradient":{"type":"string"},"allPadding":{"type":"number"},"allPaddingTop":{"type":"number"},"allPaddingRight":{"type":"number"},"allPaddingLeft":{"type":"number"},"allPaddingBottom":{"type":"number"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingBottom":{"type":"number"},"paddingLeft":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hasBoxShadow":{"type":"boolean"},"hoverBackgroundType":{"type":"string"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean"},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"},"sectionWidth":{"type":"number","default":650},"sectionAlignment":{"type":"string","default":"center"},"sectionItemStyleType":{"type":"string","default":"normal"},"sectionBackgroundType":{"type":"string","default":"solid"},"sectionBackgroundColor":{"type":"string"},"sectionBackgroundGradient":{"type":"string"},"sectionBorderType":{"type":"string","default":"none"},"sectionBorderColor":{"type":"string"},"sectionHasBoxShadow":{"type":"boolean","default":false},"sectionBorder":{"type":"number"},"sectionBorderTop":{"type":"number"},"sectionBorderRight":{"type":"number"},"sectionBorderBottom":{"type":"number"},"sectionBorderLeft":{"type":"number"},"sectionBorderRadius":{"type":"number"},"sectionBorderRadiusTop":{"type":"number"},"sectionBorderRadiusRight":{"type":"number"},"sectionBorderRadiusBottom":{"type":"number"},"sectionBorderRadiusLeft":{"type":"number"},"sectionPadding":{"type":"number"},"sectionPaddingTop":{"type":"number"},"sectionPaddingRight":{"type":"number"},"sectionPaddingBottom":{"type":"number"},"sectionPaddingLeft":{"type":"number"},"sectionMargin":{"type":"number"},"sectionMarginTop":{"type":"number"},"sectionMarginRight":{"type":"number"},"sectionMarginBottom":{"type":"number"},"sectionMarginLeft":{"type":"number"},"sectionHoverBackgroundType":{"type":"string"},"sectionHoverBackgroundColor":{"type":"string"},"sectionHoverBackgroundGradient":{"type":"string"},"sectionHoverBorderType":{"type":"string"},"sectionHoverBorderColor":{"type":"string"},"sectionHoverHasBoxShadow":{"type":"boolean","default":false},"sectionHoverBorder":{"type":"number"},"sectionHoverBorderTop":{"type":"number"},"sectionHoverBorderRight":{"type":"number"},"sectionHoverBorderBottom":{"type":"number"},"sectionHoverBorderLeft":{"type":"number"},"sectionHoverBorderRadius":{"type":"number"},"sectionHoverBorderRadiusTop":{"type":"number"},"sectionHoverBorderRadiusRight":{"type":"number"},"sectionHoverBorderRadiusBottom":{"type":"number"},"sectionHoverBorderRadiusLeft":{"type":"number"},"sectionHoverPadding":{"type":"number"},"sectionHoverPaddingTop":{"type":"number"},"sectionHoverPaddingRight":{"type":"number"},"sectionHoverPaddingBottom":{"type":"number"},"sectionHoverPaddingLeft":{"type":"number"},"sectionHoverMargin":{"type":"number"},"sectionHoverMarginTop":{"type":"number"},"sectionHoverMarginRight":{"type":"number"},"sectionHoverMarginBottom":{"type":"number"},"sectionHoverMarginLeft":{"type":"number"}},"providesContext":{"icon-list/iconColor":"iconColor","icon-list/iconSize":"iconSize","icon-list/iconType":"iconType"},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list","version":"0.1.0","title":"Icon List","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"sectionPaddingUnits":{"type":"string","default":"px"},"sectionMarginUnits":{"type":"string","default":"px"},"sectionBorderUnits":{"type":"string","default":"px"},"sectionBorderRadiusUnits":{"type":"string","default":"px"},"sectionHoverPaddingUnits":{"type":"string","default":"px"},"sectionHoverMarginUnits":{"type":"string","default":"px"},"sectionHoverBorderUnits":{"type":"string","default":"px"},"sectionHoverBorderRadiusUnits":{"type":"string","default":"px"},"mediaId":{"type":"number","default":0},"mediaUrl":{"type":"string"},"preset":{"type":"string","default":"preset-1"},"listOrientation":{"type":"string","default":"vertical"},"itemsGap":{"type":"number","default":10},"selectedIcon":{"type":"string","default":"dashboard"},"iconType":{"type":"string","default":"library"},"hasIcon":{"type":"boolean","default":false},"iconSize":{"type":"number","default":20},"separatorType":{"type":"string","default":"none"},"separatorColor":{"type":"string"},"separatorThickness":{"type":"number","default":0},"itemWidthType":{"type":"string","default":"auto"},"itemsWidth":{"type":"number","default":200},"fontWeight":{"type":"number","default":400},"fontFamily":{"type":"string","default":"\\"Open Sans\\", sans-serif"},"fontSize":{"type":"number"},"fontHeight":{"type":"number"},"letterSpacing":{"type":"number","default":0},"wordSpacing":{"type":"number","default":0},"isItalic":{"type":"boolean","default":false},"isUnderline":{"type":"boolean","default":false},"isStrikethrough":{"type":"boolean","default":false},"textTransform":{"type":"string"},"iconColor":{"type":"string"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string","default":"#fff"},"backgroundGradient":{"type":"string"},"allPadding":{"type":"number"},"allPaddingTop":{"type":"number"},"allPaddingRight":{"type":"number"},"allPaddingLeft":{"type":"number"},"allPaddingBottom":{"type":"number"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingBottom":{"type":"number"},"paddingLeft":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hasBoxShadow":{"type":"boolean"},"hoverBackgroundType":{"type":"string","default":"solid"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean"},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"},"sectionWidth":{"type":"number","default":650},"sectionAlignment":{"type":"string","default":"center"},"sectionItemStyleType":{"type":"string","default":"normal"},"sectionBackgroundType":{"type":"string","default":"solid"},"sectionBackgroundColor":{"type":"string"},"sectionBackgroundGradient":{"type":"string"},"sectionBorderType":{"type":"string","default":"none"},"sectionBorderColor":{"type":"string"},"sectionHasBoxShadow":{"type":"boolean","default":false},"sectionBorder":{"type":"number"},"sectionBorderTop":{"type":"number"},"sectionBorderRight":{"type":"number"},"sectionBorderBottom":{"type":"number"},"sectionBorderLeft":{"type":"number"},"sectionBorderRadius":{"type":"number"},"sectionBorderRadiusTop":{"type":"number"},"sectionBorderRadiusRight":{"type":"number"},"sectionBorderRadiusBottom":{"type":"number"},"sectionBorderRadiusLeft":{"type":"number"},"sectionPadding":{"type":"number"},"sectionPaddingTop":{"type":"number"},"sectionPaddingRight":{"type":"number"},"sectionPaddingBottom":{"type":"number"},"sectionPaddingLeft":{"type":"number"},"sectionMargin":{"type":"number"},"sectionMarginTop":{"type":"number"},"sectionMarginRight":{"type":"number"},"sectionMarginBottom":{"type":"number"},"sectionMarginLeft":{"type":"number"},"hoverSectionBackgroundType":{"type":"string","default":"solid"},"hoverSectionBackgroundColor":{"type":"string"},"hoverSectionBackgroundGradient":{"type":"string"},"hoverSectionBorderType":{"type":"string"},"hoverSectionBorderColor":{"type":"string"},"hoverSectionHasBoxShadow":{"type":"boolean","default":false},"hoverSectionBorder":{"type":"number"},"hoverSectionBorderTop":{"type":"number"},"hoverSectionBorderRight":{"type":"number"},"hoverSectionBorderBottom":{"type":"number"},"hoverSectionBorderLeft":{"type":"number"},"hoverSectionBorderRadius":{"type":"number"},"hoverSectionBorderRadiusTop":{"type":"number"},"hoverSectionBorderRadiusRight":{"type":"number"},"hoverSectionBorderRadiusBottom":{"type":"number"},"hoverSectionBorderRadiusLeft":{"type":"number"},"hoverSectionPadding":{"type":"number"},"hoverSectionPaddingTop":{"type":"number"},"hoverSectionPaddingRight":{"type":"number"},"hoverSectionPaddingBottom":{"type":"number"},"hoverSectionPaddingLeft":{"type":"number"},"hoverSectionMargin":{"type":"number"},"hoverSectionMarginTop":{"type":"number"},"hoverSectionMarginRight":{"type":"number"},"hoverSectionMarginBottom":{"type":"number"},"hoverSectionMarginLeft":{"type":"number"}},"providesContext":{"icon-list/iconColor":"iconColor","icon-list/iconSize":"iconSize","icon-list/iconType":"iconType"},"textdomain":"icon-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

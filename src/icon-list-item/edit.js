@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 
 	const childStyle = getBlockStyles( attributes );
 
-	const parentLayout = useParentAttributes( clientId );
+	// const parentLayout = useParentAttributes( clientId );
 
 	// const prevGrand = useRef( null );
 

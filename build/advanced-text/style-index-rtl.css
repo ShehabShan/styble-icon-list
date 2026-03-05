@@ -37,14 +37,6 @@
   border-left-width: var(--border-right-h-IP);
   border-bottom-width: var(--border-bottom-h-IP);
   border-right-width: var(--border-left-h-IP);
-  padding-top: var(--padding-top-h-IP);
-  padding-left: var(--padding-right-h-IP);
-  padding-bottom: var(--padding-bottom-h-IP);
-  padding-right: var(--padding-left-h-IP);
-  margin-top: var(--margin-top-h-IP) !important;
-  margin-left: var(--margin-right-h-IP);
-  margin-bottom: var(--margin-bottom-h-IP);
-  margin-right: var(--margin-left-h-IP);
   border-top-right-radius: var(--radius-top-h-IP);
   border-top-left-radius: var(--radius-right-h-IP);
   border-bottom-left-radius: var(--radius-bottom-h-IP);
@@ -55,6 +47,7 @@
 }
 .wp-block-create-block-advanced-text > * {
   margin: 0;
+  overflow: hidden;
   /* Core Font Settings */
   width: var(--max-content-width, auto);
   font-family: var(--font-family, inherit);

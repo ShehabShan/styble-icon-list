@@ -7,39 +7,39 @@
 	width: var(--items-width);
 
 	// --- Base State ---
-	background: var(--background-color, transparent);
-	border-color: var(--border-color, transparent);
+	background: var(--background-color);
+	border-color: var(--border-color);
 
 	/* 2. Individual Border Styles */
-	border-style: var(--border-style, none);
+	border-style: var(--border-style);
 
 	/* 3. Individual Border Widths */
-	border-top-width: var(--border-top-width, 0);
-	border-right-width: var(--border-right-width, 0);
-	border-bottom-width: var(--border-bottom-width, 0);
-	border-left-width: var(--border-left-width, 0);
+	border-top-width: var(--border-top-width);
+	border-right-width: var(--border-right-width);
+	border-bottom-width: var(--border-bottom-width);
+	border-left-width: var(--border-left-width);
 
 	/* 4. Individual Border Radii */
-	border-top-left-radius: var(--border-radius-top, 0);
-	border-top-right-radius: var(--border-radius-right, 0);
-	border-bottom-right-radius: var(--border-radius-bottom, 0);
-	border-bottom-left-radius: var(--border-radius-left, 0);
+	border-top-left-radius: var(--border-radius-top);
+	border-top-right-radius: var(--border-radius-right);
+	border-bottom-right-radius: var(--border-radius-bottom);
+	border-bottom-left-radius: var(--border-radius-left);
 
 	/* 5. Individual Padding */
-	margin-top: var(--margin-top, 0) !important;
-	margin-right: var(--margin-right, 0) !important;
-	margin-bottom: var(--margin-bottom, 0) !important;
-	margin-left: var(--margin-left, 0) !important;
+	margin-top: var(--margin-top) !important;
+	margin-right: var(--margin-right) !important;
+	margin-bottom: var(--margin-bottom) !important;
+	margin-left: var(--margin-left) !important;
 
 	/* Padding */
 
-	padding-top: var(--padding-top, 0);
-	padding-right: var(--padding-right, 0);
-	padding-bottom: var(--padding-bottom, 0);
-	padding-left: var(--padding-left, 0);
+	padding-top: var(--padding-top);
+	padding-right: var(--padding-right);
+	padding-bottom: var(--padding-bottom);
+	padding-left: var(--padding-left);
 
 	/* 7. Box Shadow */
-	box-shadow: var(--box-shadow, none);
+	box-shadow: var(--box-shadow);
 
 	transition: all 0.2s ease-in-out;
 
@@ -66,17 +66,5 @@
 		border-top-right-radius: var(--radius-right-h);
 		border-bottom-right-radius: var(--radius-bottom-h);
 		border-bottom-left-radius: var(--radius-left-h);
-
-		/* 5. Padding on Hover (Optional, use if you want the pill to grow/shrink) */
-		padding-top: var(--padding-top-h);
-		padding-right: var(--padding-right-h);
-		padding-bottom: var(--padding-bottom-h);
-		padding-left: var(--padding-left-h);
-
-		/* 6. Margin on Hover */
-		margin-top: var(--margin-top-h) !important;
-		margin-right: var(--margin-right-h) !important;
-		margin-bottom: var(--margin-bottom-h) !important;
-		margin-left: var(--margin-left-h) !important;
 	}
 }
