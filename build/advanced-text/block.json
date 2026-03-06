@@ -4,7 +4,7 @@
   "name": "create-block/advanced-text",
   "version": "0.1.0",
   "title": "Advanced Text",
-  "category": "widgets",
+  "category": "styble",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
@@ -12,22 +12,6 @@
     "html": false
   },
   "attributes": {
-    "fontSizeUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "fontHeightUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "letterSpacingUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "wordSpacingUnits": {
-      "type": "string",
-      "default": "px"
-    },
     "paddingUnits": {
       "type": "string",
       "default": "px"
@@ -36,27 +20,11 @@
       "type": "string",
       "default": "px"
     },
-    "childBorderUnits": {
+    "borderUnits": {
       "type": "number",
       "default": "px"
     },
     "borderRadiusUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverPaddingUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverMarginUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverBorderUnits": {
-      "type": "string",
-      "default": "px"
-    },
-    "hoverBorderRadiusUnits": {
       "type": "string",
       "default": "px"
     },
@@ -79,7 +47,8 @@
       "type": "string"
     },
     "maxContentWidth": {
-      "type": "number"
+      "type": "number",
+      "default": 250
     },
     "textLimit": {
       "type": "number"
@@ -91,16 +60,23 @@
       "type": "string"
     },
     "backgroundType": {
+      "type": "string",
+      "default": "solid"
+    },
+    "hoverBackgroundType": {
       "type": "string"
     },
     "backgroundColor": {
       "type": "string"
     },
+    "hoverBackgroundColor": {
+      "type": "string"
+    },
     "backgroundGradient": {
       "type": "string"
     },
-    "hasBoxShadow": {
-      "type": "boolean"
+    "hoverBackgroundGradient": {
+      "type": "string"
     },
     "fontWeight": {
       "type": "number"
@@ -132,37 +108,34 @@
     "textTransform": {
       "type": "string"
     },
-    "allPadding": {
-      "type": "number",
-      "default": 0
+    "hadBoxShadow": {
+      "type": "boolean",
+      "default": false
     },
-    "allPaddingTop": {
+    "hoverHasBoxShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "childPadding": {
       "type": "number"
     },
-    "allPaddingRight": {
+    "childPaddingTop": {
       "type": "number"
     },
-    "allPaddingLeft": {
+    "childPaddingRight": {
       "type": "number"
     },
-    "allPaddingBottom": {
+    "childPaddingBottom": {
       "type": "number"
     },
-    "padding": {
-      "type": "number",
-      "default": 0
-    },
-    "paddingTop": {
+    "childPaddingLeft": {
       "type": "number"
     },
-    "paddingRight": {
-      "type": "number"
+    "childBorderType": {
+      "type": "string"
     },
-    "paddingBottom": {
-      "type": "number"
-    },
-    "paddingLeft": {
-      "type": "number"
+    "childBorderColor": {
+      "type": "string"
     },
     "childBorder": {
       "type": "number"
@@ -179,94 +152,57 @@
     "childBorderLeft": {
       "type": "number"
     },
-    "childBorderType": {
-      "type": "string"
-    },
-    "ChildBorderColor": {
-      "type": "string"
-    },
-    "borderRadius": {
+    "childBorderRadius": {
       "type": "number",
       "default": 0
     },
-    "borderRadiusTop": {
+    "childBorderRadiusTop": {
       "type": "number"
     },
-    "borderRadiusRight": {
+    "childBorderRadiusRight": {
       "type": "number"
     },
-    "borderRadiusBottom": {
+    "childBorderRadiusBottom": {
       "type": "number"
     },
-    "borderRadiusLeft": {
+    "childBorderRadiusLeft": {
       "type": "number"
     },
-    "hadBoxShadow": {
-      "type": "boolean",
-      "default": "false"
-    },
-    "childHoverBorderType": {
+    "hoverChildBorderType": {
       "type": "string"
     },
-    "childHoverBorderColor": {
+    "hoverChildBorderColor": {
       "type": "string"
     },
-    "childHoverBorder": {
+    "hoverChildBorder": {
       "type": "number"
     },
-    "childHoverBorderTop": {
+    "hoverChildBorderTop": {
       "type": "number"
     },
-    "childHoverBorderRight": {
+    "hoverChildBorderRight": {
       "type": "number"
     },
-    "childHoverBorderBottom": {
+    "hoverChildBorderBottom": {
       "type": "number"
     },
-    "childHoverBorderLeft": {
+    "hoverChildBorderLeft": {
       "type": "number"
     },
-    "hoverBorderRadius": {
+    "hoverChildBorderRadius": {
       "type": "number"
     },
-    "hoverBorderRadiusTop": {
+    "hoverChildBorderRadiusTop": {
       "type": "number"
     },
-    "hoverBorderRadiusRight": {
+    "hoverChildBorderRadiusRight": {
       "type": "number"
     },
-    "hoverBorderRadiusBottom": {
+    "hoverChildBorderRadiusBottom": {
       "type": "number"
     },
-    "hoverBorderRadiusLeft": {
+    "hoverChildBorderRadiusLeft": {
       "type": "number"
-    },
-    "hoverPadding": {
-      "type": "number"
-    },
-    "hoverPaddingTop": {
-      "type": "number"
-    },
-    "hoverPaddingRight": {
-      "type": "number"
-    },
-    "hoverPaddingBottom": {
-      "type": "number"
-    },
-    "hoverPaddingLeft": {
-      "type": "number"
-    },
-    "hoverBackgroundType": {
-      "type": "string"
-    },
-    "hoverBackgroundColor": {
-      "type": "string"
-    },
-    "hoverBackgroundGradient": {
-      "type": "string"
-    },
-    "hoverHasBoxShadow": {
-      "type": "boolean"
     }
   },
   "textdomain": "advanced-text",

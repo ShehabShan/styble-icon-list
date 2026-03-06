@@ -4,7 +4,7 @@
 	"name": "create-block/icon-picker",
 	"version": "0.1.0",
 	"title": "Icon Picker",
-	"category": "widgets",
+	"category": "styble",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
@@ -46,10 +46,12 @@
 		"hasLink": { "type": "boolean", "default": false },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
-		"hoverBackgroundType": { "type": "string", "default": "solid" },
+		"hoverBackgroundType": { "type": "string" },
 
 		"backgroundColor": { "type": "string" },
+		"hoverBackgroundColor": { "type": "string" },
 		"backgroundGradient": { "type": "string" },
+		"hoverBackgroundGradient": { "type": "string" },
 
 		"childPadding": { "type": "number" },
 		"childPaddingTop": { "type": "number" },
@@ -63,9 +65,9 @@
 		"childMarginBottom": { "type": "number" },
 		"childMarginLeft": { "type": "number" },
 
-		"childBorderType": { "type": "string" },
+		"childBorderType": { "type": "string", "default": "none" },
 		"childBorderColor": { "type": "string" },
-		"childBorder": { "type": "number" },
+		"childBorder": { "type": "number", "default": 0 },
 		"childBorderTop": { "type": "number" },
 		"childBorderRight": { "type": "number" },
 		"childBorderBottom": { "type": "number" },
@@ -79,8 +81,6 @@
 
 		"hadBoxShadow": { "type": "boolean", "default": false },
 		"hoverHasBoxShadow": { "type": "boolean", "default": false },
-		"hoverBackgroundColor": { "type": "string" },
-		"hoverBackgroundGradient": { "type": "string" },
 
 		"hoverChildMargin": { "type": "number" },
 		"hoverChildMarginTop": { "type": "number" },
@@ -96,6 +96,7 @@
 
 		"hoverChildBorderType": { "type": "string" },
 		"hoverChildBorderColor": { "type": "string" },
+
 		"hoverChildBorder": { "type": "number" },
 		"hoverChildBorderTop": { "type": "number" },
 		"hoverChildBorderRight": { "type": "number" },

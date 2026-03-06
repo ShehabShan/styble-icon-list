@@ -4,7 +4,7 @@
   "name": "create-block/icon-list",
   "version": "0.1.0",
   "title": "Icon List",
-  "category": "widgets",
+  "category": "styble",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
@@ -185,21 +185,6 @@
     "backgroundGradient": {
       "type": "string"
     },
-    "allPadding": {
-      "type": "number"
-    },
-    "allPaddingTop": {
-      "type": "number"
-    },
-    "allPaddingRight": {
-      "type": "number"
-    },
-    "allPaddingLeft": {
-      "type": "number"
-    },
-    "allPaddingBottom": {
-      "type": "number"
-    },
     "padding": {
       "type": "number"
     },
@@ -230,10 +215,10 @@
     "borderLeft": {
       "type": "number"
     },
-    "borderType": {
+    "borderColor": {
       "type": "string"
     },
-    "borderColor": {
+    "borderType": {
       "type": "string"
     },
     "borderRadius": {
@@ -341,8 +326,7 @@
       "type": "string"
     },
     "sectionBorderType": {
-      "type": "string",
-      "default": "none"
+      "type": "string"
     },
     "sectionBorderColor": {
       "type": "string"

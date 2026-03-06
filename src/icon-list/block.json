@@ -4,7 +4,7 @@
 	"name": "create-block/icon-list",
 	"version": "0.1.0",
 	"title": "Icon List",
-	"category": "widgets",
+	"category": "styble",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
@@ -61,16 +61,12 @@
 		"isUnderline": { "type": "boolean", "default": false },
 		"isStrikethrough": { "type": "boolean", "default": false },
 		"textTransform": { "type": "string" },
+
 		"iconColor": { "type": "string" },
 		"itemStyleType": { "type": "string", "default": "normal" },
 		"backgroundType": { "type": "string", "default": "solid" },
 		"backgroundColor": { "type": "string", "default": "#fff" },
 		"backgroundGradient": { "type": "string" },
-		"allPadding": { "type": "number" },
-		"allPaddingTop": { "type": "number" },
-		"allPaddingRight": { "type": "number" },
-		"allPaddingLeft": { "type": "number" },
-		"allPaddingBottom": { "type": "number" },
 
 		"padding": { "type": "number" },
 		"paddingTop": { "type": "number" },
@@ -84,9 +80,8 @@
 		"borderBottom": { "type": "number" },
 		"borderLeft": { "type": "number" },
 
-		"borderType": { "type": "string" },
-
 		"borderColor": { "type": "string" },
+		"borderType": { "type": "string" },
 		"borderRadius": { "type": "number" },
 		"borderRadiusTop": { "type": "number" },
 		"borderRadiusRight": { "type": "number" },
@@ -128,7 +123,7 @@
 		"sectionBackgroundType": { "type": "string", "default": "solid" },
 		"sectionBackgroundColor": { "type": "string" },
 		"sectionBackgroundGradient": { "type": "string" },
-		"sectionBorderType": { "type": "string", "default": "none" },
+		"sectionBorderType": { "type": "string" },
 		"sectionBorderColor": { "type": "string" },
 		"sectionHasBoxShadow": { "type": "boolean", "default": false },
 

@@ -114,8 +114,8 @@ export const getBlockStyles = ( attributes ) => {
 		attributes?.sectionBackgroundColor;
 
 	const sHoverBackgroundValue =
-		attributes?.sectionHoverBackgroundGradient ||
-		attributes?.sectionHoverBackgroundColor;
+		attributes?.hoverSectionBackgroundGradient ||
+		attributes?.hoverSectionBackgroundColor;
 
 	return cleanStyles( {
 		// ===============================
@@ -124,10 +124,10 @@ export const getBlockStyles = ( attributes ) => {
 		'--section-width':
 			attributes?.sectionWidth && `${ attributes?.sectionWidth }px`,
 		'--section-alignment': attributes?.sectionAlignment,
-		'--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
 
+		'--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
 		'--section-box-shadow-h':
-			attributes?.sectionHoverHasBoxShadow && S_SHADOW_VAL,
+			attributes?.hoverSectionHasBoxShadow && S_SHADOW_VAL,
 
 		'--separator-thickness': withUnit(
 			attributes?.separatorThickness,
@@ -147,7 +147,7 @@ export const getBlockStyles = ( attributes ) => {
 
 		//parent border
 		'--section-border-color': attributes?.sectionBorderColor,
-		'--section-border-color-h': attributes?.sectionHoverBorderColor,
+		'--section-border-color-h': attributes?.hoverSectionBorderColor,
 
 		'--section-border-style': attributes?.sectionBorderType,
 		'--section-border-top-width': withUnit( sBorder?.top, sbU ),
@@ -176,7 +176,7 @@ export const getBlockStyles = ( attributes ) => {
 
 		// Border Hover
 
-		'--section-border-style-h': attributes?.sectionHoverBorderType,
+		'--section-border-style-h': attributes?.hoverSectionBorderType,
 
 		'--section-border-top-width-h': withUnit( sHoverBorder?.top, bU ),
 		'--section-border-right-width-h': withUnit( sHoverBorder?.right, bU ),
@@ -341,7 +341,7 @@ export const getChildBlockStyles = ( attributes ) => {
 
 	const hoverBorder = getBox( attributes, 'hoverChildBorder' );
 
-	const hoverRadius = getBox( attributes, 'hoverChildborderRadius' );
+	const hoverRadius = getBox( attributes, 'hoverChildBorderRadius' );
 
 	const backgroundValue =
 		attributes?.backgroundGradient || attributes?.backgroundColor;
@@ -411,8 +411,9 @@ export const getChildBlockStyles = ( attributes ) => {
 		// ===============================
 		'--bg-h-IP': hoverBackground || null,
 		'--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
-		'--border-color-h-IP': attributes?.hoverBorderColor,
-		'--border-style-h-IP': attributes?.hoverBorderType,
+
+		'--border-color-h-IP': attributes?.hoverChildBorderColor,
+		'--border-style-h-IP': attributes?.hoverChildBorderType,
 
 		// Hover Border Width (Falls back to normal border width, uses hbU)
 		'--border-top-h-IP': withUnit( hoverBorder?.top, bU ),

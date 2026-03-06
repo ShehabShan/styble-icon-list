@@ -38,7 +38,7 @@ const ChildItemStyle = ( props ) => {
 	const paddingKey = isChild ? 'childPadding' : 'padding';
 	const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
 
-	const hoverTypeKey = isChild ? 'childHoverBorderType' : 'hoverBorderType';
+	const hoverTypeKey = isChild ? 'hoverChildBorderType' : 'hoverBorderType';
 
 	const hoverBorderRadiusKey = isChild
 		? 'hoverChildBorderRadius'
@@ -46,7 +46,7 @@ const ChildItemStyle = ( props ) => {
 	const hoverBorderkey = isChild ? 'hoverChildBorder' : 'hoverBorder';
 
 	const hoverColorKey = isChild
-		? 'childHoverBorderColor'
+		? 'hoverChildBorderColor'
 		: 'hoverBorderColor';
 
 	return (
@@ -300,10 +300,7 @@ const ChildItemStyle = ( props ) => {
 					<div className="control-section control-section--border-color">
 						<CustomHelperComponent
 							hasReset={ true }
-							resetAttributes={ [
-								'borderColor',
-								'hoverBorderColor',
-							] }
+							resetAttributes={ [ colorKey, hoverColorKey ] }
 							hasColor={ true }
 							icon={ resetIcon }
 							label={ __( 'Border Color', 'icon-list' ) }
@@ -553,7 +550,7 @@ const ChildItemStyle = ( props ) => {
 						<div className="control-section control-section--border-color">
 							<CustomHelperComponent
 								hasReset={ true }
-								resetAttributes="hoverBorderColor"
+								resetAttributes={ [ hoverColorKey ] }
 								hasColor={ true }
 								icon={ resetIcon }
 								label={ __( 'Border Color', 'icon-list' ) }

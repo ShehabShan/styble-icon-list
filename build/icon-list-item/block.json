@@ -4,7 +4,7 @@
   "name": "create-block/icon-list-item",
   "version": "0.1.0",
   "title": "Icon List Item",
-  "category": "widgets",
+  "category": "styble",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},

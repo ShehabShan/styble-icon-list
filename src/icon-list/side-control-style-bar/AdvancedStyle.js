@@ -45,7 +45,7 @@ const AdvancedStyle = ( props ) => {
 			/>
 			<ToggleGroupControl
 				className="list-preset"
-				label={ __( 'Alignment', 'advanced-text' ) }
+				label={ __( 'Alignment', 'icon-list' ) }
 				value={ attributes?.sectionAlignment }
 				onChange={ ( value ) =>
 					setAttributes( { sectionAlignment: value } )
@@ -63,7 +63,7 @@ const AdvancedStyle = ( props ) => {
 					label={
 						<img
 							src={ alignmentLeft }
-							alt={ __( 'left', 'advanced-text' ) }
+							alt={ __( 'left', 'icon-list' ) }
 						/>
 					}
 					aria-label="left"
@@ -78,7 +78,7 @@ const AdvancedStyle = ( props ) => {
 					label={
 						<img
 							src={ alignmentCenter }
-							alt={ __( 'Center', 'advanced-text' ) }
+							alt={ __( 'Center', 'icon-list' ) }
 						/>
 					}
 					aria-label="center"
@@ -93,7 +93,7 @@ const AdvancedStyle = ( props ) => {
 					label={
 						<img
 							src={ alignmentRight }
-							alt={ __( 'Right', 'advanced-text' ) }
+							alt={ __( 'Right', 'icon-list' ) }
 						/>
 					}
 					aria-label="right"
@@ -146,7 +146,7 @@ const AdvancedStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										sectionBackgroundType: value,
-										sectionHoverBackgroundType: value,
+										hoverSectionBackgroundType: value,
 									} )
 								}
 								isBlock
@@ -187,7 +187,7 @@ const AdvancedStyle = ( props ) => {
 								icon={ resetIcon }
 								resetAttributes={ [
 									'sectionBackgroundColor',
-									'sectionHoverBackgroundColor',
+									'hoverSectionBackgroundColor',
 								] }
 								hasColor={ true }
 								label={ __( 'Background Color', 'icon-list' ) }
@@ -197,8 +197,8 @@ const AdvancedStyle = ( props ) => {
 									setAttributes( {
 										sectionBackgroundColor: color,
 										sectionBackgroundGradient: undefined,
-										sectionHoverBackgroundColor: color,
-										sectionHoverBackgroundGradient:
+										hoverSectionBackgroundColor: color,
+										hoverSectionBackgroundGradient:
 											undefined,
 									} )
 								}
@@ -210,9 +210,9 @@ const AdvancedStyle = ( props ) => {
 									setAttributes( {
 										sectionBackgroundGradient: gradient,
 										sectionBackgroundColor: undefined,
-										sectionHoverBackgroundGradient:
+										hoverSectionBackgroundGradient:
 											gradient,
-										sectionHoverBackgroundColor: undefined,
+										hoverSectionBackgroundColor: undefined,
 									} )
 								}
 							/>
@@ -231,7 +231,7 @@ const AdvancedStyle = ( props ) => {
 								onChange={ ( value ) =>
 									setAttributes( {
 										sectionBorderType: value,
-										sectionHoverBorderType: value,
+										hoverSectionBorderType: value,
 									} )
 								}
 							>
@@ -295,7 +295,7 @@ const AdvancedStyle = ( props ) => {
 							hasReset={ true }
 							resetAttributes={ [
 								'sectionBorderColor',
-								'sectionHoverBorderColor',
+								'hoverSectionBorderColor',
 							] }
 							hasColor={ true }
 							icon={ resetIcon }
@@ -305,7 +305,7 @@ const AdvancedStyle = ( props ) => {
 							onColorChange={ ( color ) =>
 								setAttributes( {
 									sectionBorderColor: color,
-									sectionHoverBorderColor: color,
+									hoverSectionBorderColor: color,
 								} )
 							}
 						/>
@@ -326,6 +326,7 @@ const AdvancedStyle = ( props ) => {
 							onChange={ ( value ) =>
 								setAttributes( {
 									sectionHasBoxShadow: value,
+									hoverSectionHasBoxShadow: value,
 								} )
 							}
 						/>
@@ -361,18 +362,18 @@ const AdvancedStyle = ( props ) => {
 								<ToggleGroupControl
 									className="background-type-toggel-group"
 									value={
-										attributes?.sectionHoverBackgroundType
+										attributes?.hoverSectionBackgroundType
 									}
 									onChange={ ( value ) =>
 										setAttributes( {
-											sectionHoverBackgroundType: value,
+											hoverSectionBackgroundType: value,
 										} )
 									}
 									isBlock
 								>
 									<ToggleGroupControlOption
 										className={ `${
-											attributes?.sectionHoverBackgroundType ===
+											attributes?.hoverSectionBackgroundType ===
 											'solid'
 												? 'is-active'
 												: ''
@@ -386,7 +387,7 @@ const AdvancedStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `${
-											attributes?.sectionHoverBackgroundType ===
+											attributes?.hoverSectionBackgroundType ===
 											'gradient'
 												? 'is-active'
 												: ''
@@ -404,11 +405,11 @@ const AdvancedStyle = ( props ) => {
 
 						{ /* 2. Conditional Background Value */ }
 						<div className="control-section control-section--background-value">
-							{ attributes?.sectionHoverBackgroundType ===
+							{ attributes?.hoverSectionBackgroundType ===
 							'solid' ? (
 								<CustomHelperComponent
 									hasReset={ true }
-									resetAttributes="sectionHoverBackgroundColor"
+									resetAttributes="hoverSectionBackgroundColor"
 									hasColor={ true }
 									icon={ resetIcon }
 									label={ __(
@@ -416,13 +417,13 @@ const AdvancedStyle = ( props ) => {
 										'icon-list'
 									) }
 									color={
-										attributes?.sectionHoverBackgroundColor
+										attributes?.hoverSectionBackgroundColor
 									}
 									setAttributes={ setAttributes }
 									onColorChange={ ( color ) =>
 										setAttributes( {
-											sectionHoverBackgroundColor: color,
-											sectionHoverBackgroundGradient:
+											hoverSectionBackgroundColor: color,
+											hoverSectionBackgroundGradient:
 												undefined,
 										} )
 									}
@@ -430,13 +431,13 @@ const AdvancedStyle = ( props ) => {
 							) : (
 								<GradientPicker
 									value={
-										attributes?.sectionHoverBackgroundGradient
+										attributes?.hoverSectionBackgroundGradient
 									}
 									onChange={ ( gradient ) =>
 										setAttributes( {
-											sectionHoverBackgroundGradient:
+											hoverSectionBackgroundGradient:
 												gradient,
-											sectionHoverBackgroundColor:
+											hoverSectionBackgroundColor:
 												undefined,
 										} )
 									}
@@ -454,16 +455,16 @@ const AdvancedStyle = ( props ) => {
 									className="custom-border-toggle-group"
 									__next40pxDefaultSize
 									isBlock={ false }
-									value={ attributes?.sectionHoverBorderType }
+									value={ attributes?.hoverSectionBorderType }
 									onChange={ ( value ) =>
 										setAttributes( {
-											sectionHoverBorderType: value,
+											hoverSectionBorderType: value,
 										} )
 									}
 								>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes?.sectionHoverBorderType ===
+											attributes?.hoverSectionBorderType ===
 											'none'
 												? 'is-active'
 												: ''
@@ -474,7 +475,7 @@ const AdvancedStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes?.sectionHoverBorderType ===
+											attributes?.hoverSectionBorderType ===
 											'solid'
 												? 'is-active'
 												: ''
@@ -488,7 +489,7 @@ const AdvancedStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes?.sectionHoverBorderType ===
+											attributes?.hoverSectionBorderType ===
 											'dashed'
 												? 'is-active'
 												: ''
@@ -502,7 +503,7 @@ const AdvancedStyle = ( props ) => {
 									/>
 									<ToggleGroupControlOption
 										className={ `custom-border-option ${
-											attributes?.sectionHoverBorderType ===
+											attributes?.hoverSectionBorderType ===
 											'dotted'
 												? 'is-active'
 												: ''
@@ -534,16 +535,16 @@ const AdvancedStyle = ( props ) => {
 							<CustomHelperComponent
 								hasReset={ true }
 								resetAttributes={ [
-									'sectionHoverBorderColor',
+									'hoverSectionBorderColor',
 								] }
 								hasColor={ true }
 								icon={ resetIcon }
 								label={ __( 'Border Color', 'icon-list' ) }
-								color={ attributes?.sectionHoverBorderColor }
+								color={ attributes?.hoverSectionBorderColor }
 								setAttributes={ setAttributes }
 								onColorChange={ ( color ) =>
 									setAttributes( {
-										sectionHoverBorderColor: color,
+										hoverSectionBorderColor: color,
 									} )
 								}
 							/>
@@ -564,10 +565,10 @@ const AdvancedStyle = ( props ) => {
 							<ToggleControl
 								label={ __( 'Box Shadow', 'icon-list' ) }
 								className="my-custom-troggle"
-								checked={ attributes?.sectionHoverHasBoxShadow }
+								checked={ attributes?.hoverSectionHasBoxShadow }
 								onChange={ ( value ) =>
 									setAttributes( {
-										sectionHoverHasBoxShadow: value,
+										hoverSectionHasBoxShadow: value,
 									} )
 								}
 							/>

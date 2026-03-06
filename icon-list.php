@@ -28,3 +28,16 @@ function feature_card_block_enqueue_dashicons() {
 	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'enqueue_block_assets', 'feature_card_block_enqueue_dashicons' );
+
+function my_custom_block_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug'  => 'styble',
+				'title' => __( 'Styble', 'icon-list' ),
+			),
+		)
+	);
+}
+add_filter( 'block_categories_all', 'my_custom_block_category', 10, 2 );

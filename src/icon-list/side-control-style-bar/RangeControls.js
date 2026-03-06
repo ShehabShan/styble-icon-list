@@ -83,16 +83,26 @@ const RangeControls = ( props ) => {
 			min: 0,
 			max: props?.isBorder ? 10 : 100,
 			step: 1,
-			marks: [
-				{ value: 0, label: '0' },
-				{ value: 15, label: '' },
-				{ value: 30, label: '30' },
-				{ value: 45, label: '' },
-				{ value: 60, label: '60' },
-				{ value: 75, label: '' },
-				{ value: 90, label: '' },
-				{ value: 100, label: '100' },
-			],
+
+			marks: props?.isBorder
+				? [
+						{ value: 1, label: '1' },
+						{ value: 3, label: '3' },
+						{ value: 5, label: '5' },
+						{ value: 7, label: '7' },
+						{ value: 9, label: '9' },
+						{ value: 10, label: '10' },
+				  ]
+				: [
+						{ value: 0, label: '0' },
+						{ value: 15, label: '' },
+						{ value: 30, label: '30' },
+						{ value: 45, label: '' },
+						{ value: 60, label: '60' },
+						{ value: 75, label: '' },
+						{ value: 90, label: '' },
+						{ value: 100, label: '100' },
+				  ],
 		},
 		em: {
 			min: 0,

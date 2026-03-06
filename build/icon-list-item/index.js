@@ -665,10 +665,10 @@ const ChildItemStyle = props => {
   const marginKey = isChild ? 'childMargin' : 'margin';
   const paddingKey = isChild ? 'childPadding' : 'padding';
   const borderRadiusKey = isChild ? 'childBorderRadius' : 'borderRadius';
-  const hoverTypeKey = isChild ? 'childHoverBorderType' : 'hoverBorderType';
+  const hoverTypeKey = isChild ? 'hoverChildBorderType' : 'hoverBorderType';
   const hoverBorderRadiusKey = isChild ? 'hoverChildBorderRadius' : 'hoverBorderRadius';
   const hoverBorderkey = isChild ? 'hoverChildBorder' : 'hoverBorder';
-  const hoverColorKey = isChild ? 'childHoverBorderColor' : 'hoverBorderColor';
+  const hoverColorKey = isChild ? 'hoverChildBorderColor' : 'hoverBorderColor';
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     children: [props?.type === 'advanceText' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_icon_list_side_control_style_bar_Typography_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
       attributes: attributes,
@@ -826,7 +826,7 @@ const ChildItemStyle = props => {
         className: "control-section control-section--border-color",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_icon_list_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
           hasReset: true,
-          resetAttributes: ['borderColor', 'hoverBorderColor'],
+          resetAttributes: [colorKey, hoverColorKey],
           hasColor: true,
           icon: resetIcon,
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Color', 'icon-list'),
@@ -987,7 +987,7 @@ const ChildItemStyle = props => {
           className: "control-section control-section--border-color",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_icon_list_side_control_bar_CustomHelperComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
             hasReset: true,
-            resetAttributes: "hoverBorderColor",
+            resetAttributes: [hoverColorKey],
             hasColor: true,
             icon: resetIcon,
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Color', 'icon-list'),
@@ -1502,7 +1502,25 @@ const RangeControls = props => {
       min: 0,
       max: props?.isBorder ? 10 : 100,
       step: 1,
-      marks: [{
+      marks: props?.isBorder ? [{
+        value: 1,
+        label: '1'
+      }, {
+        value: 3,
+        label: '3'
+      }, {
+        value: 5,
+        label: '5'
+      }, {
+        value: 7,
+        label: '7'
+      }, {
+        value: 9,
+        label: '9'
+      }, {
+        value: 10,
+        label: '10'
+      }] : [{
         value: 0,
         label: '0'
       }, {
@@ -2380,7 +2398,7 @@ const getBlockStyles = attributes => {
   const backgroundValue = attributes?.backgroundGradient || attributes?.backgroundColor;
   const hoverBackground = attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
   const sBackgroundValue = attributes?.sectionBackgroundGradient || attributes?.sectionBackgroundColor;
-  const sHoverBackgroundValue = attributes?.sectionHoverBackgroundGradient || attributes?.sectionHoverBackgroundColor;
+  const sHoverBackgroundValue = attributes?.hoverSectionBackgroundGradient || attributes?.hoverSectionBackgroundColor;
   return cleanStyles({
     // ===============================
     //Advance Section
@@ -2388,7 +2406,7 @@ const getBlockStyles = attributes => {
     '--section-width': attributes?.sectionWidth && `${attributes?.sectionWidth}px`,
     '--section-alignment': attributes?.sectionAlignment,
     '--section-box-shadow': attributes?.sectionHasBoxShadow && S_SHADOW_VAL,
-    '--section-box-shadow-h': attributes?.sectionHoverHasBoxShadow && S_SHADOW_VAL,
+    '--section-box-shadow-h': attributes?.hoverSectionHasBoxShadow && S_SHADOW_VAL,
     '--separator-thickness': withUnit(attributes?.separatorThickness, 'px'),
     '--separator-color': attributes?.separatorColor,
     '--separator-style': attributes?.separatorType,
@@ -2401,7 +2419,7 @@ const getBlockStyles = attributes => {
     '--section-padding-left': withUnit(sPadding?.left, spU),
     //parent border
     '--section-border-color': attributes?.sectionBorderColor,
-    '--section-border-color-h': attributes?.sectionHoverBorderColor,
+    '--section-border-color-h': attributes?.hoverSectionBorderColor,
     '--section-border-style': attributes?.sectionBorderType,
     '--section-border-top-width': withUnit(sBorder?.top, sbU),
     '--section-border-right-width': withUnit(sBorder?.right, sbU),
@@ -2422,7 +2440,7 @@ const getBlockStyles = attributes => {
     '--section-background-color-h': sHoverBackgroundValue || null,
     // Border Hover
 
-    '--section-border-style-h': attributes?.sectionHoverBorderType,
+    '--section-border-style-h': attributes?.hoverSectionBorderType,
     '--section-border-top-width-h': withUnit(sHoverBorder?.top, bU),
     '--section-border-right-width-h': withUnit(sHoverBorder?.right, bU),
     '--section-border-bottom-width-h': withUnit(sHoverBorder?.bottom, bU),
@@ -2534,7 +2552,7 @@ const getChildBlockStyles = attributes => {
   const border = getBox(attributes, 'childBorder');
   const borderRadius = getBox(attributes, 'childBorderRadius');
   const hoverBorder = getBox(attributes, 'hoverChildBorder');
-  const hoverRadius = getBox(attributes, 'hoverChildborderRadius');
+  const hoverRadius = getBox(attributes, 'hoverChildBorderRadius');
   const backgroundValue = attributes?.backgroundGradient || attributes?.backgroundColor;
   const hoverBackground = attributes?.hoverBackgroundGradient || attributes?.hoverBackgroundColor;
   return cleanStyles({
@@ -2587,8 +2605,8 @@ const getChildBlockStyles = attributes => {
     // ===============================
     '--bg-h-IP': hoverBackground || null,
     '--box-shadow-h-IP': attributes?.hoverHasBoxShadow && SHADOW_VAL,
-    '--border-color-h-IP': attributes?.hoverBorderColor,
-    '--border-style-h-IP': attributes?.hoverBorderType,
+    '--border-color-h-IP': attributes?.hoverChildBorderColor,
+    '--border-style-h-IP': attributes?.hoverChildBorderType,
     // Hover Border Width (Falls back to normal border width, uses hbU)
     '--border-top-h-IP': withUnit(hoverBorder?.top, bU),
     '--border-right-h-IP': withUnit(hoverBorder?.right, bU),
@@ -2798,7 +2816,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list-item","version":"0.1.0","title":"Icon List Item","category":"widgets","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string"},"backgroundGradient":{"type":"string"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"margin":{"type":"number"},"marginTop":{"type":"number"},"marginRight":{"type":"number"},"marginBottom":{"type":"number"},"marginLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hasBoxShadow":{"type":"boolean","default":false},"hoverBackgroundType":{"type":"string"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean","default":false},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"}},"textdomain":"icon-list-item","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/icon-list-item","version":"0.1.0","title":"Icon List Item","category":"styble","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"paddingUnits":{"type":"string","default":"px"},"marginUnits":{"type":"string","default":"px"},"borderUnits":{"type":"string","default":"px"},"borderRadiusUnits":{"type":"string","default":"px"},"hoverPaddingUnits":{"type":"string","default":"px"},"hoverMarginUnits":{"type":"string","default":"px"},"hoverBorderUnits":{"type":"string","default":"px"},"hoverBorderRadiusUnits":{"type":"string","default":"px"},"itemStyleType":{"type":"string","default":"normal"},"backgroundType":{"type":"string","default":"solid"},"backgroundColor":{"type":"string"},"backgroundGradient":{"type":"string"},"padding":{"type":"number"},"paddingTop":{"type":"number"},"paddingRight":{"type":"number"},"paddingLeft":{"type":"number"},"paddingBottom":{"type":"number"},"border":{"type":"number"},"borderTop":{"type":"number"},"borderRight":{"type":"number"},"borderBottom":{"type":"number"},"borderLeft":{"type":"number"},"margin":{"type":"number"},"marginTop":{"type":"number"},"marginRight":{"type":"number"},"marginBottom":{"type":"number"},"marginLeft":{"type":"number"},"borderType":{"type":"string"},"borderColor":{"type":"string"},"borderRadius":{"type":"number"},"borderRadiusTop":{"type":"number"},"borderRadiusRight":{"type":"number"},"borderRadiusBottom":{"type":"number"},"borderRadiusLeft":{"type":"number"},"hasBoxShadow":{"type":"boolean","default":false},"hoverBackgroundType":{"type":"string"},"hoverBackgroundColor":{"type":"string"},"hoverBackgroundGradient":{"type":"string"},"hoverBorderType":{"type":"string"},"hoverBorderColor":{"type":"string"},"hoverBorder":{"type":"number"},"hoverBorderTop":{"type":"number"},"hoverBorderRight":{"type":"number"},"hoverBorderBottom":{"type":"number"},"hoverBorderLeft":{"type":"number"},"hoverBorderRadius":{"type":"number"},"hoverBorderRadiusTop":{"type":"number"},"hoverBorderRadiusRight":{"type":"number"},"hoverBorderRadiusBottom":{"type":"number"},"hoverBorderRadiusLeft":{"type":"number"},"hoverHasBoxShadow":{"type":"boolean","default":false},"hoverPadding":{"type":"number"},"hoverPaddingTop":{"type":"number"},"hoverPaddingRight":{"type":"number"},"hoverPaddingBottom":{"type":"number"},"hoverPaddingLeft":{"type":"number"}},"textdomain":"icon-list-item","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

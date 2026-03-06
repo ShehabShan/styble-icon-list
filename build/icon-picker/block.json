@@ -4,7 +4,7 @@
   "name": "create-block/icon-picker",
   "version": "0.1.0",
   "title": "Icon Picker",
-  "category": "widgets",
+  "category": "styble",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
@@ -83,13 +83,18 @@
       "default": "solid"
     },
     "hoverBackgroundType": {
-      "type": "string",
-      "default": "solid"
+      "type": "string"
     },
     "backgroundColor": {
       "type": "string"
     },
+    "hoverBackgroundColor": {
+      "type": "string"
+    },
     "backgroundGradient": {
+      "type": "string"
+    },
+    "hoverBackgroundGradient": {
       "type": "string"
     },
     "childPadding": {
@@ -123,13 +128,15 @@
       "type": "number"
     },
     "childBorderType": {
-      "type": "string"
+      "type": "string",
+      "default": "none"
     },
     "childBorderColor": {
       "type": "string"
     },
     "childBorder": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "childBorderTop": {
       "type": "number"
@@ -165,12 +172,6 @@
     "hoverHasBoxShadow": {
       "type": "boolean",
       "default": false
-    },
-    "hoverBackgroundColor": {
-      "type": "string"
-    },
-    "hoverBackgroundGradient": {
-      "type": "string"
     },
     "hoverChildMargin": {
       "type": "number"
